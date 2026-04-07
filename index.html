@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Maria | Travel, Tech & Portfolio Hub</title>
+    <title>JM MARIA | Travel, Tech & UGC Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -20,16 +20,20 @@
         .action-badge { position: absolute; top: 1rem; right: 1rem; background: #ef4444; color: white; font-size: 8px; font-weight: 900; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
         .review-card { transition: all 0.3s ease; border: 1px solid #f1f5f9; }
         .review-card:hover { border-color: #000; background: #fafafa; }
-        
-        /* Form Styling */
-        input, textarea { outline: none; transition: all 0.3s ease; border: 1px solid #e2e8f0 !important; }
+        input, textarea, select { outline: none; transition: all 0.3s ease; border: 1px solid #e2e8f0 !important; }
         input:focus, textarea:focus { border-color: #000 !important; background-color: #fafafa; }
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 h-20 flex items-center px-8 justify-between">
-        <div class="font-black tracking-tighter text-xl uppercase">JM MARIA</div>
+        <div class="flex items-center space-x-4">
+            <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                <span class="text-white text-xs font-black tracking-tighter">JM</span>
+            </div>
+            <div class="font-black tracking-tighter text-xl uppercase">MARIA</div>
+        </div>
+        
         <div class="hidden lg:flex space-x-8 text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
             <a href="#travel" class="hover:text-black transition">01 Archive</a>
             <a href="#hotels" class="hover:text-black transition">02 Hotels</a>
@@ -38,7 +42,11 @@
             <a href="#shop" class="hover:text-black transition">05 Shop</a>
             <a href="#services" class="text-red-600 font-black">06 Services</a>
         </div>
-        <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="bg-black text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all shadow-lg">Subscribe</a>
+
+        <div class="flex items-center space-x-6">
+            <button class="text-slate-400 hover:text-black transition"><i class="fas fa-search text-sm"></i></button>
+            <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="bg-black text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all shadow-lg">Subscribe</a>
+        </div>
     </nav>
 
     <section id="travel" class="py-24 border-b border-slate-50">
@@ -56,9 +64,98 @@
                     <div class="video-container shadow-xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" allowfullscreen></iframe></div>
                     <div class="flex justify-between items-center"><h4 class="font-bold text-[10px] uppercase tracking-widest">Europe Series</h4><a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" target="_blank" class="text-[9px] font-bold text-slate-300 hover:text-red-500 uppercase">View List →</a></div>
                 </div>
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center">
-                    <div class="video-container shadow-xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" allowfullscreen></iframe></div>
-                    <div class="flex justify-between items-center"><h4 class="font-bold text-[10px] uppercase tracking-widest">Thailand</h4><a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" target="_blank" class="text-[9px] font-bold text-slate-300 hover:text-red-500 uppercase">View List →</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hotels" class="py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-20">
+                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-4 block">Chapter Two</span>
+                <h2 class="text-5xl font-black tracking-tighter uppercase leading-none">The Stay <span class="serif-title italic text-slate-400">List</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="review-card bg-white p-8 rounded-[2.5rem] flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-48 h-48 bg-slate-200 rounded-2xl overflow-hidden flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale">
+                    </div>
+                    <div>
+                        <div class="flex text-yellow-400 text-[8px] mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <h3 class="font-black uppercase tracking-tighter text-xl mb-2">Luxury Stay Review</h3>
+                        <a href="INSERT_HOTEL_VIDEO_URL" target="_blank" class="text-[9px] font-bold uppercase tracking-widest text-black border-b border-black pb-1">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cafes" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="mb-16">
+                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-2 block">Chapter Three</span>
+                <h2 class="text-5xl font-black tracking-tighter uppercase">Cafe <span class="serif-title italic text-slate-400">Culture</span></h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="INSERT_CAFE_VIDEO_URL" target="_blank" class="group cursor-pointer">
+                    <div class="aspect-square bg-slate-100 rounded-[2rem] mb-6 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h4 class="font-black uppercase tracking-widest text-[10px] mb-1">Specialty Concept</h4>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest">Location Tag</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nexus" class="py-32 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-8 text-center">
+            <h2 class="text-7xl font-black tracking-tighter uppercase mb-20 leading-none">The Nexus</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
+                    <span class="action-badge">Follow</span>
+                    <i class="fab fa-instagram text-4xl mb-6 text-pink-600"></i>
+                    <p class="font-black text-[10px] uppercase tracking-widest">Instagram</p>
+                </a>
+                <a href="https://www.tiktok.com/@itsjmmaria" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
+                    <span class="action-badge">Follow</span>
+                    <i class="fab fa-tiktok text-4xl mb-6 text-black"></i>
+                    <p class="font-black text-[10px] uppercase tracking-widest">TikTok</p>
+                </a>
+                <a href="https://www.facebook.com/janinamariac" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
+                    <span class="action-badge">Follow</span>
+                    <i class="fab fa-facebook text-4xl mb-6 text-blue-600"></i>
+                    <p class="font-black text-[10px] uppercase tracking-widest">Facebook</p>
+                </a>
+                <a href="https://www.youtube.com/@jmmaria" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
+                    <span class="action-badge" style="background: black;">Subscribe</span>
+                    <i class="fab fa-youtube text-4xl mb-6 text-red-600"></i>
+                    <p class="font-black text-[10px] uppercase tracking-widest">YouTube</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="py-32 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="mb-20 text-center">
+                <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.5em] mb-4 block">Store</span>
+                <h2 class="text-6xl font-black tracking-tighter uppercase leading-none">Premium <span class="serif-title italic text-slate-700">Guides</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 group hover:border-red-600 transition-all">
+                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden"><span class="text-slate-800 font-black text-7xl group-hover:text-red-600/20 transition-all uppercase">UAE</span></div>
+                    <h3 class="font-black uppercase tracking-tighter text-2xl mb-2">Dubai Guide</h3>
+                    <a href="INSERT_UAE_SHOP_LINK" target="_blank" class="block w-full py-5 bg-white text-center text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition mt-8">AED 5.00 — Buy Now</a>
+                </div>
+                <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 group hover:border-red-600 transition-all">
+                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden"><span class="text-slate-800 font-black text-7xl group-hover:text-red-600/20 transition-all uppercase">EU</span></div>
+                    <h3 class="font-black uppercase tracking-tighter text-2xl mb-2">Europe Guide</h3>
+                    <a href="INSERT_EUROPE_SHOP_LINK" target="_blank" class="block w-full py-5 bg-white text-center text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition mt-8">AED 5.00 — Buy Now</a>
+                </div>
+                <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 group hover:border-red-600 transition-all text-center">
+                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden"><i class="fas fa-camera text-slate-800 text-7xl group-hover:text-red-600/20 transition-all"></i></div>
+                    <h3 class="font-black uppercase tracking-tighter text-2xl mb-2">Tech Toolkit</h3>
+                    <a href="INSERT_TECH_SHOP_LINK" target="_blank" class="block w-full py-5 bg-white text-center text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition mt-8">View Gear</a>
                 </div>
             </div>
         </div>
@@ -67,23 +164,22 @@
     <section id="services" class="py-40 bg-white">
         <div class="max-w-7xl mx-auto px-8">
             <div class="grid lg:grid-cols-2 gap-20">
-                
                 <div>
                     <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.5em] mb-6 block">Inquiries</span>
-                    <h2 class="text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-10">Work with <br> <span class="serif-title italic text-slate-300">Maria.</span></h2>
+                    <h2 class="text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-10">Work with <br> <span class="serif-title italic text-slate-300">JM.</span></h2>
                     
                     <div class="space-y-8 mt-16">
-                        <div>
-                            <h4 class="font-black text-[11px] uppercase tracking-widest mb-2 italic">01 / Digital Portfolio Hubs</h4>
-                            <p class="text-slate-400 text-[10px] uppercase tracking-widest leading-relaxed">Custom, minimalist websites designed for creators and businesses.</p>
+                        <div class="border-l-2 border-slate-100 pl-6">
+                            <h4 class="font-black text-[11px] uppercase tracking-widest mb-1 italic">01 / UGC Video Production</h4>
+                            <p class="text-slate-400 text-[10px] uppercase tracking-widest leading-relaxed">High-converting short-form content for your products or business.</p>
                         </div>
-                        <div>
-                            <h4 class="font-black text-[11px] uppercase tracking-widest mb-2 italic">02 / UGC & Brand Content</h4>
-                            <p class="text-slate-400 text-[10px] uppercase tracking-widest leading-relaxed">High-converting short-form video content for your products or business.</p>
+                        <div class="border-l-2 border-slate-100 pl-6">
+                            <h4 class="font-black text-[11px] uppercase tracking-widest mb-1 italic">02 / Airbnb & Property</h4>
+                            <p class="text-slate-400 text-[10px] uppercase tracking-widest leading-relaxed">Premium video showcases for listings and luxury real estate.</p>
                         </div>
-                        <div>
-                            <h4 class="font-black text-[11px] uppercase tracking-widest mb-2 italic">03 / Property Showcase</h4>
-                            <p class="text-slate-400 text-[10px] uppercase tracking-widest leading-relaxed">Premium video production for AirBNB listings and Luxury Real Estate.</p>
+                        <div class="border-l-2 border-slate-100 pl-6">
+                            <h4 class="font-black text-[11px] uppercase tracking-widest mb-1 italic">03 / Portfolio Hubs</h4>
+                            <p class="text-slate-400 text-[10px] uppercase tracking-widest leading-relaxed">Custom, minimalist websites designed for creators like this one.</p>
                         </div>
                     </div>
                 </div>
@@ -96,30 +192,26 @@
                         </div>
                         <div>
                             <label class="text-[10px] font-black uppercase tracking-[0.2em] mb-2 block">Email Address</label>
-                            <input type="email" name="_replyto" required class="w-full bg-white px-6 py-5 rounded-2xl text-sm" placeholder="email@example.com">
+                            <input type="email" name="email" required class="w-full bg-white px-6 py-5 rounded-2xl text-sm" placeholder="email@example.com">
                         </div>
                         <div>
-                            <label class="text-[10px] font-black uppercase tracking-[0.2em] mb-2 block">Interest</label>
+                            <label class="text-[10px] font-black uppercase tracking-[0.2em] mb-2 block">Service Required</label>
                             <select name="service" class="w-full bg-white px-6 py-5 rounded-2xl text-sm appearance-none border-none">
                                 <option>UGC Video Content</option>
-                                <option>Airbnb / Property Video</option>
-                                <option>Website Design</option>
-                                <option>Business Collaboration</option>
+                                <option>Airbnb / Property Showcase</option>
+                                <option>Personal Hub Design</option>
+                                <option>General Inquiry</option>
                             </select>
                         </div>
                         <div>
-                            <label class="text-[10px] font-black uppercase tracking-[0.2em] mb-2 block">Message</label>
-                            <textarea name="message" rows="4" required class="w-full bg-white px-6 py-5 rounded-2xl text-sm" placeholder="Tell me about your project..."></textarea>
+                            <label class="text-[10px] font-black uppercase tracking-[0.2em] mb-2 block">Project Details</label>
+                            <textarea name="message" rows="4" required class="w-full bg-white px-6 py-5 rounded-2xl text-sm" placeholder="Tell me about your product or property..."></textarea>
                         </div>
-                        
-                        <input type="text" name="_gotcha" style="display:none">
-
                         <button type="submit" class="w-full bg-black text-white py-6 rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] hover:bg-red-600 transition-all shadow-xl">
-                            Send Message
+                            Send Inquiry
                         </button>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
