@@ -5,81 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JM Maria</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f9f9fb;
-  color: #111;
+  background: #0f0f10;
+  color: #fff;
 }
 
-/* HEADER */
-.header {
+/* HERO */
+.hero {
   text-align: center;
-  padding: 60px 20px 30px;
+  padding: 80px 20px 40px;
 }
 
-.header h1 {
-  font-size: 42px;
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
   margin: 0;
 }
 
-.header p {
-  color: #666;
+.hero p {
+  color: #bbb;
   margin-top: 10px;
 }
 
-/* SECTION */
-.section {
-  padding: 30px 20px;
-  max-width: 1000px;
-  margin: auto;
+.hero-links a {
+  margin: 8px;
 }
 
-.section h2 {
-  margin-bottom: 20px;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-/* CARD */
-.card {
-  background: white;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* BUTTON */
+/* BUTTONS */
 .btn {
   display: inline-block;
-  margin-top: 10px;
-  padding: 12px 18px;
-  border-radius: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
   text-decoration: none;
+  font-weight: 500;
   color: white;
-  font-weight: 600;
 }
 
-.amazon { background: #ff9900; }
 .instagram { background: #E1306C; }
 .youtube { background: #FF0000; }
 
-/* HERO BUTTONS */
-.hero-links a {
-  margin: 5px;
+/* SECTION */
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+/* VIDEO GRID */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.video iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  border: none;
+}
+
+/* CARDS */
+.card {
+  background: #1a1a1c;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.card p {
+  color: #aaa;
+}
+
+/* SHOP BUTTON */
+.shop-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
 }
 </style>
 </head>
@@ -87,9 +103,9 @@ body {
 <body>
 
 <!-- HERO -->
-<div class="header">
-  <h1>JM Maria ✨</h1>
-  <p>Sharing my favorite finds, cafes & content 💕</p>
+<div class="hero">
+  <h1>JM Maria</h1>
+  <p>Luxury UGC Creator • Lifestyle • Travel • Beauty</p>
 
   <div class="hero-links">
     <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn instagram">Instagram</a>
@@ -97,68 +113,65 @@ body {
   </div>
 </div>
 
+<!-- VIDEO PORTFOLIO -->
+<div class="section">
+  <h2>🎥 My Work</h2>
+
+  <div class="video-grid">
+
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=jmmaria"></iframe>
+    </div>
+
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=jmmaria"></iframe>
+    </div>
+
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=jmmaria"></iframe>
+    </div>
+
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+  <h2>💼 Work With Me</h2>
+
+  <div class="video-grid">
+
+    <div class="card">
+      <h3>UGC Videos</h3>
+      <p>High-converting short-form content for brands</p>
+    </div>
+
+    <div class="card">
+      <h3>Product Features</h3>
+      <p>Luxury aesthetic storytelling</p>
+    </div>
+
+    <div class="card">
+      <h3>Travel & Hotels</h3>
+      <p>Premium lifestyle & destination content</p>
+    </div>
+
+  </div>
+</div>
+
 <!-- SHOP -->
 <div class="section">
   <h2>🛍 Shop My Favorites</h2>
 
-  <div class="grid">
+  <div class="video-grid">
 
     <div class="card">
-      <h3>Makeup Essentials 💄</h3>
-      <p>My everyday glow routine</p>
-      <a href="#" class="btn amazon">Shop</a>
+      <p>My everyday beauty essentials</p>
+      <a href="#" class="shop-btn">Shop Now</a>
     </div>
 
     <div class="card">
-      <h3>Creator Gear 📸</h3>
-      <p>Camera, lighting & setup</p>
-      <a href="#" class="btn amazon">View</a>
-    </div>
-
-    <div class="card">
-      <h3>Amazon Finds ✨</h3>
-      <p>My viral must-haves</p>
-      <a href="#" class="btn amazon">Explore</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- CONTENT -->
-<div class="section">
-  <h2>🎥 Latest Content</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <p>Watch my latest reels & reviews</p>
-      <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn instagram">View Instagram</a>
-    </div>
-
-    <div class="card">
-      <p>Full videos & experiences</p>
-      <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn youtube">Watch YouTube</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- CAFES -->
-<div class="section">
-  <h2>☕ Places I Love</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Best Cafes in Dubai</h3>
-      <p>My aesthetic brunch spots</p>
-      <a href="#" class="btn amazon">See List</a>
-    </div>
-
-    <div class="card">
-      <h3>Hotels & Travel</h3>
-      <p>Luxury stays & reviews</p>
-      <a href="#" class="btn amazon">Explore</a>
+      <p>Content creator setup</p>
+      <a href="#" class="shop-btn">View Gear</a>
     </div>
 
   </div>
