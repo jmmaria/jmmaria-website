@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Maria | Travel, Tech & Reviews</title>
+    <title>JM Maria | Travel, Tech & Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -18,8 +18,6 @@
         .social-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
         .social-card:hover { transform: translateY(-10px); border-color: #000; }
         .action-badge { position: absolute; top: 1rem; right: 1rem; background: #ef4444; color: white; font-size: 8px; font-weight: 900; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
-        .review-card { transition: all 0.3s ease; border: 1px solid #f1f5f9; }
-        .review-card:hover { border-color: #000; background: #fafafa; }
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
@@ -36,137 +34,52 @@
         <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="bg-black text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all shadow-lg">Subscribe</a>
     </nav>
 
-    <section id="travel" class="py-24 border-b border-slate-50">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="mb-12">
-                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">Chapter One</span>
-                <h2 class="text-4xl font-black tracking-tighter uppercase">Global Archive</h2>
-                <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-2">Tap <i class="fas fa-list-ul mx-1"></i> to choose an episode</p>
-            </div>
-
-            <div class="flex gap-8 overflow-x-auto pb-10 hide-scroll snap-x">
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center">
-                    <div class="video-container shadow-xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" allowfullscreen></iframe></div>
-                    <div class="flex justify-between items-center"><h4 class="font-bold text-[10px] uppercase tracking-widest">United Arab Emirates</h4><a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" target="_blank" class="text-[9px] font-bold text-slate-300 hover:text-red-500 uppercase">View List →</a></div>
-                </div>
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center">
-                    <div class="video-container shadow-xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" allowfullscreen></iframe></div>
-                    <div class="flex justify-between items-center"><h4 class="font-bold text-[10px] uppercase tracking-widest">Europe Series</h4><a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" target="_blank" class="text-[9px] font-bold text-slate-300 hover:text-red-500 uppercase">View List →</a></div>
-                </div>
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center">
-                    <div class="video-container shadow-xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" allowfullscreen></iframe></div>
-                    <div class="flex justify-between items-center"><h4 class="font-bold text-[10px] uppercase tracking-widest">Thailand</h4><a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" target="_blank" class="text-[9px] font-bold text-slate-300 hover:text-red-500 uppercase">View List →</a></div>
-                </div>
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center">
-                    <div class="video-container shadow-xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EIE4GnkmPng7ksLrwWlCt" allowfullscreen></iframe></div>
-                    <div class="flex justify-between items-center"><h4 class="font-bold text-[10px] uppercase tracking-widest">USA</h4><a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh5EIE4GnkmPng7ksLrwWlCt" target="_blank" class="text-[9px] font-bold text-slate-300 hover:text-red-500 uppercase">View List →</a></div>
-                </div>
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center">
-                    <div class="video-container shadow-xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7Cp1hUM48Nymd1miAt8eDg" allowfullscreen></iframe></div>
-                    <div class="flex justify-between items-center"><h4 class="font-bold text-[10px] uppercase tracking-widest">Philippines</h4><a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh7Cp1hUM48Nymd1miAt8eDg" target="_blank" class="text-[9px] font-bold text-slate-300 hover:text-red-500 uppercase">View List →</a></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="hotels" class="py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="text-center mb-20">
-                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-4 block">Chapter Two</span>
-                <h2 class="text-5xl font-black tracking-tighter uppercase">The Stay <span class="serif-title italic text-slate-400">List</span></h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="review-card bg-white p-8 rounded-[2.5rem] flex flex-col md:flex-row gap-8 items-center">
-                    <div class="w-full md:w-48 h-48 bg-slate-200 rounded-2xl overflow-hidden flex-shrink-0">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
-                    </div>
-                    <div>
-                        <div class="flex text-yellow-400 text-[8px] mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <h3 class="font-black uppercase tracking-tighter text-xl mb-2">Aesthetic Luxury Stay</h3>
-                        <p class="text-slate-500 text-xs font-light leading-relaxed mb-4">A deep dive into the architecture, service, and creator-friendly spots of this premium location.</p>
-                        <a href="#" class="text-[9px] font-bold uppercase tracking-widest text-black border-b border-black pb-1">Read Review</a>
-                    </div>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section id="cafes" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-                <div>
-                    <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-2 block">Chapter Three</span>
-                    <h2 class="text-5xl font-black tracking-tighter uppercase">Cafe <span class="serif-title italic text-slate-400">Culture</span></h2>
-                </div>
-                <p class="text-slate-400 text-xs max-w-xs md:text-right mt-4 md:mt-0 font-light">Sourcing the best coffee and minimalist interiors across the globe.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group cursor-pointer">
-                    <div class="aspect-square bg-slate-100 rounded-[2rem] mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <h4 class="font-black uppercase tracking-widest text-[10px] mb-1">Concept Coffee House</h4>
-                    <p class="text-slate-400 text-[9px] uppercase tracking-widest">Dubai, UAE</p>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section id="nexus" class="py-32 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-8 text-center">
-            <h2 class="text-7xl font-black tracking-tighter uppercase mb-20 leading-none">The Nexus</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
-                    <span class="action-badge">Follow</span>
-                    <i class="fab fa-instagram text-4xl mb-6 text-pink-600"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">Instagram</p>
-                </a>
-                <a href="https://www.tiktok.com/@itsjmmaria" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
-                    <span class="action-badge">Follow</span>
-                    <i class="fab fa-tiktok text-4xl mb-6 text-black"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">TikTok</p>
-                </a>
-                <a href="https://www.facebook.com/janinamariac" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
-                    <span class="action-badge">Follow</span>
-                    <i class="fab fa-facebook text-4xl mb-6 text-blue-600"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">Facebook</p>
-                </a>
-                <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
-                    <span class="action-badge" style="background: black;">Subscribe</span>
-                    <i class="fab fa-youtube text-4xl mb-6 text-red-600"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">YouTube</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <section id="shop" class="py-32 bg-black text-white rounded-t-[5rem]">
         <div class="max-w-7xl mx-auto px-8">
             <div class="mb-20 text-center">
                 <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.5em] mb-4 block">Store</span>
                 <h2 class="text-6xl font-black tracking-tighter uppercase">Premium <span class="serif-title italic text-slate-700">Guides</span></h2>
             </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                
                 <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 group hover:border-red-600 transition-all">
-                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden"><span class="text-slate-800 font-black text-7xl group-hover:text-red-600/20 transition-all uppercase">UAE</span></div>
+                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden">
+                        <span class="text-slate-800 font-black text-7xl group-hover:text-red-600/20 transition-all uppercase">UAE</span>
+                    </div>
                     <h3 class="font-black uppercase tracking-tighter text-2xl mb-2">Dubai & Abu Dhabi</h3>
-                    <button class="w-full py-5 bg-white text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition mt-8">Download — AED 5.00</button>
+                    <p class="text-slate-500 text-[10px] uppercase tracking-widest mb-8">The complete creator itinerary.</p>
+                    
+                    <a href="INSERT_UAE_STORE_LINK_HERE" target="_blank" class="block w-full py-5 bg-white text-center text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition">AED 5.00 — Buy Now</a>
                 </div>
+
                 <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 group hover:border-red-600 transition-all">
-                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden"><span class="text-slate-800 font-black text-7xl group-hover:text-red-600/20 transition-all uppercase">EU</span></div>
+                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden">
+                        <span class="text-slate-800 font-black text-7xl group-hover:text-red-600/20 transition-all uppercase">EU</span>
+                    </div>
                     <h3 class="font-black uppercase tracking-tighter text-2xl mb-2">The Alpine Series</h3>
-                    <button class="w-full py-5 bg-white text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition mt-8">Download — AED 5.00</button>
+                    <p class="text-slate-500 text-[10px] uppercase tracking-widest mb-8">Swiss & Italian hideaways.</p>
+                    
+                    <a href="INSERT_EUROPE_STORE_LINK_HERE" target="_blank" class="block w-full py-5 bg-white text-center text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition">AED 5.00 — Buy Now</a>
                 </div>
+
                 <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 group hover:border-red-600 transition-all text-center">
-                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden"><i class="fas fa-camera text-slate-800 text-7xl group-hover:text-red-600/20 transition-all"></i></div>
+                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden">
+                        <i class="fas fa-camera text-slate-800 text-7xl group-hover:text-red-600/20 transition-all"></i>
+                    </div>
                     <h3 class="font-black uppercase tracking-tighter text-2xl mb-2">Tech Toolkit</h3>
-                    <button class="w-full py-5 bg-white text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition mt-8">Get the List</button>
+                    <p class="text-slate-500 text-[10px] uppercase tracking-widest mb-8">The minimalist gear I use daily.</p>
+                    
+                    <a href="INSERT_TECH_GEAR_LINK_HERE" target="_blank" class="block w-full py-5 bg-white text-center text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition">View Gear List</a>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <footer class="py-20 bg-black text-center"><p class="text-[9px] font-bold text-slate-800 uppercase tracking-[0.5em]">&copy; 2026 JM MARIA</p></footer>
+    <footer class="py-20 bg-black text-center text-[9px] font-bold text-slate-800 uppercase tracking-[0.5em]">
+        &copy; 2026 JM MARIA
+    </footer>
 
 </body>
 </html>
