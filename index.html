@@ -3,134 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Maria | Travel & Tech Hub</title>
+    <title>JM Maria | Master Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background: #ffffff; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .serif-title { font-family: 'Playfair Display', serif; }
-        .hide-scroll::-webkit-scrollbar { display: none; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .snap-x { scroll-snap-type: x mandatory; }
-        .snap-center { scroll-snap-align: center; }
-        .social-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .social-card:hover { transform: translateY(-12px); border-color: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .social-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
+        .social-card:hover { transform: translateY(-12px); border-color: #000; }
+        .follow-badge { position: absolute; top: 1rem; right: 1rem; background: #ef4444; color: white; font-size: 8px; font-weight: 900; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; }
     </style>
 </head>
-<body class="text-slate-900 antialiased">
+<body class="bg-white text-slate-900">
 
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 h-20 flex items-center px-8 justify-between">
-        <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white font-black text-[10px]">JM</div>
-            <span class="text-lg font-black tracking-tighter uppercase">MARIA</span>
-        </div>
-        <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-            <a href="#travel" class="hover:text-black transition text-black">01 Travel</a>
-            <a href="#tech" class="hover:text-black transition">02 Tech</a>
-            <a href="#nexus" class="hover:text-black transition">03 Nexus</a>
-            <a href="#shop" class="hover:text-black transition text-red-600">04 Shop</a>
-        </div>
-        <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="bg-black text-white px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-red-600 transition-all shadow-lg">Subscribe</a>
+        <div class="font-black tracking-tighter text-xl uppercase">JM MARIA</div>
+        <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="bg-black text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all shadow-xl">Subscribe Now</a>
     </nav>
 
-    <section id="travel" class="py-24 border-b border-slate-50">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="mb-12 flex justify-between items-end">
-                <div>
-                    <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">Chapter One</span>
-                    <h2 class="text-4xl font-black tracking-tighter uppercase">Global Archive</h2>
-                </div>
-                <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest pb-2">Swipe to Explore →</span>
-            </div>
-
-            <div class="flex gap-8 overflow-x-auto pb-10 hide-scroll snap-x">
-                <div class="min-w-[85vw] md:min-w-[650px] snap-center">
-                    <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">United Arab Emirates</h4>
-                </div>
-                <div class="min-w-[85vw] md:min-w-[650px] snap-center">
-                    <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Europe Series</h4>
-                </div>
-                <div class="min-w-[85vw] md:min-w-[650px] snap-center">
-                    <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Thailand Culture</h4>
-                </div>
-                <div class="min-w-[85vw] md:min-w-[650px] snap-center">
-                    <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EIE4GnkmPng7ksLrwWlCt" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">USA Coastline</h4>
-                </div>
-                <div class="min-w-[85vw] md:min-w-[650px] snap-center">
-                    <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7Cp1hUM48Nymd1miAt8eDg" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Philippines Expedition</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tech" class="py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="grid md:grid-cols-2 gap-20 items-center">
-                <div class="rounded-[3rem] overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80" alt="Tech" class="w-full grayscale hover:grayscale-0 transition-all duration-1000">
-                </div>
-                <div class="space-y-6">
-                    <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] block">Chapter Two</span>
-                    <h2 class="text-6xl font-black tracking-tighter leading-none">Minimalist <br><span class="serif-title italic text-slate-400">Toolkit</span></h2>
-                    <p class="text-slate-500 font-light text-lg leading-relaxed max-w-sm">A curated selection of high-performance tools designed for the modern creator.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="nexus" class="py-32 bg-white">
+    <section id="nexus" class="py-32">
         <div class="max-w-5xl mx-auto px-8 text-center">
-            <span class="text-red-600 text-[10px] font-bold uppercase tracking-[0.5em] mb-4 block">Connections</span>
-            <h2 class="text-6xl font-black tracking-tighter uppercase mb-20 leading-none">The Nexus</h2>
+            <span class="text-red-600 text-[10px] font-bold uppercase tracking-[0.5em] mb-4 block">Action Center</span>
+            <h2 class="text-6xl font-black tracking-tighter uppercase mb-20 leading-none text-slate-900">The Nexus</h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <a href="https://www.instagram.com/itsjmmaria/" target="_blank" rel="noopener noreferrer" class="social-card p-10 border border-slate-100 rounded-[2.5rem] bg-white">
-                    <i class="fab fa-instagram text-4xl mb-6 text-pink-600"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">Instagram</p>
+                <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="social-card p-12 border border-slate-100 rounded-[3rem] bg-white flex flex-col items-center">
+                    <span class="follow-badge">Follow</span>
+                    <i class="fab fa-instagram text-5xl mb-6 text-pink-600"></i>
+                    <p class="font-black text-[11px] uppercase tracking-widest">Instagram</p>
                 </a>
-                <a href="https://www.tiktok.com/@itsjmmaria" target="_blank" rel="noopener noreferrer" class="social-card p-10 border border-slate-100 rounded-[2.5rem] bg-white">
-                    <i class="fab fa-tiktok text-4xl mb-6 text-black"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">TikTok</p>
+                
+                <a href="https://www.tiktok.com/@itsjmmaria" target="_blank" class="social-card p-12 border border-slate-100 rounded-[3rem] bg-white flex flex-col items-center">
+                    <span class="follow-badge">Follow</span>
+                    <i class="fab fa-tiktok text-5xl mb-6 text-black"></i>
+                    <p class="font-black text-[11px] uppercase tracking-widest">TikTok</p>
                 </a>
-                <a href="https://www.facebook.com/janinamariac" target="_blank" rel="noopener noreferrer" class="social-card p-10 border border-slate-100 rounded-[2.5rem] bg-white">
-                    <i class="fab fa-facebook text-4xl mb-6 text-blue-600"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">Facebook</p>
+                
+                <a href="https://www.facebook.com/janinamariac" target="_blank" class="social-card p-12 border border-slate-100 rounded-[3rem] bg-white flex flex-col items-center">
+                    <span class="follow-badge">Follow</span>
+                    <i class="fab fa-facebook text-5xl mb-6 text-blue-600"></i>
+                    <p class="font-black text-[11px] uppercase tracking-widest">Facebook</p>
                 </a>
-                <a href="https://www.youtube.com/@jmmaria" target="_blank" rel="noopener noreferrer" class="social-card p-10 border border-slate-100 rounded-[2.5rem] bg-white">
-                    <i class="fab fa-youtube text-4xl mb-4 text-red-600"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">YouTube</p>
+                
+                <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="social-card p-12 border border-slate-100 rounded-[3rem] bg-white flex flex-col items-center">
+                    <span class="follow-badge" style="background: black;">Subscribe</span>
+                    <i class="fab fa-youtube text-5xl mb-6 text-red-600"></i>
+                    <p class="font-black text-[11px] uppercase tracking-widest">YouTube</p>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="shop" class="py-32 bg-black text-white rounded-t-[4rem]">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="mb-20 text-center md:text-left">
-                <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.4em] mb-4 block">Store</span>
-                <h2 class="text-5xl font-black tracking-tighter uppercase">Itinerary <span class="serif-title italic text-slate-700 font-bold text-6xl block md:inline">Guides</span></h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="bg-white/5 p-6 rounded-[2.5rem] border border-white/10 text-center">
-                    <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-slate-800 flex items-center justify-center">
-                        <span class="text-slate-600 font-black text-4xl">UAE</span>
-                    </div>
-                    <h5 class="font-bold text-[10px] mb-6 uppercase tracking-widest">Premium Guide</h5>
-                    <button class="w-full py-4 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-red-600 hover:text-white transition">AED 5.00</button>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <footer class="py-20 bg-black text-center border-t border-white/10">
-        <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[0.6em]">&copy; 2026 JM MARIA</p>
+    <footer class="py-10 text-center text-slate-300 text-[9px] font-bold uppercase tracking-[0.4em]">
+        &copy; 2026 JM MARIA | Built for Conversion
     </footer>
 
 </body>
