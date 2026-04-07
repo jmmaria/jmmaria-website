@@ -3,20 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>JM Maria | Luxury UGC Creator</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --gold: #d4af37;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #f8f8f8;
-}
-
-:root {
-  --gold: #d4af37;
+  background: #050505;
+  color: #fff;
+  scroll-behavior: smooth;
 }
 
 /* NAV */
@@ -24,16 +26,16 @@ body {
   position: fixed;
   width: 100%;
   padding: 20px;
-  background: rgba(0,0,0,0.9);
   text-align: center;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
+  z-index: 999;
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
   color: var(--gold);
+  font-size: 24px;
 }
 
 /* HERO */
@@ -52,75 +54,74 @@ body {
   height: 120%;
   top: -10%;
   left: -10%;
-  opacity: 0.2;
+  opacity: 0.25;
 }
 
 .hero-content {
-  position: relative;
   z-index: 2;
   max-width: 700px;
+  animation: fadeUp 1s ease;
 }
 
 .hero h1 {
-  font-size: 70px;
+  font-size: 75px;
   font-family: 'Playfair Display', serif;
 }
 
 .hero p {
-  color: #bbb;
-  margin-bottom: 20px;
+  color: #aaa;
+  margin-bottom: 25px;
 }
 
 .btn {
-  margin: 10px;
-  padding: 12px 22px;
-  border-radius: 30px;
-  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 40px;
   background: var(--gold);
   color: black;
+  text-decoration: none;
+  margin: 8px;
   display: inline-block;
   font-weight: 600;
   transition: 0.3s;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+  transform: translateY(-3px);
 }
 
 .btn-outline {
-  background: transparent;
   border: 1px solid var(--gold);
   color: var(--gold);
+  background: transparent;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section {
-  padding: 100px 10%;
+  padding: 120px 10%;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  margin-bottom: 30px;
+  font-size: 42px;
+  margin-bottom: 40px;
 }
 
 /* VIDEO GRID */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  gap: 25px;
+  gap: 30px;
 }
 
 .video-card {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.04);
   padding: 15px;
   border-radius: 20px;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .video-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.03);
 }
 
 .video-card iframe {
@@ -130,57 +131,85 @@ h2 {
   border: none;
 }
 
-.watch-btn {
-  margin-top: 10px;
-  display: inline-block;
-  font-size: 14px;
-  color: var(--gold);
-  text-decoration: none;
-}
-
-/* CARDS */
+/* SHOP */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 30px;
 }
 
 .card {
-  background: rgba(255,255,255,0.04);
   padding: 25px;
   border-radius: 20px;
-  transition: 0.3s;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
-.shop {
+.shop-btn {
   margin-top: 15px;
   display: inline-block;
+  padding: 10px 16px;
+  border-radius: 12px;
   background: white;
   color: black;
-  padding: 10px 16px;
-  border-radius: 10px;
   text-decoration: none;
-  font-weight: 500;
 }
 
 /* CTA STRIP */
 .cta {
   text-align: center;
-  padding: 80px 10%;
-  background: linear-gradient(120deg,#111,#1a1a1a);
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
+  padding: 100px 10%;
+  background: linear-gradient(120deg,#0a0a0a,#111);
+}
+
+/* STICKY CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--gold);
+  color: black;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* FOOTER */
 .footer {
   text-align: center;
   padding: 60px;
-  color: #888;
+  color: #777;
 }
 </style>
 </head>
@@ -198,110 +227,94 @@ h2 {
 
   <div class="hero-content">
     <h1>JM Maria ✨</h1>
-    <p>Luxury UGC Creator • Travel • Beauty • Viral Finds</p>
+    <p>Luxury UGC Creator • Viral Finds • Travel • Beauty</p>
 
-    <a href="#videos" class="btn">🎥 Watch Videos</a>
-    <a href="#shop" class="btn">🛍 Shop My Favorites</a>
+    <a href="#videos" class="btn">Watch Videos</a>
+    <a href="#shop" class="btn">Shop My Picks</a>
     <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn-outline">Follow Me</a>
   </div>
 </div>
 
 <!-- VIDEOS -->
-<div class="section" id="videos">
-  <h2>🎥 Watch My Latest Videos</h2>
+<div class="section fade" id="videos">
+  <h2>Watch My Content</h2>
 
   <div class="video-grid">
-
     <div class="video-card">
       <iframe src="https://www.youtube.com/embed/A6S5CHq_Vwk"></iframe>
-      <p><strong>Emirates Business Class… is it worth it?</strong></p>
-      <a href="https://www.youtube.com/@jmmaria" target="_blank" class="watch-btn">Watch full video →</a>
+      <p>Emirates Business Class… is it worth it?</p>
     </div>
 
     <div class="video-card">
       <iframe src="https://www.youtube.com/embed/c4R7Iaya04M"></iframe>
-      <p><strong>This hotel shocked me…</strong></p>
-      <a href="https://www.youtube.com/@jmmaria" target="_blank" class="watch-btn">Watch full video →</a>
+      <p>This hotel shocked me…</p>
     </div>
 
     <div class="video-card">
       <iframe src="https://www.youtube.com/embed/XuLwZVjsTag"></iframe>
-      <p><strong>Luxury stay you need to try</strong></p>
-      <a href="https://www.youtube.com/@jmmaria" target="_blank" class="watch-btn">Watch full video →</a>
+      <p>Luxury stay you need to try</p>
     </div>
-
   </div>
 </div>
 
-<!-- CTA YOUTUBE PUSH -->
-<div class="cta">
-  <h2>Subscribe for More Luxury & Viral Finds</h2>
-  <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn">Subscribe on YouTube</a>
+<!-- CTA -->
+<div class="cta fade">
+  <h2>Subscribe for Luxury Content</h2>
+  <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn">Subscribe</a>
 </div>
 
 <!-- SHOP -->
-<div class="section" id="shop">
-  <h2>🛍 Shop My Viral Finds</h2>
+<div class="section fade" id="shop">
+  <h2>Shop My Viral Finds</h2>
 
   <div class="grid">
-
     <div class="card">
-      <h3>Creator Gear 📸</h3>
-      <p>The exact setup I use for viral videos.</p>
-      <a href="#" class="shop">Shop Now</a>
+      <h3>Creator Setup 📸</h3>
+      <p>My exact gear for viral content</p>
+      <a href="#" class="shop-btn">Shop</a>
     </div>
 
     <div class="card">
       <h3>Beauty Favorites 💄</h3>
-      <p>My everyday essentials.</p>
-      <a href="#" class="shop">Shop Now</a>
+      <p>Daily essentials I use</p>
+      <a href="#" class="shop-btn">Shop</a>
     </div>
 
     <div class="card">
       <h3>Amazon Finds ✨</h3>
-      <p>Trending products I love.</p>
-      <a href="#" class="shop">Shop Now</a>
+      <p>Trending must-haves</p>
+      <a href="#" class="shop-btn">Shop</a>
     </div>
-
   </div>
-</div>
-
-<!-- SOCIAL CTA -->
-<div class="cta">
-  <h2>Follow My Daily Content</h2>
-  <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn">Instagram</a>
-  <a href="https://www.facebook.com/janinamariac" target="_blank" class="btn-outline">Facebook</a>
 </div>
 
 <!-- WORK -->
-<div class="section">
-  <h2>💼 Work With Me</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>UGC Content</h3>
-      <p>High-converting videos for brands.</p>
-    </div>
-
-    <div class="card">
-      <h3>Brand Deals</h3>
-      <p>Luxury collaborations & campaigns.</p>
-    </div>
-
-    <div class="card">
-      <h3>Travel Content</h3>
-      <p>Hotels, lifestyle & experiences.</p>
-    </div>
-  </div>
-
-  <br><br>
+<div class="section fade">
+  <h2>Work With Me</h2>
+  <p>I create high-performing content for brands worldwide.</p>
   <a href="mailto:your@email.com" class="btn">Contact Me</a>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  © 2026 JM Maria • Luxury Creator
+  © 2026 JM Maria
 </div>
+
+<!-- STICKY CTA -->
+<a href="#shop" class="sticky-cta">Shop Now</a>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
