@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior:smooth;">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JM Maria</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -13,26 +13,30 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #0b0b0d;
   color: white;
-  overflow-x: hidden;
 }
 
-/* SNAP SCROLL */
-html {
-  scroll-snap-type: y mandatory;
-}
-
-section {
-  min-height: 100vh;
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px 8%;
-}
-
-/* HERO */
+/* HERO VIDEO */
 .hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero iframe {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .hero h1 {
@@ -42,92 +46,61 @@ section {
 
 .hero p {
   color: #aaa;
-  font-size: 18px;
 }
 
-/* BUTTONS */
 .btn {
-  padding: 14px 26px;
+  padding: 12px 25px;
   border-radius: 30px;
-  margin: 10px;
+  margin: 5px;
   display: inline-block;
   text-decoration: none;
-  transition: 0.3s;
 }
 
-.btn:hover {
-  transform: scale(1.08);
+.ig { background:#E1306C; }
+.yt { background:#FF0000; }
+.fb { background:#1877F2; }
+
+/* SECTION */
+.section {
+  padding: 80px 8%;
 }
 
-.ig { background: linear-gradient(45deg,#E1306C,#ff6a95); }
-.yt { background: linear-gradient(45deg,#FF0000,#ff4d4d); }
-.fb { background: linear-gradient(45deg,#1877F2,#3b82f6); }
-
-/* VIDEO GRID */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  gap: 25px;
-}
-
-.video-box img {
+/* FEATURED VIDEO */
+.featured iframe {
   width: 100%;
-  height: 350px;
-  object-fit: cover;
+  height: 500px;
   border-radius: 25px;
-  transition: 0.4s;
 }
 
-.video-box:hover img {
-  transform: scale(1.05);
-}
-
-/* CARDS */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 25px;
+  gap: 20px;
 }
 
+/* CARD */
 .card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
-  padding: 30px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
+  background: #151518;
+  border-radius: 20px;
+  padding: 25px;
 }
 
 /* SHOP */
 .shop {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 18px;
+  margin-top: 10px;
   background: white;
   color: black;
-  border-radius: 12px;
+  padding: 10px 15px;
+  border-radius: 10px;
   text-decoration: none;
 }
 
-/* STICKY BAR */
-.sticky {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.7);
-  padding: 12px 25px;
-  border-radius: 30px;
-  backdrop-filter: blur(10px);
-}
-
 /* MOBILE */
-@media (max-width:768px){
-  .hero h1 { font-size: 40px; }
-  .video-box img { height: 220px; }
+@media(max-width:768px){
+  .hero h1 { font-size:40px; }
+  .featured iframe { height:300px; }
 }
 </style>
 </head>
@@ -135,105 +108,71 @@ section {
 <body>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>JM Maria ✨</h1>
-  <p>Luxury UGC Creator • Travel • Beauty • Lifestyle</p>
+<div class="hero">
+  <iframe src="https://www.youtube.com/embed/A6S5CHq_Vwk?autoplay=1&mute=1&controls=0&loop=1&playlist=A6S5CHq_Vwk"></iframe>
 
-  <div>
+  <div class="hero-content">
+    <h1>JM Maria ✨</h1>
+    <p>Luxury UGC Creator • Travel • Beauty</p>
+
     <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn ig">Instagram</a>
     <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn yt">YouTube</a>
     <a href="https://www.facebook.com/janinamariac" target="_blank" class="btn fb">Facebook</a>
   </div>
-</section>
+</div>
 
-<!-- VIDEOS -->
-<section>
-  <h2>🎥 My Content</h2>
-
-  <div class="video-grid">
-
-    <div class="video-box" onclick="playVideo(this,'A6S5CHq_Vwk')">
-      <img src="https://img.youtube.com/vi/A6S5CHq_Vwk/hqdefault.jpg">
-    </div>
-
-    <div class="video-box" onclick="playVideo(this,'c4R7Iaya04M')">
-      <img src="https://img.youtube.com/vi/c4R7Iaya04M/hqdefault.jpg">
-    </div>
-
-    <div class="video-box" onclick="playVideo(this,'XuLwZVjsTag')">
-      <img src="https://img.youtube.com/vi/XuLwZVjsTag/hqdefault.jpg">
-    </div>
-
-  </div>
-</section>
+<!-- FEATURED VIDEO -->
+<div class="section featured">
+  <h2>🎬 Featured Content</h2>
+  <iframe src="https://www.youtube.com/embed/c4R7Iaya04M"></iframe>
+</div>
 
 <!-- SHOP -->
-<section>
+<div class="section">
   <h2>🛍 Shop My Favorites</h2>
 
   <div class="grid">
     <div class="card">
       <h3>Makeup 💄</h3>
-      <p>My daily glow routine</p>
+      <p>My daily routine</p>
       <a href="#" class="shop">Shop Now</a>
     </div>
 
     <div class="card">
-      <h3>Creator Gear 📸</h3>
-      <p>My filming setup</p>
+      <h3>Camera Gear 📸</h3>
+      <p>My setup</p>
       <a href="#" class="shop">View Gear</a>
     </div>
 
     <div class="card">
       <h3>Amazon Finds ✨</h3>
-      <p>Viral products I love</p>
+      <p>Viral products</p>
       <a href="#" class="shop">Explore</a>
     </div>
   </div>
-</section>
+</div>
 
-<!-- SERVICES -->
-<section>
+<!-- WORK WITH ME -->
+<div class="section">
   <h2>💼 Work With Me</h2>
 
   <div class="grid">
     <div class="card">
       <h3>UGC Videos</h3>
-      <p>High-converting brand content</p>
+      <p>High-converting content</p>
     </div>
 
     <div class="card">
-      <h3>Luxury Campaigns</h3>
-      <p>Premium storytelling</p>
+      <h3>Brand Deals</h3>
+      <p>Luxury collaborations</p>
     </div>
 
     <div class="card">
       <h3>Travel Content</h3>
-      <p>Hotels & experiences</p>
+      <p>Hotels & lifestyle</p>
     </div>
   </div>
-</section>
-
-<!-- CONTACT -->
-<section style="text-align:center;">
-  <h2>📩 Work with me</h2>
-  <p>For collaborations & brand deals</p>
-  <a href="mailto:your@email.com">your@email.com</a>
-</section>
-
-<!-- STICKY -->
-<div class="sticky">
-  <a href="https://www.instagram.com/itsjmmaria/" target="_blank">IG</a> |
-  <a href="https://www.youtube.com/@jmmaria" target="_blank">YT</a> |
-  <a href="https://www.facebook.com/janinamariac" target="_blank">FB</a>
 </div>
-
-<script>
-function playVideo(el,id){
-  el.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&mute=1"
-  style="width:100%;height:350px;border-radius:25px;border:none;" allowfullscreen></iframe>`;
-}
-</script>
 
 </body>
 </html>
