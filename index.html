@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior:smooth;">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,120 +11,123 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg,#0c0c0e,#111);
-  color: #fff;
+  background: #0b0b0d;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* SNAP SCROLL */
+html {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 8%;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 90px 20px 50px;
 }
 
 .hero h1 {
+  font-size: 70px;
   font-family: 'Playfair Display', serif;
-  font-size: 52px;
 }
 
 .hero p {
   color: #aaa;
+  font-size: 18px;
 }
 
 /* BUTTONS */
 .btn {
-  padding: 12px 22px;
+  padding: 14px 26px;
   border-radius: 30px;
-  text-decoration: none;
-  margin: 6px;
+  margin: 10px;
   display: inline-block;
-  font-weight: 500;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .ig { background: linear-gradient(45deg,#E1306C,#ff6a95); }
 .yt { background: linear-gradient(45deg,#FF0000,#ff4d4d); }
 .fb { background: linear-gradient(45deg,#1877F2,#3b82f6); }
 
-/* SECTION */
-.section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 50px 20px;
-}
-
-.section h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
-}
-
 /* VIDEO GRID */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.video-box {
-  cursor: pointer;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 25px;
 }
 
 .video-box img {
   width: 100%;
-  border-radius: 20px;
-  transition: 0.3s;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 25px;
+  transition: 0.4s;
 }
 
 .video-box:hover img {
   transform: scale(1.05);
-  opacity: 0.85;
 }
 
-/* GRID */
+/* CARDS */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 25px;
 }
 
-/* CARD */
 .card {
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 30px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 /* SHOP */
 .shop {
   display: inline-block;
-  margin-top: 12px;
+  margin-top: 15px;
+  padding: 12px 18px;
   background: white;
   color: black;
-  padding: 10px 16px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: 500;
 }
 
-/* CONTACT */
-.contact {
-  text-align: center;
-  padding: 70px 20px;
-}
-
-/* STICKY */
+/* STICKY BAR */
 .sticky {
   position: fixed;
-  bottom: 15px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: #111;
-  padding: 10px 20px;
+  background: rgba(0,0,0,0.7);
+  padding: 12px 25px;
   border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
+
+/* MOBILE */
+@media (max-width:768px){
+  .hero h1 { font-size: 40px; }
+  .video-box img { height: 220px; }
 }
 </style>
 </head>
@@ -132,48 +135,43 @@ body {
 <body>
 
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
   <h1>JM Maria ✨</h1>
   <p>Luxury UGC Creator • Travel • Beauty • Lifestyle</p>
 
-  <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn ig">Instagram</a>
-  <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn yt">YouTube</a>
-  <a href="https://www.facebook.com/janinamariac" target="_blank" class="btn fb">Facebook</a>
-</div>
+  <div>
+    <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn ig">Instagram</a>
+    <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn yt">YouTube</a>
+    <a href="https://www.facebook.com/janinamariac" target="_blank" class="btn fb">Facebook</a>
+  </div>
+</section>
 
 <!-- VIDEOS -->
-<div class="section">
+<section>
   <h2>🎥 My Content</h2>
 
   <div class="video-grid">
 
-    <div class="video-box" onclick="playVideo(this, 'A6S5CHq_Vwk')">
+    <div class="video-box" onclick="playVideo(this,'A6S5CHq_Vwk')">
       <img src="https://img.youtube.com/vi/A6S5CHq_Vwk/hqdefault.jpg">
     </div>
 
-    <div class="video-box" onclick="playVideo(this, 'c4R7Iaya04M')">
+    <div class="video-box" onclick="playVideo(this,'c4R7Iaya04M')">
       <img src="https://img.youtube.com/vi/c4R7Iaya04M/hqdefault.jpg">
     </div>
 
-    <div class="video-box" onclick="playVideo(this, 'XuLwZVjsTag')">
+    <div class="video-box" onclick="playVideo(this,'XuLwZVjsTag')">
       <img src="https://img.youtube.com/vi/XuLwZVjsTag/hqdefault.jpg">
     </div>
 
   </div>
+</section>
 
-  <div style="text-align:center; margin-top:20px;">
-    <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn yt">
-      Watch more →
-    </a>
-  </div>
-</div>
-
-<!-- MONEY -->
-<div class="section">
+<!-- SHOP -->
+<section>
   <h2>🛍 Shop My Favorites</h2>
 
   <div class="grid">
-
     <div class="card">
       <h3>Makeup 💄</h3>
       <p>My daily glow routine</p>
@@ -191,19 +189,17 @@ body {
       <p>Viral products I love</p>
       <a href="#" class="shop">Explore</a>
     </div>
-
   </div>
-</div>
+</section>
 
 <!-- SERVICES -->
-<div class="section">
+<section>
   <h2>💼 Work With Me</h2>
 
   <div class="grid">
-
     <div class="card">
       <h3>UGC Videos</h3>
-      <p>High-converting content for brands</p>
+      <p>High-converting brand content</p>
     </div>
 
     <div class="card">
@@ -215,16 +211,15 @@ body {
       <h3>Travel Content</h3>
       <p>Hotels & experiences</p>
     </div>
-
   </div>
-</div>
+</section>
 
 <!-- CONTACT -->
-<div class="contact">
+<section style="text-align:center;">
   <h2>📩 Work with me</h2>
   <p>For collaborations & brand deals</p>
-  <a href="mailto:jmmaria.ugc@gmail.com">your@email.com</a>
-</div>
+  <a href="mailto:your@email.com">your@email.com</a>
+</section>
 
 <!-- STICKY -->
 <div class="sticky">
@@ -234,14 +229,9 @@ body {
 </div>
 
 <script>
-function playVideo(el, id) {
-  el.innerHTML = `<iframe 
-    src="https://www.youtube.com/embed/${id}?autoplay=1&mute=1"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-    style="width:100%; height:220px; border-radius:20px;">
-  </iframe>`;
+function playVideo(el,id){
+  el.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&mute=1"
+  style="width:100%;height:350px;border-radius:25px;border:none;" allowfullscreen></iframe>`;
 }
 </script>
 
