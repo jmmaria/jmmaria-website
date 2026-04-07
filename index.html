@@ -28,7 +28,11 @@ body {
   backdrop-filter:blur(10px);
   z-index:999;
 }
-.logo { font-family:'Playfair Display'; color:var(--gold); }
+
+.logo {
+  font-family:'Playfair Display';
+  color:var(--gold);
+}
 
 /* HERO */
 .hero {
@@ -39,13 +43,16 @@ body {
   text-align:center;
   position:relative;
 }
+
 .hero iframe {
   position:absolute;
   width:120%;
   height:120%;
   opacity:0.25;
 }
+
 .hero-content { z-index:2; }
+
 .btn {
   padding:12px 22px;
   background:var(--gold);
@@ -71,7 +78,7 @@ body {
   cursor:pointer;
 }
 
-/* POPUP (TIKTOK STYLE) */
+/* POPUP */
 .popup {
   position:fixed;
   top:0; left:0;
@@ -90,10 +97,11 @@ body {
   border-radius:20px;
 }
 
+/* CONTROLS */
 .popup-controls {
   position:absolute;
   right:20px;
-  bottom:100px;
+  bottom:120px;
   display:flex;
   flex-direction:column;
   gap:15px;
@@ -102,28 +110,28 @@ body {
 .popup-controls a {
   background:var(--gold);
   color:black;
-  padding:10px;
+  padding:10px 14px;
   border-radius:20px;
   text-decoration:none;
   font-size:14px;
 }
 
+/* CLOSE */
 .close-btn {
   position:absolute;
   top:20px;
   right:20px;
-  font-size:20px;
+  font-size:22px;
   cursor:pointer;
 }
 
-/* NAV BUTTONS */
+/* NAVIGATION */
 .nav-btn {
   position:absolute;
   top:50%;
   transform:translateY(-50%);
   font-size:30px;
   cursor:pointer;
-  color:white;
 }
 
 .prev { left:20px; }
@@ -196,11 +204,11 @@ body {
   <span class="nav-btn prev" onclick="prevVideo()">‹</span>
   <span class="nav-btn next" onclick="nextVideo()">›</span>
 
-  <video id="popupVideo" controls autoplay></video>
+  <video id="popupVideo" controls autoplay playsinline></video>
 
   <div class="popup-controls">
-    <a id="fbBtn" target="_blank">Watch on Facebook</a>
-    <a id="shopBtn" target="_blank">Shop Now</a>
+    <a id="fbBtn" target="_blank">▶ Watch Full on Facebook</a>
+    <a id="shopBtn" target="_blank">🛍 Shop Now</a>
   </div>
 
 </div>
@@ -209,18 +217,18 @@ body {
 const videos = [
   {
     src:"videos/reel1.mp4",
-    fb:"https://www.facebook.com/janinamariac",
-    shop:"#"
+    fb:"https://www.facebook.com/reel/REPLACE_WITH_REAL_ID_1",
+    shop:"https://your-affiliate-link-1.com"
   },
   {
     src:"videos/reel2.mp4",
-    fb:"https://www.facebook.com/janinamariac",
-    shop:"#"
+    fb:"https://www.facebook.com/reel/REPLACE_WITH_REAL_ID_2",
+    shop:"https://your-affiliate-link-2.com"
   },
   {
     src:"videos/reel3.mp4",
-    fb:"https://www.facebook.com/janinamariac",
-    shop:"#"
+    fb:"https://www.facebook.com/reel/REPLACE_WITH_REAL_ID_3",
+    shop:"https://your-affiliate-link-3.com"
   }
 ];
 
@@ -235,16 +243,19 @@ function openPopup(index){
 function loadVideo(){
   const v = videos[current];
   const vid = document.getElementById("popupVideo");
+
   vid.src = v.src;
-  vid.play();
+  vid.load();
+  vid.play().catch(() => {});
 
   document.getElementById("fbBtn").href = v.fb;
   document.getElementById("shopBtn").href = v.shop;
 }
 
 function closePopup(){
+  const vid = document.getElementById("popupVideo");
+  vid.pause();
   document.getElementById("popup").style.display="none";
-  document.getElementById("popupVideo").pause();
 }
 
 function nextVideo(){
