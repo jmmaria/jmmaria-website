@@ -9,208 +9,126 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --gold: #d4af37;
-}
+:root { --gold:#d4af37; }
 
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #050505;
-  color: #fff;
-  scroll-behavior: smooth;
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#050505;
+  color:#fff;
 }
 
 /* NAV */
 .navbar {
-  position: fixed;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(12px);
-  z-index: 999;
+  position:fixed;
+  width:100%;
+  padding:20px;
+  text-align:center;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:999;
 }
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  color: var(--gold);
-  font-size: 24px;
-}
+.logo { font-family:'Playfair Display'; color:var(--gold); }
 
 /* HERO */
 .hero {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
 }
-
 .hero iframe {
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  top: -10%;
-  left: -10%;
-  opacity: 0.25;
+  position:absolute;
+  width:120%;
+  height:120%;
+  opacity:0.25;
 }
-
-.hero-content {
-  z-index: 2;
-  max-width: 700px;
-  animation: fadeUp 1s ease;
-}
-
-.hero h1 {
-  font-size: 75px;
-  font-family: 'Playfair Display', serif;
-}
-
-.hero p {
-  color: #aaa;
-  margin-bottom: 25px;
-}
-
+.hero-content { z-index:2; }
 .btn {
-  padding: 14px 24px;
-  border-radius: 40px;
-  background: var(--gold);
-  color: black;
-  text-decoration: none;
-  margin: 8px;
-  display: inline-block;
-  font-weight: 600;
-  transition: 0.3s;
+  padding:12px 22px;
+  background:var(--gold);
+  color:black;
+  border-radius:30px;
+  text-decoration:none;
+  margin:5px;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  background: transparent;
-}
-
-/* SECTIONS */
-.section {
-  padding: 120px 10%;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  margin-bottom: 40px;
-}
+/* SECTION */
+.section { padding:120px 10%; }
 
 /* VIDEO GRID */
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  gap: 30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
-.video-card {
-  background: rgba(255,255,255,0.04);
-  padding: 15px;
-  border-radius: 20px;
-  transition: 0.4s;
+.video-card video {
+  width:100%;
+  border-radius:20px;
+  cursor:pointer;
 }
 
-.video-card:hover {
-  transform: scale(1.03);
+/* POPUP (TIKTOK STYLE) */
+.popup {
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:9999;
 }
 
-.video-card iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 15px;
-  border: none;
+.popup video {
+  height:80vh;
+  border-radius:20px;
 }
 
-/* SHOP */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 30px;
+.popup-controls {
+  position:absolute;
+  right:20px;
+  bottom:100px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
 }
 
-.card {
-  padding: 25px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(10px);
-  transition: 0.4s;
+.popup-controls a {
+  background:var(--gold);
+  color:black;
+  padding:10px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:14px;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+.close-btn {
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:20px;
+  cursor:pointer;
 }
 
-.shop-btn {
-  margin-top: 15px;
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 12px;
-  background: white;
-  color: black;
-  text-decoration: none;
+/* NAV BUTTONS */
+.nav-btn {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:30px;
+  cursor:pointer;
+  color:white;
 }
 
-/* CTA STRIP */
-.cta {
-  text-align: center;
-  padding: 100px 10%;
-  background: linear-gradient(120deg,#0a0a0a,#111);
-}
+.prev { left:20px; }
+.next { right:20px; }
 
-/* STICKY CTA */
-.sticky-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--gold);
-  color: black;
-  padding: 12px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  z-index: 999;
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 60px;
-  color: #777;
-}
 </style>
 </head>
 
@@ -227,93 +145,117 @@ h2 {
 
   <div class="hero-content">
     <h1>JM Maria ✨</h1>
-    <p>Luxury UGC Creator • Viral Finds • Travel • Beauty</p>
+    <p>Luxury • Travel • Viral Finds</p>
 
     <a href="#videos" class="btn">Watch Videos</a>
-    <a href="#shop" class="btn">Shop My Picks</a>
-    <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn-outline">Follow Me</a>
+    <a href="#shop" class="btn">Shop</a>
   </div>
 </div>
 
 <!-- VIDEOS -->
-<div class="section fade" id="videos">
-  <h2>Watch My Content</h2>
+<div class="section" id="videos">
+  <h2>🔥 Tap to Watch My Viral Finds</h2>
 
   <div class="video-grid">
+
     <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/A6S5CHq_Vwk"></iframe>
-      <p>Emirates Business Class… is it worth it?</p>
+      <video onclick="openPopup(0)">
+        <source src="videos/reel1.mp4">
+      </video>
     </div>
 
     <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/c4R7Iaya04M"></iframe>
-      <p>This hotel shocked me…</p>
+      <video onclick="openPopup(1)">
+        <source src="videos/reel2.mp4">
+      </video>
     </div>
 
     <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/XuLwZVjsTag"></iframe>
-      <p>Luxury stay you need to try</p>
+      <video onclick="openPopup(2)">
+        <source src="videos/reel3.mp4">
+      </video>
     </div>
+
   </div>
-</div>
-
-<!-- CTA -->
-<div class="cta fade">
-  <h2>Subscribe for Luxury Content</h2>
-  <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn">Subscribe</a>
 </div>
 
 <!-- SHOP -->
-<div class="section fade" id="shop">
-  <h2>Shop My Viral Finds</h2>
+<div class="section" id="shop">
+  <h2>🛍 Shop My Picks</h2>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Creator Setup 📸</h3>
-      <p>My exact gear for viral content</p>
-      <a href="#" class="shop-btn">Shop</a>
-    </div>
+  <a href="#" class="btn">Amazon Finds</a>
+  <a href="#" class="btn">Beauty</a>
+  <a href="#" class="btn">Creator Gear</a>
+</div>
 
-    <div class="card">
-      <h3>Beauty Favorites 💄</h3>
-      <p>Daily essentials I use</p>
-      <a href="#" class="shop-btn">Shop</a>
-    </div>
+<!-- POPUP -->
+<div id="popup" class="popup">
 
-    <div class="card">
-      <h3>Amazon Finds ✨</h3>
-      <p>Trending must-haves</p>
-      <a href="#" class="shop-btn">Shop</a>
-    </div>
+  <span class="close-btn" onclick="closePopup()">✕</span>
+
+  <span class="nav-btn prev" onclick="prevVideo()">‹</span>
+  <span class="nav-btn next" onclick="nextVideo()">›</span>
+
+  <video id="popupVideo" controls autoplay></video>
+
+  <div class="popup-controls">
+    <a id="fbBtn" target="_blank">Watch on Facebook</a>
+    <a id="shopBtn" target="_blank">Shop Now</a>
   </div>
-</div>
 
-<!-- WORK -->
-<div class="section fade">
-  <h2>Work With Me</h2>
-  <p>I create high-performing content for brands worldwide.</p>
-  <a href="mailto:your@email.com" class="btn">Contact Me</a>
 </div>
-
-<!-- FOOTER -->
-<div class="footer">
-  © 2026 JM Maria
-</div>
-
-<!-- STICKY CTA -->
-<a href="#shop" class="sticky-cta">Shop Now</a>
 
 <script>
-const faders = document.querySelectorAll('.fade');
+const videos = [
+  {
+    src:"videos/reel1.mp4",
+    fb:"https://www.facebook.com/janinamariac",
+    shop:"#"
+  },
+  {
+    src:"videos/reel2.mp4",
+    fb:"https://www.facebook.com/janinamariac",
+    shop:"#"
+  },
+  {
+    src:"videos/reel3.mp4",
+    fb:"https://www.facebook.com/janinamariac",
+    shop:"#"
+  }
+];
 
-window.addEventListener('scroll', () => {
-  faders.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add('show');
-    }
-  });
-});
+let current = 0;
+
+function openPopup(index){
+  current = index;
+  document.getElementById("popup").style.display="flex";
+  loadVideo();
+}
+
+function loadVideo(){
+  const v = videos[current];
+  const vid = document.getElementById("popupVideo");
+  vid.src = v.src;
+  vid.play();
+
+  document.getElementById("fbBtn").href = v.fb;
+  document.getElementById("shopBtn").href = v.shop;
+}
+
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+  document.getElementById("popupVideo").pause();
+}
+
+function nextVideo(){
+  current = (current + 1) % videos.length;
+  loadVideo();
+}
+
+function prevVideo(){
+  current = (current - 1 + videos.length) % videos.length;
+  loadVideo();
+}
 </script>
 
 </body>
