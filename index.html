@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Maria | Travel & Tech Hub</title>
+    <title>JM Maria | Travel, Tech & Curated Guides</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -13,7 +13,9 @@
         .hide-scroll::-webkit-scrollbar { display: none; }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1.5rem; }
-        .reel-container { aspect-ratio: 9/16; width: 100%; max-width: 320px; border-radius: 1rem; overflow: hidden; background: #f1f1f1; }
+        .reel-container { aspect-ratio: 9/16; width: 100%; max-width: 300px; border-radius: 1.5rem; overflow: hidden; background: #f8fafc; }
+        .snap-x { scroll-snap-type: x mandatory; }
+        .snap-center { scroll-snap-align: center; }
     </style>
 </head>
 <body class="text-slate-900 antialiased">
@@ -24,134 +26,140 @@
                 <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white font-black text-[10px]">JM</div>
                 <span class="text-lg font-black tracking-tighter uppercase">MARIA</span>
             </div>
-            <div class="hidden md:flex space-x-12 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-                <a href="#travel-chapter" class="hover:text-black transition">01 Travel</a>
-                <a href="#tech-chapter" class="hover:text-black transition">02 Tech</a>
-                <a href="#reels-chapter" class="hover:text-black transition">03 Reels</a>
+            <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+                <a href="#travel" class="hover:text-black transition">01 Travel</a>
+                <a href="#tech" class="hover:text-black transition">02 Tech</a>
+                <a href="#reels" class="hover:text-black transition">03 Reels</a>
+                <a href="#shop" class="hover:text-black transition text-red-600">04 Shop</a>
             </div>
-            <button class="text-[10px] font-bold uppercase tracking-[0.2em] bg-black text-white px-6 py-3 rounded-full">Subscribe</button>
+            <a href="https://www.youtube.com/@JMMaria" target="_blank" class="text-[10px] font-bold uppercase tracking-[0.2em] bg-black text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all">Subscribe</a>
         </div>
     </nav>
 
-    <section id="travel-chapter" class="py-20 border-b border-slate-50">
+    <section id="travel" class="py-24 border-b border-slate-50">
         <div class="max-w-7xl mx-auto px-8">
-            <div class="mb-12">
-                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">Chapter One</span>
-                <h2 class="text-4xl font-black tracking-tighter">Global <span class="serif-title italic text-slate-400">Destinations</span></h2>
+            <div class="mb-12 flex justify-between items-end">
+                <div>
+                    <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">Chapter One</span>
+                    <h2 class="text-4xl font-black tracking-tighter uppercase">Global <span class="serif-title italic text-slate-300">Archive</span></h2>
+                </div>
+                <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest pb-2">Swipe to Explore →</span>
             </div>
 
             <div class="flex gap-8 overflow-x-auto pb-10 hide-scroll snap-x">
-                
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center group">
-                    <div class="video-container shadow-2xl mb-6">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7Cp1hUM48Nymd1miAt8eDg" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="flex justify-between items-center px-2">
-                        <h4 class="font-bold uppercase tracking-widest text-xs">Philippines</h4>
-                        <a href="#" class="text-[10px] font-bold text-slate-400 hover:text-red-500 uppercase tracking-widest transition">View Details →</a>
-                    </div>
+                <div class="min-w-[85vw] md:min-w-[650px] snap-center">
+                    <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7Cp1hUM48Nymd1miAt8eDg" frameborder="0" allowfullscreen></iframe></div>
+                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Philippines: Islands & Tech</h4>
                 </div>
-
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center group">
-                    <div class="video-container shadow-2xl mb-6">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="flex justify-between items-center px-2">
-                        <h4 class="font-bold uppercase tracking-widest text-xs">Thailand</h4>
-                        <a href="#" class="text-[10px] font-bold text-slate-400 hover:text-red-500 uppercase tracking-widest transition">View Details →</a>
-                    </div>
+                <div class="min-w-[85vw] md:min-w-[650px] snap-center">
+                    <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" frameborder="0" allowfullscreen></iframe></div>
+                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Thailand: Cafe Culture</h4>
                 </div>
-
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center group">
-                    <div class="video-container shadow-2xl mb-6">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="flex justify-between items-center px-2">
-                        <h4 class="font-bold uppercase tracking-widest text-xs">UAE</h4>
-                        <a href="#" class="text-[10px] font-bold text-slate-400 hover:text-red-500 uppercase tracking-widest transition">View Details →</a>
-                    </div>
+                <div class="min-w-[85vw] md:min-w-[650px] snap-center">
+                    <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" frameborder="0" allowfullscreen></iframe></div>
+                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">UAE: Urban Minimalism</h4>
                 </div>
-
-                <div class="min-w-[85vw] md:min-w-[600px] snap-center group">
-                    <div class="video-container shadow-2xl mb-6">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="flex justify-between items-center px-2">
-                        <h4 class="font-bold uppercase tracking-widest text-xs">Europe</h4>
-                        <a href="#" class="text-[10px] font-bold text-slate-400 hover:text-red-500 uppercase tracking-widest transition">View Details →</a>
-                    </div>
+                <div class="min-w-[85vw] md:min-w-[650px] snap-center">
+                    <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" frameborder="0" allowfullscreen></iframe></div>
+                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Europe: Alpine Series</h4>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="tech-chapter" class="py-32 bg-slate-50">
+    <section id="tech" class="py-32 bg-slate-50">
         <div class="max-w-7xl mx-auto px-8">
             <div class="grid md:grid-cols-2 gap-20 items-center">
-                <div>
-                    <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-4 block">Chapter Two</span>
-                    <h2 class="text-6xl font-black tracking-tighter leading-none mb-8">
-                        The Minimalist <br><span class="serif-title italic text-slate-400">Toolkit</span>
-                    </h2>
-                    <p class="text-slate-500 font-light text-lg leading-relaxed mb-10">
-                        Professional grade equipment curated for the modern digital nomad. These are the tools behind the aesthetics.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition">
-                            <i class="fas fa-camera text-red-500 mb-4"></i>
-                            <h5 class="font-bold text-sm mb-1">Optics</h5>
-                            <p class="text-[10px] text-slate-400 mb-4 uppercase">View 2026 Camera Setup</p>
-                            <a href="#" class="text-[10px] font-black border-b border-black pb-1">Shop Gear</a>
-                        </div>
-                        <div class="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition">
-                            <i class="fas fa-laptop text-red-500 mb-4"></i>
-                            <h5 class="font-bold text-sm mb-1">Workstation</h5>
-                            <p class="text-[10px] text-slate-400 mb-4 uppercase">Laptop & Hubs</p>
-                            <a href="#" class="text-[10px] font-black border-b border-black pb-1">Shop Gear</a>
-                        </div>
-                    </div>
+                <div class="order-2 md:order-1 relative rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] md:aspect-auto">
+                    <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80" alt="Tech" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
                 </div>
-                <div class="relative rounded-[3rem] overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80" alt="Tech Setup" class="w-full grayscale hover:grayscale-0 transition-all duration-1000">
+                <div class="order-1 md:order-2 space-y-8">
+                    <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] block">Chapter Two</span>
+                    <h2 class="text-6xl font-black tracking-tighter leading-none">Minimalist <br><span class="serif-title italic text-slate-400">Toolkit</span></h2>
+                    <p class="text-slate-500 font-light text-lg leading-relaxed">The essential gear for high-fidelity travel creation. Curated for the modern nomad who values performance and aesthetics.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="#" class="p-6 bg-white rounded-3xl border border-slate-100 hover:shadow-xl transition group">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-300 group-hover:text-red-500">Optics</span>
+                            <h5 class="font-bold text-sm mt-1 uppercase">Camera Setup</h5>
+                        </a>
+                        <a href="#" class="p-6 bg-white rounded-3xl border border-slate-100 hover:shadow-xl transition group">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-300 group-hover:text-red-500">Utility</span>
+                            <h5 class="font-bold text-sm mt-1 uppercase">Travel Hubs</h5>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="reels-chapter" class="py-32">
+    <section id="reels" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-8">
             <div class="text-center mb-20">
                 <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-4 block">Chapter Three</span>
                 <h2 class="text-4xl font-black tracking-tighter uppercase">Facebook <span class="serif-title italic text-slate-400">Reels</span></h2>
             </div>
-
             <div class="flex flex-wrap justify-center gap-10">
-                
-                <div class="reel-container shadow-2xl border-4 border-white">
-                   <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=YOUR_FACEBOOK_REEL_URL&show_text=false&width=267&t=0" 
-                           width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <div class="reel-container shadow-2xl border-8 border-white">
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=YOUR_FACEBOOK_REEL_URL&show_text=false&width=267&t=0" 
+                    width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
-
-                <div class="reel-container shadow-2xl border-4 border-white">
-                    <div class="h-full flex items-center justify-center text-slate-300 italic text-xs p-8 text-center bg-slate-50">
-                        Paste your Facebook Reel link inside the iframe src
-                    </div>
+                <div class="reel-container shadow-2xl border-8 border-white flex items-center justify-center p-8 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-300 text-center">
+                    Paste Reel 02 Link Here
                 </div>
-
-                <div class="reel-container shadow-2xl border-4 border-white">
-                    <div class="h-full flex items-center justify-center text-slate-300 italic text-xs p-8 text-center bg-slate-50">
-                        Paste your Facebook Reel link inside the iframe src
-                    </div>
+                <div class="reel-container shadow-2xl border-8 border-white flex items-center justify-center p-8 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-300 text-center">
+                    Paste Reel 03 Link Here
                 </div>
-
             </div>
         </div>
     </section>
 
-    <footer class="py-20 border-t border-slate-100 text-center">
-        <p class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.4em]">&copy; 2026 JM MARIA HUB</p>
+    <section id="shop" class="py-32 bg-slate-950 text-white rounded-t-[4rem]">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div>
+                    <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-4 block">Chapter Four</span>
+                    <h2 class="text-5xl font-black tracking-tighter uppercase">Premium <br><span class="serif-title italic text-slate-600">Guides</span></h2>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-full px-8 py-4 flex items-center gap-4">
+                    <i class="fas fa-search text-slate-500"></i>
+                    <input type="text" placeholder="FIND A DESTINATION" class="bg-transparent border-none outline-none text-[10px] font-bold uppercase tracking-[0.2em] w-40">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="group">
+                    <div class="aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-8 relative bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute top-6 right-6 bg-red-600 px-4 py-2 rounded-full font-black text-[10px] tracking-widest uppercase">AED 5.00</div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 uppercase tracking-tight">Switzerland: The CLOU Route</h4>
+                    <p class="text-slate-500 text-xs font-light mb-8">Detailed locations for every K-Drama scene and Alpine hotel stay.</p>
+                    <a href="https://your-payment-link.com/swiss" class="block w-full text-center py-5 bg-white text-black rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white transition">Get Access</a>
+                </div>
+                <div class="group">
+                    <div class="aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-8 relative bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=600" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute top-6 right-6 bg-red-600 px-4 py-2 rounded-full font-black text-[10px] tracking-widest uppercase">AED 5.00</div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 uppercase tracking-tight">Philippines: Ultimate Island Guide</h4>
+                    <p class="text-slate-500 text-xs font-light mb-8">Navigating El Nido & Siargao. Logistics for boats, gear, and stays.</p>
+                    <a href="https://your-payment-link.com/ph" class="block w-full text-center py-5 bg-white text-black rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white transition">Get Access</a>
+                </div>
+                <div class="group">
+                    <div class="aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-8 relative bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1528181304800-2f140819898f?auto=format&fit=crop&w=600" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute top-6 right-6 bg-red-600 px-4 py-2 rounded-full font-black text-[10px] tracking-widest uppercase">AED 5.00</div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 uppercase tracking-tight">Thailand: Nomad Lifestyle</h4>
+                    <p class="text-slate-500 text-xs font-light mb-8">The best coffee shops with WiFi and high-speed co-working hubs.</p>
+                    <a href="https://your-payment-link.com/thai" class="block w-full text-center py-5 bg-white text-black rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white transition">Get Access</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 py-20 text-center border-t border-white/5">
+        <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[0.4em]">&copy; 2026 JM MARIA | CREATOR HUB</p>
     </footer>
 
 </body>
