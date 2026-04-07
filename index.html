@@ -3,576 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JM Maria | Luxury UGC Creator - Shop My Favorites</title>
-<meta name="description" content="Luxury UGC Creator • Shop my Amazon favorites • High-converting content for beauty & travel brands">
+<title>JM Maria | Luxury UGC Creator</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
+  margin: 0;
   font-family: 'Inter', sans-serif;
   background: #0a0a0a;
   color: #f8f8f8;
-  line-height: 1.6;
-  overflow-x: hidden;
 }
 
 :root {
-  --gold-primary: #d4af37;
-  --gold-secondary: #ffd700;
-  --glass-bg: rgba(255,255,255,0.03);
-  --glass-border: rgba(255,255,255,0.08);
+  --gold: #d4af37;
 }
 
-/* AI CHATBOT - MONETIZATION FOCUSED */
-.chatbot-container {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 2000;
-}
-
-.chatbot-toggle {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-  border: none;
-  color: #000;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 12px 40px rgba(212,175,55,0.5);
-  transition: all 0.3s ease;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 12px 40px rgba(212,175,55,0.5); }
-  50% { box-shadow: 0 12px 60px rgba(212,175,55,0.8); }
-}
-
-.chatbot-window {
-  position: absolute;
-  bottom: 90px;
-  right: 0;
-  width: 380px;
-  height: 520px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(30px);
-  border-radius: 24px;
-  border: 1px solid var(--glass-border);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
-  overflow: hidden;
-  box-shadow: 0 32px 100px rgba(0,0,0,0.8);
-}
-
-.chatbot-window.open { opacity: 1; visibility: visible; transform: translateY(0); }
-
-.chatbot-header {
-  padding: 24px;
-  background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(255,215,0,0.1));
-  border-bottom: 1px solid var(--glass-border);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.chatbot-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: #000;
-  font-weight: 600;
-}
-
-.chatbot-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; }
-
-.chatbot-close {
-  margin-left: auto;
-  background: none;
-  border: none;
-  color: #f8f8f8;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
-  transition: background 0.3s ease;
-}
-
-.chatbot-close:hover { background: rgba(255,255,255,0.1); }
-
-.chatbot-messages {
-  height: 360px;
-  overflow-y: auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.message { 
-  max-width: 85%; 
-  padding: 16px 20px; 
-  border-radius: 20px; 
-  font-size: 15px; 
-  line-height: 1.5; 
-}
-
-.message.user {
-  align-self: flex-end;
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-  color: #000;
-  border-bottom-right-radius: 6px;
-}
-
-.message.bot {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid var(--glass-border);
-  border-bottom-left-radius: 6px;
-}
-
-.chatbot-input {
-  padding: 20px;
-  border-top: 1px solid var(--glass-border);
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.chatbot-input input {
-  flex: 1;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  padding: 14px 20px;
-  color: #f8f8f8;
-  font-size: 15px;
-  outline: none;
-}
-
-.chatbot-input input:focus {
-  border-color: var(--gold-primary);
-  box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
-}
-
-.chatbot-input button {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-  border: none;
-  color: #000;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chatbot-input button:hover { transform: scale(1.1); }
-
-/* NAVBAR */
+/* NAV */
 .navbar {
   position: fixed;
-  top: 0;
   width: 100%;
-  background: rgba(10,10,10,0.98);
-  backdrop-filter: blur(20px);
+  padding: 20px;
+  background: rgba(0,0,0,0.9);
+  text-align: center;
   z-index: 1000;
-  padding: 16px 0;
-}
-
-.nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
   font-size: 24px;
-  font-weight: 400;
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none;
+  color: var(--gold);
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 32px;
-  align-items: center;
-}
-
-.nav-link {
-  color: #f8f8f8;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover { color: var(--gold-primary); }
-
-.mobile-menu {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: #f8f8f8;
-  cursor: pointer;
-}
-
-/* HERO WITH AUTOPLAY */
+/* HERO */
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 160px 20px 60px;
-  background: radial-gradient(ellipse at center, rgba(212,175,55,0.1) 0%, transparent 70%);
 }
 
-.hero-video {
+.hero iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
   opacity: 0.25;
-  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
 }
 
 .hero h1 {
+  font-size: 70px;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(48px, 8vw, 88px);
-  font-weight: 400;
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, #f8f8f8 0%, var(--gold-primary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-.hero-subtitle {
-  font-size: clamp(18px, 2.5vw, 22px);
-  color: #b8b8b8;
-  margin-bottom: 40px;
-  font-weight: 300;
+.hero p {
+  color: #bbb;
 }
 
-.hero-stats {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
-}
-
-.stat-number {
-  font-size: 42px;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: block;
-}
-
-.stat-label {
-  font-size: 13px;
-  color: #b8b8b8;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 500;
-}
-
-/* SHOP SECTION - MONEY MAKING */
-.shop-hero {
-  padding: 120px 5%;
-  max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.shop-hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 6vw, 56px);
-  margin-bottom: 16px;
-  position: relative;
-}
-
-.shop-hero h2::after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--gold-primary), var(--gold-secondary), transparent);
-}
-
-.shop-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  margin-top: 80px;
-}
-
-.shop-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 48px 32px;
-  text-align: center;
-  border: 1px solid var(--glass-border);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.shop-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary));
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-}
-
-.shop-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
-  border-color: rgba(212,175,55,0.3);
-}
-
-.shop-card:hover::before { transform: scaleX(1); }
-
-.shop-icon {
-  font-size: 56px;
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 24px;
-  display: block;
-}
-
-.shop-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  margin-bottom: 16px;
-}
-
-.shop-card p {
-  color: #b8b8b8;
-  margin-bottom: 32px;
-  font-size: 16px;
-}
-
-.shop-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 36px;
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-  color: #000;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 16px;
+.btn {
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
   text-decoration: none;
-  transition: all 0.4s ease;
-  box-shadow: 0 12px 40px rgba(212,175,55,0.4);
+  background: var(--gold);
+  color: black;
+  display: inline-block;
 }
 
-.shop-btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 20px 60px rgba(212,175,55,0.6);
-  text-decoration: none;
-  color: #000;
+/* SECTION */
+.section {
+  padding: 100px 10%;
 }
 
-/* SOCIAL PROOF */
-.social-proof {
-  padding: 80px 5%;
-  background: rgba(255,255,255,0.02);
-  text-align: center;
-}
-
-.social-proof-grid {
+/* VIDEO GRID */
+.video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-top: 60px;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 20px;
 }
 
-.proof-card {
-  padding: 32px;
-  background: var(--glass-bg);
+.video-grid iframe {
+  width: 100%;
+  height: 220px;
   border-radius: 20px;
-  border: 1px solid var(--glass-border);
+  border: none;
 }
 
-.proof-stat {
-  font-size: 48px;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 12px;
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
 }
 
-.proof-label {
-  color: #b8b8b8;
-  font-size: 16px;
-  font-weight: 500;
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 20px;
 }
 
-/* CTA SECTION */
-.cta-section {
-  padding: 120px 5%;
-  text-align: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.cta-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  margin-bottom: 24px;
-}
-
-.cta-p {
-  font-size: 20px;
-  color: #b8b8b8;
-  margin-bottom: 48px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
+.shop {
+  margin-top: 10px;
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 /* FOOTER */
 .footer {
-  background: #000;
-  padding: 60px 5% 30px;
   text-align: center;
-  border-top: 1px solid var(--glass-border);
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.footer-link {
-  color: #b8b8b8;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer-link:hover {
-  color: var(--gold-primary);
-  transform: translateY(-2px);
-}
-
-.affiliate-disclaimer {
-  color: #666;
-  font-size: 14px;
-  margin-top: 24px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .mobile-menu { display: block; }
-  .nav-links { display: none; }
-  .chatbot-window { right: 20px; width: 340px; height: 480px; }
-  .hero-stats { gap: 20px; }
-  .stat-number { font-size: 32px; }
-  .shop-grid { grid-template-columns: 1fr; }
-  .social-proof-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-links { flex-direction: column; gap: 20px; }
+  padding: 60px;
+  color: #888;
 }
 </style>
 </head>
 
 <body>
-<!-- AI CHATBOT -->
-<div class="chatbot-container">
-  <button class="chatbot-toggle" id="chatbotToggle">
-    <i class="fas fa-robot"></i>
-  </button>
-  <div class="chatbot-window" id="chatbotWindow">
-    <div class="chatbot-header">
-      <div class="chatbot-avatar">🤖</div>
-      <div class="chatbot-title">Shop Assistant</div>
-      <button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button>
+
+<!-- NAV -->
+<div class="navbar">
+  <div class="logo">JM Maria</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <iframe src="https://www.youtube.com/embed/A6S5CHq_Vwk?autoplay=1&mute=1&controls=0&loop=1&playlist=A6S5CHq_Vwk"></iframe>
+
+  <div class="hero-content">
+    <h1>JM Maria ✨</h1>
+    <p>Luxury UGC Creator • Travel • Beauty</p>
+
+    <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn">Instagram</a>
+    <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn">YouTube</a>
+    <a href="https://www.facebook.com/janinamariac" target="_blank" class="btn">Facebook</a>
+  </div>
+</div>
+
+<!-- VIDEOS -->
+<div class="section">
+  <h2>Featured Content</h2>
+
+  <div class="video-grid">
+    <iframe src="https://www.youtube.com/embed/A6S5CHq_Vwk"></iframe>
+    <iframe src="https://www.youtube.com/embed/c4R7Iaya04M"></iframe>
+    <iframe src="https://www.youtube.com/embed/XuLwZVjsTag"></iframe>
+  </div>
+</div>
+
+<!-- SHOP -->
+<div class="section">
+  <h2>Shop My Favorites</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Makeup 💄</h3>
+      <p>My daily routine</p>
+      <a href="#" class="shop">Shop</a>
     </div>
-    <div class="chatbot-messages" id="chatbotMessages">
-      <div class="message bot">
-        👋 Hi! Ready to shop my favorites? I can help you find:<br><br>
-        - Amazon bestsellers I use daily<br>
-        - Creator gear (10% off codes)<br>
-        - Luxury beauty must-haves<br>
-        - Viral TikTok products<br><br>
-        Type "shop" to see top picks!
-      </div>
+
+    <div class="card">
+      <h3>Creator Gear 📸</h3>
+      <p>My setup</p>
+      <a href="#" class="shop">View</a>
     </div>
-    <div class="chatbot-input">
-      <input type="text" id="chatbotInput" placeholder="What are you shopping for?">
-      <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+
+    <div class="card">
+      <h3>Amazon Finds ✨</h3>
+      <p>Viral products</p>
+      <a href="#" class="shop">Explore</a>
     </div>
   </div>
 </div>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="#home" class="logo">JM Maria</a>
-    <ul class="nav-links">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#shop" class="nav-link">Shop</a></li>
-      <li><a href="#instagram" class="nav-link" onclick="window.open('https://www.instagram.com/itsjmmaria/', '_blank')">
-        <i class="fab fa-instagram"></i> Instagram
-      </a></li>
-      <li><a href="#youtube" class="nav-link" onclick="window.open('https://www.youtube.com/@jmmaria', '_blank')">
-        <i class="fab fa-youtube"></i> YouTube
-      </a></li>
-    </ul>
-    <button class="mobile-menu" id="mobileMenu"><i class="fas fa-bars"></i></button>
-  </div>
-</nav>
+<!-- WORK -->
+<div class="section">
+  <h2>Work With Me</h2>
 
-<!-- HERO WITH AUTOPLAY VIDEO -->
-<section class="hero" id="home">
+  <div class="grid">
+    <div class="card">
+      <h3>UGC Content</h3>
+      <p>High-converting videos</p>
+    </div>
+
+    <div class="card">
+      <h3>Brand Deals</h3>
+      <p>Luxury collaborations</p>
+    </div>
+
+    <div class="card">
+      <h3>Travel Content</h3>
+      <p>Hotels & lifestyle</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Contact: your@email.com
+</div>
+
+</body>
+</html>
