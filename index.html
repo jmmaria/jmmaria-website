@@ -5,55 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JM Maria</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0f0f10;
+  background: linear-gradient(180deg,#0c0c0e,#111);
   color: #fff;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 90px 20px 50px;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  margin: 0;
+  font-size: 52px;
+  letter-spacing: 1px;
 }
 
 .hero p {
-  color: #bbb;
-  margin-top: 10px;
-}
-
-.hero-links a {
-  margin: 8px;
+  color: #aaa;
+  font-size: 16px;
 }
 
 /* BUTTONS */
 .btn {
-  display: inline-block;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 30px;
   text-decoration: none;
+  margin: 6px;
+  display: inline-block;
   font-weight: 500;
-  color: white;
+  transition: 0.3s;
 }
 
-.instagram { background: #E1306C; }
-.youtube { background: #FF0000; }
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.ig { background: linear-gradient(45deg,#E1306C,#ff6a95); }
+.yt { background: linear-gradient(45deg,#FF0000,#ff4d4d); }
 
 /* SECTION */
 .section {
   max-width: 1100px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 .section h2 {
@@ -61,41 +62,73 @@ body {
   margin-bottom: 20px;
 }
 
-/* VIDEO GRID */
-.video-grid {
+/* VIDEO */
+.video iframe {
+  width: 100%;
+  height: 420px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* INSTAGRAM */
+.ig-embed {
+  margin-top: 20px;
+}
+
+/* GRID */
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-.video iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 15px;
-  border: none;
-}
-
-/* CARDS */
+/* CARD */
 .card {
-  background: #1a1a1c;
-  padding: 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
+  padding: 20px;
+  transition: 0.3s;
 }
 
-.card p {
-  color: #aaa;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* SHOP BUTTON */
-.shop-btn {
+/* SHOP */
+.shop {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 12px;
+  background: white;
+  color: black;
   padding: 10px 16px;
   border-radius: 10px;
-  background: #fff;
-  color: #000;
   text-decoration: none;
   font-weight: 500;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+/* STICKY BAR */
+.sticky {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.sticky a {
+  margin: 0 8px;
+  font-size: 14px;
 }
 </style>
 </head>
@@ -104,31 +137,49 @@ body {
 
 <!-- HERO -->
 <div class="hero">
-  <h1>JM Maria</h1>
-  <p>Luxury UGC Creator • Lifestyle • Travel • Beauty</p>
+  <h1>JM Maria ✨</h1>
+  <p>Luxury UGC Creator • Travel • Beauty • Lifestyle</p>
 
-  <div class="hero-links">
-    <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn instagram">Instagram</a>
-    <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn youtube">YouTube</a>
+  <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="btn ig">Follow on Instagram</a>
+  <a href="https://www.youtube.com/@jmmaria" target="_blank" class="btn yt">Subscribe on YouTube</a>
+</div>
+
+<!-- VIDEO (AUTO) -->
+<div class="section">
+  <h2>🎥 My Content</h2>
+
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=jmmaria" allowfullscreen></iframe>
+  </div>
+
+  <!-- Instagram embed -->
+  <div class="ig-embed">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/itsjmmaria/" data-instgrm-version="14"></blockquote>
   </div>
 </div>
 
-<!-- VIDEO PORTFOLIO -->
+<!-- MONEY -->
 <div class="section">
-  <h2>🎥 My Work</h2>
+  <h2>🛍 Shop My Favorites</h2>
 
-  <div class="video-grid">
+  <div class="grid">
 
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=jmmaria"></iframe>
+    <div class="card">
+      <h3>Makeup 💄</h3>
+      <p>My daily glow routine</p>
+      <a href="#" class="shop">Shop Now</a>
     </div>
 
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=jmmaria"></iframe>
+    <div class="card">
+      <h3>Creator Gear 📸</h3>
+      <p>My filming setup</p>
+      <a href="#" class="shop">View Gear</a>
     </div>
 
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=jmmaria"></iframe>
+    <div class="card">
+      <h3>Amazon Finds ✨</h3>
+      <p>Viral products I love</p>
+      <a href="#" class="shop">Explore</a>
     </div>
 
   </div>
@@ -138,44 +189,41 @@ body {
 <div class="section">
   <h2>💼 Work With Me</h2>
 
-  <div class="video-grid">
+  <div class="grid">
 
     <div class="card">
       <h3>UGC Videos</h3>
-      <p>High-converting short-form content for brands</p>
+      <p>High-converting content for brands</p>
     </div>
 
     <div class="card">
-      <h3>Product Features</h3>
-      <p>Luxury aesthetic storytelling</p>
+      <h3>Luxury Campaigns</h3>
+      <p>Premium storytelling</p>
     </div>
 
     <div class="card">
-      <h3>Travel & Hotels</h3>
-      <p>Premium lifestyle & destination content</p>
+      <h3>Travel Content</h3>
+      <p>Hotels & experiences</p>
     </div>
 
   </div>
 </div>
 
-<!-- SHOP -->
-<div class="section">
-  <h2>🛍 Shop My Favorites</h2>
-
-  <div class="video-grid">
-
-    <div class="card">
-      <p>My everyday beauty essentials</p>
-      <a href="#" class="shop-btn">Shop Now</a>
-    </div>
-
-    <div class="card">
-      <p>Content creator setup</p>
-      <a href="#" class="shop-btn">View Gear</a>
-    </div>
-
-  </div>
+<!-- CONTACT -->
+<div class="contact">
+  <h2>📩 Work with me</h2>
+  <p>For collaborations & brand deals</p>
+  <a href="mailto:your@email.com">your@email.com</a>
 </div>
+
+<!-- STICKY GROWTH BAR -->
+<div class="sticky">
+  <a href="https://www.instagram.com/itsjmmaria/" target="_blank">Instagram</a>
+  |
+  <a href="https://www.youtube.com/@jmmaria" target="_blank">YouTube</a>
+</div>
+
+<script async src="//www.instagram.com/embed.js"></script>
 
 </body>
 </html>
