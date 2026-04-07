@@ -3,118 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Maria | Global Travel & Tech Hub</title>
+    <title>JM Maria | Global Travel & Minimalist Tech</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem; }
-        .hide-scroll::-webkit-scrollbar { display: none; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         html { scroll-behavior: smooth; }
-        .nav-link:hover { border-bottom: 3px solid #ef4444; color: #ef4444; }
+        
+        /* Minimalist Typography Setup */
+        body { font-family: 'Inter', sans-serif; letter-spacing: -0.01em; }
+        .serif-title { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; letter-spacing: -0.03em; }
+        .minimal-btn { position: relative; padding-bottom: 2px; }
+        .minimal-btn::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1.5px; background-color: #0f172a; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+        .minimal-btn:hover::after { transform: scaleX(1); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-[#fafafa] text-slate-900 antialiased">
 
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-                    <i class="fas fa-globe-asia"></i>
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+                <div class="w-8 h-8 bg-slate-950 rounded-full flex items-center justify-center text-white font-extrabold text-xs">
+                    JM
                 </div>
-                <span class="text-xl font-black tracking-tighter uppercase">JM<span class="text-red-600">MARIA</span></span>
+                <span class="text-xl font-black tracking-tighter uppercase text-slate-950">MARIA</span>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest text-slate-600">
-                <a href="#philippines" class="nav-link transition pb-1">Philippines</a>
-                <a href="#thailand" class="nav-link transition pb-1">Thailand</a>
-                <a href="#uae" class="nav-link transition pb-1">UAE</a>
-                <a href="#europe" class="nav-link transition pb-1">Europe</a>
+            <div class="hidden md:flex space-x-12 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+                <a href="#philippines" class="hover:text-slate-950 transition">Philippines</a>
+                <a href="#thailand" class="hover:text-slate-950 transition">Thailand</a>
+                <a href="#uae" class="hover:text-slate-950 transition">UAE</a>
+                <a href="#europe" class="hover:text-slate-950 transition">Europe</a>
             </div>
-            <a href="https://www.youtube.com/@JMMaria" target="_blank" class="bg-red-600 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg hover:bg-red-700 transition">
-                <i class="fab fa-youtube mr-2"></i>Subscribe
+            <a href="https://www.youtube.com/@JMMaria" target="_blank" class="text-xs font-semibold uppercase tracking-[0.2em] border border-slate-950 px-6 py-3 rounded-full hover:bg-slate-950 hover:text-white transition-all">
+                Subscribe
             </a>
         </div>
     </nav>
 
-    <header class="bg-slate-900 text-white py-20 px-6">
+    <header class="py-24 px-8 bg-white border-b border-slate-100">
         <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-black mb-6 uppercase italic tracking-tighter">Explore <span class="text-red-600">The World</span></h1>
-            <p class="text-slate-400 text-xl mb-10 leading-relaxed">Tech reviews, luxury hotel tours, and cafe recommendations from my global journeys. Shop the gear I use and the places I stay.</p>
+            <span class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400 mb-4 block">World Travel & Tech</span>
+            <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 text-slate-950 leading-[0.9]">
+                Global <span class="serif-title text-slate-800">Curation</span>
+            </h1>
+            <p class="text-slate-600 text-lg md:text-xl font-light mb-12 leading-relaxed max-w-2xl mx-auto">
+                A personal archive of global journeys, focused on aesthetic travel, luxury hotels, and the quiet power of minimalist technology.
+            </p>
             <div class="flex justify-center gap-6">
-                <a href="#philippines" class="bg-white text-slate-900 px-8 py-4 rounded-2xl font-black hover:bg-red-600 hover:text-white transition shadow-2xl">Start Watching</a>
+                <a href="#philippines" class="text-sm font-semibold uppercase tracking-[0.2em] minimal-btn">Explore Destinations</a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 py-16 space-y-32">
+    <main class="max-w-7xl mx-auto px-8 py-20 space-y-36">
 
-        <section id="philippines" class="scroll-mt-28">
-            <div class="flex items-center gap-4 mb-8">
-                <h2 class="text-3xl font-black uppercase italic">Philippines <span class="text-red-600">Adventure</span></h2>
-                <div class="h-1 flex-1 bg-slate-200 rounded-full"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="video-container shadow-2xl ring-4 ring-white">
+        <section id="philippines" class="scroll-mt-32">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="video-container rounded-3xl overflow-hidden shadow-2xl shadow-slate-100">
                     <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7Cp1hUM48Nymd1miAt8eDg" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-center">
-                    <span class="text-red-600 font-black text-xs uppercase mb-2">Featured Guide</span>
-                    <h3 class="text-2xl font-bold mb-4">Island Hopping & Tech Gear</h3>
-                    <p class="text-slate-500 mb-6">From Manila to the islands, see the best spots in the Philippines. Check out the waterproof tech I use for these boat tours.</p>
-                    <a href="YOUR_AFFILIATE_LINK" class="bg-slate-900 text-white text-center py-4 rounded-xl font-bold hover:bg-blue-600 transition">Shop Philippines Gear</a>
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-black tracking-tighter text-slate-950">
+                        Philippines <span class="serif-title text-slate-800">Archive</span>
+                    </h2>
+                    <p class="text-slate-600 font-light leading-relaxed">Exploring the visual beauty of the Philippines. This series features island tours and the specialized vlogging gear I use for coastal environments.</p>
+                    
+                    <p class="text-sm font-light text-slate-500 italic border-l-2 border-slate-100 pl-4 py-1">
+                        I use the waterproof gear mentioned in this series. <a href="YOUR_AFFILIATE_LINK" class="font-semibold text-slate-950 hover:underline">Shop Philippines Setup</a>.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="thailand" class="scroll-mt-28">
-            <div class="flex items-center gap-4 mb-8">
-                <div class="h-1 flex-1 bg-slate-200 rounded-full"></div>
-                <h2 class="text-3xl font-black uppercase italic">Thailand <span class="text-red-600">Vlogs</span></h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-center order-2 md:order-1">
-                    <span class="text-red-600 font-black text-xs uppercase mb-2">Travel Recommendation</span>
-                    <h3 class="text-2xl font-bold mb-4">Bangkok's Best Digital Nomad Cafes</h3>
-                    <p class="text-slate-500 mb-6">Finding the best WiFi and coffee in Thailand. Stay tuned for my "Cafe Hopping" series and the laptop stand I swear by.</p>
-                    <a href="YOUR_AFFILIATE_LINK" class="bg-slate-900 text-white text-center py-4 rounded-xl font-bold hover:bg-orange-500 transition">View Thailand Hotel Deals</a>
+        <section id="thailand" class="scroll-mt-32">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6 order-2 md:order-1">
+                    <h2 class="text-4xl font-black tracking-tighter text-slate-950">
+                        Thailand <span class="serif-title text-slate-800">Guide</span>
+                    </h2>
+                    <p class="text-slate-600 font-light leading-relaxed">Cafe hopping in Bangkok and finding quiet coastal retreats. A focus on visual aesthetic and minimalist travel tech.</p>
+                    
+                    <p class="text-sm font-light text-slate-500 italic border-l-2 border-slate-100 pl-4 py-1">
+                        For cafe hopping, I use this minimalist laptop stand. <a href="YOUR_AFFILIATE_LINK" class="font-semibold text-slate-950 hover:underline">Shop Thailand Essentials</a>.
+                    </p>
                 </div>
-                <div class="video-container shadow-2xl ring-4 ring-white order-1 md:order-2">
+                <div class="video-container rounded-3xl overflow-hidden shadow-2xl shadow-slate-100 order-1 md:order-2">
                     <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
 
-        <section id="uae" class="scroll-mt-28">
-            <div class="flex items-center gap-4 mb-8">
-                <h2 class="text-3xl font-black uppercase italic">UAE <span class="text-red-600">Luxury & Tech</span></h2>
-                <div class="h-1 flex-1 bg-slate-200 rounded-full"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="video-container shadow-2xl ring-4 ring-white">
+        <section id="uae" class="scroll-mt-32">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="video-container rounded-3xl overflow-hidden shadow-2xl shadow-slate-100">
                     <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-center">
-                    <span class="text-red-600 font-black text-xs uppercase mb-2">High-Ticket Affiliate</span>
-                    <h3 class="text-2xl font-bold mb-4">Dubai Lifestyle & Camera Gear</h3>
-                    <p class="text-slate-500 mb-6">Exploring the luxury of the UAE. See the high-end camera lenses I used to capture the Dubai skyline.</p>
-                    <a href="YOUR_AFFILIATE_LINK" class="bg-slate-900 text-white text-center py-4 rounded-xl font-bold hover:bg-emerald-600 transition">Shop Dubai Camera Setup</a>
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-black tracking-tighter text-slate-950">
+                        UAE <span class="serif-title text-slate-800">Portfolio</span>
+                    </h2>
+                    <p class="text-slate-600 font-light leading-relaxed">Capturing the scale and luxury of the UAE. A study in architectural symmetry and advanced camera gear.</p>
+                    
+                    <p class="text-sm font-light text-slate-500 italic border-l-2 border-slate-100 pl-4 py-1">
+                        I shot this series using specific prime lenses. <a href="YOUR_AFFILIATE_LINK" class="font-semibold text-slate-950 hover:underline">View Dubai Camera Gear</a>.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="europe" class="scroll-mt-28">
-            <div class="flex items-center gap-4 mb-8">
-                <div class="h-1 flex-1 bg-slate-200 rounded-full"></div>
-                <h2 class="text-3xl font-black uppercase italic">Europe <span class="text-red-600">Series</span></h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-center order-2 md:order-1">
-                    <span class="text-red-600 font-black text-xs uppercase mb-2">K-Drama Tour</span>
-                    <h3 class="text-2xl font-bold mb-4">Switzerland: Hotel Grimselblick</h3>
-                    <p class="text-slate-500 mb-6">The definitive guide to the "Crash Landing on You" locations. Don't forget to book the hotel seen in my vlogs below.</p>
-                    <a href="YOUR_AFFILIATE_LINK" class="bg-slate-900 text-white text-center py-4 rounded-xl font-bold hover:bg-red-600 transition">Book Switzerland Hotels</a>
+        <section id="europe" class="scroll-mt-32">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6 order-2 md:order-1">
+                    <h2 class="text-4xl font-black tracking-tighter text-slate-950">
+                        Europe <span class="serif-title text-slate-800">Series</span>
+                    </h2>
+                    <p class="text-slate-600 font-light leading-relaxed">The quiet peaks of Switzerland and the places seen in "Crash Landing on You." A look at the relationship between landscape and visual tech.</p>
+                    
+                    <p class="text-sm font-light text-slate-500 italic border-l-2 border-slate-100 pl-4 py-1">
+                        I stayed at Hotel Grimselblick. <a href="YOUR_AFFILIATE_LINK" class="font-semibold text-slate-950 hover:underline">Book Switzerland Hotels</a>.
+                    </p>
                 </div>
-                <div class="video-container shadow-2xl ring-4 ring-white order-1 md:order-2">
+                <div class="video-container rounded-3xl overflow-hidden shadow-2xl shadow-slate-100 order-1 md:order-2">
                     <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
@@ -122,44 +135,29 @@
 
     </main>
 
-    <section class="bg-slate-900 text-white py-20 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-black mb-12 uppercase italic text-center">My Universal <span class="text-red-600">Travel Tech</span></h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-slate-800 p-4 rounded-2xl hover:bg-slate-700 transition cursor-pointer">
-                    <div class="h-32 bg-slate-600 rounded-xl mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=300" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-sm">Vlogging Drone</h4>
-                    <a href="#" class="text-xs text-red-500 font-bold uppercase mt-2 block">Check Price</a>
+    <footer class="bg-white border-t border-slate-100 py-16 text-center px-8">
+        <div class="max-w-2xl mx-auto space-y-12">
+            <div class="flex items-center gap-1.5 justify-center">
+                <div class="w-8 h-8 bg-slate-950 rounded-full flex items-center justify-center text-white font-extrabold text-xs">
+                    JM
                 </div>
-                <div class="bg-slate-800 p-4 rounded-2xl hover:bg-slate-700 transition cursor-pointer">
-                    <div class="h-32 bg-slate-600 rounded-xl mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=300" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-sm">Travel Power Bank</h4>
-                    <a href="#" class="text-xs text-red-500 font-bold uppercase mt-2 block">Check Price</a>
-                </div>
-                <div class="bg-slate-800 p-4 rounded-2xl hover:bg-slate-700 transition cursor-pointer">
-                    <div class="h-32 bg-slate-600 rounded-xl mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1512444594211-3e4b33537877?auto=format&fit=crop&w=300" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-sm">Noise Canceling Pods</h4>
-                    <a href="#" class="text-xs text-red-500 font-bold uppercase mt-2 block">Check Price</a>
-                </div>
-                <div class="bg-slate-800 p-4 rounded-2xl hover:bg-slate-700 transition cursor-pointer">
-                    <div class="h-32 bg-slate-600 rounded-xl mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=300" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-sm">Universal Adapter</h4>
-                    <a href="#" class="text-xs text-red-500 font-bold uppercase mt-2 block">Check Price</a>
-                </div>
+                <span class="text-xl font-black tracking-tighter uppercase text-slate-950">MARIA</span>
             </div>
+            
+            <p class="text-slate-500 text-sm font-light max-w-lg mx-auto leading-relaxed">
+                This hub is a curated archive. Some links contain affiliate codes, supporting this project's continuation through qualifying purchases.
+            </p>
+            
+            <div class="flex justify-center gap-10 text-slate-400 text-xl">
+                <a href="#" class="hover:text-slate-950 transition"><i class="fab fa-facebook-square"></i></a>
+                <a href="#" class="hover:text-slate-950 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-slate-950 transition"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p class="text-[11px] text-slate-400 font-semibold uppercase tracking-[0.3em] pt-8">
+                &copy; 2026 JM MARIA | GLOBAL CURATION HUB
+            </p>
         </div>
-    </section>
-
-    <footer class="bg-white py-12 text-center border-t border-slate-200">
-        <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.3em]">&copy; 2026 JM MARIA | GLOBAL CREATOR HUB</p>
     </footer>
 
 </body>
