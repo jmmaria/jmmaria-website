@@ -19,11 +19,11 @@ body {
 }
 
 /* NAV */
-.navbar {
+.nav {
   position:fixed;
   width:100%;
-  padding:20px;
   text-align:center;
+  padding:20px;
   background:rgba(0,0,0,0.6);
   backdrop-filter:blur(10px);
   z-index:999;
@@ -38,236 +38,163 @@ body {
 .hero {
   height:100vh;
   display:flex;
-  align-items:center;
+  flex-direction:column;
   justify-content:center;
+  align-items:center;
   text-align:center;
-  position:relative;
 }
 
-.hero iframe {
-  position:absolute;
-  width:120%;
-  height:120%;
-  opacity:0.25;
+.hero h1 {
+  font-size:60px;
+  font-family:'Playfair Display';
 }
 
-.hero-content { z-index:2; }
+.hero p {
+  color:#aaa;
+}
 
 .btn {
   padding:12px 22px;
-  background:var(--gold);
-  color:black;
   border-radius:30px;
   text-decoration:none;
-  margin:5px;
+  margin:8px;
+  background:var(--gold);
+  color:black;
+  display:inline-block;
 }
 
 /* SECTION */
-.section { padding:120px 10%; }
+.section { padding:100px 10%; }
 
-/* VIDEO GRID */
-.video-grid {
+/* VIDEO SCROLL */
+.video-row {
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+}
+
+.video-card video {
+  width:200px;
+  border-radius:15px;
+  cursor:pointer;
+}
+
+/* SHOP */
+.grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
 
-.video-card video {
-  width:100%;
-  border-radius:20px;
-  cursor:pointer;
-}
-
-/* POPUP */
-.popup {
-  position:fixed;
-  top:0; left:0;
-  width:100%;
-  height:100%;
-  background:black;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  z-index:9999;
-}
-
-.popup video {
-  height:80vh;
+.card {
+  background:#111;
+  padding:20px;
   border-radius:20px;
 }
 
-/* CONTROLS */
-.popup-controls {
-  position:absolute;
-  right:20px;
-  bottom:120px;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.popup-controls a {
-  background:var(--gold);
+.shop-btn {
+  display:inline-block;
+  margin-top:10px;
+  background:white;
   color:black;
-  padding:10px 14px;
-  border-radius:20px;
+  padding:8px 14px;
+  border-radius:10px;
   text-decoration:none;
-  font-size:14px;
 }
 
-/* CLOSE */
-.close-btn {
-  position:absolute;
-  top:20px;
-  right:20px;
-  font-size:22px;
-  cursor:pointer;
+/* FOOTER */
+.footer {
+  text-align:center;
+  padding:50px;
+  color:#777;
 }
-
-/* NAVIGATION */
-.nav-btn {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:30px;
-  cursor:pointer;
-}
-
-.prev { left:20px; }
-.next { right:20px; }
-
 </style>
 </head>
 
 <body>
 
 <!-- NAV -->
-<div class="navbar">
+<div class="nav">
   <div class="logo">JM Maria</div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <iframe src="https://www.youtube.com/embed/A6S5CHq_Vwk?autoplay=1&mute=1&controls=0&loop=1&playlist=A6S5CHq_Vwk"></iframe>
+  <h1>JM Maria ✨</h1>
+  <p>Luxury • Travel • Viral Finds</p>
 
-  <div class="hero-content">
-    <h1>JM Maria ✨</h1>
-    <p>Luxury • Travel • Viral Finds</p>
-
-    <a href="#videos" class="btn">Watch Videos</a>
-    <a href="#shop" class="btn">Shop</a>
-  </div>
+  <a href="#videos" class="btn">Watch Videos</a>
+  <a href="#shop" class="btn">Shop My Picks</a>
+  <a href="https://www.facebook.com/janinamariac" class="btn">Facebook</a>
 </div>
 
 <!-- VIDEOS -->
 <div class="section" id="videos">
-  <h2>🔥 Tap to Watch My Viral Finds</h2>
+  <h2>🔥 Viral Finds</h2>
 
-  <div class="video-grid">
+  <div class="video-row">
 
     <div class="video-card">
-      <video onclick="openPopup(0)">
+      <video onclick="window.open('https://www.facebook.com/reel/REPLACE1')">
         <source src="videos/reel1.mp4">
       </video>
     </div>
 
     <div class="video-card">
-      <video onclick="openPopup(1)">
+      <video onclick="window.open('https://www.facebook.com/reel/REPLACE2')">
         <source src="videos/reel2.mp4">
       </video>
     </div>
 
     <div class="video-card">
-      <video onclick="openPopup(2)">
+      <video onclick="window.open('https://www.facebook.com/reel/REPLACE3')">
         <source src="videos/reel3.mp4">
       </video>
     </div>
 
   </div>
+
 </div>
 
 <!-- SHOP -->
 <div class="section" id="shop">
-  <h2>🛍 Shop My Picks</h2>
+  <h2>🛍 Shop My Favorites</h2>
 
-  <a href="#" class="btn">Amazon Finds</a>
-  <a href="#" class="btn">Beauty</a>
-  <a href="#" class="btn">Creator Gear</a>
-</div>
+  <div class="grid">
 
-<!-- POPUP -->
-<div id="popup" class="popup">
+    <div class="card">
+      <h3>Creator Gear 📸</h3>
+      <p>My exact filming setup</p>
+      <a href="#" class="shop-btn">Shop Now</a>
+    </div>
 
-  <span class="close-btn" onclick="closePopup()">✕</span>
+    <div class="card">
+      <h3>Beauty 💄</h3>
+      <p>Daily essentials</p>
+      <a href="#" class="shop-btn">Shop Now</a>
+    </div>
 
-  <span class="nav-btn prev" onclick="prevVideo()">‹</span>
-  <span class="nav-btn next" onclick="nextVideo()">›</span>
+    <div class="card">
+      <h3>Amazon Finds ✨</h3>
+      <p>Trending products</p>
+      <a href="#" class="shop-btn">Shop Now</a>
+    </div>
 
-  <video id="popupVideo" controls autoplay playsinline></video>
-
-  <div class="popup-controls">
-    <a id="fbBtn" target="_blank">▶ Watch Full on Facebook</a>
-    <a id="shopBtn" target="_blank">🛍 Shop Now</a>
   </div>
 
 </div>
 
-<script>
-const videos = [
-  {
-    src:"videos/reel1.mp4",
-    fb:"https://www.facebook.com/reel/REPLACE_WITH_REAL_ID_1",
-    shop:"https://your-affiliate-link-1.com"
-  },
-  {
-    src:"videos/reel2.mp4",
-    fb:"https://www.facebook.com/reel/REPLACE_WITH_REAL_ID_2",
-    shop:"https://your-affiliate-link-2.com"
-  },
-  {
-    src:"videos/reel3.mp4",
-    fb:"https://www.facebook.com/reel/REPLACE_WITH_REAL_ID_3",
-    shop:"https://your-affiliate-link-3.com"
-  }
-];
+<!-- WORK -->
+<div class="section">
+  <h2>💼 Work With Me</h2>
+  <p>I create high-converting content for brands.</p>
+  <a href="mailto:your@email.com" class="btn">Contact Me</a>
+</div>
 
-let current = 0;
-
-function openPopup(index){
-  current = index;
-  document.getElementById("popup").style.display="flex";
-  loadVideo();
-}
-
-function loadVideo(){
-  const v = videos[current];
-  const vid = document.getElementById("popupVideo");
-
-  vid.src = v.src;
-  vid.load();
-  vid.play().catch(() => {});
-
-  document.getElementById("fbBtn").href = v.fb;
-  document.getElementById("shopBtn").href = v.shop;
-}
-
-function closePopup(){
-  const vid = document.getElementById("popupVideo");
-  vid.pause();
-  document.getElementById("popup").style.display="none";
-}
-
-function nextVideo(){
-  current = (current + 1) % videos.length;
-  loadVideo();
-}
-
-function prevVideo(){
-  current = (current - 1 + videos.length) % videos.length;
-  loadVideo();
-}
-</script>
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 JM Maria
+</div>
 
 </body>
 </html>
