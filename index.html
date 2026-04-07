@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JM Maria | Travel, Tech & Premium Guides</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background: #ffffff; }
@@ -16,8 +16,8 @@
         .reel-card { width: 320px; min-height: 580px; border-radius: 1.5rem; overflow: hidden; background: #f8fafc; border: 8px solid white; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
         .snap-x { scroll-snap-type: x mandatory; }
         .snap-center { scroll-snap-align: center; }
-        .deep-link-btn { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .deep-link-btn:hover { transform: translateY(-10px); }
+        .social-btn { transition: all 0.3s ease; border: 1px solid #f1f5f9; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2.5rem; border-radius: 2rem; background: white; }
+        .social-btn:hover { transform: translateY(-8px); border-color: #ef4444; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
     </style>
 </head>
 <body class="text-slate-900 antialiased">
@@ -38,51 +38,47 @@
                 <a href="#shop" class="hover:text-black transition text-red-600">04 Shop</a>
                 <a href="#nexus" class="hover:text-black transition">05 Nexus</a>
             </div>
-            <a href="https://youtube.com/@jmmaria" target="_blank" class="text-[10px] font-bold uppercase tracking-[0.2em] bg-black text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all shadow-lg">Subscribe</a>
+            <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="text-[10px] font-bold uppercase tracking-[0.2em] bg-black text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all shadow-lg">Subscribe</a>
         </div>
     </nav>
 
-    <section id="travel" class="py-24 border-b border-slate-50">
+    <section id="travel" class="py-24">
         <div class="max-w-7xl mx-auto px-8">
             <div class="mb-12 flex justify-between items-end">
                 <div>
                     <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">Chapter One</span>
-                    <h2 class="text-4xl font-black tracking-tighter uppercase">Global <span class="serif-title italic text-slate-300">Archive</span></h2>
+                    <h2 class="text-4xl font-black tracking-tighter uppercase">Global Archive</h2>
                 </div>
-                <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest pb-2">Swipe to Explore →</span>
             </div>
 
             <div class="flex gap-8 overflow-x-auto pb-10 hide-scroll snap-x">
                 <div class="min-w-[85vw] md:min-w-[650px] snap-center">
                     <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">UAE: Urban Minimalism</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">UAE</h4>
                 </div>
                 <div class="min-w-[85vw] md:min-w-[650px] snap-center">
                     <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Europe: Alpine Series</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Europe</h4>
                 </div>
                 <div class="min-w-[85vw] md:min-w-[650px] snap-center">
                     <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Thailand: Cafe Culture</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Thailand</h4>
                 </div>
                 <div class="min-w-[85vw] md:min-w-[650px] snap-center">
                     <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EIE4GnkmPng7ksLrwWlCt" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">USA: Coast to Coast</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">USA</h4>
                 </div>
                 <div class="min-w-[85vw] md:min-w-[650px] snap-center">
                     <div class="video-container shadow-2xl mb-6"><iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7Cp1hUM48Nymd1miAt8eDg" frameborder="0" allowfullscreen></iframe></div>
-                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Philippines: Island Expedition</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-[0.2em]">Philippines</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="reels" class="py-32 bg-white border-b border-slate-50">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="text-center mb-20">
-                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-4 block">Chapter Three</span>
-                <h2 class="text-4xl font-black tracking-tighter uppercase">Facebook <span class="serif-title italic text-slate-400">Reels</span></h2>
-            </div>
+    <section id="reels" class="py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <h2 class="text-4xl font-black tracking-tighter uppercase mb-20">Facebook Reels</h2>
             <div class="flex flex-wrap justify-center gap-10">
                 <div class="reel-card flex items-center justify-center">
                     <div class="fb-video" data-href="https://www.facebook.com/reel/17NvQyWii2/" data-width="267" data-show-text="false"></div>
@@ -97,39 +93,37 @@
         </div>
     </section>
 
-    <section id="nexus" class="py-32 bg-slate-50 border-b border-slate-100">
-        <div class="max-w-5xl mx-auto px-8 text-center">
-            <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.6em] mb-6 block">Chapter Five</span>
-            <h2 class="text-6xl font-black tracking-tighter uppercase mb-8 leading-none">The <span class="serif-title italic text-slate-400">Nexus</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <a href="instagram://user?username=itsjmmaria" class="deep-link-btn bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
-                    <i class="fab fa-instagram text-3xl mb-4 text-pink-600"></i>
-                    <h5 class="font-black uppercase tracking-widest text-[9px]">Instagram</h5>
+    <section id="nexus" class="py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-8 text-center">
+            <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.6em] mb-6 block">Stay Connected</span>
+            <h2 class="text-6xl font-black tracking-tighter uppercase mb-16 leading-none">The Nexus</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="https://instagram.com/itsjmmaria" target="_blank" class="social-btn">
+                    <i class="fab fa-instagram text-4xl mb-4 text-pink-600"></i>
+                    <span class="font-black uppercase tracking-widest text-[10px]">Instagram</span>
                 </a>
-                <a href="https://tiktok.com/@itsjmmaria" class="deep-link-btn bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
-                    <i class="fab fa-tiktok text-3xl mb-4 text-black"></i>
-                    <h5 class="font-black uppercase tracking-widest text-[9px]">TikTok</h5>
+                
+                <a href="https://tiktok.com/@itsjmmaria" target="_blank" class="social-btn">
+                    <i class="fab fa-tiktok text-4xl mb-4 text-black"></i>
+                    <span class="font-black uppercase tracking-widest text-[10px]">TikTok</span>
                 </a>
-                <a href="fb://profile/janinamariac" class="deep-link-btn bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
-                    <i class="fab fa-facebook text-3xl mb-4 text-blue-600"></i>
-                    <h5 class="font-black uppercase tracking-widest text-[9px]">Facebook</h5>
+                
+                <a href="https://www.facebook.com/janinamariac" target="_blank" class="social-btn">
+                    <i class="fab fa-facebook text-4xl mb-4 text-blue-600"></i>
+                    <span class="font-black uppercase tracking-widest text-[10px]">Facebook</span>
                 </a>
-                <a href="https://youtube.com/@jmmaria" class="deep-link-btn bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
-                    <i class="fab fa-youtube text-3xl mb-4 text-red-600"></i>
-                    <h5 class="font-black uppercase tracking-widest text-[9px]">YouTube</h5>
+                
+                <a href="https://youtube.com/@jmmaria" target="_blank" class="social-btn">
+                    <i class="fab fa-youtube text-4xl mb-4 text-red-600"></i>
+                    <span class="font-black uppercase tracking-widest text-[10px]">YouTube</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-white py-20 text-center">
-        <div class="flex justify-center gap-8 mb-8 text-slate-300 text-xs">
-            <a href="https://instagram.com/itsjmmaria" class="hover:text-black transition">IG</a>
-            <a href="https://tiktok.com/@itsjmmaria" class="hover:text-black transition">TK</a>
-            <a href="https://www.facebook.com/janinamariac" class="hover:text-black transition">FB</a>
-            <a href="https://youtube.com/@jmmaria" class="hover:text-black transition">YT</a>
-        </div>
-        <p class="text-[10px] font-bold text-slate-200 uppercase tracking-[0.5em]">&copy; 2026 JM MARIA</p>
+    <footer class="bg-black py-20 text-center">
+        <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[0.5em]">&copy; 2026 JM MARIA</p>
     </footer>
 
 </body>
