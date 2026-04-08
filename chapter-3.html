@@ -1,9 +1,93 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<div class="py-24 bg-white px-8 text-right">
-    <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em]">03 Cafes</span>
-    <h2 class="text-6xl font-black uppercase tracking-tighter mb-16">Cafe Culture</h2>
-    <div class="grid md:grid-cols-2 gap-10">
-        <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm"><div style="padding-bottom:56.25%;" class="relative bg-slate-200 rounded-[2rem]"></div><h3 class="mt-6 font-black uppercase text-xl">Hidden Gems: Dubai</h3></div>
-        <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm"><div style="padding-bottom:56.25%;" class="relative bg-slate-200 rounded-[2rem]"></div><h3 class="mt-6 font-black uppercase text-xl">Aesthetic Sips</h3></div>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    .cafe-container { 
+        position: relative; padding-bottom: 56.25%; border-radius: 2rem; 
+        overflow: hidden; background: #e2e8f0; transition: all 0.4s ease;
+    }
+    .cafe-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .cafe-card.hidden { display: none; opacity: 0; transform: translateY(20px); }
+    
+    .cafe-filter-btn { transition: all 0.3s ease; border-bottom: 2px solid transparent; cursor: pointer; }
+    .cafe-filter-btn.active { border-color: #ef4444; color: black; }
+</style>
+
+<div class="py-24 bg-white px-8">
+    <div class="max-w-7xl mx-auto mb-8 text-right">
+        <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">03 Cafes</span>
+        <h2 class="text-6xl font-black uppercase tracking-tighter leading-none">
+            Cafe <span style="font-family:'Playfair Display'; font-style:italic;" class="text-slate-200">Culture</span>
+        </h2>
+    </div>
+
+    <div class="max-w-7xl mx-auto mb-12 flex flex-wrap justify-end gap-6 text-[10px] font-black uppercase tracking-widest text-slate-400">
+        <button onclick="filterCafes('all')" class="cafe-filter-btn active" id="cbtn-all">All Sips</button>
+        <button onclick="filterCafes('dubai')" class="cafe-filter-btn" id="cbtn-dubai">Dubai</button>
+        <button onclick="filterCafes('thailand')" class="cafe-filter-btn" id="cbtn-thailand">Thailand</button>
+        <button onclick="filterCafes('europe')" class="cafe-filter-btn" id="cbtn-europe">Europe</button>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="cafeGrid">
+        
+        <div class="cafe-card dubai group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <div class="absolute inset-0 flex items-center justify-center font-black text-slate-400 text-[10px] uppercase tracking-widest">Dubai Gem Coming Soon</div>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="font-black uppercase text-xl tracking-tight">Hidden Gems: Dubai</h3>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4">Jumeirah, Dubai</p>
+                    <a href="#" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Reel</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cafe-card thailand group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <div class="absolute inset-0 flex items-center justify-center font-black text-slate-400 text-[10px] uppercase tracking-widest">Phuket Aesthetic</div>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="font-black uppercase text-xl tracking-tight">Aesthetic Sips</h3>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4">Old Town, Phuket</p>
+                    <a href="#" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Reel</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
+<script>
+/**
+ * Cafe Filter Engine
+ */
+function filterCafes(region) {
+    const cards = document.querySelectorAll('.cafe-card');
+    const buttons = document.querySelectorAll('.cafe-filter-btn');
+    
+    // Update button UI
+    buttons.forEach(btn => btn.classList.remove('active', 'text-black'));
+    const targetBtn = document.getElementById('cbtn-' + region);
+    if(targetBtn) targetBtn.classList.add('active', 'text-black');
+
+    // Filter Logic
+    cards.forEach(card => {
+        if (region === 'all' || card.classList.contains(region)) {
+            card.classList.remove('hidden');
+            setTimeout(() => { 
+                card.style.opacity = "1"; 
+                card.style.transform = "translateY(0)"; 
+            }, 50);
+        } else {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            setTimeout(() => { 
+                card.classList.add('hidden'); 
+            }, 400);
+        }
+    });
+}
+</script>
