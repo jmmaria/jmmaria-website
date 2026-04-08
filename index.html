@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
     
     <style>
-        /* 1. LINK TO YOUR UPLOADED DAILY FONT */
+        /* 1. LOAD JANE AUSTEN FONT */
         @font-face {
-            font-family: 'DailyLogo';
-            src: url('Daily.otf') format('opentype');
+            font-family: 'JaneAusten';
+            src: url('JaneAust.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -20,35 +20,39 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         iframe { width: 100%; border: none; display: block; }
 
-        /* 2. LOGO STYLING (STACKED BUT NO OVERLAP) */
+        /* 2. LOGO STYLING (ELEGANT STACKED SCRIPT) */
         .logo-wrap {
             display: flex;
             flex-direction: column;
             align-items: center;
-            line-height: 0.85; /* Increased from 0.5 to prevent J/M overlap */
-            padding: 8px 0;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Jane Austen has very tall ascenders/descenders, 
+               so we use a wider line-height to prevent overlap */
+            line-height: 1.1; 
+            padding: 10px 0;
+            transition: all 0.4s ease;
             text-decoration: none;
             cursor: pointer;
         }
 
         .logo-text {
-            font-family: 'DailyLogo', cursive;
+            font-family: 'JaneAusten', cursive;
             color: #000;
             transition: all 0.3s ease;
             text-transform: none;
             user-select: none;
+            white-space: nowrap;
         }
 
         .text-jm {
-            font-size: 42px;
-            transform: rotate(-4deg); /* Slight tilt for character */
-            margin-bottom: 2px; /* Adds physical space between the lines */
+            font-size: 38px;
+            transform: rotate(-2deg);
+            margin-bottom: 2px;
         }
 
         .text-maria {
-            font-size: 46px;
-            padding-left: 10px; /* Kept the offset for that hand-drawn feel */
+            font-size: 42px;
+            /* Shifting Maria right ensures the 'M' clears the 'J' tail */
+            padding-left: 20px; 
         }
 
         /* Hover Interaction */
@@ -57,7 +61,7 @@
         }
 
         .nav-container:hover .logo-text {
-            color: #ef4444; /* Accented red on hover */
+            color: #ef4444; /* Branding Red */
         }
     </style>
 </head>
