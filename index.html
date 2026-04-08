@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
     
     <style>
-        /* 1. LOAD HIJRNOTES FONT */
         @font-face {
             font-family: 'Hijrnotes';
             src: url('Hijrnotes_PERSONAL_USE_ONLY.ttf') format('truetype');
@@ -20,19 +19,18 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         iframe { width: 100%; border: none; display: block; }
 
-        /* 2. SLANTED STACKED LOGO (HIJRNOTES STYLE) */
+        /* SLANTED STACKED LOGO */
         .logo-wrap {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            /* Hijrnotes has very large flourishes, line-height 0.7-0.8 creates a nice overlap 
-               without making the text unreadable */
-            line-height: 0.75; 
+            align-items: flex-start; /* Aligned left for precise stacking */
+            line-height: 0.65; /* Tighter overlap for the signature look */
             padding: 10px 0;
             text-decoration: none;
             cursor: pointer;
-            transform: rotate(-6deg); /* Your requested slant */
+            transform: rotate(-6deg);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-left: 10px;
         }
 
         .logo-text {
@@ -44,15 +42,16 @@
         }
 
         .text-jm {
-            font-size: 32px; /* Adjusted for Hijrnotes' vertical scale */
-            text-transform: none; /* Keeps the Capital J */
-            margin-bottom: -2px;
+            font-size: 34px;
+            text-transform: none;
+            margin-bottom: -4px;
         }
 
         .text-maria {
-            font-size: 34px;
-            text-transform: lowercase; /* Small-caps feel for maria */
-            padding-left: 22px; /* Offset to clear the tail of the capital J */
+            font-size: 36px;
+            text-transform: none; /* Preserves Capital M */
+            /* This offset places the 'M' directly under the 'm' of Jm */
+            padding-left: 14px; 
         }
 
         /* Hover Interaction */
@@ -61,7 +60,7 @@
         }
 
         .nav-container:hover .logo-text {
-            color: #ef4444; /* Branding Red */
+            color: #ef4444; 
         }
     </style>
 </head>
@@ -71,7 +70,7 @@
         
         <a href="#" class="logo-wrap">
             <span class="logo-text text-jm">Jm</span>
-            <span class="logo-text text-maria">maria</span>
+            <span class="logo-text text-maria">Maria</span>
         </a>
 
         <div class="hidden lg:flex space-x-8 text-[8px] font-bold uppercase tracking-[0.25em] text-slate-400">
