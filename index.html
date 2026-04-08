@@ -12,42 +12,45 @@
         .serif-title { font-family: 'Playfair Display', serif; }
         .hide-scroll::-webkit-scrollbar { display: none; }
         
-        /* Snap Scrolling Logic */
+        /* Carousel Logic */
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
         .video-feed {
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
             gap: 2rem;
-            padding-bottom: 2rem;
-            -webkit-overflow-scrolling: touch;
+            padding-bottom: 3rem;
+            cursor: grab;
+            user-select: none;
         }
         .video-card {
             min-width: 85vw;
-            scroll-snap-align: center;
             flex-shrink: 0;
+            transition: transform 0.3s ease;
         }
-        @media (min-width: 768px) { .video-card { min-width: 650px; } }
+        @media (min-width: 768px) { .video-card { min-width: 600px; } }
 
         .video-container { 
             position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; 
             border-radius: 2rem; background: #000; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: auto; }
 
-        .social-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
-        .social-card:hover { transform: translateY(-10px); border-color: #000; }
-        .action-badge { position: absolute; top: 1rem; right: 1rem; background: #ef4444; color: white; font-size: 8px; font-weight: 900; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
-        
-        input, textarea, select { outline: none; transition: all 0.3s ease; border: 1px solid #e2e8f0 !important; }
-        input:focus, textarea:focus { border-color: #000 !important; background-color: #fafafa; }
+        /* Navigation Circle */
+        .nav-jm {
+            width: 40px; height: 40px; background: black; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 h-20 flex items-center px-8 justify-between">
         <div class="flex items-center space-x-4">
-            <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-                <span class="text-white text-xs font-black tracking-tighter">JM</span>
+            <div class="nav-jm">
+                <span class="text-white text-[10px] font-black tracking-tighter">JM</span>
             </div>
             <div class="font-black tracking-tighter text-xl uppercase">MARIA</div>
         </div>
@@ -63,28 +66,25 @@
 
         <div class="flex items-center space-x-6">
             <button class="text-slate-400 hover:text-black transition"><i class="fas fa-search text-sm"></i></button>
-            <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="bg-black text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all shadow-lg">Subscribe</a>
+            <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="bg-black text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all">Subscribe</a>
         </div>
     </nav>
 
     <section id="travel" class="py-24 border-b border-slate-50 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="mb-12">
-                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">Chapter One</span>
-                <h2 class="text-4xl font-black tracking-tighter uppercase leading-none">Global Archive</h2>
-            </div>
+        <div class="max-w-7xl mx-auto px-8 mb-12">
+            <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">Chapter One</span>
+            <h2 class="text-4xl font-black tracking-tighter uppercase leading-none">Global Archive</h2>
+        </div>
 
-            <div class="video-feed hide-scroll" id="videoFeed">
+        <div class="carousel-container" id="carouselWrapper">
+            <div class="video-feed" id="videoFeed">
                 <div class="video-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj&autoplay=1&mute=1&loop=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                     <div class="mt-6 flex justify-between items-center px-2">
-                        <div>
-                            <h4 class="font-black text-[11px] uppercase tracking-[0.2em]">United Arab Emirates</h4>
-                            <p class="text-[8px] font-bold text-slate-300 mt-1">EPISODE SERIES 01</p>
-                        </div>
-                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" target="_blank" class="text-[9px] font-black text-black border-b border-black pb-1 hover:text-red-600 hover:border-red-600 transition">VIEW FULL PLAYLIST</a>
+                        <h4 class="font-black text-[11px] uppercase tracking-[0.2em]">UAE Archive</h4>
+                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" target="_blank" class="text-[9px] font-black border-b border-black">FULL PLAYLIST</a>
                     </div>
                 </div>
                 <div class="video-card">
@@ -92,11 +92,8 @@
                         <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn&autoplay=1&mute=1&loop=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                     <div class="mt-6 flex justify-between items-center px-2">
-                        <div>
-                            <h4 class="font-black text-[11px] uppercase tracking-[0.2em]">Europe Series</h4>
-                            <p class="text-[8px] font-bold text-slate-300 mt-1">EPISODE SERIES 02</p>
-                        </div>
-                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" target="_blank" class="text-[9px] font-black text-black border-b border-black pb-1 hover:text-red-600 hover:border-red-600 transition">VIEW FULL PLAYLIST</a>
+                        <h4 class="font-black text-[11px] uppercase tracking-[0.2em]">Europe Archive</h4>
+                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" target="_blank" class="text-[9px] font-black border-b border-black">FULL PLAYLIST</a>
                     </div>
                 </div>
                 <div class="video-card">
@@ -104,105 +101,9 @@
                         <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy&autoplay=1&mute=1&loop=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                     <div class="mt-6 flex justify-between items-center px-2">
-                        <div>
-                            <h4 class="font-black text-[11px] uppercase tracking-[0.2em]">Thailand</h4>
-                            <p class="text-[8px] font-bold text-slate-300 mt-1">EPISODE SERIES 03</p>
-                        </div>
-                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" target="_blank" class="text-[9px] font-black text-black border-b border-black pb-1 hover:text-red-600 hover:border-red-600 transition">VIEW FULL PLAYLIST</a>
+                        <h4 class="font-black text-[11px] uppercase tracking-[0.2em]">Thailand Archive</h4>
+                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" target="_blank" class="text-[9px] font-black border-b border-black">FULL PLAYLIST</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="hotels" class="py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="text-center mb-20">
-                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-4 block">Chapter Two</span>
-                <h2 class="text-5xl font-black tracking-tighter uppercase leading-none">The Stay <span class="serif-title italic text-slate-400">List</span></h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="review-card bg-white p-8 rounded-[2.5rem] flex flex-col md:flex-row gap-8 items-center group">
-                    <div class="w-full md:w-48 h-48 bg-slate-200 rounded-2xl overflow-hidden flex-shrink-0">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                    </div>
-                    <div class="text-left">
-                        <div class="flex text-yellow-400 text-[8px] mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <h3 class="font-black uppercase tracking-tighter text-xl mb-2">Luxury Review</h3>
-                        <a href="#" class="text-[9px] font-bold uppercase tracking-widest text-black border-b border-black pb-1">Watch Video</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="cafes" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="mb-16">
-                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-2 block">Chapter Three</span>
-                <h2 class="text-5xl font-black tracking-tighter uppercase leading-none">Cafe <span class="serif-title italic text-slate-400">Culture</span></h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="#" class="group">
-                    <div class="aspect-square bg-slate-100 rounded-[2rem] mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-all grayscale group-hover:grayscale-0 duration-700">
-                    </div>
-                    <h4 class="font-black uppercase tracking-widest text-[10px] mb-1">Concept Coffee</h4>
-                    <p class="text-slate-400 text-[9px] uppercase tracking-widest">Global Destinations</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="nexus" class="py-32 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-8 text-center">
-            <h2 class="text-7xl font-black tracking-tighter uppercase mb-20 leading-none">The Nexus</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
-                    <span class="action-badge">Follow</span>
-                    <i class="fab fa-instagram text-4xl mb-6 text-pink-600"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">Instagram</p>
-                </a>
-                <a href="https://www.tiktok.com/@itsjmmaria" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
-                    <span class="action-badge">Follow</span>
-                    <i class="fab fa-tiktok text-4xl mb-6 text-black"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">TikTok</p>
-                </a>
-                <a href="https://www.facebook.com/janinamariac" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
-                    <span class="action-badge">Follow</span>
-                    <i class="fab fa-facebook text-4xl mb-6 text-blue-600"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">Facebook</p>
-                </a>
-                <a href="https://www.youtube.com/@jmmaria" target="_blank" class="social-card p-12 border border-white rounded-[3rem] bg-white flex flex-col items-center shadow-sm">
-                    <span class="action-badge" style="background: black;">Subscribe</span>
-                    <i class="fab fa-youtube text-4xl mb-6 text-red-600"></i>
-                    <p class="font-black text-[10px] uppercase tracking-widest">YouTube</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="shop" class="py-32 bg-black text-white">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="mb-20 text-center">
-                <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.5em] mb-4 block">Store</span>
-                <h2 class="text-6xl font-black tracking-tighter uppercase leading-none">Premium <span class="serif-title italic text-slate-700">Guides</span></h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 group hover:border-red-600 transition-all">
-                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden"><span class="text-slate-800 font-black text-7xl group-hover:text-red-600/20 transition-all uppercase">UAE</span></div>
-                    <h3 class="font-black uppercase tracking-tighter text-2xl mb-2">Dubai Itinerary</h3>
-                    <a href="#" class="block w-full py-5 bg-white text-center text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition mt-8">AED 5.00</a>
-                </div>
-                <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 group hover:border-red-600 transition-all">
-                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden"><span class="text-slate-800 font-black text-7xl group-hover:text-red-600/20 transition-all uppercase">EU</span></div>
-                    <h3 class="font-black uppercase tracking-tighter text-2xl mb-2">Europe Guide</h3>
-                    <a href="#" class="block w-full py-5 bg-white text-center text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition mt-8">AED 5.00</a>
-                </div>
-                <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 group hover:border-red-600 transition-all">
-                    <div class="aspect-[4/5] bg-slate-900 rounded-[2rem] mb-8 flex items-center justify-center overflow-hidden"><i class="fas fa-camera text-slate-800 text-7xl group-hover:text-red-600/20 transition-all"></i></div>
-                    <h3 class="font-black uppercase tracking-tighter text-2xl mb-2">Gear Toolkit</h3>
-                    <a href="#" class="block w-full py-5 bg-white text-center text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition mt-8">View Setup</a>
                 </div>
             </div>
         </div>
@@ -214,36 +115,52 @@
                 <div>
                     <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.5em] mb-6 block">Inquiries</span>
                     <h2 class="text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-10">Work with <br> <span class="serif-title italic text-slate-300">JM.</span></h2>
-                    <div class="space-y-8 mt-16">
-                        <div class="border-l-2 border-slate-100 pl-6"><h4 class="font-black text-[11px] uppercase tracking-widest mb-1">01 / UGC Production</h4><p class="text-slate-400 text-[10px] uppercase tracking-widest">High-converting content for brands.</p></div>
-                        <div class="border-l-2 border-slate-100 pl-6"><h4 class="font-black text-[11px] uppercase tracking-widest mb-1">02 / Airbnb Showcase</h4><p class="text-slate-400 text-[10px] uppercase tracking-widest">Luxury property videos.</p></div>
-                    </div>
                 </div>
-
-                <div class="bg-slate-50 p-10 md:p-16 rounded-[4rem]">
+                <div class="bg-slate-50 p-10 rounded-[4rem]">
                     <form action="https://formspree.io/f/jmmaria.ugc@gmail.com" method="POST" class="space-y-6">
-                        <input type="text" name="name" required class="w-full bg-white px-6 py-5 rounded-2xl text-sm" placeholder="Full Name">
-                        <input type="email" name="email" required class="w-full bg-white px-6 py-5 rounded-2xl text-sm" placeholder="Email Address">
-                        <select name="service" class="w-full bg-white px-6 py-5 rounded-2xl text-sm appearance-none border-none">
-                            <option>UGC Video Content</option>
-                            <option>Airbnb / Property Showcase</option>
-                            <option>Collaboration</option>
-                        </select>
-                        <textarea name="message" rows="4" required class="w-full bg-white px-6 py-5 rounded-2xl text-sm" placeholder="Message..."></textarea>
-                        <button type="submit" class="w-full bg-black text-white py-6 rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] hover:bg-red-600 transition-all shadow-xl">Send Inquiry</button>
+                        <input type="text" name="name" required class="w-full bg-white px-6 py-5 rounded-2xl" placeholder="Name">
+                        <input type="email" name="email" required class="w-full bg-white px-6 py-5 rounded-2xl" placeholder="Email">
+                        <textarea name="message" rows="4" required class="w-full bg-white px-6 py-5 rounded-2xl" placeholder="Project Details..."></textarea>
+                        <button type="submit" class="w-full bg-black text-white py-6 rounded-2xl font-black uppercase tracking-widest">Send Inquiry</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 bg-black text-center">
-        <div class="mb-10 text-white flex justify-center gap-10 text-[9px] font-bold uppercase tracking-[0.3em]">
-            <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="hover:text-red-600 transition">Instagram</a>
-            <a href="https://www.tiktok.com/@itsjmmaria" target="_blank" class="hover:text-red-600 transition">TikTok</a>
-        </div>
-        <p class="text-[9px] font-bold text-slate-800 uppercase tracking-[0.6em]">&copy; 2026 JM MARIA</p>
-    </footer>
+    <script>
+        const feed = document.getElementById('videoFeed');
+        const wrapper = document.getElementById('carouselWrapper');
+        let scrollSpeed = 1; // Adjust speed here
+        let isPaused = false;
+
+        // Clone items for infinite effect
+        const cards = Array.from(feed.children);
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            feed.appendChild(clone);
+        });
+
+        // Auto Scroll Function
+        function step() {
+            if (!isPaused) {
+                feed.scrollLeft += scrollSpeed;
+                if (feed.scrollLeft >= feed.scrollWidth / 2) {
+                    feed.scrollLeft = 0;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        // Pause on Hover/Touch
+        wrapper.addEventListener('mouseenter', () => isPaused = true);
+        wrapper.addEventListener('mouseleave', () => isPaused = false);
+        wrapper.addEventListener('touchstart', () => isPaused = true);
+        wrapper.addEventListener('touchend', () => isPaused = false);
+
+        // Start the engine
+        requestAnimationFrame(step);
+    </script>
 
 </body>
 </html>
