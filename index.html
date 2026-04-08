@@ -7,48 +7,61 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         iframe { width: 100%; border: none; display: block; }
 
-        /* MERGED SIGNATURE MARK: JMMARIA AS A UNIFIED NAME */
-        .jmmaria-signature {
-            font-family: 'La Belle Aurore', cursive;
-            font-size: 38px; /* Standardized size for logo feel */
-            color: #000;
-            line-height: 1;
-            letter-spacing: -1px; /* Tighter spacing so J, M, and M flow into each other */
-            cursor: pointer;
-            transition: all 0.4s ease;
+        /* THE STACKED SIGNATURE LOGO */
+        .logo-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 0.7; /* Pulls the lines closer like the screenshot */
+            padding: 10px 0;
+            transition: all 0.3s ease;
         }
 
-        .jmmaria-signature span {
-            font-weight: bold;
+        .logo-jm {
+            font-family: 'Reenie Beanie', cursive;
+            font-size: 38px;
             color: #000;
+            transform: rotate(-5deg); /* Slight organic tilt */
         }
 
-        .nav-container:hover .jmmaria-signature {
+        .logo-maria {
+            font-family: 'Reenie Beanie', cursive;
+            font-size: 42px;
+            color: #000;
+            padding-left: 8px; /* Off-center bounce */
+        }
+
+        .nav-container:hover .logo-wrap {
+            transform: scale(1.1);
+        }
+        
+        .nav-container:hover .logo-jm, 
+        .nav-container:hover .logo-maria {
             color: #ef4444; /* Signature Red on hover */
-            transform: scale(1.05); /* Slight "pop" on hover */
         }
     </style>
 </head>
 <body class="bg-white">
 
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-20 flex items-center px-8 justify-between nav-container">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-24 flex items-center px-8 justify-between nav-container">
         
-        <a href="#" class="flex items-center">
-            <div class="jmmaria-signature">JMMaria</div>
+        <a href="#" class="logo-wrap">
+            <span class="logo-jm">Jm</span>
+            <span class="logo-maria">Maria</span>
         </a>
 
         <div class="hidden lg:flex space-x-6 text-[8px] font-bold uppercase tracking-[0.2em] text-slate-400">
-            <a href="#travel" class="hover:text-black transition-colors">01 Archive</a>
-            <a href="#hotels" class="hover:text-black transition-colors">02 Hotels</a>
-            <a href="#cafes" class="hover:text-black transition-colors">03 Cafes</a>
-            <a href="#connect" class="hover:text-black transition-colors">04 Connect</a>
-            <a href="#shop" class="hover:text-black transition-colors">05 Shop</a>
+            <a href="#travel" class="hover:text-black">01 Archive</a>
+            <a href="#hotels" class="hover:text-black">02 Hotels</a>
+            <a href="#cafes" class="hover:text-black">03 Cafes</a>
+            <a href="#connect" class="hover:text-black">04 Connect</a>
+            <a href="#shop" class="hover:text-black">05 Shop</a>
             <a href="#inquiries" class="text-red-600 font-black">06 Inquiries</a>
         </div>
         
