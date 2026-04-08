@@ -34,30 +34,53 @@
         <div class="cafe-card dubai group">
             <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
                 <div class="cafe-container">
-                    <iframe src="https://www.youtube.com/embed/HCbQy0xm6cI?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/HnQWPyHMw-0?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
                 </div>
                 <div class="mt-6 px-2">
-                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">Villa 515</h3>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Villa+515+Cafe+Dubai" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block hover:text-red-500 transition">
-                        <i class="fas fa-map-marker-alt mr-1"></i> Jumeirah, Dubai
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">CoCoParis</h3>
+                    <a href="https://www.google.com/maps/search/?api=1&query=CoCoParis+The+Mall+Jumeirah" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block hover:text-red-500 transition">
+                        <i class="fas fa-map-marker-alt mr-1"></i> The Mall, Jumeirah, Dubai
                     </a>
                     <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">
-                        "A hidden sanctuary in the heart of Jumeirah combining perfume, fashion, and artisanal coffee."
+                        "A floral wonderland in Jumeirah featuring rose-themed interiors and whimsical artisanal desserts."
                     </p>
-                    <a href="https://www.youtube.com/watch?v=HCbQy0xm6cI" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Reel</a>
+                    <a href="https://youtu.be/HnQWPyHMw-0" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Reel</a>
                 </div>
             </div>
         </div>
 
-        <div class="cafe-card thailand group">
-            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm opacity-60">
-                <div class="cafe-container bg-slate-200">
-                    <div class="absolute inset-0 flex items-center justify-center font-black text-slate-400 text-[10px] uppercase tracking-widest">Thailand Sips</div>
+        <div class="cafe-card dubai group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <iframe src="https://www.youtube.com/embed/Rw48OghmSCI?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
                 </div>
                 <div class="mt-6 px-2">
-                    <h3 class="font-black uppercase text-xl tracking-tight text-slate-400">Next Discovery</h3>
-                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4">Thailand</p>
-                    <p class="text-slate-400 text-[11px] leading-relaxed mb-4 italic">Review dropping soon...</p>
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">bkry</h3>
+                    <a href="https://www.google.com/maps/search/?api=1&query=bkry+Alserkal+Avenue+Dubai" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block hover:text-red-500 transition">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Alserkal Avenue, Al Quoz
+                    </a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">
+                        "Industrial-chic artisanal bakery in Al Quoz known for small-batch bakes and creative pastry craft."
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=Rw48OghmSCI" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Reel</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cafe-card dubai group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <iframe src="https://www.youtube.com/embed/HCbQy0xm6cI?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">Villa 515</h3>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Villa+515+Jumeirah+Dubai" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block hover:text-red-500 transition">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Jumeirah, Dubai
+                    </a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">
+                        "A hidden sanctuary combining artisanal coffee with high-end perfumery and fashion."
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=HCbQy0xm6cI" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Reel</a>
                 </div>
             </div>
         </div>
@@ -67,18 +90,18 @@
 
 <script>
 /**
- * Cafe Filter Logic
+ * Cafe Filter Engine
  */
 function filterCafes(region) {
     const cards = document.querySelectorAll('.cafe-card');
     const buttons = document.querySelectorAll('.cafe-filter-btn');
     
-    // Update Button UI
+    // Update button UI
     buttons.forEach(btn => btn.classList.remove('active', 'text-black'));
     const targetBtn = document.getElementById('cbtn-' + region);
     if(targetBtn) targetBtn.classList.add('active', 'text-black');
 
-    // Filter Animation Logic
+    // Filter Logic
     cards.forEach(card => {
         if (region === 'all' || card.classList.contains(region)) {
             card.classList.remove('hidden');
