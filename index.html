@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM MARIA | Portfolio</title>
+    <title>JM MARIA | Travel & UGC Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -26,7 +26,8 @@
 
         .nav-jm { width: 42px; height: 42px; background: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .social-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .social-card:hover { transform: translateY(-8px); }
+        .social-card:hover { transform: translateY(-8px); filter: grayscale(0); }
+        .grayscale-icons { filter: grayscale(1); }
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
@@ -40,7 +41,7 @@
             <a href="#travel" class="hover:text-black transition">01 Archive</a>
             <a href="#hotels" class="hover:text-black transition">02 Hotels</a>
             <a href="#cafes" class="hover:text-black transition">03 Cafes</a>
-            <a href="#nexus" class="hover:text-black transition">04 Nexus</a>
+            <a href="#connect" class="hover:text-black transition">04 Connect</a>
             <a href="#shop" class="hover:text-black transition">05 Shop</a>
             <a href="#inquiries" class="text-red-600 font-black">06 Inquiries</a>
         </div>
@@ -58,10 +59,18 @@
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj&autoplay=1&mute=1&loop=1&playlist=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
+                    <div class="mt-6 flex justify-between items-center px-4">
+                        <h4 class="font-black text-[10px] uppercase tracking-widest">United Arab Emirates</h4>
+                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" target="_blank" class="text-[9px] font-black border-b-2 border-black pb-1 hover:text-red-600 transition">VIEW PLAYLIST</a>
+                    </div>
                 </div>
                 <div class="video-card px-4">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn&autoplay=1&mute=1&loop=1&playlist=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center px-4">
+                        <h4 class="font-black text-[10px] uppercase tracking-widest">Europe Diaries</h4>
+                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" target="_blank" class="text-[9px] font-black border-b-2 border-black pb-1 hover:text-red-600 transition">VIEW PLAYLIST</a>
                     </div>
                 </div>
             </div>
@@ -75,23 +84,17 @@
                 <h2 class="text-6xl font-black tracking-tighter uppercase leading-none">The Stay <span class="serif-title italic text-slate-300">List</span></h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-white p-6 rounded-[3rem] shadow-sm group">
+                <div class="bg-white p-6 rounded-[3rem] shadow-sm">
                     <div class="video-container mb-6">
                         <iframe src="https://www.youtube.com/embed/aXV-8E-7As0?autoplay=1&mute=1&loop=1&playlist=aXV-8E-7As0&controls=0" allow="autoplay; encrypted-media"></iframe>
                     </div>
-                    <div class="flex justify-between items-center px-2">
-                        <h3 class="font-black uppercase tracking-tighter text-xl">Sea Seeker Krabi</h3>
-                        <a href="https://www.youtube.com/watch?v=aXV-8E-7As0" target="_blank" class="text-[9px] font-bold border-b-2 border-black pb-1">VIEW REVIEW</a>
-                    </div>
+                    <h3 class="font-black uppercase tracking-tighter text-xl px-2">Sea Seeker Krabi</h3>
                 </div>
-                <div class="bg-white p-6 rounded-[3rem] shadow-sm group">
+                <div class="bg-white p-6 rounded-[3rem] shadow-sm">
                     <div class="video-container mb-6">
                         <iframe src="https://www.youtube.com/embed/S3ubr4hrB5I?autoplay=1&mute=1&loop=1&playlist=S3ubr4hrB5I&controls=0" allow="autoplay; encrypted-media"></iframe>
                     </div>
-                    <div class="flex justify-between items-center px-2">
-                        <h3 class="font-black uppercase tracking-tighter text-xl">Hip Seaview Phi Phi</h3>
-                        <a href="https://www.youtube.com/watch?v=S3ubr4hrB5I" target="_blank" class="text-[9px] font-bold border-b-2 border-black pb-1">VIEW REVIEW</a>
-                    </div>
+                    <h3 class="font-black uppercase tracking-tighter text-xl px-2">Hip Seaview Phi Phi</h3>
                 </div>
             </div>
         </div>
@@ -104,39 +107,38 @@
                 <h2 class="text-6xl font-black tracking-tighter uppercase leading-none">Cafe <span class="serif-title italic text-slate-300">Culture</span></h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
-                    <div class="video-container mb-6 bg-slate-200 flex items-center justify-center">
-                        <span class="text-slate-400 font-black uppercase text-xs">Cafe Video 01</span>
-                    </div>
-                    <h3 class="font-black uppercase tracking-tighter text-xl px-2">Local Gems: Dubai</h3>
+                <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm group">
+                    <div class="video-container mb-6 bg-slate-200"></div>
+                    <h3 class="font-black uppercase tracking-tighter text-xl px-2">Hidden Gems: Dubai</h3>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
-                    <div class="video-container mb-6 bg-slate-200 flex items-center justify-center">
-                        <span class="text-slate-400 font-black uppercase text-xs">Cafe Video 02</span>
-                    </div>
-                    <h3 class="font-black uppercase tracking-tighter text-xl px-2">Coffee & Aesthetics</h3>
+                <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm group">
+                    <div class="video-container mb-6 bg-slate-200"></div>
+                    <h3 class="font-black uppercase tracking-tighter text-xl px-2">Aesthetic Sips</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="CONNECT WITH ME" class="py-24 bg-slate-50">
+    <section id="connect" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-8">
-            <h2 class="text-8xl font-black tracking-tighter uppercase mb-16 text-center">Nexus</h2>
+            <div class="text-center mb-16">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.5em] mb-2 block">Let's be friends</span>
+                <h2 class="text-7xl font-black tracking-tighter uppercase">Connect <span class="serif-title italic text-slate-300">With Me</span></h2>
+            </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="social-card p-10 bg-white rounded-[3rem] flex flex-col items-center shadow-sm">
+                <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="social-card p-10 bg-white rounded-[3rem] flex flex-col items-center shadow-sm grayscale-icons">
                     <i class="fab fa-instagram text-2xl mb-2 text-pink-600"></i>
                     <p class="font-black text-[8px] uppercase tracking-widest">Instagram</p>
                 </a>
-                <a href="https://www.tiktok.com/@itsjmmaria" target="_blank" class="social-card p-10 bg-white rounded-[3rem] flex flex-col items-center shadow-sm">
+                <a href="https://www.tiktok.com/@itsjmmaria" target="_blank" class="social-card p-10 bg-white rounded-[3rem] flex flex-col items-center shadow-sm grayscale-icons">
                     <i class="fab fa-tiktok text-2xl mb-2"></i>
                     <p class="font-black text-[8px] uppercase tracking-widest">TikTok</p>
                 </a>
-                <a href="https://www.facebook.com/janinamariac" target="_blank" class="social-card p-10 bg-white rounded-[3rem] flex flex-col items-center shadow-sm">
+                <a href="https://www.facebook.com/janinamariac" target="_blank" class="social-card p-10 bg-white rounded-[3rem] flex flex-col items-center shadow-sm grayscale-icons">
                     <i class="fab fa-facebook text-2xl mb-2 text-blue-600"></i>
                     <p class="font-black text-[8px] uppercase tracking-widest">Facebook</p>
                 </a>
-                <a href="https://www.youtube.com/@jmmaria" target="_blank" class="social-card p-10 bg-white rounded-[3rem] flex flex-col items-center shadow-sm">
+                <a href="https://www.youtube.com/@jmmaria" target="_blank" class="social-card p-10 bg-white rounded-[3rem] flex flex-col items-center shadow-sm grayscale-icons">
                     <i class="fab fa-youtube text-2xl mb-2 text-red-600"></i>
                     <p class="font-black text-[8px] uppercase tracking-widest">YouTube</p>
                 </a>
@@ -148,32 +150,41 @@
         <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="text-center md:text-left">
                 <h2 class="text-7xl font-black tracking-tighter uppercase italic serif-title mb-4">The Shop</h2>
-                <p class="text-[10px] uppercase font-bold tracking-[0.5em] text-slate-500">Curated Travel Guides</p>
+                <p class="text-[10px] uppercase font-bold tracking-[0.5em] text-slate-500">Travel Itineraries & Guides</p>
             </div>
-            <div class="bg-white/5 p-12 rounded-[4rem] border border-white/10 text-center w-full max-w-sm">
-                <span class="text-red-500 font-black text-[10px] uppercase tracking-widest mb-6 block">Launching Soon</span>
-                <a href="#" class="inline-block border-2 border-white px-10 py-4 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition">Get Notified</a>
-            </div>
+            <a href="#" class="inline-block border-2 border-white px-12 py-5 rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition">Coming Soon</a>
         </div>
     </section>
 
     <section id="inquiries" class="py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+        <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20">
             <div>
-                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-4 block">Chapter Six</span>
-                <h2 class="text-8xl font-black tracking-tighter uppercase leading-[0.85] mb-12">Work <br> <span class="serif-title italic text-slate-300">With JM.</span></h2>
-                <div class="space-y-6">
-                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">● UGC CONTENT PRODUCTION</p>
-                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">● LUXURY HOTEL FEATURES</p>
-                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">● BRAND COLLABORATIONS</p>
+                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-4 block">Work With JM</span>
+                <h2 class="text-8xl font-black tracking-tighter uppercase leading-[0.85] mb-12">What I <br> <span class="serif-title italic text-slate-300">Offer.</span></h2>
+                
+                <div class="space-y-12">
+                    <div class="group">
+                        <h4 class="font-black uppercase tracking-tighter text-xl mb-2 group-hover:text-red-600 transition">UGC Content Production</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed max-w-md">I create high-energy, vertical video content designed for social growth. From storytelling to editing, I provide brands with ready-to-post assets that convert.</p>
+                    </div>
+                    <div class="group">
+                        <h4 class="font-black uppercase tracking-tighter text-xl mb-2 group-hover:text-red-600 transition">Cinematic Property Features</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed max-w-md">Highlighting the luxury and lifestyle of hotels and resorts. I combine professional visuals with authentic guest-experience storytelling to showcase your property.</p>
+                    </div>
+                    <div class="group">
+                        <h4 class="font-black uppercase tracking-tighter text-xl mb-2 group-hover:text-red-600 transition">Brand Collaborations</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed max-w-md">Strategic partnerships that align my travel audience with your product. Genuine integration that feels like a recommendation, not an ad.</p>
+                    </div>
                 </div>
             </div>
-            <div class="bg-white p-12 rounded-[4rem] shadow-2xl">
+
+            <div class="bg-white p-12 rounded-[4rem] shadow-2xl self-start">
+                <h3 class="font-black uppercase tracking-tighter text-2xl mb-8">Send an Inquiry</h3>
                 <form action="https://formspree.io/f/jmmaria.ugc@gmail.com" method="POST" class="space-y-4">
-                    <input type="text" name="name" required placeholder="Full Name" class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm focus:outline-black">
-                    <input type="email" name="email" required placeholder="Email Address" class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm focus:outline-black">
-                    <textarea name="message" required placeholder="Project Details..." rows="4" class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm focus:outline-black"></textarea>
-                    <button type="submit" class="w-full bg-black text-white py-6 rounded-2xl font-black text-xs uppercase tracking-[0.4em] hover:bg-red-600 transition-all">Submit Project</button>
+                    <input type="text" name="name" required placeholder="Full Name" class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm focus:ring-2 focus:ring-black">
+                    <input type="email" name="email" required placeholder="Email Address" class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm focus:ring-2 focus:ring-black">
+                    <textarea name="message" required placeholder="Project Details (Timeline, Deliverables, etc.)" rows="4" class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm focus:ring-2 focus:ring-black"></textarea>
+                    <button type="submit" class="w-full bg-black text-white py-6 rounded-2xl font-black text-xs uppercase tracking-[0.4em] hover:bg-red-600 transition-all">Submit Request</button>
                 </form>
             </div>
         </div>
