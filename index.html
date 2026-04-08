@@ -20,31 +20,43 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         iframe { width: 100%; border: none; display: block; }
 
-        /* 2. ONE-LINE SIGNATURE LOGO STYLING */
+        /* 2. SLANTED STACKED SIGNATURE LOGO */
         .logo-wrap {
             display: flex;
+            flex-direction: column;
             align-items: center;
+            line-height: 0.65; /* Tight vertical stack */
+            padding: 5px 0;
             text-decoration: none;
             cursor: pointer;
-            padding: 5px 0;
-            transition: all 0.4s ease;
+            /* Slant the whole logo container */
+            transform: rotate(-6deg); 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .logo-text {
             font-family: 'JaneAusten', cursive;
             color: #000;
-            font-size: 36px; /* Optimized for single-line layout */
-            transition: all 0.3s ease;
-            text-transform: none;
+            /* Small caps effect using lowercase for Jane Austen's style */
+            text-transform: lowercase; 
             user-select: none;
             white-space: nowrap;
-            letter-spacing: 1px;
-            line-height: 1;
+            transition: color 0.3s ease;
+        }
+
+        .text-jm {
+            font-size: 28px; /* Smaller size */
+            margin-bottom: -2px;
+        }
+
+        .text-maria {
+            font-size: 32px; /* Maria slightly larger for balance */
+            padding-left: 10px; /* Bouncy offset */
         }
 
         /* Hover Interaction */
         .nav-container:hover .logo-wrap {
-            transform: translateX(5px);
+            transform: rotate(-3deg) scale(1.05); /* Straightens slightly on hover */
         }
 
         .nav-container:hover .logo-text {
@@ -57,7 +69,8 @@
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-24 flex items-center px-8 justify-between nav-container">
         
         <a href="#" class="logo-wrap">
-            <span class="logo-text">Jm Maria</span>
+            <span class="logo-text text-jm">jm</span>
+            <span class="logo-text text-maria">maria</span>
         </a>
 
         <div class="hidden lg:flex space-x-8 text-[8px] font-bold uppercase tracking-[0.25em] text-slate-400">
