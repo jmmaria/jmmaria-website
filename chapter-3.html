@@ -1,18 +1,29 @@
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-    .cafe-container { 
-        position: relative; padding-bottom: 56.25%; border-radius: 2rem; 
-        overflow: hidden; background: #000; transition: all 0.4s ease;
-    }
-    .cafe-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-    .cafe-card.hidden { display: none; opacity: 0; transform: translateY(20px); }
-    
-    .cafe-filter-btn { transition: all 0.3s ease; border-bottom: 2px solid transparent; cursor: pointer; }
-    .cafe-filter-btn.active { border-color: #ef4444; color: black; }
-</style>
+    <style>
+        body { background-color: white; margin: 0; font-family: sans-serif; }
+        .cafe-container { 
+            position: relative; padding-bottom: 56.25%; border-radius: 2rem; 
+            overflow: hidden; background: #000; transition: all 0.4s ease;
+        }
+        .cafe-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); opacity: 1; transform: translateY(0); }
+        .cafe-card.hidden { display: none; }
+        
+        .cafe-filter-btn { transition: all 0.3s ease; border-bottom: 2px solid transparent; cursor: pointer; }
+        .cafe-filter-btn.active { border-color: #ef4444; color: black; }
+        
+        /* Smooth scale effect on hover */
+        .cafe-card:hover .cafe-container { transform: scale(1.02); }
+    </style>
+</head>
+<body>
 
 <div class="py-24 bg-white px-8">
     <div class="max-w-7xl mx-auto mb-8 text-right">
@@ -38,12 +49,8 @@
                 </div>
                 <div class="mt-6 px-2">
                     <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">CoCoParis</h3>
-                    <a href="https://www.google.com/maps/search/CoCoParis+The+Mall+Jumeirah+Dubai" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block hover:text-red-500 transition">
-                        <i class="fas fa-map-marker-alt mr-1"></i> The Mall, Jumeirah, Dubai
-                    </a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">
-                        "A floral wonderland in Jumeirah featuring rose-themed interiors and whimsical artisanal desserts."
-                    </p>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block"><i class="fas fa-map-marker-alt mr-1"></i> Jumeirah, Dubai</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A floral wonderland in Jumeirah featuring rose-themed interiors and whimsical desserts."</p>
                     <a href="https://youtu.be/HnQWPyHMw-0" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
                 </div>
             </div>
@@ -56,12 +63,8 @@
                 </div>
                 <div class="mt-6 px-2">
                     <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">bkry</h3>
-                    <a href="https://www.google.com/maps/search/bkry+Alserkal+Avenue+Al+Quoz" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block hover:text-red-500 transition">
-                        <i class="fas fa-map-marker-alt mr-1"></i> Alserkal Avenue, Al Quoz
-                    </a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">
-                        "Industrial-chic artisanal bakery in Al Quoz known for small-batch bakes and creative pastry craft."
-                    </p>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block"><i class="fas fa-map-marker-alt mr-1"></i> Alserkal Avenue, Dubai</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Industrial-chic artisanal bakery known for small-batch bakes and pastry craft."</p>
                     <a href="https://www.youtube.com/watch?v=Rw48OghmSCI" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
                 </div>
             </div>
@@ -74,13 +77,93 @@
                 </div>
                 <div class="mt-6 px-2">
                     <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">Villa 515</h3>
-                    <a href="https://www.google.com/maps/search/Villa+515+Jumeirah+Dubai" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block hover:text-red-500 transition">
-                        <i class="fas fa-map-marker-alt mr-1"></i> Jumeirah, Dubai
-                    </a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">
-                        "A hidden sanctuary combining artisanal coffee with high-end perfumery and fashion."
-                    </p>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block"><i class="fas fa-map-marker-alt mr-1"></i> Jumeirah, Dubai</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A hidden sanctuary combining artisanal coffee with high-end perfumery."</p>
                     <a href="https://www.youtube.com/watch?v=HCbQy0xm6cI" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cafe-card dubai group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <iframe src="https://www.youtube.com/embed/QOi1ZjY7Im0?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">Talabat Cafe</h3>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block"><i class="fas fa-map-marker-alt mr-1"></i> City Walk, Dubai</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A futuristic, tech-driven cafe experience in the heart of City Walk."</p>
+                    <a href="https://youtu.be/QOi1ZjY7Im0" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cafe-card dubai group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <iframe src="https://www.youtube.com/embed/5Qeb2T3Iwzk?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">Caia Cafe</h3>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block"><i class="fas fa-map-marker-alt mr-1"></i> Boxpark, Dubai</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Minimalist aesthetics meet premium brews in this sleek destination."</p>
+                    <a href="https://youtu.be/5Qeb2T3Iwzk" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cafe-card dubai group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <iframe src="https://www.youtube.com/embed/b10i_wEQEj8?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">143 Cafe</h3>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block"><i class="fas fa-map-marker-alt mr-1"></i> Jumeirah, Dubai</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A cozy neighborhood spot serving up specialty coffee and heartfelt vibes."</p>
+                    <a href="https://youtu.be/b10i_wEQEj8" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cafe-card dubai group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <iframe src="https://www.youtube.com/embed/HJM1SwD92PU?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">Voyage Cafe</h3>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block"><i class="fas fa-map-marker-alt mr-1"></i> d3, Dubai</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Journey through flavors in a space inspired by global exploration."</p>
+                    <a href="https://youtu.be/HJM1SwD92PU" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cafe-card dubai group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <iframe src="https://www.youtube.com/embed/cWuPHpVhX68?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">Koncrete Cafe</h3>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block"><i class="fas fa-map-marker-alt mr-1"></i> Al Quoz, Dubai</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Industrial design meets sophisticated coffee culture in the arts district."</p>
+                    <a href="https://youtu.be/cWuPHpVhX68" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cafe-card dubai group">
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
+                <div class="cafe-container">
+                    <iframe src="https://www.youtube.com/embed/ugP0CkwzJj4?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                </div>
+                <div class="mt-6 px-2">
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">SCM Cafe</h3>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block"><i class="fas fa-map-marker-alt mr-1"></i> Meydan, Dubai</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Elevated experiences with a focus on meticulous brewing and refined snacks."</p>
+                    <a href="https://youtu.be/ugP0CkwzJj4" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
                 </div>
             </div>
         </div>
@@ -89,19 +172,14 @@
 </div>
 
 <script>
-/**
- * Cafe Filter Engine
- */
 function filterCafes(region) {
     const cards = document.querySelectorAll('.cafe-card');
     const buttons = document.querySelectorAll('.cafe-filter-btn');
     
-    // Update button UI
     buttons.forEach(btn => btn.classList.remove('active', 'text-black'));
     const targetBtn = document.getElementById('cbtn-' + region);
     if(targetBtn) targetBtn.classList.add('active', 'text-black');
 
-    // Filter Logic
     cards.forEach(card => {
         if (region === 'all' || card.classList.contains(region)) {
             card.classList.remove('hidden');
@@ -119,3 +197,6 @@ function filterCafes(region) {
     });
 }
 </script>
+
+</body>
+</html>
