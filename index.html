@@ -20,47 +20,47 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         iframe { width: 100%; border: none; display: block; }
 
-        /* 2. SLANTED STACKED SIGNATURE LOGO */
+        /* 2. SLANTED STACKED SIGNATURE LOGO (Capital J) */
         .logo-wrap {
             display: flex;
             flex-direction: column;
             align-items: center;
-            line-height: 0.65; /* Tight vertical stack */
+            line-height: 0.6; /* Tight vertical stack */
             padding: 5px 0;
             text-decoration: none;
             cursor: pointer;
-            /* Slant the whole logo container */
-            transform: rotate(-6deg); 
+            transform: rotate(-5deg); /* Subtle organic slant */
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .logo-text {
             font-family: 'JaneAusten', cursive;
             color: #000;
-            /* Small caps effect using lowercase for Jane Austen's style */
-            text-transform: lowercase; 
             user-select: none;
             white-space: nowrap;
             transition: color 0.3s ease;
         }
 
         .text-jm {
-            font-size: 28px; /* Smaller size */
+            font-size: 28px;
+            /* Using lowercase 'm' with Capital 'J' for the specified look */
+            text-transform: none; 
             margin-bottom: -2px;
         }
 
         .text-maria {
-            font-size: 32px; /* Maria slightly larger for balance */
-            padding-left: 10px; /* Bouncy offset */
+            font-size: 32px;
+            text-transform: lowercase; /* Small-caps feel for maria */
+            padding-left: 14px; /* Offset for better flow under the J tail */
         }
 
         /* Hover Interaction */
         .nav-container:hover .logo-wrap {
-            transform: rotate(-3deg) scale(1.05); /* Straightens slightly on hover */
+            transform: rotate(-2deg) scale(1.05);
         }
 
         .nav-container:hover .logo-text {
-            color: #ef4444; /* Branding Red */
+            color: #ef4444; /* Signature Red */
         }
     </style>
 </head>
@@ -69,7 +69,7 @@
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-24 flex items-center px-8 justify-between nav-container">
         
         <a href="#" class="logo-wrap">
-            <span class="logo-text text-jm">jm</span>
+            <span class="logo-text text-jm">Jm</span>
             <span class="logo-text text-maria">maria</span>
         </a>
 
@@ -88,12 +88,24 @@
     </nav>
 
     <main>
-        <div id="travel"><iframe src="chapter-1.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="hotels"><iframe src="chapter-2.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="cafes"><iframe src="chapter-3.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="connect"><iframe src="chapter-4.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="shop"><iframe src="chapter-5.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="inquiries"><iframe src="chapter-6.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+        <div id="travel">
+            <iframe src="chapter-1.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
+        </div>
+        <div id="hotels">
+            <iframe src="chapter-2.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
+        </div>
+        <div id="cafes">
+            <iframe src="chapter-3.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
+        </div>
+        <div id="connect">
+            <iframe src="chapter-4.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
+        </div>
+        <div id="shop">
+            <iframe src="chapter-5.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
+        </div>
+        <div id="inquiries">
+            <iframe src="chapter-6.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
+        </div>
     </main>
 
     <footer class="py-16 bg-black text-center border-t border-white/5">
