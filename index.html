@@ -126,18 +126,20 @@
                     <div>
                         <div class="flex text-yellow-400 text-[10px] mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <h3 class="font-black uppercase tracking-tighter text-2xl mb-1 leading-tight">Sea Seeker <br>Krabi Resort</h3>
-                        <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">Krabi District, Thailand</p>
-                        <a href="https://www.youtube.com/watch?v=aXV-8E-7As0&list=PLhATCoSKZoh4ioClQL_HU3tH5g7uDofHA&index=13" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-black border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition">Watch Review</a>
+                        <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">Ao Nang, Thailand</p>
+                        <a href="https://www.youtube.com/watch?v=aXV-8E-7As0&list=PLhATCoSKZoh4ioClQL_HU3tH5g7uDofHA&index=13" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-black border-b-2 border-black pb-1 hover:text-red-600 transition">Watch Review</a>
                     </div>
                 </div>
+
                 <div class="bg-white p-10 rounded-[3rem] flex flex-col md:flex-row gap-8 items-center text-left group shadow-sm hover:shadow-xl transition-all">
                     <div class="w-full md:w-56 h-56 bg-slate-200 rounded-[2rem] overflow-hidden flex-shrink-0">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img src="505135914.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
                     </div>
                     <div>
                         <div class="flex text-yellow-400 text-[10px] mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <h3 class="font-black uppercase tracking-tighter text-2xl mb-3 leading-tight">Hospitality <br>Archive</h3>
-                        <a href="#" class="text-[10px] font-black uppercase tracking-widest text-black border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition">Explore More</a>
+                        <h3 class="font-black uppercase tracking-tighter text-2xl mb-1 leading-tight">Hip Seaview <br>Resort @ Phi Phi</h3>
+                        <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">Phi Phi Islands, Thailand</p>
+                        <a href="https://www.youtube.com/watch?v=S3ubr4hrB5I&list=PLhATCoSKZoh4ioClQL_HU3tH5g7uDofHA&index=15" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-black border-b-2 border-black pb-1 hover:text-red-600 transition">Watch Review</a>
                     </div>
                 </div>
             </div>
@@ -230,13 +232,14 @@
         let scrollAmount = 0;
         let isPaused = false;
 
-        // Clone content for infinite loop
+        // Clone content for infinite loop effect
         const clone = feed.innerHTML;
         feed.innerHTML += clone; 
 
         function autoScroll() {
             if (!isPaused) {
-                scrollAmount += 0.8; // Speed
+                // Velocity set to 1.6 for faster motion
+                scrollAmount += 1.6; 
                 wrapper.scrollLeft = scrollAmount;
 
                 if (scrollAmount >= feed.scrollWidth / 2) {
