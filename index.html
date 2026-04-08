@@ -8,49 +8,55 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         .serif-title { font-family: 'Playfair Display', serif; }
-        .hide-scroll::-webkit-scrollbar { display: none; }
         
-        /* Carousel Logic */
-        .carousel-container {
-            overflow: hidden;
+        /* Auto-Scroll Carousel Core */
+        .carousel-wrapper {
             width: 100%;
+            overflow: hidden; 
             position: relative;
+            cursor: pointer;
+            padding: 2rem 0;
         }
-        .video-feed {
+        
+        #videoFeed {
             display: flex;
-            gap: 2rem;
-            padding-bottom: 3rem;
-            cursor: grab;
-            user-select: none;
+            gap: 2.5rem;
+            white-space: nowrap;
         }
+
         .video-card {
             min-width: 85vw;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
+            display: inline-block;
         }
-        @media (min-width: 768px) { .video-card { min-width: 600px; } }
+        @media (min-width: 768px) { .video-card { min-width: 650px; } }
 
         .video-container { 
             position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; 
-            border-radius: 2rem; background: #000; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 2.5rem; background: #000; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
         }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* Navigation Circle */
         .nav-jm {
-            width: 40px; height: 40px; background: black; border-radius: 50%;
+            width: 42px; height: 42px; background: black; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
         }
+
+        .social-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .social-card:hover { transform: translateY(-10px); }
+        
+        input, textarea, select { outline: none; border: 1px solid #e2e8f0 !important; }
+        input:focus, textarea:focus { border-color: #000 !important; background-color: #fafafa; }
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 h-20 flex items-center px-8 justify-between">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-20 flex items-center px-8 justify-between">
         <div class="flex items-center space-x-4">
-            <div class="nav-jm">
-                <span class="text-white text-[10px] font-black tracking-tighter">JM</span>
+            <div class="nav-jm shadow-lg">
+                <span class="text-white text-[11px] font-black tracking-tighter">JM</span>
             </div>
             <div class="font-black tracking-tighter text-xl uppercase">MARIA</div>
         </div>
@@ -65,45 +71,130 @@
         </div>
 
         <div class="flex items-center space-x-6">
-            <button class="text-slate-400 hover:text-black transition"><i class="fas fa-search text-sm"></i></button>
-            <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="bg-black text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all">Subscribe</a>
+            <a href="https://www.youtube.com/@jmmaria?sub_confirmation=1" target="_blank" class="bg-black text-white px-7 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all shadow-xl">Subscribe</a>
         </div>
     </nav>
 
-    <section id="travel" class="py-24 border-b border-slate-50 overflow-hidden">
+    <section id="travel" class="py-24 border-b border-slate-50">
         <div class="max-w-7xl mx-auto px-8 mb-12">
             <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">Chapter One</span>
-            <h2 class="text-4xl font-black tracking-tighter uppercase leading-none">Global Archive</h2>
+            <h2 class="text-5xl font-black tracking-tighter uppercase leading-none">Global Archive</h2>
         </div>
 
-        <div class="carousel-container" id="carouselWrapper">
+        <div class="carousel-wrapper" id="carouselWrapper">
             <div class="video-feed" id="videoFeed">
                 <div class="video-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj&autoplay=1&mute=1&loop=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
-                    <div class="mt-6 flex justify-between items-center px-2">
-                        <h4 class="font-black text-[11px] uppercase tracking-[0.2em]">UAE Archive</h4>
-                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" target="_blank" class="text-[9px] font-black border-b border-black">FULL PLAYLIST</a>
+                    <div class="mt-8 flex justify-between items-center px-4">
+                        <h4 class="font-black text-xs uppercase tracking-[0.2em]">United Arab Emirates</h4>
+                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh7cbZHJut0lrlH1NIxosPLj" target="_blank" class="text-[9px] font-black border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition">FULL PLAYLIST</a>
                     </div>
                 </div>
                 <div class="video-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn&autoplay=1&mute=1&loop=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
-                    <div class="mt-6 flex justify-between items-center px-2">
-                        <h4 class="font-black text-[11px] uppercase tracking-[0.2em]">Europe Archive</h4>
-                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" target="_blank" class="text-[9px] font-black border-b border-black">FULL PLAYLIST</a>
+                    <div class="mt-8 flex justify-between items-center px-4">
+                        <h4 class="font-black text-xs uppercase tracking-[0.2em]">Europe Series</h4>
+                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh5EfzCjCZzXl3DJC_C_5NZn" target="_blank" class="text-[9px] font-black border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition">FULL PLAYLIST</a>
                     </div>
                 </div>
                 <div class="video-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy&autoplay=1&mute=1&loop=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
-                    <div class="mt-6 flex justify-between items-center px-2">
-                        <h4 class="font-black text-[11px] uppercase tracking-[0.2em]">Thailand Archive</h4>
-                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" target="_blank" class="text-[9px] font-black border-b border-black">FULL PLAYLIST</a>
+                    <div class="mt-8 flex justify-between items-center px-4">
+                        <h4 class="font-black text-xs uppercase tracking-[0.2em]">Thailand</h4>
+                        <a href="https://www.youtube.com/playlist?list=PLhATCoSKZoh64pz4yu36FdRlVgbNy7zgy" target="_blank" class="text-[9px] font-black border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition">FULL PLAYLIST</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hotels" class="py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-4 block">Chapter Two</span>
+            <h2 class="text-6xl font-black tracking-tighter uppercase mb-20">The Stay <span class="serif-title italic text-slate-400">List</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-white p-10 rounded-[3rem] flex flex-col md:flex-row gap-8 items-center text-left group shadow-sm hover:shadow-xl transition-all">
+                    <div class="w-full md:w-56 h-56 bg-slate-200 rounded-[2rem] overflow-hidden flex-shrink-0">
+                        <img src="Sea-Seeker-Krabi-Resort-Drone-View-after-rotate.webp" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div>
+                        <div class="flex text-yellow-400 text-[10px] mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <h3 class="font-black uppercase tracking-tighter text-2xl mb-1 leading-tight">Sea Seeker <br>Krabi Resort</h3>
+                        <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">Krabi District, Thailand</p>
+                        <a href="https://www.youtube.com/watch?v=aXV-8E-7As0&list=PLhATCoSKZoh4ioClQL_HU3tH5g7uDofHA&index=13" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-black border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition">Watch Review</a>
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-[3rem] flex flex-col md:flex-row gap-8 items-center text-left group shadow-sm hover:shadow-xl transition-all">
+                    <div class="w-full md:w-56 h-56 bg-slate-200 rounded-[2rem] overflow-hidden flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div>
+                        <div class="flex text-yellow-400 text-[10px] mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <h3 class="font-black uppercase tracking-tighter text-2xl mb-3 leading-tight">Hospitality <br>Archive</h3>
+                        <a href="#" class="text-[10px] font-black uppercase tracking-widest text-black border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cafes" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="mb-16">
+                <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-2 block">Chapter Three</span>
+                <h2 class="text-6xl font-black tracking-tighter uppercase">Cafe <span class="serif-title italic text-slate-400">Culture</span></h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <a href="#" class="group">
+                    <div class="aspect-square bg-slate-100 rounded-[2.5rem] mb-8 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-all grayscale group-hover:grayscale-0 duration-700">
+                    </div>
+                    <h4 class="font-black uppercase tracking-widest text-xs mb-1">Concept Aesthetics</h4>
+                    <p class="text-slate-400 text-[10px] uppercase tracking-widest">Global Scouting</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nexus" class="py-32 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-8 text-center">
+            <h2 class="text-8xl font-black tracking-tighter uppercase mb-24 leading-none">The Nexus</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <a href="https://www.instagram.com/itsjmmaria/" target="_blank" class="social-card p-14 border border-white rounded-[3.5rem] bg-white flex flex-col items-center shadow-sm hover:shadow-2xl">
+                    <i class="fab fa-instagram text-5xl mb-8 text-pink-600"></i>
+                    <p class="font-black text-[11px] uppercase tracking-widest">Instagram</p>
+                </a>
+                <a href="https://www.tiktok.com/@itsjmmaria" target="_blank" class="social-card p-14 border border-white rounded-[3.5rem] bg-white flex flex-col items-center shadow-sm hover:shadow-2xl">
+                    <i class="fab fa-tiktok text-5xl mb-8 text-black"></i>
+                    <p class="font-black text-[11px] uppercase tracking-widest">TikTok</p>
+                </a>
+                <a href="https://www.facebook.com/janinamariac" target="_blank" class="social-card p-14 border border-white rounded-[3.5rem] bg-white flex flex-col items-center shadow-sm hover:shadow-2xl">
+                    <i class="fab fa-facebook text-5xl mb-8 text-blue-600"></i>
+                    <p class="font-black text-[11px] uppercase tracking-widest">Facebook</p>
+                </a>
+                <a href="https://www.youtube.com/@jmmaria" target="_blank" class="social-card p-14 border border-white rounded-[3.5rem] bg-white flex flex-col items-center shadow-sm hover:shadow-2xl">
+                    <i class="fab fa-youtube text-5xl mb-8 text-red-600"></i>
+                    <p class="font-black text-[11px] uppercase tracking-widest">YouTube</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="py-32 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.5em] mb-6 block">Store</span>
+            <h2 class="text-7xl font-black tracking-tighter uppercase mb-24">Shop <span class="serif-title italic text-slate-800">JM.</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-14">
+                <div class="bg-white/5 p-10 rounded-[3.5rem] border border-white/10 group hover:border-red-600 transition-all">
+                    <div class="aspect-[4/5] bg-slate-900 rounded-[2.5rem] mb-10 flex items-center justify-center overflow-hidden"><span class="text-slate-800 font-black text-8xl group-hover:text-red-600/10 transition-all uppercase">UAE</span></div>
+                    <h3 class="font-black uppercase tracking-tighter text-3xl mb-10">Dubai Travel <br>Guide</h3>
+                    <a href="#" class="block w-full py-6 bg-white text-black font-black text-[11px] uppercase tracking-[0.3em] rounded-2xl hover:bg-red-600 hover:text-white transition">AED 5.00</a>
                 </div>
             </div>
         </div>
@@ -111,55 +202,57 @@
 
     <section id="services" class="py-40 bg-white">
         <div class="max-w-7xl mx-auto px-8">
-            <div class="grid lg:grid-cols-2 gap-20">
+            <div class="grid lg:grid-cols-2 gap-24">
                 <div>
-                    <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.5em] mb-6 block">Inquiries</span>
-                    <h2 class="text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-10">Work with <br> <span class="serif-title italic text-slate-300">JM.</span></h2>
+                    <span class="text-[10px] font-bold text-red-600 uppercase tracking-[0.5em] mb-8 block">Inquiries</span>
+                    <h2 class="text-8xl font-black tracking-tighter uppercase leading-[0.85] mb-12">Work with <br> <span class="serif-title italic text-slate-300">JM.</span></h2>
                 </div>
-                <div class="bg-slate-50 p-10 rounded-[4rem]">
-                    <form action="https://formspree.io/f/jmmaria.ugc@gmail.com" method="POST" class="space-y-6">
-                        <input type="text" name="name" required class="w-full bg-white px-6 py-5 rounded-2xl" placeholder="Name">
-                        <input type="email" name="email" required class="w-full bg-white px-6 py-5 rounded-2xl" placeholder="Email">
-                        <textarea name="message" rows="4" required class="w-full bg-white px-6 py-5 rounded-2xl" placeholder="Project Details..."></textarea>
-                        <button type="submit" class="w-full bg-black text-white py-6 rounded-2xl font-black uppercase tracking-widest">Send Inquiry</button>
+
+                <div class="bg-slate-50 p-12 md:p-20 rounded-[4.5rem]">
+                    <form action="https://formspree.io/f/jmmaria.ugc@gmail.com" method="POST" class="space-y-8">
+                        <input type="text" name="name" required class="w-full bg-white px-8 py-6 rounded-3xl text-sm" placeholder="Full Name">
+                        <input type="email" name="email" required class="w-full bg-white px-8 py-6 rounded-3xl text-sm" placeholder="Email Address">
+                        <textarea name="message" rows="5" required class="w-full bg-white px-8 py-6 rounded-3xl text-sm" placeholder="Tell me about your project..."></textarea>
+                        <button type="submit" class="w-full bg-black text-white py-8 rounded-3xl font-black text-xs uppercase tracking-[0.4em] hover:bg-red-600 transition-all shadow-2xl">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <footer class="py-24 bg-black text-center">
+        <p class="text-[10px] font-bold text-slate-800 uppercase tracking-[0.8em]">&copy; 2026 JM MARIA</p>
+    </footer>
+
     <script>
         const feed = document.getElementById('videoFeed');
         const wrapper = document.getElementById('carouselWrapper');
-        let scrollSpeed = 1; // Adjust speed here
+        let scrollAmount = 0;
         let isPaused = false;
 
-        // Clone items for infinite effect
-        const cards = Array.from(feed.children);
-        cards.forEach(card => {
-            const clone = card.cloneNode(true);
-            feed.appendChild(clone);
-        });
+        // Clone content for infinite loop
+        const clone = feed.innerHTML;
+        feed.innerHTML += clone; 
 
-        // Auto Scroll Function
-        function step() {
+        function autoScroll() {
             if (!isPaused) {
-                feed.scrollLeft += scrollSpeed;
-                if (feed.scrollLeft >= feed.scrollWidth / 2) {
-                    feed.scrollLeft = 0;
+                scrollAmount += 0.8; // Speed
+                wrapper.scrollLeft = scrollAmount;
+
+                if (scrollAmount >= feed.scrollWidth / 2) {
+                    scrollAmount = 0;
+                    wrapper.scrollLeft = 0;
                 }
             }
-            requestAnimationFrame(step);
+            requestAnimationFrame(autoScroll);
         }
 
-        // Pause on Hover/Touch
         wrapper.addEventListener('mouseenter', () => isPaused = true);
         wrapper.addEventListener('mouseleave', () => isPaused = false);
         wrapper.addEventListener('touchstart', () => isPaused = true);
         wrapper.addEventListener('touchend', () => isPaused = false);
 
-        // Start the engine
-        requestAnimationFrame(step);
+        autoScroll();
     </script>
 
 </body>
