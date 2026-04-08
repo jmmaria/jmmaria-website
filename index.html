@@ -20,44 +20,31 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         iframe { width: 100%; border: none; display: block; }
 
-        /* 2. LOGO STYLING (ELEGANT STACKED SCRIPT) */
+        /* 2. ONE-LINE SIGNATURE LOGO STYLING */
         .logo-wrap {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            /* Jane Austen has very tall ascenders/descenders, 
-               so we use a wider line-height to prevent overlap */
-            line-height: 1.1; 
-            padding: 10px 0;
-            transition: all 0.4s ease;
             text-decoration: none;
             cursor: pointer;
+            padding: 5px 0;
+            transition: all 0.4s ease;
         }
 
         .logo-text {
             font-family: 'JaneAusten', cursive;
             color: #000;
+            font-size: 36px; /* Optimized for single-line layout */
             transition: all 0.3s ease;
             text-transform: none;
             user-select: none;
             white-space: nowrap;
-        }
-
-        .text-jm {
-            font-size: 38px;
-            transform: rotate(-2deg);
-            margin-bottom: 2px;
-        }
-
-        .text-maria {
-            font-size: 42px;
-            /* Shifting Maria right ensures the 'M' clears the 'J' tail */
-            padding-left: 20px; 
+            letter-spacing: 1px;
+            line-height: 1;
         }
 
         /* Hover Interaction */
         .nav-container:hover .logo-wrap {
-            transform: translateY(-2px);
+            transform: translateX(5px);
         }
 
         .nav-container:hover .logo-text {
@@ -70,8 +57,7 @@
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-24 flex items-center px-8 justify-between nav-container">
         
         <a href="#" class="logo-wrap">
-            <span class="logo-text text-jm">Jm</span>
-            <span class="logo-text text-maria">Maria</span>
+            <span class="logo-text">Jm Maria</span>
         </a>
 
         <div class="hidden lg:flex space-x-8 text-[8px] font-bold uppercase tracking-[0.25em] text-slate-400">
@@ -89,24 +75,12 @@
     </nav>
 
     <main>
-        <div id="travel">
-            <iframe src="chapter-1.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
-        </div>
-        <div id="hotels">
-            <iframe src="chapter-2.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
-        </div>
-        <div id="cafes">
-            <iframe src="chapter-3.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
-        </div>
-        <div id="connect">
-            <iframe src="chapter-4.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
-        </div>
-        <div id="shop">
-            <iframe src="chapter-5.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
-        </div>
-        <div id="inquiries">
-            <iframe src="chapter-6.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe>
-        </div>
+        <div id="travel"><iframe src="chapter-1.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+        <div id="hotels"><iframe src="chapter-2.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+        <div id="cafes"><iframe src="chapter-3.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+        <div id="connect"><iframe src="chapter-4.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+        <div id="shop"><iframe src="chapter-5.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+        <div id="inquiries"><iframe src="chapter-6.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
     </main>
 
     <footer class="py-16 bg-black text-center border-t border-white/5">
