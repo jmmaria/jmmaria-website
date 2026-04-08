@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
     
     <style>
-        /* 1. LOAD THE DOWNLOADED DAILY FONT */
+        /* 1. LINK TO YOUR UPLOADED DAILY FONT */
         @font-face {
             font-family: 'DailyLogo';
             src: url('Daily.otf') format('opentype');
@@ -20,13 +20,13 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         iframe { width: 100%; border: none; display: block; }
 
-        /* 2. THE STACKED LOGO DESIGN */
+        /* 2. LOGO STYLING (STACKED BUT NO OVERLAP) */
         .logo-wrap {
             display: flex;
             flex-direction: column;
             align-items: center;
-            line-height: 0.5; /* Tight overlap for the signature look */
-            padding: 12px 0;
+            line-height: 0.85; /* Increased from 0.5 to prevent J/M overlap */
+            padding: 8px 0;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             cursor: pointer;
@@ -41,23 +41,23 @@
         }
 
         .text-jm {
-            font-size: 44px;
-            transform: rotate(-6deg); /* Bouncy tilt */
-            margin-bottom: -4px;
+            font-size: 42px;
+            transform: rotate(-4deg); /* Slight tilt for character */
+            margin-bottom: 2px; /* Adds physical space between the lines */
         }
 
         .text-maria {
-            font-size: 48px;
-            padding-left: 18px; /* Offset for a natural feel */
+            font-size: 46px;
+            padding-left: 10px; /* Kept the offset for that hand-drawn feel */
         }
 
         /* Hover Interaction */
         .nav-container:hover .logo-wrap {
-            transform: translateY(-3px) scale(1.02);
+            transform: translateY(-2px);
         }
 
         .nav-container:hover .logo-text {
-            color: #ef4444; /* Brand Red accent */
+            color: #ef4444; /* Accented red on hover */
         }
     </style>
 </head>
