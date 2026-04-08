@@ -5,7 +5,7 @@
 <style>
     .cafe-container { 
         position: relative; padding-bottom: 56.25%; border-radius: 2rem; 
-        overflow: hidden; background: #e2e8f0; transition: all 0.4s ease;
+        overflow: hidden; background: #000; transition: all 0.4s ease;
     }
     .cafe-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
     .cafe-card.hidden { display: none; opacity: 0; transform: translateY(20px); }
@@ -34,25 +34,30 @@
         <div class="cafe-card dubai group">
             <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
                 <div class="cafe-container">
-                    <div class="absolute inset-0 flex items-center justify-center font-black text-slate-400 text-[10px] uppercase tracking-widest">Dubai Gem Coming Soon</div>
+                    <iframe src="https://www.youtube.com/embed/HCbQy0xm6cI?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
                 </div>
                 <div class="mt-6 px-2">
-                    <h3 class="font-black uppercase text-xl tracking-tight">Hidden Gems: Dubai</h3>
-                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4">Jumeirah, Dubai</p>
-                    <a href="#" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Reel</a>
+                    <h3 class="font-black uppercase text-xl tracking-tight group-hover:text-red-600 transition">Villa 515</h3>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Villa+515+Cafe+Dubai" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4 block hover:text-red-500 transition">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Jumeirah, Dubai
+                    </a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">
+                        "A hidden sanctuary in the heart of Jumeirah combining perfume, fashion, and artisanal coffee."
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=HCbQy0xm6cI" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Reel</a>
                 </div>
             </div>
         </div>
 
         <div class="cafe-card thailand group">
-            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm">
-                <div class="cafe-container">
-                    <div class="absolute inset-0 flex items-center justify-center font-black text-slate-400 text-[10px] uppercase tracking-widest">Phuket Aesthetic</div>
+            <div class="bg-slate-50 p-6 rounded-[3rem] shadow-sm opacity-60">
+                <div class="cafe-container bg-slate-200">
+                    <div class="absolute inset-0 flex items-center justify-center font-black text-slate-400 text-[10px] uppercase tracking-widest">Thailand Sips</div>
                 </div>
                 <div class="mt-6 px-2">
-                    <h3 class="font-black uppercase text-xl tracking-tight">Aesthetic Sips</h3>
-                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4">Old Town, Phuket</p>
-                    <a href="#" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Reel</a>
+                    <h3 class="font-black uppercase text-xl tracking-tight text-slate-400">Next Discovery</h3>
+                    <p class="text-slate-400 text-[9px] uppercase tracking-widest mt-1 mb-4">Thailand</p>
+                    <p class="text-slate-400 text-[11px] leading-relaxed mb-4 italic">Review dropping soon...</p>
                 </div>
             </div>
         </div>
@@ -62,18 +67,18 @@
 
 <script>
 /**
- * Cafe Filter Engine
+ * Cafe Filter Logic
  */
 function filterCafes(region) {
     const cards = document.querySelectorAll('.cafe-card');
     const buttons = document.querySelectorAll('.cafe-filter-btn');
     
-    // Update button UI
+    // Update Button UI
     buttons.forEach(btn => btn.classList.remove('active', 'text-black'));
     const targetBtn = document.getElementById('cbtn-' + region);
     if(targetBtn) targetBtn.classList.add('active', 'text-black');
 
-    // Filter Logic
+    // Filter Animation Logic
     cards.forEach(card => {
         if (region === 'all' || card.classList.contains(region)) {
             card.classList.remove('hidden');
