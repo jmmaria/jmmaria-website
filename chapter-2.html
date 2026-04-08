@@ -33,22 +33,22 @@
 
     <div class="max-w-7xl mx-auto mb-12 flex flex-wrap gap-6 text-[10px] font-black uppercase tracking-widest text-slate-400">
         <button onclick="filterHotels('all')" class="filter-btn active" id="btn-all">All Stays</button>
+        <button onclick="filterHotels('germany')" class="filter-btn" id="btn-germany">Germany</button>
         <button onclick="filterHotels('thailand')" class="filter-btn" id="btn-thailand">Thailand</button>
-        <button onclick="filterHotels('europe')" class="filter-btn" id="btn-europe">Europe</button>
         <button onclick="filterHotels('philippines')" class="filter-btn" id="btn-philippines">Philippines</button>
         <button onclick="filterHotels('usa')" class="filter-btn" id="btn-usa">USA</button>
     </div>
 
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" id="hotelGrid">
         
-        <div class="hotel-card europe group">
+        <div class="hotel-card germany group">
             <div class="video-container mb-5">
                 <iframe src="https://www.youtube.com/embed/-mgD_Reaazc?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
             </div>
             <div class="px-1">
                 <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Novotel Berlin Mitte</h3>
-                <a href="https://www.google.com/maps/search/?api=1&query=Novotel+Berlin+Mitte&query_place_id=ChIJR5kGoSdOqEcRCiB4N4CC5rw" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Berlin, Germany
+                <a href="https://www.google.com/maps/search/?api=1&query=Novotel+Berlin+Mitte" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
+                    <i class="fas fa-map-marker-alt mr-1"></i> Mitte, Berlin, Germany
                 </a>
                 <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Modern Mediterranean-inspired lodging in the heart of Berlin's historic center."</p>
                 <a href="https://youtu.be/-mgD_Reaazc" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
@@ -61,7 +61,7 @@
             </div>
             <div class="px-1">
                 <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Pimalai Resort & Spa</h3>
-                <a href="https://www.google.com/maps/search/?api=1&query=Pimalai+Resort+and+Spa&query_place_id=ChIJbWpjxeUCTjAROaX9ERTK_FA" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
+                <a href="https://www.google.com/maps/search/?api=1&query=Pimalai+Resort+and+Spa+Koh+Lanta" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
                     <i class="fas fa-map-marker-alt mr-1"></i> Koh Lanta, Thailand
                 </a>
                 <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A swanky cliffside getaway offering ultimate privacy and pristine beach access."</p>
@@ -71,29 +71,29 @@
 
         <div class="hotel-card thailand group">
             <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/yPpXDz1B5so?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/1ynft8XBS0s?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
             </div>
             <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">L'esprit de Nai Yang</h3>
-                <a href="https://maps.google.com/?cid=9043171204752377915&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Nai Yang, Phuket, Thailand
+                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Grand Kata VIP</h3>
+                <a href="https://www.google.com/maps/search/?api=1&query=Grand+Kata+VIP+Phuket" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
+                    <i class="fas fa-map-marker-alt mr-1"></i> Kata, Phuket, Thailand
                 </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A peaceful boutique retreat tucked away by the serene shores of Nai Yang."</p>
-                <a href="https://www.youtube.com/watch?v=yPpXDz1B5so" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
+                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Polished rooftop living and spacious apartments just steps from Kata Beach."</p>
+                <a href="https://youtu.be/1ynft8XBS0s" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
             </div>
         </div>
 
         <div class="hotel-card thailand group">
             <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/1ynft8XBS0s?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/6vmlIrOePIw?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
             </div>
             <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Grand Kata VIP</h3>
-                <a href="https://www.google.com/maps/search/?api=1&query=Grand+Kata&query_place_id=ChIJ8fl9IZslUDARqwOoclJ1ZU0" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Phuket, Thailand
+                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Cross Vibe Bangkok</h3>
+                <a href="https://www.google.com/maps/search/?api=1&query=Cross+Vibe+Bangkok+Sukhumvit" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
+                    <i class="fas fa-map-marker-alt mr-1"></i> Sukhumvit, Bangkok, Thailand
                 </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Polished rooftop living and spacious apartments just steps from Kata Beach."</p>
-                <a href="https://youtu.be/1ynft8XBS0s" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
+                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Hip, modern vibes in Sukhumvit featuring a signature outdoor pool and spa."</p>
+                <a href="https://youtu.be/6vmlIrOePIw" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
             </div>
         </div>
 
@@ -103,7 +103,7 @@
             </div>
             <div class="px-1">
                 <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Sea Seeker Krabi</h3>
-                <a href="https://maps.google.com/?cid=6112825962471920012&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
+                <a href="https://www.google.com/maps/search/?api=1&query=Sea+Seeker+Krabi+Resort" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
                     <i class="fas fa-map-marker-alt mr-1"></i> Ao Nang, Krabi, Thailand
                 </a>
                 <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Modern sanctuary in Ao Nang with cinematic mountain views."</p>
@@ -117,8 +117,8 @@
             </div>
             <div class="px-1">
                 <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">HIP Seaview Phi Phi</h3>
-                <a href="https://maps.google.com/?cid=1226413108270774036&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Long Beach, Phi Phi Islands, Thailand
+                <a href="https://www.google.com/maps/search/?api=1&query=HIP+Seaview+Resort+Phi+Phi" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
+                    <i class="fas fa-map-marker-alt mr-1"></i> Long Beach, Phi Phi, Thailand
                 </a>
                 <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Elevated island living with iconic panoramic ocean vistas."</p>
                 <a href="https://www.youtube.com/watch?v=S3ubr4hrB5I" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
@@ -127,15 +127,15 @@
 
         <div class="hotel-card thailand group">
             <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/6vmlIrOePIw?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/yPpXDz1B5so?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
             </div>
             <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Cross Vibe Bangkok</h3>
-                <a href="https://www.google.com/maps/search/?api=1&query=Cross+Vibe+Bangkok+Sukhumvit&query_place_id=ChIJjVwIb-uf4jARmom5v8GkVWo" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Bangkok, Thailand
+                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">L'esprit de Nai Yang</h3>
+                <a href="https://www.google.com/maps/search/?api=1&query=L'esprit+de+Nai+Yang+Phuket" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
+                    <i class="fas fa-map-marker-alt mr-1"></i> Nai Yang, Phuket, Thailand
                 </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Hip, modern vibes in Sukhumvit featuring a signature outdoor pool and spa."</p>
-                <a href="https://youtu.be/6vmlIrOePIw" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
+                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A peaceful boutique retreat tucked away by the serene shores of Nai Yang."</p>
+                <a href="https://www.youtube.com/watch?v=yPpXDz1B5so" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">Watch Review</a>
             </div>
         </div>
 
