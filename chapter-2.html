@@ -4,66 +4,59 @@
     .video-container { 
         position: relative; 
         padding-bottom: 56.25%; 
-        border-radius: 2.5rem; 
+        border-radius: 1.5rem; 
         overflow: hidden; 
         background: #000; 
-        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-        transition: transform 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
-    .video-container:hover { transform: scale(1.01); }
+    .hotel-card:hover .video-container { 
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    }
 </style>
 
 <div class="py-24 bg-slate-50 px-8">
     <div class="max-w-7xl mx-auto mb-16">
         <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">02 Hotels</span>
-        <h2 class="text-6xl font-black uppercase tracking-tighter">
+        <h2 class="text-5xl font-black uppercase tracking-tighter">
             The Stay <span style="font-family:'Playfair Display'; font-style:italic;" class="text-slate-300">List</span>
         </h2>
     </div>
 
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <div class="bg-white p-8 rounded-[3.5rem] shadow-sm flex flex-col justify-between">
-            <div>
-                <div class="video-container mb-8">
-                    <iframe 
-                        src="https://www.youtube.com/embed/aXV-8E-7As0?rel=0" 
-                        class="absolute inset-0 w-full h-full border-none" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <h3 class="font-black uppercase text-2xl mb-3 tracking-tight">Sea Seeker Krabi</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6 italic">
-                    "Modern sanctuary in Ao Nang with cinematic mountain views. A perfect home base for exploring the cliffs and islands of Krabi."
-                </p>
+        <div class="hotel-card group">
+            <div class="video-container mb-5">
+                <iframe src="https://www.youtube.com/embed/aXV-8E-7As0?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
             </div>
-            <div>
-                <a href="https://www.youtube.com/watch?v=aXV-8E-7As0" target="_blank" class="inline-block text-[9px] font-black border-b-2 border-black uppercase pb-1 hover:text-red-600 hover:border-red-600 transition-colors">
-                    Watch Full Review
-                </a>
+            <div class="px-1">
+                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Sea Seeker Krabi</h3>
+                <p class="text-slate-500 text-[11px] leading-relaxed mb-3 line-clamp-2">
+                    Modern sanctuary in Ao Nang with cinematic mountain views.
+                </p>
+                <a href="https://www.youtube.com/watch?v=aXV-8E-7As0" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 hover:border-red-600 transition">Watch Review</a>
             </div>
         </div>
 
-        <div class="bg-white p-8 rounded-[3.5rem] shadow-sm flex flex-col justify-between">
-            <div>
-                <div class="video-container mb-8">
-                    <iframe 
-                        src="https://www.youtube.com/embed/S3ubr4hrB5I?rel=0" 
-                        class="absolute inset-0 w-full h-full border-none" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <h3 class="font-black uppercase text-2xl mb-3 tracking-tight">Hip Seaview Phi Phi</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6 italic">
-                    "Elevated island living with panoramic ocean vistas. Capturing the raw beauty and turquoise waters of Phi Phi Don from above."
-                </p>
+        <div class="hotel-card group">
+            <div class="video-container mb-5">
+                <iframe src="https://www.youtube.com/embed/S3ubr4hrB5I?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
             </div>
-            <div>
-                <a href="https://www.youtube.com/watch?v=S3ubr4hrB5I" target="_blank" class="inline-block text-[9px] font-black border-b-2 border-black uppercase pb-1 hover:text-red-600 hover:border-red-600 transition-colors">
-                    Watch Full Review
-                </a>
+            <div class="px-1">
+                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Hip Seaview Phi Phi</h3>
+                <p class="text-slate-500 text-[11px] leading-relaxed mb-3 line-clamp-2">
+                    Elevated island living with panoramic ocean vistas.
+                </p>
+                <a href="https://www.youtube.com/watch?v=S3ubr4hrB5I" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 hover:border-red-600 transition">Watch Review</a>
+            </div>
+        </div>
+
+        <div class="hotel-card group">
+            <div class="video-container mb-5 bg-slate-200">
+                </div>
+            <div class="px-1">
+                <h3 class="font-black uppercase text-lg mb-1 tracking-tight text-slate-300">Next Stay</h3>
+                <p class="text-slate-400 text-[11px] leading-relaxed mb-3 italic">Coming soon...</p>
             </div>
         </div>
 
