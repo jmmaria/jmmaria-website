@@ -7,41 +7,71 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         iframe { width: 100%; border: none; display: block; }
-        
-        /* Signature Font Styling */
-        .signature-font {
-            font-family: 'Monsieur La Doulaise', cursive;
-            font-size: 42px; /* Large enough to feel like a real signature */
-            line-height: 1;
-            margin-left: -8px; /* Slight overlap with the circle for a natural look */
-            text-transform: none; /* Signatures shouldn't be all caps */
-            letter-spacing: 0;
+
+        /* SUGGESTION 1: THE MODERN MONOGRAM LOGO */
+        .signature-logo {
+            font-family: 'La Belle Aurore', cursive;
+            font-size: 32px;
             color: #000;
+            line-height: 1;
+            margin-left: 12px;
+            transition: all 0.4s ease;
+        }
+
+        .monogram-container {
+            display: flex;
+            items-center;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            cursor: default;
+        }
+
+        .jm-text {
+            font-weight: 900;
+            font-size: 18px;
+            letter-spacing: -1px;
+            color: #000;
+        }
+
+        .divider {
+            width: 1px;
+            height: 24px;
+            background-color: #e2e8f0; /* Soft slate separator */
+            margin: 0 12px;
+            transform: rotate(15deg); /* Subtle organic tilt */
+            transition: all 0.3s ease;
+        }
+
+        .nav-container:hover .divider {
+            background-color: #ef4444; /* Accelerator Red on hover */
+            transform: rotate(0deg);
         }
     </style>
 </head>
 <body class="bg-white">
 
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-20 flex items-center px-8 justify-between">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-20 flex items-center px-8 justify-between nav-container">
+        
         <div class="flex items-center">
-            <div class="w-[42px] h-[42px] bg-black rounded-full flex items-center justify-center shadow-lg relative z-10">
-                <span class="text-white text-[11px] font-black tracking-tighter">JM</span>
+            <div class="monogram-container items-center flex">
+                <span class="jm-text">JM</span>
+                <div class="divider"></div>
             </div>
-            
-            <div class="signature-font">Maria</div>
+            <div class="signature-logo">Maria</div>
         </div>
 
         <div class="hidden lg:flex space-x-6 text-[8px] font-bold uppercase tracking-[0.2em] text-slate-400">
-            <a href="#travel" class="hover:text-black">01 Archive</a>
-            <a href="#hotels" class="hover:text-black">02 Hotels</a>
-            <a href="#cafes" class="hover:text-black">03 Cafes</a>
-            <a href="#connect" class="hover:text-black">04 Connect</a>
-            <a href="#shop" class="hover:text-black">05 Shop</a>
+            <a href="#travel" class="hover:text-black transition-colors">01 Archive</a>
+            <a href="#hotels" class="hover:text-black transition-colors">02 Hotels</a>
+            <a href="#cafes" class="hover:text-black transition-colors">03 Cafes</a>
+            <a href="#connect" class="hover:text-black transition-colors">04 Connect</a>
+            <a href="#shop" class="hover:text-black transition-colors">05 Shop</a>
             <a href="#inquiries" class="text-red-600 font-black">06 Inquiries</a>
         </div>
         
