@@ -19,18 +19,15 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         iframe { width: 100%; border: none; display: block; }
 
-        /* SLANTED STACKED LOGO */
+        /* 1-LINE SIGNATURE LOGO */
         .logo-wrap {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Aligned left for precise stacking */
-            line-height: 0.65; /* Tighter overlap for the signature look */
-            padding: 10px 0;
+            align-items: baseline;
             text-decoration: none;
             cursor: pointer;
-            transform: rotate(-6deg);
+            transform: rotate(-4deg); /* Signature slant */
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            margin-left: 10px;
+            padding: 10px 0;
         }
 
         .logo-text {
@@ -39,24 +36,13 @@
             user-select: none;
             white-space: nowrap;
             transition: color 0.3s ease;
-        }
-
-        .text-jm {
-            font-size: 34px;
-            text-transform: none;
-            margin-bottom: -4px;
-        }
-
-        .text-maria {
-            font-size: 36px;
-            text-transform: none; /* Preserves Capital M */
-            /* This offset places the 'M' directly under the 'm' of Jm */
-            padding-left: 14px; 
+            font-size: 38px;
+            letter-spacing: -1px;
         }
 
         /* Hover Interaction */
         .nav-container:hover .logo-wrap {
-            transform: rotate(-3deg) scale(1.08);
+            transform: rotate(-2deg) scale(1.05);
         }
 
         .nav-container:hover .logo-text {
@@ -69,8 +55,7 @@
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-24 flex items-center px-8 justify-between nav-container">
         
         <a href="#" class="logo-wrap">
-            <span class="logo-text text-jm">Jm</span>
-            <span class="logo-text text-maria">Maria</span>
+            <span class="logo-text">Jm Maria</span>
         </a>
 
         <div class="hidden lg:flex space-x-8 text-[8px] font-bold uppercase tracking-[0.25em] text-slate-400">
