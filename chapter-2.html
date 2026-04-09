@@ -13,12 +13,16 @@
             overflow: hidden; background: #000;
         }
 
-        /* Responsive Grid / Swipe Logic */
-        .hotel-page { display: none; }
-        .hotel-page.active { display: grid; }
+        /* Desktop: 3x3 Grid */
+        #hotelGrid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 2.5rem;
+        }
 
+        /* Mobile: Horizontal Swipe */
         @media (max-width: 768px) {
-            .hotel-page.active {
+            #hotelGrid {
                 display: flex;
                 overflow-x: auto;
                 scroll-snap-type: x mandatory;
@@ -27,14 +31,15 @@
                 -webkit-overflow-scrolling: touch;
             }
             .hotel-card {
-                min-width: 85vw; /* Shows a peek of the next card */
+                min-width: 85vw;
                 scroll-snap-align: center;
             }
-            /* Hide scrollbar but keep functionality */
-            .hotel-page.active::-webkit-scrollbar { display: none; }
+            #hotelGrid::-webkit-scrollbar { display: none; }
+            .pagination-dots { display: none; } /* Dots usually not needed for free-swipe mobile */
         }
 
-        /* Pagination Dots */
+        .hotel-card.hidden { display: none; }
+        
         .dot { cursor: pointer; height: 6px; width: 6px; background-color: #cbd5e1; border-radius: 50%; display: inline-block; transition: all 0.3s ease; }
         .dot.active { background-color: #ef4444; width: 20px; border-radius: 10px; }
         
@@ -42,7 +47,7 @@
         .filter-btn.active { border-color: #ef4444; color: black; }
     </style>
 </head>
-<body class="bg-slate-50">
+<body class="bg-white">
 
 <div class="py-16 md:py-24 px-6 md:px-8">
     <div class="max-w-7xl mx-auto mb-8">
@@ -58,69 +63,81 @@
         <button onclick="filterHotels('thailand')" class="filter-btn" id="btn-thailand">Thailand</button>
     </div>
 
-    <div class="max-w-7xl mx-auto" id="pagedGrid">
+    <div class="max-w-7xl mx-auto" id="hotelGrid">
         
-        <div class="hotel-page active grid grid-cols-1 md:grid-cols-3 gap-10" id="page-1">
-            
-            <div class="hotel-card germany group">
-                <div class="video-container mb-4">
-                    <iframe src="https://www.youtube.com/embed/-mgD_Reaazc?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
-                </div>
-                <div class="px-1">
-                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Novotel Berlin Mitte</h3>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Novotel+Berlin+Mitte" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
-                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Berlin, Germany
-                    </a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Urban hospitality at the intersection of history and modern Berlin culture."</p>
-                    <a href="https://youtu.be/-mgD_Reaazc" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
-                </div>
+        <div class="hotel-card germany group">
+            <div class="video-container mb-4">
+                <iframe src="https://www.youtube.com/embed/-mgD_Reaazc?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
             </div>
-
-            <div class="hotel-card thailand group">
-                <div class="video-container mb-4">
-                    <iframe src="https://www.youtube.com/embed/YT2MyyZTuIk?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
-                </div>
-                <div class="px-1">
-                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Pimalai Resort & Spa</h3>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Pimalai+Resort+Krabi" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
-                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Koh Lanta, Thailand
-                    </a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A premier destination for luxury eco-tourism on Thailand's Andaman Coast."</p>
-                    <a href="https://youtu.be/YT2MyyZTuIk" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
-                </div>
+            <div class="px-1">
+                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Novotel Berlin Mitte</h3>
+                <a href="https://www.google.com/maps/search/Novotel+Berlin+Mitte" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
+                    <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Berlin, Germany
+                </a>
+                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Urban hospitality at the intersection of history and modern Berlin culture."</p>
+                <a href="https://youtu.be/-mgD_Reaazc" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
             </div>
+        </div>
 
-            <div class="hotel-card thailand group">
-                <div class="video-container mb-4">
-                    <iframe src="https://www.youtube.com/embed/1ynft8XBS0s?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
-                </div>
-                <div class="px-1">
-                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Grand Kata VIP</h3>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Grand+Kata+VIP+Phuket" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
-                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Phuket, Thailand
-                    </a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Contemporary rooftop living showcasing Phuket's coastal lifestyle."</p>
-                    <a href="https://youtu.be/1ynft8XBS0s" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
-                </div>
+        <div class="hotel-card thailand group">
+            <div class="video-container mb-4">
+                <iframe src="https://www.youtube.com/embed/YT2MyyZTuIk?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
             </div>
+            <div class="px-1">
+                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Pimalai Resort & Spa</h3>
+                <a href="https://www.google.com/maps/search/Pimalai+Resort+and+Spa" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
+                    <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Koh Lanta, Thailand
+                </a>
+                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A premier destination for luxury eco-tourism on Thailand's Andaman Coast."</p>
+                <a href="https://youtu.be/YT2MyyZTuIk" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+            </div>
+        </div>
 
-        </div> </div>
+        <div class="hotel-card thailand group">
+            <div class="video-container mb-4">
+                <iframe src="https://www.youtube.com/embed/1ynft8XBS0s?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
+            </div>
+            <div class="px-1">
+                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Grand Kata VIP</h3>
+                <a href="https://www.google.com/maps/search/Grand+Kata+VIP+Phuket" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
+                    <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Phuket, Thailand
+                </a>
+                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Contemporary rooftop living showcasing Phuket's coastal lifestyle."</p>
+                <a href="https://youtu.be/1ynft8XBS0s" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+            </div>
+        </div>
 
-    <div class="max-w-7xl mx-auto mt-12 flex justify-center items-center gap-4">
-        <span class="dot active" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-12 hidden md:flex justify-center items-center gap-4 pagination-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </div>
 </div>
 
 <script>
-    function currentSlide(n) {
-        let pages = document.getElementsByClassName("hotel-page");
-        let dots = document.getElementsByClassName("dot");
-        for (let i = 0; i < pages.length; i++) { pages[i].classList.remove("active"); }
-        for (let i = 0; i < dots.length; i++) { dots[i].classList.remove("active"); }
-        pages[n-1].classList.add("active");
-        dots[n-1].classList.add("active");
+    function filterHotels(category) {
+        const cards = document.querySelectorAll('.hotel-card');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        // Update Button States
+        buttons.forEach(btn => {
+            btn.classList.remove('active', 'text-black');
+        });
+        document.getElementById('btn-' + category).classList.add('active', 'text-black');
+
+        // Filter Cards
+        cards.forEach(card => {
+            if (category === 'all' || card.classList.contains(category)) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+
+        // Reset mobile scroll position to start after filtering
+        document.getElementById('hotelGrid').scrollLeft = 0;
     }
 </script>
 
