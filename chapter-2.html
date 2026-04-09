@@ -13,19 +13,15 @@
             overflow: hidden; background: #000;
         }
 
-        /* Pagination Display Logic */
+        /* Desktop: Fixed 3x3 Grid */
         .hotel-page { display: none; }
-        .hotel-page.active { display: grid; }
-
-        /* Desktop Grid: Fixed 3x3 */
-        @media (min-width: 769px) {
-            .hotel-page.active {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2.5rem;
-            }
+        .hotel-page.active { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 2.5rem; 
         }
 
-        /* Mobile Swipe: Horizontal 1x1 */
+        /* Mobile: Horizontal Swipe */
         @media (max-width: 768px) {
             .hotel-page.active {
                 display: flex;
@@ -47,7 +43,6 @@
         .filter-btn { transition: 0.3s; border-bottom: 2px solid transparent; cursor: pointer; }
         .filter-btn.active { border-color: #ef4444; color: black; font-weight: 900; }
         
-        /* Hide cards that don't match filter */
         .hotel-card.hidden-by-filter { display: none !important; }
     </style>
 </head>
@@ -65,22 +60,22 @@
         <button onclick="filterHotels('all')" class="filter-btn active" id="btn-all">All Stays</button>
         <button onclick="filterHotels('germany')" class="filter-btn" id="btn-germany">Germany</button>
         <button onclick="filterHotels('thailand')" class="filter-btn" id="btn-thailand">Thailand</button>
-        <button onclick="filterHotels('uae')" class="filter-btn" id="btn-uae">UAE</button>
     </div>
 
     <div class="max-w-7xl mx-auto" id="mainGridContainer">
         
         <div class="hotel-page active" id="page-1">
+            
             <div class="hotel-card germany group">
                 <div class="video-container mb-4">
                     <iframe src="https://www.youtube.com/embed/-mgD_Reaazc?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Novotel Berlin Mitte</h3>
-                    <a href="https://www.google.com/maps/search/Novotel+Berlin+Mitte" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500">
+                    <a href="https://www.google.com/maps/search/Novotel+Berlin+Mitte" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
                         <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Berlin, Germany
                     </a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Urban hospitality at the intersection of history and modern Berlin culture."</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">Urban hospitality at the intersection of history and modern Berlin culture.</p>
                     <a href="https://youtu.be/-mgD_Reaazc" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
                 </div>
             </div>
@@ -91,10 +86,10 @@
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Pimalai Resort & Spa</h3>
-                    <a href="https://www.google.com/maps/search/Pimalai+Resort+and+Spa" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2">
+                    <a href="https://www.google.com/maps/search/Pimalai+Resort+and+Spa" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
                         <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Koh Lanta, Thailand
                     </a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A premier destination for luxury eco-tourism on Thailand's Andaman Coast."</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">A premier destination for luxury eco-tourism on the Andaman Coast.</p>
                     <a href="https://youtu.be/YT2MyyZTuIk" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
                 </div>
             </div>
@@ -108,23 +103,81 @@
                     <a href="https://www.google.com/maps/search/Grand+Kata+VIP+Phuket" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2">
                         <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Phuket, Thailand
                     </a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Contemporary rooftop living showcasing Phuket's coastal lifestyle."</p>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">Contemporary rooftop living showcasing Phuket's coastal lifestyle.</p>
                     <a href="https://youtu.be/1ynft8XBS0s" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
                 </div>
             </div>
-            
-            </div>
 
-        <div class="hotel-page" id="page-2">
-            <div class="hotel-card uae group">
+            <div class="hotel-card thailand group">
                 <div class="video-container mb-4">
-                    <div class="absolute inset-0 bg-slate-100 flex items-center justify-center text-[10px] text-slate-400 font-bold uppercase tracking-widest">Upcoming Content</div>
+                    <iframe src="https://www.youtube.com/embed/z9C9R_e8G_o?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
                 </div>
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Address Downtown</h3>
-                <a href="#" class="text-slate-400 text-[9px] uppercase tracking-tight">Dubai, UAE</a>
+                <div class="px-1">
+                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Wyndham Grand Kalim</h3>
+                    <a href="https://www.google.com/maps/search/Wyndham+Grand+Phuket+Kalim+Bay" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2">
+                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Phuket, Thailand
+                    </a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">Stunning cliffside villas with panoramic views of the Andaman Sea.</p>
+                    <a href="https://youtu.be/z9C9R_e8G_o" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+                </div>
             </div>
-        </div>
 
+            <div class="hotel-card thailand group">
+                <div class="video-container mb-4">
+                    <iframe src="https://www.youtube.com/embed/yW_8o8G7j_c?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
+                </div>
+                <div class="px-1">
+                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Cassia Phuket</h3>
+                    <a href="https://www.google.com/maps/search/Cassia+Phuket" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2">
+                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Phuket, Thailand
+                    </a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">A vibrant, social apartment-style stay in the heart of Laguna.</p>
+                    <a href="https://youtu.be/yW_8o8G7j_c" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+                </div>
+            </div>
+
+            <div class="hotel-card thailand group">
+                <div class="video-container mb-4">
+                    <iframe src="https://www.youtube.com/embed/L_S84k7j7uY?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
+                </div>
+                <div class="px-1">
+                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Homm Bliss Southbeach</h3>
+                    <a href="https://www.google.com/maps/search/Homm+Bliss+Southbeach+Patong" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2">
+                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Patong, Thailand
+                    </a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">Chic seaside simplicity on the quiet end of Patong Beach.</p>
+                    <a href="https://youtu.be/L_S84k7j7uY" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+                </div>
+            </div>
+
+            <div class="hotel-card thailand group">
+                <div class="video-container mb-4">
+                    <iframe src="https://www.youtube.com/embed/W_3yE3dFqsc?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
+                </div>
+                <div class="px-1">
+                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight">NH Boat Lagoon</h3>
+                    <a href="https://www.google.com/maps/search/NH+Boat+Lagoon+Phuket+Resort" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2">
+                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Phuket, Thailand
+                    </a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">Phuket's first marina resort, perfect for nautical enthusiasts.</p>
+                    <a href="https://youtu.be/W_3yE3dFqsc" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+                </div>
+            </div>
+
+            <div class="hotel-card germany group">
+                <div class="video-container mb-4">
+                    <div class="absolute inset-0 bg-slate-100 flex items-center justify-center text-[10px] text-slate-400 font-bold uppercase tracking-widest">Berlin Stay 02</div>
+                </div>
+                <div class="px-1">
+                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Grand Hyatt Berlin</h3>
+                    <a href="https://www.google.com/maps/search/Grand+Hyatt+Berlin" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2">
+                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Berlin, Germany
+                    </a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">Sophisticated luxury at Potsdamer Platz.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <div class="max-w-7xl mx-auto mt-16 flex justify-center items-center gap-4">
@@ -135,11 +188,9 @@
 </div>
 
 <script>
-    // 1. Page Navigation Logic
     function goToPage(pageNum) {
         const pages = document.querySelectorAll('.hotel-page');
         const dots = document.querySelectorAll('.dot');
-        
         pages.forEach(p => p.classList.remove('active'));
         dots.forEach(d => d.classList.remove('active'));
         
@@ -148,21 +199,15 @@
             targetPage.classList.add('active');
             document.getElementById('dot-' + pageNum).classList.add('active');
         }
-        
-        // Smooth scroll back to section header on mobile
         document.getElementById('mainGridContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // 2. Global Filter Logic (Fixed so hotels don't disappear)
     function filterHotels(country) {
         const cards = document.querySelectorAll('.hotel-card');
         const buttons = document.querySelectorAll('.filter-btn');
-
-        // Update active button state
         buttons.forEach(btn => btn.classList.remove('active', 'text-black'));
         document.getElementById('btn-' + country).classList.add('active', 'text-black');
 
-        // Filter all cards across ALL pages
         cards.forEach(card => {
             if (country === 'all' || card.classList.contains(country)) {
                 card.classList.remove('hidden-by-filter');
@@ -170,8 +215,6 @@
                 card.classList.add('hidden-by-filter');
             }
         });
-        
-        // Jump back to Page 1 so results are visible immediately
         goToPage(1);
     }
 </script>
