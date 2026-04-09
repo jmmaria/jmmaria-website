@@ -9,89 +9,104 @@
 
     <style>
         .video-container { 
-            position: relative; padding-bottom: 56.25%; border-radius: 1.5rem; 
-            overflow: hidden; background: #000; transition: all 0.4s ease;
-        }
-        /* Pagination Logic */
-        .hotel-page { display: none; }
-        .hotel-page.active { display: grid; animation: fadeIn 0.6s ease forwards; }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
+            position: relative; padding-bottom: 56.25%; border-radius: 2rem; 
+            overflow: hidden; background: #000;
         }
 
-        .dot { cursor: pointer; height: 8px; width: 8px; background-color: #cbd5e1; border-radius: 50%; display: inline-block; transition: all 0.3s ease; }
-        .dot.active { background-color: #ef4444; width: 24px; border-radius: 4px; }
+        /* Responsive Grid / Swipe Logic */
+        .hotel-page { display: none; }
+        .hotel-page.active { display: grid; }
+
+        @media (max-width: 768px) {
+            .hotel-page.active {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 1.5rem;
+                padding-bottom: 2rem;
+                -webkit-overflow-scrolling: touch;
+            }
+            .hotel-card {
+                min-width: 85vw; /* Shows a peek of the next card */
+                scroll-snap-align: center;
+            }
+            /* Hide scrollbar but keep functionality */
+            .hotel-page.active::-webkit-scrollbar { display: none; }
+        }
+
+        /* Pagination Dots */
+        .dot { cursor: pointer; height: 6px; width: 6px; background-color: #cbd5e1; border-radius: 50%; display: inline-block; transition: all 0.3s ease; }
+        .dot.active { background-color: #ef4444; width: 20px; border-radius: 10px; }
         
         .filter-btn { transition: all 0.3s ease; border-bottom: 2px solid transparent; cursor: pointer; }
         .filter-btn.active { border-color: #ef4444; color: black; }
-        
-        .hotel-card:hover .video-container { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
 <body class="bg-slate-50">
 
-<div class="py-24 px-8">
-    <div class="max-w-7xl mx-auto mb-8 text-left">
+<div class="py-16 md:py-24 px-6 md:px-8">
+    <div class="max-w-7xl mx-auto mb-8">
         <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">02 Hotels</span>
-        <h2 class="text-5xl font-black uppercase tracking-tighter leading-none">
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
             The Stay <span style="font-family:'Playfair Display'; font-style:italic;" class="text-slate-300">List</span>
         </h2>
     </div>
 
-    <div class="max-w-7xl mx-auto mb-12 flex flex-wrap gap-6 text-[10px] font-black uppercase tracking-widest text-slate-400">
+    <div class="max-w-7xl mx-auto mb-10 flex flex-wrap gap-6 text-[10px] font-black uppercase tracking-widest text-slate-400">
         <button onclick="filterHotels('all')" class="filter-btn active" id="btn-all">All Stays</button>
         <button onclick="filterHotels('germany')" class="filter-btn" id="btn-germany">Germany</button>
         <button onclick="filterHotels('thailand')" class="filter-btn" id="btn-thailand">Thailand</button>
-        <button onclick="filterHotels('philippines')" class="filter-btn" id="btn-philippines">Philippines</button>
     </div>
 
     <div class="max-w-7xl mx-auto" id="pagedGrid">
         
-        <div class="hotel-page active grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" id="page-1">
+        <div class="hotel-page active grid grid-cols-1 md:grid-cols-3 gap-10" id="page-1">
             
             <div class="hotel-card germany group">
-                <div class="video-container mb-5">
+                <div class="video-container mb-4">
                     <iframe src="https://www.youtube.com/embed/-mgD_Reaazc?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Novotel Berlin Mitte</h3>
-                    <a href="#" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2"><i class="fas fa-map-marker-alt mr-1"></i> Berlin, Germany</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Novotel+Berlin+Mitte" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
+                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Berlin, Germany
+                    </a>
                     <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Urban hospitality at the intersection of history and modern Berlin culture."</p>
-                    <a href="#" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+                    <a href="https://youtu.be/-mgD_Reaazc" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
                 </div>
             </div>
 
             <div class="hotel-card thailand group">
-                <div class="video-container mb-5">
+                <div class="video-container mb-4">
                     <iframe src="https://www.youtube.com/embed/YT2MyyZTuIk?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Pimalai Resort & Spa</h3>
-                    <a href="#" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2"><i class="fas fa-map-marker-alt mr-1"></i> Koh Lanta, Thailand</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Pimalai+Resort+Krabi" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
+                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Koh Lanta, Thailand
+                    </a>
                     <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A premier destination for luxury eco-tourism on Thailand's Andaman Coast."</p>
-                    <a href="#" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+                    <a href="https://youtu.be/YT2MyyZTuIk" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
                 </div>
             </div>
 
-            </div>
-
-        <div class="hotel-page grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" id="page-2">
-            <div class="hotel-card philippines group">
-                <div class="video-container mb-5">
-                    <div class="absolute inset-0 bg-slate-200 flex items-center justify-center text-slate-400 text-[10px] font-bold uppercase tracking-widest">Upcoming Content</div>
+            <div class="hotel-card thailand group">
+                <div class="video-container mb-4">
+                    <iframe src="https://www.youtube.com/embed/1ynft8XBS0s?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
                 </div>
                 <div class="px-1">
-                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Cebu Luxury Stay</h3>
-                    <a href="#" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2"><i class="fas fa-map-marker-alt mr-1"></i> Cebu, Philippines</a>
-                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic">Showcasing the archipelago's finest coastal hospitality.</p>
+                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Grand Kata VIP</h3>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Grand+Kata+VIP+Phuket" target="_blank" class="flex items-center text-slate-400 text-[9px] uppercase tracking-tight mb-2 hover:text-red-500 transition">
+                        <i class="fas fa-map-marker-alt mr-1.5 text-red-400"></i> Phuket, Thailand
+                    </a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Contemporary rooftop living showcasing Phuket's coastal lifestyle."</p>
+                    <a href="https://youtu.be/1ynft8XBS0s" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="max-w-7xl mx-auto mt-16 flex justify-center gap-3">
+        </div> </div>
+
+    <div class="max-w-7xl mx-auto mt-12 flex justify-center items-center gap-4">
         <span class="dot active" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
@@ -99,40 +114,13 @@
 </div>
 
 <script>
-    let currentActivePage = 1;
-
     function currentSlide(n) {
-        showPage(currentActivePage = n);
-    }
-
-    function showPage(n) {
         let pages = document.getElementsByClassName("hotel-page");
         let dots = document.getElementsByClassName("dot");
-        
-        if (n > pages.length) {currentActivePage = 1}
-        if (n < 1) {currentActivePage = pages.length}
-        
-        for (let i = 0; i < pages.length; i++) {
-            pages[i].classList.remove("active");
-        }
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        
-        pages[currentActivePage-1].classList.add("active");
-        dots[currentActivePage-1].className += " active";
-    }
-
-    // Filter Logic integrated with Paging
-    function filterHotels(country) {
-        const buttons = document.querySelectorAll('.filter-btn');
-        buttons.forEach(btn => btn.classList.remove('active', 'text-black'));
-        const targetBtn = document.getElementById('btn-' + country);
-        if(targetBtn) targetBtn.classList.add('active', 'text-black');
-
-        // Note: For a true pitch deck, you would likely disable pagination 
-        // when a filter is active to show all matches on one screen, 
-        // or re-paginate based on the filter results.
+        for (let i = 0; i < pages.length; i++) { pages[i].classList.remove("active"); }
+        for (let i = 0; i < dots.length; i++) { dots[i].classList.remove("active"); }
+        pages[n-1].classList.add("active");
+        dots[n-1].classList.add("active");
     }
 </script>
 
