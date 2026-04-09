@@ -12,8 +12,17 @@
             position: relative; padding-bottom: 56.25%; border-radius: 1.5rem; 
             overflow: hidden; background: #000; transition: all 0.4s ease;
         }
-        .hotel-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); opacity: 1; transform: scale(1); }
-        .hotel-card.hidden { display: none; opacity: 0; transform: scale(0.95); }
+        /* Pagination Logic */
+        .hotel-page { display: none; }
+        .hotel-page.active { display: grid; animation: fadeIn 0.6s ease forwards; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .dot { cursor: pointer; height: 8px; width: 8px; background-color: #cbd5e1; border-radius: 50%; display: inline-block; transition: all 0.3s ease; }
+        .dot.active { background-color: #ef4444; width: 24px; border-radius: 4px; }
         
         .filter-btn { transition: all 0.3s ease; border-bottom: 2px solid transparent; cursor: pointer; }
         .filter-btn.active { border-color: #ef4444; color: black; }
@@ -36,137 +45,95 @@
         <button onclick="filterHotels('germany')" class="filter-btn" id="btn-germany">Germany</button>
         <button onclick="filterHotels('thailand')" class="filter-btn" id="btn-thailand">Thailand</button>
         <button onclick="filterHotels('philippines')" class="filter-btn" id="btn-philippines">Philippines</button>
-        <button onclick="filterHotels('usa')" class="filter-btn" id="btn-usa">USA</button>
     </div>
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" id="hotelGrid">
+    <div class="max-w-7xl mx-auto" id="pagedGrid">
         
-        <div class="hotel-card germany group">
-            <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/-mgD_Reaazc?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
+        <div class="hotel-page active grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" id="page-1">
+            
+            <div class="hotel-card germany group">
+                <div class="video-container mb-5">
+                    <iframe src="https://www.youtube.com/embed/-mgD_Reaazc?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
+                </div>
+                <div class="px-1">
+                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Novotel Berlin Mitte</h3>
+                    <a href="#" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2"><i class="fas fa-map-marker-alt mr-1"></i> Berlin, Germany</a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Urban hospitality at the intersection of history and modern Berlin culture."</p>
+                    <a href="#" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+                </div>
             </div>
-            <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Novotel Berlin Mitte</h3>
-                <a href="https://maps.app.goo.gl/35m5v9S5XF18L1yW6" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Mitte, Berlin, Germany
-                </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Urban hospitality at the intersection of history and modern Berlin culture."</p>
-                <a href="https://youtu.be/-mgD_Reaazc" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Curation</a>
+
+            <div class="hotel-card thailand group">
+                <div class="video-container mb-5">
+                    <iframe src="https://www.youtube.com/embed/YT2MyyZTuIk?rel=0" class="absolute inset-0 w-full h-full border-none"></iframe>
+                </div>
+                <div class="px-1">
+                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Pimalai Resort & Spa</h3>
+                    <a href="#" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2"><i class="fas fa-map-marker-alt mr-1"></i> Koh Lanta, Thailand</a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A premier destination for luxury eco-tourism on Thailand's Andaman Coast."</p>
+                    <a href="#" class="text-[9px] font-black border-b border-black uppercase pb-0.5">View Curation</a>
+                </div>
+            </div>
+
+            </div>
+
+        <div class="hotel-page grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" id="page-2">
+            <div class="hotel-card philippines group">
+                <div class="video-container mb-5">
+                    <div class="absolute inset-0 bg-slate-200 flex items-center justify-center text-slate-400 text-[10px] font-bold uppercase tracking-widest">Upcoming Content</div>
+                </div>
+                <div class="px-1">
+                    <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Cebu Luxury Stay</h3>
+                    <a href="#" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2"><i class="fas fa-map-marker-alt mr-1"></i> Cebu, Philippines</a>
+                    <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic">Showcasing the archipelago's finest coastal hospitality.</p>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="hotel-card thailand group">
-            <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/YT2MyyZTuIk?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
-            </div>
-            <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Pimalai Resort & Spa</h3>
-                <a href="https://maps.app.goo.gl/Yy25p9xM6uK9L1yW6" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Koh Lanta, Krabi, Thailand
-                </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"A premier destination for luxury eco-tourism on Thailand's Andaman Coast."</p>
-                <a href="https://youtu.be/YT2MyyZTuIk" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Curation</a>
-            </div>
-        </div>
-
-        <div class="hotel-card thailand group">
-            <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/1ynft8XBS0s?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
-            </div>
-            <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Grand Kata VIP</h3>
-                <a href="https://maps.app.goo.gl/7qK8WzW5WjY5L1yW6" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Kata Beach, Phuket, Thailand
-                </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Contemporary rooftop living showcasing Phuket's coastal lifestyle."</p>
-                <a href="https://youtu.be/1ynft8XBS0s" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Curation</a>
-            </div>
-        </div>
-
-        <div class="hotel-card thailand group">
-            <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/6vmlIrOePIw?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
-            </div>
-            <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Cross Vibe Bangkok</h3>
-                <a href="https://maps.app.goo.gl/3fD5rWzW9jR5L1yW6" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Sukhumvit, Bangkok, Thailand
-                </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Vibrant design and urban energy in Bangkok’s most dynamic district."</p>
-                <a href="https://youtu.be/6vmlIrOePIw" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Curation</a>
-            </div>
-        </div>
-
-        <div class="hotel-card thailand group">
-            <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/aXV-8E-7As0?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
-            </div>
-            <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">Sea Seeker Krabi</h3>
-                <a href="https://maps.app.goo.gl/2fE9wZ9W7jK5L1yW6" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Ao Nang, Krabi, Thailand
-                </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Elevated resort experiences overlooking the limestone karsts of Krabi."</p>
-                <a href="https://www.youtube.com/watch?v=aXV-8E-7As0" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Curation</a>
-            </div>
-        </div>
-
-        <div class="hotel-card thailand group">
-            <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/S3ubr4hrB5I?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
-            </div>
-            <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">HIP Seaview Phi Phi</h3>
-                <a href="https://maps.app.goo.gl/9fX5rWzW1jH5L1yW6" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Long Beach, Phi Phi Islands, Thailand
-                </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Capturing the essence of secluded island luxury and panoramic vistas."</p>
-                <a href="https://www.youtube.com/watch?v=S3ubr4hrB5I" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Curation</a>
-            </div>
-        </div>
-
-        <div class="hotel-card thailand group">
-            <div class="video-container mb-5">
-                <iframe src="https://www.youtube.com/embed/yPpXDz1B5so?rel=0" class="absolute inset-0 w-full h-full border-none" allowfullscreen></iframe>
-            </div>
-            <div class="px-1">
-                <h3 class="font-black uppercase text-lg mb-1 tracking-tight group-hover:text-red-600 transition">L'esprit de Nai Yang</h3>
-                <a href="https://maps.app.goo.gl/1fW5rWzW3jU5L1yW6" target="_blank" class="text-slate-400 text-[9px] uppercase tracking-tight block mb-2 hover:text-red-500 transition">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Nai Yang, Phuket, Thailand
-                </a>
-                <p class="text-slate-500 text-[11px] leading-relaxed mb-4 italic line-clamp-2">"Boutique privacy and serene beachside living on Phuket's northern shore."</p>
-                <a href="https://www.youtube.com/watch?v=yPpXDz1B5so" target="_blank" class="text-[9px] font-black border-b border-black uppercase pb-0.5 hover:text-red-600 transition">View Curation</a>
-            </div>
-        </div>
-
+    <div class="max-w-7xl mx-auto mt-16 flex justify-center gap-3">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 </div>
 
 <script>
-function filterHotels(country) {
-    const cards = document.querySelectorAll('.hotel-card');
-    const buttons = document.querySelectorAll('.filter-btn');
-    
-    buttons.forEach(btn => btn.classList.remove('active', 'text-black'));
-    const targetBtn = document.getElementById('btn-' + country);
-    if(targetBtn) targetBtn.classList.add('active', 'text-black');
+    let currentActivePage = 1;
 
-    cards.forEach(card => {
-        if (country === 'all' || card.classList.contains(country)) {
-            card.classList.remove('hidden');
-            setTimeout(() => { 
-                card.style.opacity = "1"; 
-                card.style.transform = "scale(1)"; 
-            }, 50);
-        } else {
-            card.style.opacity = "0";
-            card.style.transform = "scale(0.95)";
-            setTimeout(() => { 
-                card.classList.add('hidden'); 
-            }, 400);
+    function currentSlide(n) {
+        showPage(currentActivePage = n);
+    }
+
+    function showPage(n) {
+        let pages = document.getElementsByClassName("hotel-page");
+        let dots = document.getElementsByClassName("dot");
+        
+        if (n > pages.length) {currentActivePage = 1}
+        if (n < 1) {currentActivePage = pages.length}
+        
+        for (let i = 0; i < pages.length; i++) {
+            pages[i].classList.remove("active");
         }
-    });
-}
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        
+        pages[currentActivePage-1].classList.add("active");
+        dots[currentActivePage-1].className += " active";
+    }
+
+    // Filter Logic integrated with Paging
+    function filterHotels(country) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active', 'text-black'));
+        const targetBtn = document.getElementById('btn-' + country);
+        if(targetBtn) targetBtn.classList.add('active', 'text-black');
+
+        // Note: For a true pitch deck, you would likely disable pagination 
+        // when a filter is active to show all matches on one screen, 
+        // or re-paginate based on the filter results.
+    }
 </script>
 
 </body>
