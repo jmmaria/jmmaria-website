@@ -393,13 +393,12 @@
 <!-- ══════════════════════════════════════
      BUY ME A COFFEE
      ──────────────────────────────────────
-     SETUP (5 minutes):
-     1. Go to buymeacoffee.com → sign up
-     2. Pick your page URL, e.g. buymeacoffee.com/jmmaria
-     3. Find all 4 instances of itsjmmaria below
-        and replace with your actual username
-     4. Optional: paste the BMC floating widget script
-        in the slot at the bottom of this section
+     ⚠️  ACTION NEEDED — 3 steps:
+     1. Go to buymeacoffee.com and sign up
+     2. When asked for your page URL, type: itsjmmaria
+     3. That's it — all 4 links below already point
+        to buymeacoffee.com/itsjmmaria and will work
+        the moment your account is live.
 ══════════════════════════════════════ -->
 <section id="support" class="py-24 px-8">
     <div class="max-w-7xl mx-auto">
@@ -437,7 +436,7 @@
                     </div>
 
                     <!-- ↓ REPLACE "itsjmmaria" with your actual username (instance 1 of 4) -->
-                    <a href="https://buymeacoffee.com/itsjmmaria" target="_blank"
+                    <a href="https://buymeacoffee.com/itsjmmaria" data-bmc="pending" target="_blank"
                        style="display:inline-flex;align-items:center;gap:10px;background:#FFDD00;color:#000;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;padding:18px 32px;border-radius:100px;text-decoration:none;transition:transform 0.2s ease;"
                        onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
                         <span style="font-size:20px;line-height:1;">☕</span>
@@ -449,7 +448,7 @@
                 <div class="space-y-4">
 
                     <!-- ↓ REPLACE "itsjmmaria" — instance 2 of 4 -->
-                    <a href="https://buymeacoffee.com/itsjmmaria" target="_blank" class="bmc-tier">
+                    <a href="https://buymeacoffee.com/itsjmmaria" data-bmc="pending" target="_blank" class="bmc-tier">
                         <div class="flex items-center justify-between mb-3">
                             <div class="flex items-center gap-3">
                                 <span style="font-size:22px;line-height:1;">☕</span>
@@ -464,7 +463,7 @@
                     </a>
 
                     <!-- ↓ REPLACE "itsjmmaria" — instance 3 of 4 -->
-                    <a href="https://buymeacoffee.com/itsjmmaria" target="_blank" class="bmc-tier featured">
+                    <a href="https://buymeacoffee.com/itsjmmaria" data-bmc="pending" target="_blank" class="bmc-tier featured">
                         <div class="flex items-center justify-between mb-3">
                             <div class="flex items-center gap-3">
                                 <span style="font-size:22px;line-height:1;">✈️</span>
@@ -479,7 +478,7 @@
                     </a>
 
                     <!-- ↓ REPLACE "itsjmmaria" — instance 4 of 4 -->
-                    <a href="https://buymeacoffee.com/itsjmmaria" target="_blank" class="bmc-tier">
+                    <a href="https://buymeacoffee.com/itsjmmaria" data-bmc="pending" target="_blank" class="bmc-tier">
                         <div class="flex items-center justify-between mb-3">
                             <div class="flex items-center gap-3">
                                 <span style="font-size:22px;line-height:1;">🎬</span>
@@ -504,6 +503,29 @@
                  │  2. Copy the <script> tag                              │
                  │  3. Paste it between the arrows below                   │
                  └─────────────────────────────────────────────────────────┘ -->
+
+            <!-- ════════════════════════════════════════════════════════
+                 ⚠️  REMOVE THIS BLOCK once buymeacoffee.com/itsjmmaria
+                 is live — it shows a "coming soon" notice to visitors
+                 ════════════════════════════════════════════════════════ -->
+            <div id="bmc-pending-notice" class="mt-8 mb-4 text-center">
+                <p class="text-slate-600 text-[10px] font-black uppercase tracking-[0.3em]">
+                    ☕ Support page launching soon at buymeacoffee.com/itsjmmaria
+                </p>
+            </div>
+            <script>
+                /* Intercept BMC clicks until account is live.
+                   DELETE this <script> block once your BMC page is created. */
+                document.querySelectorAll('[data-bmc="pending"]').forEach(function(a) {
+                    a.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.open('https://buymeacoffee.com', '_blank');
+                    });
+                });
+            </script>
+            <!-- ════════════════════════════════════════════════════════
+                 END REMOVE BLOCK
+                 ════════════════════════════════════════════════════════ -->
 
             <!-- ↓↓↓  PASTE BMC FLOATING WIDGET SCRIPT HERE (optional)  ↓↓↓ -->
 
