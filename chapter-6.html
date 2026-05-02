@@ -1,27 +1,93 @@
-<script src="https://cdn.tailwindcss.com"></script>
-<div class="py-32 bg-slate-50 px-8 grid lg:grid-cols-2 gap-20">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #faf9f6; margin: 0; }
+        input, select, textarea {
+            width: 100%; background: #fff;
+            border: 1.5px solid #e2e8f0; border-radius: 1rem;
+            padding: 18px 22px; font-size: 13px; font-weight: 700;
+            font-family: 'Inter', sans-serif; color: #000; outline: none;
+            transition: border-color 0.2s ease;
+            -webkit-appearance: none;
+        }
+        input:focus, select:focus, textarea:focus { border-color: #000; }
+        input::placeholder, textarea::placeholder { color: #94a3b8; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<div class="py-24 px-8 grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+
     <div>
-        <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-4 block">Work With JM</span>
-        <h2 class="text-8xl font-black tracking-tighter uppercase leading-[0.85] mb-12">What I Offer.</h2>
-        <div class="space-y-8">
-            <div><h4 class="font-black uppercase text-xl">UGC Content Production</h4><p class="text-slate-500 text-sm">High-energy assets for TikTok and Reels.</p></div>
-            <div><h4 class="font-black uppercase text-xl">Hotel Features</h4><p class="text-slate-500 text-sm">Cinematic storytelling for hospitality brands.</p></div>
+        <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.5em] mb-4 block">06 Work With JM</span>
+        <h2 class="text-7xl font-black tracking-tighter uppercase leading-[0.85] mb-8">Let's<br>Create.</h2>
+
+        <div class="space-y-6 mb-10">
+            <div class="flex gap-4 items-start">
+                <div style="width:36px;height:36px;border-radius:50%;background:#000;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <span style="color:#fff;font-size:14px;">🎬</span>
+                </div>
+                <div>
+                    <h4 class="font-black uppercase text-base tracking-tight">UGC Content Production</h4>
+                    <p class="text-slate-500 text-sm mt-0.5">High-energy short-form assets for TikTok and Reels — filmed, edited, and delivered with full usage rights.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 items-start">
+                <div style="width:36px;height:36px;border-radius:50%;background:#000;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <span style="color:#fff;font-size:14px;">🏨</span>
+                </div>
+                <div>
+                    <h4 class="font-black uppercase text-base tracking-tight">Hotel Features</h4>
+                    <p class="text-slate-500 text-sm mt-0.5">Cinematic YouTube storytelling for hospitality brands. Every stay, every detail, beautifully filmed.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 items-start">
+                <div style="width:36px;height:36px;border-radius:50%;background:#ef4444;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <span style="color:#fff;font-size:14px;">🗺️</span>
+                </div>
+                <div>
+                    <h4 class="font-black uppercase text-base tracking-tight">Tourism Campaigns</h4>
+                    <p class="text-slate-500 text-sm mt-0.5">Multi-platform destination campaigns for tourism boards, restaurants, and lifestyle brands.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-black rounded-[2rem] p-8">
+            <p class="text-white/40 text-[9px] font-black uppercase tracking-widest mb-2">Response time</p>
+            <p class="text-white font-black text-lg">Within 24 hours ✦</p>
+            <p class="text-white/40 text-xs mt-2">Based in Dubai · Available worldwide</p>
         </div>
     </div>
-    <div class="bg-white p-12 rounded-[4rem] shadow-2xl">
+
+    <div class="bg-white rounded-[3rem] p-10" style="box-shadow: 0 32px 64px -12px rgba(0,0,0,0.1);">
         <form action="https://formspree.io/f/jmmaria.ugc@gmail.com" method="POST" class="space-y-4">
-            <input type="text" name="name" required placeholder="Full Name" class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm">
-            <input type="email" name="email" required placeholder="Email Address" class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm">
-            <select name="subject" required class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm">
-                <option value="" disabled selected>Subject: Select Inquiry Type</option>
+            <input type="text" name="name" required placeholder="Full Name">
+            <input type="email" name="email" required placeholder="Email Address">
+            <input type="text" name="brand" placeholder="Brand / Company (optional)">
+            <select name="subject" required>
+                <option value="" disabled selected>Inquiry Type</option>
                 <option value="UGC">UGC Content</option>
                 <option value="Hotel">Hotel Feature</option>
-                <option value="Collab">Partnership</option>
-                <option value="Others">Others</option>
+                <option value="Tourism">Tourism Campaign</option>
+                <option value="Collab">Partnership / Collab</option>
+                <option value="Restaurant">Restaurant / Cafe</option>
+                <option value="Others">Other</option>
             </select>
-            <textarea name="message" required placeholder="Project Details..." rows="4" class="w-full bg-slate-50 border-none px-6 py-5 rounded-2xl font-bold text-sm"></textarea>
-            <button type="submit" class="w-full bg-black text-white py-6 rounded-2xl font-black text-xs uppercase tracking-[0.4em] hover:bg-red-600 transition-all">Submit Request</button>
-            <p class="text-center text-[9px] font-bold text-slate-300 uppercase mt-4">jmmaria.com</p>
+            <textarea name="message" required placeholder="Tell me about your project..." rows="4"></textarea>
+            <button type="submit"
+                style="width:100%;background:#000;color:#fff;padding:20px;border-radius:1rem;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:0.3em;border:none;cursor:pointer;transition:background 0.2s ease;"
+                onmouseover="this.style.background='#ef4444'" onmouseout="this.style.background='#000'">
+                Send Inquiry →
+            </button>
+            <p class="text-center text-[9px] font-bold text-slate-300 uppercase tracking-widest">jmmaria.com · Dubai</p>
         </form>
     </div>
+
 </div>
+
+</body>
+</html>
