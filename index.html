@@ -3,87 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM MARIA | jmmaria.com</title>
+    <title>JM Maria | Travel Creator · Dubai</title>
+    <meta name="description" content="JM Maria — cinematic travel creator based in Dubai. Hotels, cafes, and destinations across Europe, Southeast Asia & the Middle East.">
+    <meta property="og:title" content="JM Maria | Travel Creator · Dubai">
+    <meta property="og:description" content="Cinematic travel storytelling across YouTube, TikTok & Instagram.">
+    <meta property="og:image" content="https://jmmaria.com/og-image.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         @font-face {
             font-family: 'Hijrnotes';
             src: url('Hijrnotes_PERSONAL_USE_ONLY.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
         }
 
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-        iframe { width: 100%; border: none; display: block; }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { cursor: none; }
+        body { font-family: 'Inter', sans-serif; background: #fff; overflow-x: hidden; cursor: none; }
 
-        /* 1-LINE SIGNATURE LOGO */
-        .logo-wrap {
-            display: flex;
-            align-items: baseline;
-            text-decoration: none;
-            cursor: pointer;
-            transform: rotate(-4deg); /* Signature slant */
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            padding: 10px 0;
+        /* ── CUSTOM CURSOR ── */
+        #cursor {
+            width: 10px; height: 10px;
+            background: #ef4444; border-radius: 50%;
+            position: fixed; top: 0; left: 0;
+            pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
         }
+        #cursor-ring {
+            width: 36px; height: 36px;
+            border: 1.5px solid rgba(239,68,68,0.4);
+            border-radius: 50%;
+            position: fixed; top: 0; left: 0;
+            pointer-events: none; z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: transform 0.08s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+        }
+        body:has(a:hover) #cursor, body:has(button:hover) #cursor { width: 20px; height: 20px; }
+        body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring { opacity: 0; }
+        @media (hover: none) { #cursor, #cursor-ring { display: none; } html, body { cursor: auto; } }
 
+        /* ── LOGO ── */
         .logo-text {
             font-family: 'Hijrnotes', cursive;
-            color: #000;
-            user-select: none;
-            white-space: nowrap;
+            font-size: 38px; letter-spacing: -1px;
+            transform: rotate(-4deg); display: inline-block;
             transition: color 0.3s ease;
-            font-size: 38px;
-            letter-spacing: -1px;
         }
+        .logo-wrap:hover .logo-text { color: #ef4444; }
 
-        /* Hover Interaction */
-        .nav-container:hover .logo-wrap {
-            transform: rotate(-2deg) scale(1.05);
-        }
+        /* ── NAV ── */
+        nav { position: sticky; top: 0; z-index: 100; }
 
-        .nav-container:hover .logo-text {
-            color: #ef4444; 
+        /* ── MOBILE MENU ── */
+        #mobile-menu {
+            position: fixed; inset: 0; background: #000; z-index: 200;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.35s ease;
         }
+        #mobile-menu.open { opacity: 1; pointer-events: all; }
+        .mobile-link {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em;
+            color: #fff; text-decoration: none; transition: color 0.2s ease;
+        }
+        .mobile-link:hover { color: #ef4444; }
+
+        /* ── HERO ── */
+        .hero-bg {
+            background: #000;
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: flex-end;
+            position: relative; overflow: hidden;
+        }
+        .hero-video-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 70%, #000 100%);
+            z-index: 1;
+        }
+        .hero-content { position: relative; z-index: 2; padding: 0 2rem 4rem; }
+
+        /* ── TICKER ── */
+        .ticker-track { display: flex; gap: 3rem; animation: ticker 25s linear infinite; width: max-content; }
+        @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ── SECTION ALTERNATING ── */
+        .section-dark { background: #0a0a0a; color: #fff; }
+        .section-cream { background: #faf9f6; }
+        .section-white { background: #fff; }
+
+        /* ── IFRAME SECTIONS ── */
+        iframe { width: 100%; border: none; display: block; }
     </style>
 </head>
-<body class="bg-white">
+<body>
 
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 h-24 flex items-center px-8 justify-between nav-container">
-        
-        <a href="#" class="logo-wrap">
-            <span class="logo-text">Jm Maria</span>
-        </a>
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
 
-        <div class="hidden lg:flex space-x-8 text-[8px] font-bold uppercase tracking-[0.25em] text-slate-400">
-            <a href="#travel" class="hover:text-black transition-colors">01 Archive</a>
-            <a href="#hotels" class="hover:text-black transition-colors">02 Hotels</a>
-            <a href="#cafes" class="hover:text-black transition-colors">03 Cafes</a>
-            <a href="#connect" class="hover:text-black transition-colors">04 Connect</a>
-            <a href="#shop" class="hover:text-black transition-colors">05 Shop</a>
-            <a href="#inquiries" class="text-red-600 font-black">06 Inquiries</a>
-        </div>
-        
-        <a href="https://www.youtube.com/@jmmaria" target="_blank" class="bg-black text-white px-7 py-3.5 rounded-full text-[9px] font-black uppercase tracking-widest hover:bg-red-600 transition-all shadow-sm">
+<!-- ── MOBILE MENU ── -->
+<div id="mobile-menu" role="dialog" aria-label="Navigation menu">
+    <button id="menu-close" onclick="toggleMenu()" aria-label="Close menu"
+        style="position:absolute;top:2rem;right:2rem;background:none;border:none;color:#fff;font-size:2rem;cursor:none;">✕</button>
+    <a href="#travel" class="mobile-link" onclick="toggleMenu()">01 Archive</a>
+    <a href="#hotels" class="mobile-link" onclick="toggleMenu()">02 Hotels</a>
+    <a href="#cafes" class="mobile-link" onclick="toggleMenu()">03 Cafes</a>
+    <a href="#connect" class="mobile-link" onclick="toggleMenu()">04 Connect</a>
+    <a href="#shop" class="mobile-link" onclick="toggleMenu()">05 Support</a>
+    <a href="#inquiries" class="mobile-link" onclick="toggleMenu()" style="color:#ef4444;">06 Inquiries</a>
+</div>
+
+<!-- ── NAV ── -->
+<nav class="bg-black/95 backdrop-blur-md border-b border-white/5 h-20 flex items-center px-6 lg:px-10 justify-between">
+    <a href="#" class="logo-wrap" style="text-decoration:none;">
+        <span class="logo-text" style="color:#fff;">Jm Maria</span>
+    </a>
+    <div class="hidden lg:flex space-x-8 text-[8px] font-bold uppercase tracking-[0.25em] text-white/40">
+        <a href="#travel" class="hover:text-white transition-colors">01 Archive</a>
+        <a href="#hotels" class="hover:text-white transition-colors">02 Hotels</a>
+        <a href="#cafes" class="hover:text-white transition-colors">03 Cafes</a>
+        <a href="#connect" class="hover:text-white transition-colors">04 Connect</a>
+        <a href="#shop" class="hover:text-white transition-colors">05 Support</a>
+        <a href="#inquiries" class="text-red-500 font-black">06 Inquiries</a>
+    </div>
+    <div class="flex items-center gap-4">
+        <a href="https://www.youtube.com/@jmmaria" target="_blank"
+           class="bg-red-600 text-white px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-widest hover:bg-red-700 transition-all">
             Subscribe
         </a>
-    </nav>
+        <button id="menu-toggle" onclick="toggleMenu()" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" style="background:none;border:none;">
+            <span style="display:block;width:22px;height:2px;background:#fff;border-radius:2px;"></span>
+            <span style="display:block;width:16px;height:2px;background:#fff;border-radius:2px;"></span>
+            <span style="display:block;width:22px;height:2px;background:#fff;border-radius:2px;"></span>
+        </button>
+    </div>
+</nav>
 
-    <main>
-        <div id="travel"><iframe src="chapter-1.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="hotels"><iframe src="chapter-2.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="cafes"><iframe src="chapter-3.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="connect"><iframe src="chapter-4.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="shop"><iframe src="chapter-5.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-        <div id="inquiries"><iframe src="chapter-6.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-    </main>
+<!-- ── HERO ── -->
+<section class="hero-bg">
+    <!-- Swap this img for your own photo or a video poster -->
+    <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80"
+         alt="JM Maria — travel creator"
+         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;">
+    <div class="hero-video-overlay"></div>
+    <div class="hero-content max-w-7xl mx-auto w-full">
+        <div class="max-w-3xl">
+            <p class="text-[10px] font-black text-red-500 uppercase tracking-[0.5em] mb-5">Travel Creator · Dubai</p>
+            <h1 class="text-[clamp(3.5rem,11vw,8rem)] font-black uppercase tracking-tighter leading-[0.85] text-white mb-6">
+                JM<br><span class="text-red-500">Maria</span>
+            </h1>
+            <p class="text-white/60 text-sm font-bold uppercase tracking-widest max-w-sm leading-relaxed mb-10">
+                Cinematic travel storytelling — hotels, cafes & destinations across Europe, Southeast Asia & the Middle East.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#travel" class="bg-white text-black px-8 py-4 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all">
+                    Watch My Films
+                </a>
+                <a href="#inquiries" class="border border-white/30 text-white px-8 py-4 rounded-full text-[10px] font-black uppercase tracking-widest hover:border-white transition-all">
+                    Work With Me
+                </a>
+            </div>
+        </div>
+        <!-- Stats row -->
+        <div class="flex flex-wrap gap-8 mt-16 pt-8 border-t border-white/10">
+            <div><div class="text-3xl font-black text-white">21K+</div><div class="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1">YouTube</div></div>
+            <div><div class="text-3xl font-black text-white">10K+</div><div class="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1">Instagram</div></div>
+            <div><div class="text-3xl font-black text-white">17+</div><div class="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1">Hotels</div></div>
+            <div><div class="text-3xl font-black text-white">5</div><div class="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1">Countries</div></div>
+        </div>
+    </div>
+</section>
 
-    <footer class="py-16 bg-black text-center border-t border-white/5">
-        <p class="text-[9px] font-bold text-slate-700 uppercase tracking-[1em]">© 2026 JM MARIA | jmmaria.com</p>
-    </footer>
+<!-- ── SOCIAL PROOF TICKER ── -->
+<div class="bg-red-600 py-3 overflow-hidden">
+    <div style="overflow:hidden;">
+        <div class="ticker-track text-[9px] font-black uppercase tracking-[0.3em] text-white">
+            <span class="whitespace-nowrap">✦ 21K YouTube Subscribers</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+            <span class="whitespace-nowrap">✦ 10K Instagram Followers</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+            <span class="whitespace-nowrap">✦ 17+ Hotels Featured</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+            <span class="whitespace-nowrap">✦ 5 Countries Covered</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+            <span class="whitespace-nowrap">✦ Dubai · Bangkok · Paris · Berlin · Warsaw</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+            <span class="whitespace-nowrap">✦ UGC · Hotel Features · Tourism Campaigns</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+            <span class="whitespace-nowrap">✦ 21K YouTube Subscribers</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+            <span class="whitespace-nowrap">✦ 10K Instagram Followers</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+            <span class="whitespace-nowrap">✦ 17+ Hotels Featured</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+            <span class="whitespace-nowrap">✦ 5 Countries Covered</span>
+            <span class="whitespace-nowrap opacity-60">·</span>
+        </div>
+    </div>
+</div>
 
+<!-- ── SECTIONS (iframed chapters) ── -->
+<main>
+    <div id="travel" class="reveal"><iframe src="chapter-1.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+    <div id="hotels" class="reveal reveal-delay-1"><iframe src="chapter-2.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+    <div id="cafes" class="reveal reveal-delay-1"><iframe src="chapter-3.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+    <div id="connect" class="reveal reveal-delay-1"><iframe src="chapter-4.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+    <div id="shop" class="reveal reveal-delay-1"><iframe src="chapter-5.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+    <div id="inquiries" class="reveal reveal-delay-1"><iframe src="chapter-6.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
+</main>
+
+<footer class="py-16 bg-black text-center border-t border-white/5">
+    <div class="flex justify-center gap-6 mb-6">
+        <a href="https://instagram.com/itsjmmaria" target="_blank" class="text-white/30 hover:text-white transition-colors text-sm"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com/@itsjmmaria" target="_blank" class="text-white/30 hover:text-white transition-colors text-sm"><i class="fab fa-tiktok"></i></a>
+        <a href="https://youtube.com/@jmmaria" target="_blank" class="text-white/30 hover:text-red-500 transition-colors text-sm"><i class="fab fa-youtube"></i></a>
+        <a href="https://facebook.com/janinamariac" target="_blank" class="text-white/30 hover:text-white transition-colors text-sm"><i class="fab fa-facebook"></i></a>
+    </div>
+    <p class="text-[9px] font-bold text-slate-700 uppercase tracking-[1em]">© 2026 JM Maria | jmmaria.com</p>
+</footer>
+
+<script>
+    /* Custom cursor */
+    const cur = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px'; });
+    function animRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animRing); }
+    animRing();
+
+    /* Mobile menu */
+    function toggleMenu() {
+        document.getElementById('mobile-menu').classList.toggle('open');
+        document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+    }
+
+    /* Scroll reveal */
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* Smooth scroll */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+</script>
 </body>
 </html>
