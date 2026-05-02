@@ -1,5 +1,535 @@
-<script src="https://cdn.tailwindcss.com"></script>
-<div class="py-24 bg-black text-white px-8 flex flex-col md:flex-row justify-between items-center gap-12">
-    <div><h2 class="text-7xl font-black uppercase tracking-tighter mb-4 italic">The Shop</h2><p class="text-[10px] uppercase font-bold text-slate-500 tracking-[0.5em]">Travel Itineraries & Digital Guides</p></div>
-    <a href="#" class="border-2 border-white px-12 py-5 rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition">Coming Soon</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #fff; margin: 0; overflow-x: hidden; }
+
+        .dest-tab {
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            border-top: none; border-left: none; border-right: none;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            background: none;
+            padding-bottom: 16px;
+        }
+        .dest-tab.active  { border-bottom-color: #ef4444; color: #000; font-weight: 900; }
+        .dest-tab:hover:not(.active) { color: #000; }
+
+        .dest-panel { display: none; }
+        .dest-panel.active { display: block; }
+
+        /* Placeholder slot shown before embed is pasted */
+        .widget-slot {
+            background: #f8fafc;
+            border: 2px dashed #e2e8f0;
+            border-radius: 1.5rem;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 48px 24px;
+        }
+        /* Once real content is pasted the slot dissolves */
+        .widget-slot.live {
+            background: transparent;
+            border: none;
+            min-height: unset;
+            padding: 0;
+            display: block;
+        }
+
+        .search-slot {
+            background: #000;
+            border-radius: 2rem;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 32px;
+            gap: 10px;
+        }
+        .search-slot.live {
+            padding: 0;
+            min-height: unset;
+            background: transparent;
+            border-radius: 0;
+        }
+
+        .step-badge {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: #ef4444; color: #fff;
+            font-size: 10px; font-weight: 900;
+            display: inline-flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .red-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #ef4444; color: #fff;
+            font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em;
+            padding: 11px 22px; border-radius: 100px;
+            text-decoration: none; transition: all 0.25s ease; border: none; cursor: pointer;
+        }
+        .red-pill:hover { background: #dc2626; }
+
+        .outline-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: transparent; color: #000;
+            font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em;
+            padding: 11px 22px; border-radius: 100px;
+            text-decoration: none; transition: all 0.25s ease; border: 1.5px solid #000; cursor: pointer;
+        }
+        .outline-pill:hover { background: #000; color: #fff; }
+
+        .bmc-tier {
+            display: block; text-decoration: none;
+            background: #111; border: 1.5px solid #222; border-radius: 1.5rem;
+            padding: 26px 24px; transition: all 0.3s ease;
+        }
+        .bmc-tier:hover { border-color: #ef4444; transform: translateY(-3px); }
+        .bmc-tier.featured { border-color: #ef4444; background: #1a0000; }
+
+        .perks-track { display: flex; gap: 2.5rem; animation: scrollPerks 22s linear infinite; width: max-content; }
+        @keyframes scrollPerks { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    </style>
+</head>
+<body>
+
+
+<!-- ══════════════════════════════════════
+     HEADER
+══════════════════════════════════════ -->
+<div class="py-20 px-8 bg-white border-b border-slate-50">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div>
+            <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-3 block">05 Support & Explore</span>
+            <h2 class="text-6xl font-black uppercase tracking-tighter leading-none">
+                The <span style="font-family:'Playfair Display';font-style:italic;font-weight:400;" class="text-slate-200">Good</span><br>Stuff
+            </h2>
+            <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mt-4 max-w-sm leading-relaxed">
+                Book the experiences I love. Support the content you watch.
+            </p>
+        </div>
+        <div class="flex gap-3 flex-wrap">
+            <a href="#klook" class="red-pill"><i class="fas fa-ticket-alt"></i> Book Activities</a>
+            <a href="#support" class="outline-pill"><i class="fas fa-coffee"></i> Buy Me a Coffee</a>
+        </div>
+    </div>
 </div>
+
+
+<!-- ══════════════════════════════════════
+     KLOOK SECTION INTRO
+══════════════════════════════════════ -->
+<section id="klook" class="pt-20 pb-10 px-8 bg-white">
+    <div class="max-w-7xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-4">
+            <div style="width:36px;height:3px;background:#ef4444;border-radius:2px;"></div>
+            <span class="text-[10px] font-black text-red-500 uppercase tracking-[0.4em]">Klook Kreator</span>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+                <h3 class="text-4xl font-black uppercase tracking-tighter">Activities I<br>Actually Book</h3>
+                <p class="text-slate-400 text-xs mt-3 max-w-md leading-relaxed font-medium">
+                    Every destination below is somewhere I've filmed. Book through these links — Klook handles everything and I earn a small commission at zero extra cost to you.
+                </p>
+            </div>
+            <a href="https://www.klook.com" target="_blank" class="outline-pill self-start">
+                <i class="fas fa-external-link-alt"></i> Browse All on Klook
+            </a>
+        </div>
+
+
+        <!-- ┌─────────────────────────────────────────────────────────┐
+             │  KLOOK SEARCH BOX                                       │
+             │                                                         │
+             │  STEPS:                                                 │
+             │  1. Kreator Dashboard → My Ads → Search Box            │
+             │  2. Customise → set button colour to  #ef4444          │
+             │  3. Copy the <script> embed code                        │
+             │  4. Paste it between the two arrows below               │
+             │  5. Add class="live" to the search-slot div             │
+             └─────────────────────────────────────────────────────────┘ -->
+        <div class="mb-14">
+            <div class="search-slot">
+
+                <!-- ↓↓↓  PASTE KLOOK SEARCH BOX EMBED CODE HERE  ↓↓↓ -->
+
+
+
+                <!-- ↑↑↑  PASTE KLOOK SEARCH BOX EMBED CODE HERE  ↑↑↑ -->
+
+                <!-- Placeholder — remove this block once embed is pasted -->
+                <i class="fas fa-search text-slate-600 text-2xl block mb-2"></i>
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Klook Search Box</p>
+                <p class="text-slate-500 text-xs text-center max-w-xs">
+                    Kreator → My Ads → Search Box → customise colour to #ef4444 → copy embed → paste above
+                </p>
+                <!-- End placeholder -->
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     DESTINATION TABS + DYNAMIC WIDGETS
+══════════════════════════════════════ -->
+<section class="pb-20 px-8 bg-white">
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Tabs -->
+        <div class="flex gap-8 overflow-x-auto pb-1 mb-12 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 border-b border-slate-100"
+             style="-webkit-overflow-scrolling:touch;scrollbar-width:none;">
+            <button class="dest-tab active" onclick="switchDest('uae',this)">🇦🇪 UAE</button>
+            <button class="dest-tab" onclick="switchDest('thailand',this)">🇹🇭 Thailand</button>
+            <button class="dest-tab" onclick="switchDest('france',this)">🇫🇷 France</button>
+            <button class="dest-tab" onclick="switchDest('germany',this)">🇩🇪 Germany</button>
+        </div>
+
+
+        <!-- ┌─────────────────────────────────────────────────────────┐
+             │  UAE — DYNAMIC WIDGET                                   │
+             │                                                         │
+             │  STEPS:                                                 │
+             │  1. Kreator → My Ads → Dynamic Widgets                 │
+             │  2. Create Widget → Destination: Dubai / UAE           │
+             │  3. Style: Carousel recommended                         │
+             │  4. Copy the embed code                                 │
+             │  5. Paste between the arrows below                      │
+             │  6. Delete the placeholder <div> block                  │
+             └─────────────────────────────────────────────────────────┘ -->
+        <div class="dest-panel active" id="panel-uae">
+            <div class="widget-slot">
+
+                <!-- ↓↓↓  PASTE UAE DYNAMIC WIDGET EMBED CODE HERE  ↓↓↓ -->
+
+
+
+                <!-- ↑↑↑  PASTE UAE DYNAMIC WIDGET EMBED CODE HERE  ↑↑↑ -->
+
+                <!-- Placeholder — delete this block once embed is pasted -->
+                <span style="font-size:40px;line-height:1;display:block;">🇦🇪</span>
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">UAE — Dynamic Widget</p>
+                <p class="text-slate-400 text-xs text-center max-w-xs mb-2">
+                    Paste your Klook Dynamic Widget here. It will show live UAE activities with real prices and availability — auto-updated by Klook.
+                </p>
+                <div class="flex flex-col gap-2 text-left">
+                    <div class="flex items-center gap-2"><span class="step-badge">1</span><span class="text-xs text-slate-500">Kreator → My Ads → Dynamic Widgets</span></div>
+                    <div class="flex items-center gap-2"><span class="step-badge">2</span><span class="text-xs text-slate-500">Create Widget → Destination: Dubai</span></div>
+                    <div class="flex items-center gap-2"><span class="step-badge">3</span><span class="text-xs text-slate-500">Copy embed → paste above ↑ → delete this block</span></div>
+                </div>
+                <!-- End placeholder -->
+
+            </div>
+        </div>
+
+
+        <!-- ┌─────────────────────────────────────────────────────────┐
+             │  THAILAND — DYNAMIC WIDGET                              │
+             │                                                         │
+             │  TIP: Create 3 separate widgets for Bangkok,           │
+             │  Phuket, and Krabi — paste all 3 embed codes           │
+             │  between the arrows. They stack automatically.          │
+             └─────────────────────────────────────────────────────────┘ -->
+        <div class="dest-panel" id="panel-thailand">
+            <div class="widget-slot">
+
+                <!-- ↓↓↓  PASTE THAILAND DYNAMIC WIDGET(S) HERE  ↓↓↓ -->
+                <!-- TIP: paste Bangkok widget, then Phuket, then Krabi -->
+
+
+
+                <!-- ↑↑↑  PASTE THAILAND DYNAMIC WIDGET(S) HERE  ↑↑↑ -->
+
+                <!-- Placeholder -->
+                <span style="font-size:40px;line-height:1;display:block;">🇹🇭</span>
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Thailand — Dynamic Widget</p>
+                <p class="text-slate-400 text-xs text-center max-w-xs mb-2">
+                    Create separate widgets for Bangkok, Phuket & Krabi and paste all 3 codes here — they'll stack automatically.
+                </p>
+                <div class="flex flex-col gap-2 text-left">
+                    <div class="flex items-center gap-2"><span class="step-badge">1</span><span class="text-xs text-slate-500">Kreator → My Ads → Dynamic Widgets</span></div>
+                    <div class="flex items-center gap-2"><span class="step-badge">2</span><span class="text-xs text-slate-500">Create Widget → Destination: Bangkok</span></div>
+                    <div class="flex items-center gap-2"><span class="step-badge">3</span><span class="text-xs text-slate-500">Repeat for Phuket + Krabi → paste all 3 ↑</span></div>
+                </div>
+                <!-- End placeholder -->
+
+            </div>
+        </div>
+
+
+        <!-- ┌─────────────────────────────────────────────────────────┐
+             │  FRANCE — DYNAMIC WIDGET                                │
+             │  Destination: Paris / Dijon / Burgundy                 │
+             └─────────────────────────────────────────────────────────┘ -->
+        <div class="dest-panel" id="panel-france">
+            <div class="widget-slot">
+
+                <!-- ↓↓↓  PASTE FRANCE DYNAMIC WIDGET EMBED CODE HERE  ↓↓↓ -->
+
+
+
+                <!-- ↑↑↑  PASTE FRANCE DYNAMIC WIDGET EMBED CODE HERE  ↑↑↑ -->
+
+                <!-- Placeholder -->
+                <span style="font-size:40px;line-height:1;display:block;">🇫🇷</span>
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">France — Dynamic Widget</p>
+                <p class="text-slate-400 text-xs text-center max-w-xs mb-2">
+                    Live Paris & Dijon activities with real prices. Perfect for visitors who watched your Maison Tillot or Hotel AMI Paris videos.
+                </p>
+                <div class="flex flex-col gap-2 text-left">
+                    <div class="flex items-center gap-2"><span class="step-badge">1</span><span class="text-xs text-slate-500">Kreator → My Ads → Dynamic Widgets</span></div>
+                    <div class="flex items-center gap-2"><span class="step-badge">2</span><span class="text-xs text-slate-500">Create Widget → Destination: Paris</span></div>
+                    <div class="flex items-center gap-2"><span class="step-badge">3</span><span class="text-xs text-slate-500">Copy embed → paste above ↑ → delete this block</span></div>
+                </div>
+                <!-- End placeholder -->
+
+            </div>
+        </div>
+
+
+        <!-- ┌─────────────────────────────────────────────────────────┐
+             │  GERMANY — DYNAMIC WIDGET                               │
+             │  Destination: Berlin                                    │
+             └─────────────────────────────────────────────────────────┘ -->
+        <div class="dest-panel" id="panel-germany">
+            <div class="widget-slot">
+
+                <!-- ↓↓↓  PASTE GERMANY DYNAMIC WIDGET EMBED CODE HERE  ↓↓↓ -->
+
+
+
+                <!-- ↑↑↑  PASTE GERMANY DYNAMIC WIDGET EMBED CODE HERE  ↑↑↑ -->
+
+                <!-- Placeholder -->
+                <span style="font-size:40px;line-height:1;display:block;">🇩🇪</span>
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Germany — Dynamic Widget</p>
+                <p class="text-slate-400 text-xs text-center max-w-xs mb-2">
+                    Live Berlin activities. Great cross-sell for visitors who watched your Novotel Berlin Mitte video.
+                </p>
+                <div class="flex flex-col gap-2 text-left">
+                    <div class="flex items-center gap-2"><span class="step-badge">1</span><span class="text-xs text-slate-500">Kreator → My Ads → Dynamic Widgets</span></div>
+                    <div class="flex items-center gap-2"><span class="step-badge">2</span><span class="text-xs text-slate-500">Create Widget → Destination: Berlin</span></div>
+                    <div class="flex items-center gap-2"><span class="step-badge">3</span><span class="text-xs text-slate-500">Copy embed → paste above ↑ → delete this block</span></div>
+                </div>
+                <!-- End placeholder -->
+
+            </div>
+        </div>
+
+
+        <!-- ┌─────────────────────────────────────────────────────────┐
+             │  OPTIONAL: ACTIVITY BANNERS                             │
+             │                                                         │
+             │  Use these for specific "JM's Pick" featured           │
+             │  activities — e.g. a Hot Air Balloon banner             │
+             │  or Desert Safari. Placed here below the               │
+             │  destination widgets as bonus highlights.               │
+             │                                                         │
+             │  Kreator → My Ads → Activity Banners                   │
+             └─────────────────────────────────────────────────────────┘ -->
+
+        <!-- ↓↓↓  PASTE ACTIVITY BANNERS HERE (optional)  ↓↓↓ -->
+
+
+
+        <!-- ↑↑↑  PASTE ACTIVITY BANNERS HERE (optional)  ↑↑↑ -->
+
+
+        <!-- Disclaimer -->
+        <p class="text-[9px] text-slate-300 font-bold uppercase tracking-widest text-center mt-14">
+            ✦ Booking through these links supports my content at zero extra cost to you — thank you ✦
+        </p>
+
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PERKS MARQUEE
+══════════════════════════════════════ -->
+<div class="py-5 bg-slate-50 overflow-hidden border-y border-slate-100">
+    <div style="overflow:hidden;">
+        <div class="perks-track">
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">☕ Fuel the next adventure</span>
+            <span class="text-red-300 font-black">·</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">✈️ More destinations</span>
+            <span class="text-red-300 font-black">·</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">🎬 Better gear</span>
+            <span class="text-red-300 font-black">·</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">💌 Exclusive travel tips</span>
+            <span class="text-red-300 font-black">·</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">🗺️ Free itinerary drops</span>
+            <span class="text-red-300 font-black">·</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">📍 Hidden spots first</span>
+            <span class="text-red-300 font-black">·</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">☕ Fuel the next adventure</span>
+            <span class="text-red-300 font-black">·</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">✈️ More destinations</span>
+            <span class="text-red-300 font-black">·</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">🎬 Better gear</span>
+            <span class="text-red-300 font-black">·</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">💌 Exclusive travel tips</span>
+            <span class="text-red-300 font-black">·</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     BUY ME A COFFEE
+     ──────────────────────────────────────
+     SETUP (5 minutes):
+     1. Go to buymeacoffee.com → sign up
+     2. Pick your page URL, e.g. buymeacoffee.com/jmmaria
+     3. Find all 4 instances of YOUR_BMC_USERNAME below
+        and replace with your actual username
+     4. Optional: paste the BMC floating widget script
+        in the slot at the bottom of this section
+══════════════════════════════════════ -->
+<section id="support" class="py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+        <div style="background:#000;border-radius:3rem;overflow:hidden;padding:5rem 3.5rem 3.5rem;">
+
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+                <!-- Left: headline + main button -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div style="width:36px;height:3px;background:#ef4444;border-radius:2px;"></div>
+                        <span class="text-[10px] font-black text-red-500 uppercase tracking-[0.4em]">Support the Creator</span>
+                    </div>
+                    <h3 class="text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-white mb-6">
+                        Enjoyed<br>the content?<br>
+                        <span class="text-red-500">Buy me a<br>coffee.</span>
+                        <span style="font-size:48px;line-height:1;display:inline-block;margin-left:6px;">☕</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm mb-8">
+                        Every video, hotel review, and cafe guide takes days of travel, filming, and editing. If my content helped you plan a trip — even one small coffee keeps me going.
+                    </p>
+                    <div class="space-y-3 mb-10">
+                        <div class="flex items-center gap-3">
+                            <div style="width:6px;height:6px;border-radius:50%;background:#ef4444;flex-shrink:0;"></div>
+                            <span class="text-slate-300 text-xs font-bold uppercase tracking-wider">No subscription required — one-time or recurring</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div style="width:6px;height:6px;border-radius:50%;background:#ef4444;flex-shrink:0;"></div>
+                            <span class="text-slate-300 text-xs font-bold uppercase tracking-wider">Supporters get early access to destination guides</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div style="width:6px;height:6px;border-radius:50%;background:#ef4444;flex-shrink:0;"></div>
+                            <span class="text-slate-300 text-xs font-bold uppercase tracking-wider">Every coffee funds the next adventure</span>
+                        </div>
+                    </div>
+
+                    <!-- ↓ REPLACE "YOUR_BMC_USERNAME" with your actual username (instance 1 of 4) -->
+                    <a href="https://buymeacoffee.com/YOUR_BMC_USERNAME" target="_blank"
+                       style="display:inline-flex;align-items:center;gap:10px;background:#FFDD00;color:#000;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;padding:18px 32px;border-radius:100px;text-decoration:none;transition:transform 0.2s ease;"
+                       onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+                        <span style="font-size:20px;line-height:1;">☕</span>
+                        Buy Me a Coffee
+                    </a>
+                </div>
+
+                <!-- Right: tiers -->
+                <div class="space-y-4">
+
+                    <!-- ↓ REPLACE "YOUR_BMC_USERNAME" — instance 2 of 4 -->
+                    <a href="https://buymeacoffee.com/YOUR_BMC_USERNAME" target="_blank" class="bmc-tier">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <span style="font-size:22px;line-height:1;">☕</span>
+                                <div>
+                                    <div class="text-white font-black text-base uppercase tracking-tight">One Coffee</div>
+                                    <div class="text-slate-500 text-[9px] font-bold uppercase tracking-widest">The classic</div>
+                                </div>
+                            </div>
+                            <div class="text-white font-black text-xl">$5</div>
+                        </div>
+                        <p class="text-slate-400 text-xs leading-relaxed">A one-time thank you. Keeps the editing sessions going — and honestly, it means the world.</p>
+                    </a>
+
+                    <!-- ↓ REPLACE "YOUR_BMC_USERNAME" — instance 3 of 4 -->
+                    <a href="https://buymeacoffee.com/YOUR_BMC_USERNAME" target="_blank" class="bmc-tier featured">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <span style="font-size:22px;line-height:1;">✈️</span>
+                                <div>
+                                    <div class="text-white font-black text-base uppercase tracking-tight">Travel Fund</div>
+                                    <div class="text-red-500 text-[9px] font-black uppercase tracking-widest">Most popular ✦</div>
+                                </div>
+                            </div>
+                            <div class="text-white font-black text-xl">$15</div>
+                        </div>
+                        <p class="text-slate-400 text-xs leading-relaxed">Helps cover airport transfers, entry tickets, and the costs that never make it into the video. Big deal to a solo creator.</p>
+                    </a>
+
+                    <!-- ↓ REPLACE "YOUR_BMC_USERNAME" — instance 4 of 4 -->
+                    <a href="https://buymeacoffee.com/YOUR_BMC_USERNAME" target="_blank" class="bmc-tier">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <span style="font-size:22px;line-height:1;">🎬</span>
+                                <div>
+                                    <div class="text-white font-black text-base uppercase tracking-tight">Gear Fund</div>
+                                    <div class="text-slate-500 text-[9px] font-bold uppercase tracking-widest">For the big dreams</div>
+                                </div>
+                            </div>
+                            <div class="text-white font-black text-xl">$50</div>
+                        </div>
+                        <p class="text-slate-400 text-xs leading-relaxed">Goes toward better cameras, drones & lighting. Supporters at this tier get a shoutout in my next video.</p>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- ┌─────────────────────────────────────────────────────────┐
+                 │  OPTIONAL: BMC FLOATING BUTTON WIDGET                   │
+                 │                                                         │
+                 │  Adds a floating yellow coffee button on every page    │
+                 │  1. buymeacoffee.com → Dashboard → Extras → Widget     │
+                 │  2. Copy the <script> tag                              │
+                 │  3. Paste it between the arrows below                   │
+                 └─────────────────────────────────────────────────────────┘ -->
+
+            <!-- ↓↓↓  PASTE BMC FLOATING WIDGET SCRIPT HERE (optional)  ↓↓↓ -->
+
+
+
+            <!-- ↑↑↑  PASTE BMC FLOATING WIDGET SCRIPT HERE (optional)  ↑↑↑ -->
+
+            <div class="mt-16 pt-8 border-t border-white/5 text-center">
+                <p class="text-slate-600 text-[10px] font-black uppercase tracking-[0.4em]">
+                    100% of support goes toward travel, content creation & gear · Thank you for watching ✦
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+    function switchDest(dest, btn) {
+        document.querySelectorAll('.dest-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.dest-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('panel-' + dest).classList.add('active');
+        btn.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
