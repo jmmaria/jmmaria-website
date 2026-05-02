@@ -5,94 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* High-Performance Carousel Engine */
-        .carousel-wrapper { width: 100%; overflow: hidden; position: relative; cursor: pointer; padding: 2rem 0; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: #0a0a0a; overflow-x: hidden; }
+        .carousel-wrapper { width: 100%; overflow: hidden; position: relative; cursor: grab; padding: 2rem 0; }
+        .carousel-wrapper:active { cursor: grabbing; }
         #videoFeed { display: flex; gap: 2.5rem; white-space: nowrap; }
         .video-card { min-width: 85vw; flex-shrink: 0; display: inline-block; }
-        @media (min-width: 768px) { .video-card { min-width: 650px; } }
-
-        .video-container { 
-            position: relative; padding-bottom: 56.25%; height: 0; border-radius: 2.5rem; 
-            overflow: hidden; background: #000; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+        @media (min-width: 768px) { .video-card { min-width: 640px; } }
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            border-radius: 1.5rem; overflow: hidden; background: #111;
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .video-card:hover .video-container { transform: scale(1.02); }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        
-        /* Hide scrollbar for Chrome, Safari and Opera */
         .carousel-wrapper::-webkit-scrollbar { display: none; }
-        /* Hide scrollbar for IE, Edge and Firefox */
         .carousel-wrapper { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .dest-tag {
+            display: inline-block;
+            background: #ef4444; color: #fff;
+            font-size: 8px; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 0.2em;
+            padding: 3px 10px; border-radius: 100px;
+            margin-bottom: 8px;
+        }
+        .video-title { color: #fff; font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: -0.01em; }
+        .watch-link { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.3); font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; text-decoration: none; transition: border-color 0.2s ease, color 0.2s ease; }
+        .watch-link:hover { color: #ef4444; border-color: #ef4444; }
     </style>
 </head>
-<body class="bg-white">
+<body>
 
-<div class="py-20 border-b border-slate-50 overflow-hidden bg-white">
-    <div class="max-w-7xl mx-auto px-8 mb-10">
-        <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">01 Archive</span>
-        <h2 class="text-5xl font-black uppercase tracking-tighter leading-none">Global Archive</h2>
+<div class="py-20 border-b border-white/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8 mb-10 flex items-end justify-between">
+        <div>
+            <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.4em] mb-2 block">01 Archive</span>
+            <h2 class="text-5xl font-black uppercase tracking-tighter leading-none text-white">Global Archive</h2>
+        </div>
+        <a href="https://www.youtube.com/@jmmaria" target="_blank"
+           class="hidden md:inline-flex items-center gap-2 border border-white/20 text-white/60 hover:text-white hover:border-white transition-all px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-widest">
+            <i class="fab fa-youtube text-red-500"></i> All Videos
+        </a>
     </div>
 
     <div class="carousel-wrapper" id="carouselWrapper">
         <div id="videoFeed">
-            
+
             <div class="video-card px-4">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/FNltoH5j3v4?rel=0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/FNltoH5j3v4?rel=0" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="mt-6 flex justify-between items-center px-2 uppercase font-bold text-[9px] tracking-[0.2em]">
-                    <span class="text-slate-900">Archive 01</span>
-                    <a href="https://youtu.be/FNltoH5j3v4" target="_blank" class="border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition-all">Watch Video</a>
+                <div class="mt-5 px-2">
+                    <span class="dest-tag">Dijon, France</span>
+                    <div class="flex justify-between items-center">
+                        <span class="video-title">Wine Country Weekend</span>
+                        <a href="https://youtu.be/FNltoH5j3v4" target="_blank" class="watch-link">Watch</a>
+                    </div>
                 </div>
             </div>
 
             <div class="video-card px-4">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/XuLwZVjsTag?rel=0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/XuLwZVjsTag?rel=0" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="mt-6 flex justify-between items-center px-2 uppercase font-bold text-[9px] tracking-[0.2em]">
-                    <span class="text-slate-900">Archive 02</span>
-                    <a href="https://youtu.be/XuLwZVjsTag" target="_blank" class="border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition-all">Watch Video</a>
-                </div>
-            </div>
-
-            <div class="video-card px-4">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/VXyzkHhVQvk?rel=0" allowfullscreen></iframe>
-                </div>
-                <div class="mt-6 flex justify-between items-center px-2 uppercase font-bold text-[9px] tracking-[0.2em]">
-                    <span class="text-slate-900">Archive 03</span>
-                    <a href="https://youtu.be/VXyzkHhVQvk" target="_blank" class="border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition-all">Watch Video</a>
+                <div class="mt-5 px-2">
+                    <span class="dest-tag">Paris, France</span>
+                    <div class="flex justify-between items-center">
+                        <span class="video-title">Hotel AMI Paris</span>
+                        <a href="https://youtu.be/XuLwZVjsTag" target="_blank" class="watch-link">Watch</a>
+                    </div>
                 </div>
             </div>
 
             <div class="video-card px-4">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/n4ITSnyI05Y?rel=0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/VXyzkHhVQvk?rel=0" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="mt-6 flex justify-between items-center px-2 uppercase font-bold text-[9px] tracking-[0.2em]">
-                    <span class="text-slate-900">Archive 04</span>
-                    <a href="https://youtu.be/n4ITSnyI05Y" target="_blank" class="border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition-all">Watch Video</a>
-                </div>
-            </div>
-
-            <div class="video-card px-4">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/O_5tg878Ygg?rel=0" allowfullscreen></iframe>
-                </div>
-                <div class="mt-6 flex justify-between items-center px-2 uppercase font-bold text-[9px] tracking-[0.2em]">
-                    <span class="text-slate-900">Archive 05</span>
-                    <a href="https://youtu.be/O_5tg878Ygg" target="_blank" class="border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition-all">Watch Video</a>
+                <div class="mt-5 px-2">
+                    <span class="dest-tag">Thailand</span>
+                    <div class="flex justify-between items-center">
+                        <span class="video-title">Island Life</span>
+                        <a href="https://youtu.be/VXyzkHhVQvk" target="_blank" class="watch-link">Watch</a>
+                    </div>
                 </div>
             </div>
 
             <div class="video-card px-4">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/EZ203AEh54c?rel=0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/n4ITSnyI05Y?rel=0" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="mt-6 flex justify-between items-center px-2 uppercase font-bold text-[9px] tracking-[0.2em]">
-                    <span class="text-slate-900">Archive 06</span>
-                    <a href="https://youtu.be/EZ203AEh54c" target="_blank" class="border-b-2 border-black pb-1 hover:text-red-600 hover:border-red-600 transition-all">Watch Video</a>
+                <div class="mt-5 px-2">
+                    <span class="dest-tag">Dubai, UAE</span>
+                    <div class="flex justify-between items-center">
+                        <span class="video-title">City Diaries</span>
+                        <a href="https://youtu.be/n4ITSnyI05Y" target="_blank" class="watch-link">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card px-4">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/O_5tg878Ygg?rel=0" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="mt-5 px-2">
+                    <span class="dest-tag">Bangkok, Thailand</span>
+                    <div class="flex justify-between items-center">
+                        <span class="video-title">Bangkok Cuts</span>
+                        <a href="https://youtu.be/O_5tg878Ygg" target="_blank" class="watch-link">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card px-4">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/EZ203AEh54c?rel=0" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="mt-5 px-2">
+                    <span class="dest-tag">Berlin, Germany</span>
+                    <div class="flex justify-between items-center">
+                        <span class="video-title">Berlin Dispatch</span>
+                        <a href="https://youtu.be/EZ203AEh54c" target="_blank" class="watch-link">Watch</a>
+                    </div>
                 </div>
             </div>
 
@@ -103,32 +136,21 @@
 <script>
     const feed = document.getElementById('videoFeed');
     const wrap = document.getElementById('carouselWrapper');
-    let scroll = 0; 
-    let paused = false;
-
-    // Clone content for infinite loop
     feed.innerHTML += feed.innerHTML;
+    let scroll = 0, paused = false, isDragging = false, startX = 0, scrollStart = 0;
 
-    function auto() { 
-        if(!paused) { 
-            scroll += 1.2; 
-            wrap.scrollLeft = scroll; 
-            
-            if(scroll >= feed.scrollWidth / 2) {
-                scroll = 0; 
-                wrap.scrollLeft = 0;
-            } 
-        } 
-        requestAnimationFrame(auto); 
+    function auto() {
+        if (!paused && !isDragging) { scroll += 0.8; wrap.scrollLeft = scroll; if (scroll >= feed.scrollWidth / 2) { scroll = 0; wrap.scrollLeft = 0; } }
+        requestAnimationFrame(auto);
     }
-
-    wrap.onmouseenter = () => paused = true; 
-    wrap.onmouseleave = () => paused = false; 
+    wrap.onmouseenter = () => paused = true;
+    wrap.onmouseleave = () => paused = false;
     wrap.ontouchstart = () => paused = true;
-    wrap.ontouchend = () => paused = false;
-
+    wrap.ontouchend = () => { setTimeout(() => paused = false, 1200); };
+    wrap.onmousedown = e => { isDragging = true; startX = e.pageX; scrollStart = wrap.scrollLeft; scroll = wrap.scrollLeft; };
+    window.onmouseup = () => { isDragging = false; };
+    wrap.onmousemove = e => { if (!isDragging) return; wrap.scrollLeft = scrollStart - (e.pageX - startX); scroll = wrap.scrollLeft; };
     auto();
 </script>
-
 </body>
 </html>
