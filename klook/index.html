@@ -155,38 +155,60 @@
 
 <script>
     var widgets = {
-        uae:      { cid: '78',  label: '🇦🇪 UAE' },
-        thailand: { cid: '4',   label: '🇹🇭 Thailand' },
-        france:   { cid: '107', label: '🇫🇷 France' },
-        germany:  { cid: '103', label: '🇩🇪 Germany' }
+        uae:      { cid: '78'  },
+        thailand: { cid: '4'   },
+        france:   { cid: '107' },
+        germany:  { cid: '103' }
     };
+
+    /* Build a self-contained HTML page for each widget */
+    function buildWidgetHTML(cid) {
+        return '<!DOCTYPE html><html><head><meta charset="UTF-8">' +
+            '<style>body{margin:0;padding:0;overflow:hidden;}</style></head><body>' +
+            '<ins class="klk-aff-widget"' +
+            ' data-adid="1268649"' +
+            ' data-lang=""' +
+            ' data-currency=""' +
+            ' data-cardH="126"' +
+            ' data-padding="92"' +
+            ' data-lgH="470"' +
+            ' data-edgeValue="655"' +
+            ' data-cid="' + cid + '"' +
+            ' data-tid="-1"' +
+            ' data-amount="6"' +
+            ' data-prod="dynamic_widget">' +
+            '<a href="//www.klook.com/">Klook.com</a></ins>' +
+            '<script>(function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];' +
+            's.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);}' +
+            ')(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");' +
+            '<\/script></body></html>';
+    }
 
     function renderWidget(dest) {
         var container = document.getElementById('widget-container');
-        var w = widgets[dest];
-        /* Clear previous iframe/ins completely */
+        var cid = widgets[dest].cid;
+        /* Remove old iframe */
         container.innerHTML = '';
-        /* Build fresh ins tag */
-        var ins = document.createElement('ins');
-        ins.className = 'klk-aff-widget';
-        ins.setAttribute('data-adid', '1268649');
-        ins.setAttribute('data-lang', '');
-        ins.setAttribute('data-currency', '');
-        ins.setAttribute('data-cardH', '126');
-        ins.setAttribute('data-padding', '92');
-        ins.setAttribute('data-lgH', '470');
-        ins.setAttribute('data-edgeValue', '655');
-        ins.setAttribute('data-cid', w.cid);
-        ins.setAttribute('data-tid', '-1');
-        ins.setAttribute('data-amount', '6');
-        ins.setAttribute('data-prod', 'dynamic_widget');
-        ins.innerHTML = '<a href="//www.klook.com/">Klook.com</a>';
-        container.appendChild(ins);
-        /* Inject fresh script so Klook re-processes only this ins */
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.src = 'https://affiliate.klook.com/widget/fetch-iframe-init.js';
-        container.appendChild(s);
+        /* Create sandboxed iframe */
+        var iframe = document.createElement('iframe');
+        iframe.style.width = '100%';
+        iframe.style.height = '520px';
+        iframe.style.border = 'none';
+        iframe.style.display = 'block';
+        iframe.setAttribute('scrolling', 'no');
+        container.appendChild(iframe);
+        /* Write the widget HTML into the fresh iframe */
+        var doc = iframe.contentDocument || iframe.contentWindow.document;
+        doc.open();
+        doc.write(buildWidgetHTML(cid));
+        doc.close();
+        /* Auto-resize once Klook has rendered */
+        setTimeout(function() {
+            try {
+                var h = doc.body.scrollHeight;
+                if (h > 200) iframe.style.height = h + 'px';
+            } catch(e) {}
+        }, 3000);
     }
 
     function switchDest(dest, btn) {
@@ -215,7 +237,9 @@
     }
 
     /* Render UAE on load */
-    renderWidget('uae');
+    window.addEventListener('DOMContentLoaded', function() {
+        renderWidget('uae');
+    });
 </script>
 </body>
 </html>
