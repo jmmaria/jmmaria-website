@@ -2,304 +2,410 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM Maria | Travel Creator · Dubai</title>
     <meta name="description" content="Cinematic travel storytelling across YouTube, TikTok & Instagram. Hotels, cafes, and destinations across Europe, Southeast Asia & the Middle East — by JM Maria, based in Dubai.">
     <meta name="keywords" content="JM Maria, travel creator Dubai, travel vlog, UAE travel blogger, Dubai content creator, hotel reviews, cafe Dubai">
     <meta name="author" content="JM Maria">
     <meta name="robots" content="index, follow">
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="JM Maria">
     <meta property="og:title" content="JM Maria | Travel Creator · Dubai">
-    <meta property="og:description" content="Cinematic travel storytelling across YouTube, TikTok & Instagram. Hotels, cafes, and destinations across Europe, Southeast Asia & the Middle East — by JM Maria, based in Dubai.">
+    <meta property="og:description" content="Cinematic travel storytelling across YouTube, TikTok & Instagram.">
     <meta property="og:url" content="https://jmmaria.com/">
     <meta property="og:image" content="https://jmmaria.com/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@itsjmmaria">
     <meta name="twitter:title" content="JM Maria | Travel Creator · Dubai">
-    <meta name="twitter:description" content="Cinematic travel storytelling across YouTube, TikTok & Instagram. Hotels, cafes, and destinations across Europe, Southeast Asia & the Middle East — by JM Maria, based in Dubai.">
+    <meta name="twitter:description" content="Cinematic travel storytelling across YouTube, TikTok & Instagram.">
     <meta name="twitter:image" content="https://jmmaria.com/og-image.jpg">
-    <!-- Canonical -->
     <link rel="canonical" href="https://jmmaria.com/">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Maria | Travel Creator · Dubai</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        @font-face {
-            font-family: 'Hijrnotes';
-            src: url('Hijrnotes_PERSONAL_USE_ONLY.ttf') format('truetype');
-        }
+        @font-face { font-family:'Hijrnotes'; src:url('Hijrnotes_PERSONAL_USE_ONLY.ttf') format('truetype'); }
 
-        *, *::before, *::after { box-sizing: border-box; }
-        html { cursor: none; }
-        body { font-family: 'Inter', sans-serif; background: #fff; overflow-x: hidden; cursor: none; }
+        :root { --red:#ef4444; --black:#0a0a0a; --cream:#faf8f4; --warm:#f5f0e8; }
 
-        /* ── CUSTOM CURSOR ── */
-        #cursor {
-            width: 10px; height: 10px;
-            background: #ef4444; border-radius: 50%;
-            position: fixed; top: 0; left: 0;
-            pointer-events: none; z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
-        }
-        #cursor-ring {
-            width: 36px; height: 36px;
-            border: 1.5px solid rgba(239,68,68,0.4);
-            border-radius: 50%;
-            position: fixed; top: 0; left: 0;
-            pointer-events: none; z-index: 9998;
-            transform: translate(-50%, -50%);
-            transition: transform 0.08s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
-        }
-        body:has(a:hover) #cursor, body:has(button:hover) #cursor { width: 20px; height: 20px; }
-        body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring { opacity: 0; }
-        @media (hover: none) { #cursor, #cursor-ring { display: none; } html, body { cursor: auto; } }
+        *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'Syne',sans-serif; background:var(--cream); color:var(--black); overflow-x:hidden; cursor:none; }
 
-        /* ── LOGO ── */
-        .logo-text {
-            font-family: 'Hijrnotes', cursive;
-            font-size: 38px; letter-spacing: -1px;
-            transform: rotate(-4deg); display: inline-block;
-            transition: color 0.3s ease;
-        }
-        .logo-wrap:hover .logo-text { color: #ef4444; }
+        /* CURSOR */
+        #cur { width:10px; height:10px; background:var(--red); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .2s,height .2s; }
+        #cur-ring { width:38px; height:38px; border:1.5px solid rgba(239,68,68,.35); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); }
+        body:has(a:hover) #cur, body:has(button:hover) #cur { width:22px; height:22px; }
+        body:has(a:hover) #cur-ring, body:has(button:hover) #cur-ring { opacity:0; }
+        @media(hover:none){ #cur,#cur-ring{ display:none; } body{ cursor:auto; } }
 
-        /* ── NAV ── */
-        nav { position: sticky; top: 0; z-index: 100; }
+        /* NAV */
+        #nav { position:sticky; top:0; z-index:100; background:rgba(250,248,244,.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(0,0,0,.07); }
+        .nav-inner { max-width:1400px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:68px; }
+        .logo { font-family:'Hijrnotes',cursive; font-size:34px; color:var(--black); text-decoration:none; transform:rotate(-4deg); display:inline-block; transition:color .3s; }
+        .logo:hover { color:var(--red); }
+        .nav-links { display:flex; align-items:center; gap:1.8rem; }
+        .nav-links a { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.18em; color:rgba(0,0,0,.4); text-decoration:none; transition:color .2s; }
+        .nav-links a:hover { color:var(--black); }
+        .nav-sep { width:1px; height:18px; background:rgba(0,0,0,.1); flex-shrink:0; }
+        .pill-btn { background:var(--black) !important; color:#fff !important; padding:9px 20px; border-radius:100px; font-size:10px !important; }
+        .pill-btn:hover { background:var(--red) !important; }
 
-        /* ── MOBILE MENU ── */
-        #mobile-menu {
-            position: fixed; inset: 0; background: #000; z-index: 200;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem;
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.35s ease;
-        }
-        #mobile-menu.open { opacity: 1; pointer-events: all; }
-        .mobile-link {
-            font-size: clamp(2rem, 8vw, 3.5rem);
-            font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em;
-            color: #fff; text-decoration: none; transition: color 0.2s ease;
-        }
-        .mobile-link:hover { color: #ef4444; }
+        /* MOBILE MENU */
+        #mob { position:fixed; inset:0; background:var(--black); z-index:200; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:3rem 3rem 3rem 4rem; gap:1.4rem; opacity:0; pointer-events:none; transition:opacity .4s; }
+        #mob.open { opacity:1; pointer-events:all; }
+        .mob-link { font-size:clamp(2rem,7vw,3.2rem); font-weight:800; color:#fff; text-decoration:none; text-transform:uppercase; letter-spacing:-.02em; transition:color .2s; }
+        .mob-link:hover { color:var(--red); }
+        .mob-sub { font-size:clamp(.85rem,2.5vw,1.1rem); font-weight:700; color:rgba(255,255,255,.3); text-decoration:none; text-transform:uppercase; letter-spacing:.15em; transition:color .2s; }
+        .mob-sub:hover { color:var(--red); }
+        #mob-x { position:absolute; top:1.8rem; right:2rem; background:none; border:none; color:#fff; font-size:1.6rem; cursor:none; }
 
-        /* ── HERO ── */
-        .hero-bg {
-            background: #000;
-            min-height: 100vh;
-            display: flex; flex-direction: column;
-            justify-content: flex-end;
-            position: relative; overflow: hidden;
-        }
-        .hero-video-overlay {
-            position: absolute; inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 70%, #000 100%);
-            z-index: 1;
-        }
-        .hero-content { position: relative; z-index: 2; padding: 0 2rem 4rem; }
+        /* HERO */
+        .hero { display:grid; grid-template-columns:55% 45%; min-height:100vh; }
+        @media(max-width:768px){ .hero{ grid-template-columns:1fr; } }
+        .hero-l { background:var(--black); padding:clamp(100px,15vw,160px) 3rem 3rem; display:flex; flex-direction:column; justify-content:flex-end; position:relative; overflow:hidden; }
+        .hero-l::before { content:''; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px); background-size:30px 30px; }
+        .hero-r { background:var(--red); display:flex; flex-direction:column; justify-content:flex-end; padding:2.5rem; position:relative; overflow:hidden; }
+        @media(max-width:768px){ .hero-r{ min-height:55vw; } }
 
-        /* ── TICKER ── */
-        .ticker-track { display: flex; gap: 3rem; animation: ticker 25s linear infinite; width: max-content; }
-        @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .hlabel { font-size:9px; font-weight:700; letter-spacing:.45em; text-transform:uppercase; color:var(--red); position:relative; z-index:1; margin-bottom:1.5rem; }
+        .hname { font-family:'DM Serif Display',serif; font-size:clamp(5rem,11vw,9.5rem); color:#fff; line-height:.84; position:relative; z-index:1; }
+        .hname em { font-style:italic; color:rgba(255,255,255,.2); }
+        .htag { font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.4); max-width:280px; line-height:1.9; margin:1.8rem 0; position:relative; z-index:1; }
+        .hbtns { display:flex; gap:12px; flex-wrap:wrap; position:relative; z-index:1; }
+        .hbtn-w { background:#fff; color:var(--black); font-size:9px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; padding:14px 28px; border-radius:100px; text-decoration:none; transition:all .25s; }
+        .hbtn-w:hover { background:var(--red); color:#fff; }
+        .hbtn-g { border:1.5px solid rgba(255,255,255,.3); color:#fff; font-size:9px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; padding:14px 28px; border-radius:100px; text-decoration:none; transition:border-color .25s; }
+        .hbtn-g:hover { border-color:#fff; }
+        .hstats { display:flex; gap:2rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.07); margin-top:2rem; position:relative; z-index:1; flex-wrap:wrap; }
+        .hstat-n { font-family:'DM Serif Display',serif; font-size:2rem; color:#fff; display:block; }
+        .hstat-l { font-size:8px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-top:3px; display:block; }
 
-        /* ── SCROLL REVEAL ── */
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
+        /* Red side deco */
+        .rdeco { font-family:'DM Serif Display',serif; font-style:italic; font-size:clamp(3.5rem,7vw,6rem); color:rgba(0,0,0,.13); line-height:.9; user-select:none; }
+        .rbadge { position:absolute; top:2rem; right:2rem; background:rgba(0,0,0,.15); border-radius:1rem; padding:.9rem 1.1rem; text-align:center; }
+        .rbadge span { display:block; font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:rgba(255,255,255,.65); }
+        .rbadge strong { display:block; font-size:1.3rem; font-weight:800; color:#fff; margin-top:2px; }
+        .rsocials { display:flex; gap:10px; flex-wrap:wrap; margin-top:1.4rem; }
+        .rsoc-pill { background:rgba(0,0,0,.16); color:#fff; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:9px 16px; border-radius:100px; text-decoration:none; transition:background .2s; }
+        .rsoc-pill:hover { background:rgba(0,0,0,.32); }
 
-        /* ── SECTION ALTERNATING ── */
-        .section-dark { background: #0a0a0a; color: #fff; }
-        .section-cream { background: #faf9f6; }
-        .section-white { background: #fff; }
+        /* TICKER */
+        .ticker { background:var(--black); overflow:hidden; padding:13px 0; }
+        .ticker-t { display:flex; gap:2.5rem; animation:sticker 26s linear infinite; width:max-content; }
+        @keyframes sticker { from{transform:translateX(0)}to{transform:translateX(-50%)} }
+        .ti { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.3em; color:rgba(255,255,255,.45); white-space:nowrap; }
+        .td { color:var(--red); }
 
-        /* ── IFRAME SECTIONS ── */
-        iframe { width: 100%; border: none; display: block; }
+        /* SECTION HEADERS */
+        .sh { padding:80px 2rem 0; max-width:1400px; margin:0 auto; }
+        .slabel { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.4em; color:var(--red); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+        .slabel::before { content:''; width:26px; height:2px; background:var(--red); border-radius:2px; display:block; flex-shrink:0; }
+        .slabel-dark { color:rgba(255,100,100,.8); }
+        .slabel-dark::before { background:rgba(255,80,80,.6); }
+        .stitle { font-family:'DM Serif Display',serif; font-size:clamp(2.2rem,4.5vw,3.8rem); line-height:1.05; }
+        .stitle-dark { color:#fff; }
+        .stitle em { font-style:italic; color:rgba(0,0,0,.18); }
+        .stitle-dark em { color:rgba(255,255,255,.18); }
+
+        /* CONNECT */
+        .cg { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; }
+        .sc { background:#fff; border-radius:2rem; padding:2rem 1.5rem; text-align:center; text-decoration:none; transition:all .3s; border:1.5px solid transparent; display:block; }
+        .sc:hover { transform:translateY(-6px); border-color:var(--red); }
+        .si { font-size:2rem; margin-bottom:1rem; display:block; }
+        .sn { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:rgba(0,0,0,.45); display:block; }
+        .sh2 { font-size:11px; font-weight:700; color:var(--black); margin-top:4px; display:block; }
+        .scount { font-family:'DM Serif Display',serif; font-size:2rem; color:var(--black); margin-top:8px; display:block; }
+
+        /* REVEAL */
+        .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+        .reveal.on { opacity:1; transform:translateY(0); }
+        .rd1 { transition-delay:.1s; }
+        .rd2 { transition-delay:.2s; }
+
+        /* IFRAME */
+        .fw-iframe iframe { width:100%; border:none; display:block; }
+
+        /* HAM */
+        #ham { background:none; border:none; cursor:none; display:none; flex-direction:column; gap:5px; padding:4px; }
+        @media(max-width:1024px){ #ham{display:flex;} .nav-links{display:none;} }
+        .hl { width:22px; height:2px; background:var(--black); border-radius:2px; }
     </style>
 </head>
 <body>
 
-<!-- Custom cursor -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+<div id="cur"></div>
+<div id="cur-ring"></div>
 
-<!-- ── MOBILE MENU ── -->
-<div id="mobile-menu" role="dialog" aria-label="Navigation menu">
-    <button id="menu-close" onclick="toggleMenu()" aria-label="Close menu"
-        style="position:absolute;top:2rem;right:2rem;background:none;border:none;color:#fff;font-size:2rem;cursor:none;">✕</button>
-    <a href="#travel" class="mobile-link" onclick="toggleMenu()">01 Archive</a>
-    <a href="#hotels" class="mobile-link" onclick="toggleMenu()">02 Hotels</a>
-    <a href="#cafes" class="mobile-link" onclick="toggleMenu()">03 Cafes</a>
-    <a href="#connect" class="mobile-link" onclick="toggleMenu()">04 Connect</a>
-    <a href="#shop" class="mobile-link" onclick="toggleMenu()">05 Support</a>
-    <a href="#inquiries" class="mobile-link" onclick="toggleMenu()" style="color:#ef4444;">06 Inquiries</a>
-    <div style="width:40px;height:1px;background:rgba(255,255,255,0.1);"></div>
-    <a href="/klook" class="mobile-link" style="font-size:clamp(1.2rem,4vw,2rem);">🎟 Klook</a>
-    <a href="/amazon" class="mobile-link" style="font-size:clamp(1.2rem,4vw,2rem);">🛒 Amazon</a>
-    <a href="/buymeacoffee" class="mobile-link" style="font-size:clamp(1.2rem,4vw,2rem);">☕ Buy Me a Coffee</a>
+<!-- MOBILE MENU -->
+<div id="mob">
+    <button id="mob-x" onclick="tMob()">✕</button>
+    <a href="#travel" class="mob-link" onclick="tMob()">Archive</a>
+    <a href="#hotels" class="mob-link" onclick="tMob()">Hotels</a>
+    <a href="#cafes" class="mob-link" onclick="tMob()">Cafes</a>
+    <a href="#connect" class="mob-link" onclick="tMob()">Connect</a>
+    <a href="#shop" class="mob-link" onclick="tMob()">Support</a>
+    <a href="#inquiries" class="mob-link" style="color:var(--red);" onclick="tMob()">Work With Me</a>
+    <div style="width:36px;height:1px;background:rgba(255,255,255,.1);"></div>
+    <a href="/klook" class="mob-sub" onclick="tMob()">🎟 Klook · JMMARIAKLOOK</a>
+    <a href="/amazon" class="mob-sub" onclick="tMob()">🛒 Amazon Storefront</a>
+    <a href="/buymeacoffee" class="mob-sub" onclick="tMob()">☕ Buy Me a Coffee</a>
 </div>
 
-<!-- ── NAV ── -->
-<nav class="bg-black/95 backdrop-blur-md border-b border-white/5 h-20 flex items-center px-6 lg:px-10 justify-between">
-    <a href="#" class="logo-wrap" style="text-decoration:none;">
-        <span class="logo-text" style="color:#fff;">Jm Maria</span>
-    </a>
-    <div class="hidden lg:flex space-x-6 text-[8px] font-bold uppercase tracking-[0.25em] text-white/40">
-        <a href="#travel" class="hover:text-white transition-colors">01 Archive</a>
-        <a href="#hotels" class="hover:text-white transition-colors">02 Hotels</a>
-        <a href="#cafes" class="hover:text-white transition-colors">03 Cafes</a>
-        <a href="#connect" class="hover:text-white transition-colors">04 Connect</a>
-        <a href="#shop" class="hover:text-white transition-colors">05 Support</a>
-        <a href="#inquiries" class="text-red-500 font-black">06 Inquiries</a>
-        <!-- separator -->
-        <span class="text-white/10">|</span>
-        <a href="/klook" class="hover:text-red-400 transition-colors text-white/30">Klook</a>
-        <a href="/amazon" class="hover:text-red-400 transition-colors text-white/30">Amazon</a>
-        <a href="/buymeacoffee" class="hover:text-red-400 transition-colors text-white/30">☕</a>
-    </div>
-    <div class="flex items-center gap-4">
-        <a href="https://www.youtube.com/@jmmaria" target="_blank"
-           class="bg-red-600 text-white px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-widest hover:bg-red-700 transition-all">
-            Subscribe
-        </a>
-        <button id="menu-toggle" onclick="toggleMenu()" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" style="background:none;border:none;">
-            <span style="display:block;width:22px;height:2px;background:#fff;border-radius:2px;"></span>
-            <span style="display:block;width:16px;height:2px;background:#fff;border-radius:2px;"></span>
-            <span style="display:block;width:22px;height:2px;background:#fff;border-radius:2px;"></span>
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-inner">
+        <a href="#" class="logo">Jm Maria</a>
+        <div class="nav-links">
+            <a href="#travel">Archive</a>
+            <a href="#hotels">Hotels</a>
+            <a href="#cafes">Cafes</a>
+            <a href="#connect">Connect</a>
+            <a href="#shop">Support</a>
+            <div class="nav-sep"></div>
+            <a href="/klook" style="color:rgba(0,0,0,.3);">Klook</a>
+            <a href="/amazon" style="color:rgba(0,0,0,.3);">Amazon</a>
+            <a href="/buymeacoffee" style="color:rgba(0,0,0,.3);">☕</a>
+            <div class="nav-sep"></div>
+            <a href="#inquiries" class="pill-btn">Work With Me</a>
+        </div>
+        <button id="ham" onclick="tMob()" aria-label="Open menu">
+            <span class="hl"></span>
+            <span class="hl" style="width:16px;"></span>
+            <span class="hl"></span>
         </button>
     </div>
 </nav>
 
-<!-- ── HERO ── -->
-<section class="hero-bg">
-    <!-- Swap this img for your own photo or a video poster -->
-    <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80"
-         alt="JM Maria — travel creator"
-         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;">
-    <div class="hero-video-overlay"></div>
-    <div class="hero-content max-w-7xl mx-auto w-full">
-        <div class="max-w-3xl">
-            <p class="text-[10px] font-black text-red-500 uppercase tracking-[0.5em] mb-5">Travel Creator · Dubai</p>
-            <h1 class="text-[clamp(3.5rem,11vw,8rem)] font-black uppercase tracking-tighter leading-[0.85] text-white mb-6">
-                JM<br><span class="text-red-500">Maria</span>
-            </h1>
-            <p class="text-white/60 text-sm font-bold uppercase tracking-widest max-w-sm leading-relaxed mb-10">
-                Cinematic travel storytelling — hotels, cafes & destinations across Europe, Southeast Asia & the Middle East.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#travel" class="bg-white text-black px-8 py-4 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all">
-                    Watch My Films
-                </a>
-                <a href="#inquiries" class="border border-white/30 text-white px-8 py-4 rounded-full text-[10px] font-black uppercase tracking-widest hover:border-white transition-all">
-                    Work With Me
-                </a>
-            </div>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-l">
+        <p class="hlabel">Travel Creator · Dubai · UAE</p>
+        <h1 class="hname">JM<br><em>Maria</em></h1>
+        <p class="htag">Cinematic hotels, hidden cafes & destination stories — Europe, Southeast Asia & the Middle East.</p>
+        <div class="hbtns">
+            <a href="#travel" class="hbtn-w">Watch My Films</a>
+            <a href="#inquiries" class="hbtn-g">Work With Me</a>
         </div>
-        <!-- Stats row -->
-        <div class="flex flex-wrap gap-8 mt-16 pt-8 border-t border-white/10">
-            <div><div class="text-3xl font-black text-white">21K+</div><div class="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1">YouTube</div></div>
-            <div><div class="text-3xl font-black text-white">10K+</div><div class="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1">Instagram</div></div>
-            <div><div class="text-3xl font-black text-white">17+</div><div class="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1">Hotels</div></div>
-            <div><div class="text-3xl font-black text-white">5</div><div class="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1">Countries</div></div>
+        <div class="hstats">
+            <div><span class="hstat-n">21K+</span><span class="hstat-l">YouTube</span></div>
+            <div><span class="hstat-n">10K+</span><span class="hstat-l">Instagram</span></div>
+            <div><span class="hstat-n">17+</span><span class="hstat-l">Hotels</span></div>
+            <div><span class="hstat-n">5</span><span class="hstat-l">Countries</span></div>
+        </div>
+    </div>
+    <div class="hero-r">
+        <div class="rbadge">
+            <span>Based in</span>
+            <strong>Dubai 🇦🇪</strong>
+        </div>
+        <div>
+            <div class="rdeco">Hotels.<br>Cafes.<br>Stories.</div>
+            <div class="rsocials">
+                <a href="https://instagram.com/itsjmmaria" target="_blank" class="rsoc-pill"><i class="fab fa-instagram"></i> @itsjmmaria</a>
+                <a href="https://youtube.com/@jmmaria" target="_blank" class="rsoc-pill"><i class="fab fa-youtube"></i> Subscribe</a>
+                <a href="https://tiktok.com/@itsjmmaria" target="_blank" class="rsoc-pill"><i class="fab fa-tiktok"></i> TikTok</a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ── SOCIAL PROOF TICKER ── -->
-<div class="bg-red-600 py-3 overflow-hidden">
-    <div style="overflow:hidden;">
-        <div class="ticker-track text-[9px] font-black uppercase tracking-[0.3em] text-white">
-            <span class="whitespace-nowrap">✦ 21K YouTube Subscribers</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-            <span class="whitespace-nowrap">✦ 10K Instagram Followers</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-            <span class="whitespace-nowrap">✦ 17+ Hotels Featured</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-            <span class="whitespace-nowrap">✦ 5 Countries Covered</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-            <span class="whitespace-nowrap">✦ Dubai · Bangkok · Paris · Berlin · Warsaw</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-            <span class="whitespace-nowrap">✦ UGC · Hotel Features · Tourism Campaigns</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-            <span class="whitespace-nowrap">✦ 21K YouTube Subscribers</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-            <span class="whitespace-nowrap">✦ 10K Instagram Followers</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-            <span class="whitespace-nowrap">✦ 17+ Hotels Featured</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-            <span class="whitespace-nowrap">✦ 5 Countries Covered</span>
-            <span class="whitespace-nowrap opacity-60">·</span>
-        </div>
+<!-- TICKER -->
+<div class="ticker">
+    <div class="ticker-t">
+        <span class="ti">Dubai</span><span class="td">✦</span>
+        <span class="ti">Bangkok</span><span class="td">✦</span>
+        <span class="ti">Paris</span><span class="td">✦</span>
+        <span class="ti">Koh Lanta</span><span class="td">✦</span>
+        <span class="ti">Berlin</span><span class="td">✦</span>
+        <span class="ti">Phi Phi Island</span><span class="td">✦</span>
+        <span class="ti">Dijon</span><span class="td">✦</span>
+        <span class="ti">Phuket</span><span class="td">✦</span>
+        <span class="ti">Warsaw</span><span class="td">✦</span>
+        <span class="ti">Krabi</span><span class="td">✦</span>
+        <span class="ti">Dubai</span><span class="td">✦</span>
+        <span class="ti">Bangkok</span><span class="td">✦</span>
+        <span class="ti">Paris</span><span class="td">✦</span>
+        <span class="ti">Koh Lanta</span><span class="td">✦</span>
+        <span class="ti">Berlin</span><span class="td">✦</span>
+        <span class="ti">Phi Phi Island</span><span class="td">✦</span>
+        <span class="ti">Dijon</span><span class="td">✦</span>
+        <span class="ti">Phuket</span><span class="td">✦</span>
+        <span class="ti">Warsaw</span><span class="td">✦</span>
+        <span class="ti">Krabi</span><span class="td">✦</span>
     </div>
 </div>
 
-<!-- ── SECTIONS (iframed chapters) ── -->
-<main>
-    <div id="travel" class="reveal"><iframe src="chapter-1.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-    <div id="hotels" class="reveal reveal-delay-1"><iframe src="chapter-2.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-    <div id="cafes" class="reveal reveal-delay-1"><iframe src="chapter-3.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-    <div id="connect" class="reveal reveal-delay-1"><iframe src="chapter-4.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-    <div id="shop" class="reveal reveal-delay-1"><iframe src="chapter-5.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-    <div id="inquiries" class="reveal reveal-delay-1"><iframe src="chapter-6.html" onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';"></iframe></div>
-</main>
+<!-- ARCHIVE -->
+<section id="travel" style="background:var(--black); padding-bottom:40px;">
+    <div class="sh reveal">
+        <p class="slabel slabel-dark">01 Archive</p>
+        <h2 class="stitle stitle-dark">My <em>Films</em></h2>
+    </div>
+    <div class="fw-iframe reveal">
+        <iframe src="chapter-1.html" onload="aH(this)" title="Video archive"></iframe>
+    </div>
+</section>
 
-<!-- Destination pages strip -->
-<div style="background:#111; padding:48px 2rem; border-top:1px solid rgba(255,255,255,0.05);">
-    <div style="max-width:1200px; margin:0 auto;">
-        <p style="color:rgba(255,255,255,0.3); font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.4em; text-align:center; margin-bottom:24px;">Explore by Destination</p>
-        <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-            <a href="/uae" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; padding:14px 28px; border-radius:100px; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='#ef4444';this.style.borderColor='#ef4444'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.1)'">🇦🇪 Dubai & UAE</a>
-            <a href="/thailand" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; padding:14px 28px; border-radius:100px; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='#ef4444';this.style.borderColor='#ef4444'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.1)'">🇹🇭 Thailand</a>
-            <a href="/france" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; padding:14px 28px; border-radius:100px; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='#ef4444';this.style.borderColor='#ef4444'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.1)'">🇫🇷 France</a>
+<!-- HOTELS -->
+<section id="hotels" style="background:var(--warm); padding-bottom:40px;">
+    <div class="sh reveal">
+        <p class="slabel">02 Hotels</p>
+        <h2 class="stitle">The Stay <em>List</em></h2>
+    </div>
+    <div class="fw-iframe reveal">
+        <iframe src="chapter-2.html" onload="aH(this)" title="Hotel reviews"></iframe>
+    </div>
+</section>
+
+<!-- CAFES -->
+<section id="cafes" style="background:var(--black); padding-bottom:40px;">
+    <div class="sh reveal">
+        <p class="slabel slabel-dark">03 Cafes</p>
+        <h2 class="stitle stitle-dark">Cafe <em>Culture</em></h2>
+    </div>
+    <div class="fw-iframe reveal">
+        <iframe src="chapter-3.html" onload="aH(this)" title="Cafe reviews"></iframe>
+    </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect" style="background:var(--cream); padding:100px 2rem 80px;">
+    <div style="max-width:1000px; margin:0 auto;">
+        <div class="reveal" style="text-align:center; margin-bottom:3rem;">
+            <p class="slabel" style="justify-content:center;">04 Connect</p>
+            <h2 class="stitle">Find Me <em>Everywhere</em></h2>
+            <p style="color:rgba(0,0,0,.4); font-size:13px; font-weight:600; letter-spacing:.05em; margin-top:1rem;">Follow along for daily travel content, hotel reviews & Dubai life.</p>
+        </div>
+
+        <div class="cg reveal rd1">
+            <a href="https://youtube.com/@jmmaria" target="_blank" class="sc">
+                <span class="si" style="color:#ef4444;"><i class="fab fa-youtube"></i></span>
+                <span class="sn">YouTube</span>
+                <span class="sh2">@jmmaria</span>
+                <span class="scount">21K+</span>
+            </a>
+            <a href="https://instagram.com/itsjmmaria" target="_blank" class="sc">
+                <span class="si" style="color:#e1306c;"><i class="fab fa-instagram"></i></span>
+                <span class="sn">Instagram</span>
+                <span class="sh2">@itsjmmaria</span>
+                <span class="scount">10K+</span>
+            </a>
+            <a href="https://tiktok.com/@itsjmmaria" target="_blank" class="sc">
+                <span class="si"><i class="fab fa-tiktok"></i></span>
+                <span class="sn">TikTok</span>
+                <span class="sh2">@itsjmmaria</span>
+                <span class="scount">15K+</span>
+            </a>
+            <a href="https://facebook.com/janinamariac" target="_blank" class="sc">
+                <span class="si" style="color:#1877f2;"><i class="fab fa-facebook"></i></span>
+                <span class="sn">Facebook</span>
+                <span class="sh2">janinamariac</span>
+                <span class="scount">5K+</span>
+            </a>
+        </div>
+
+        <!-- Destination pills + CTA -->
+        <div class="reveal rd2" style="margin-top:2.5rem; background:var(--black); border-radius:2.5rem; padding:2.5rem; display:flex; gap:2rem; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+            <div>
+                <p style="font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.35em; color:rgba(255,255,255,.3); margin-bottom:12px;">Explore by destination</p>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                    <a href="/uae" style="background:rgba(255,255,255,.07); color:#fff; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px; text-decoration:none; transition:background .2s;" onmouseover="this.style.background='#ef4444'" onmouseout="this.style.background='rgba(255,255,255,.07)'">🇦🇪 UAE</a>
+                    <a href="/thailand" style="background:rgba(255,255,255,.07); color:#fff; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px; text-decoration:none; transition:background .2s;" onmouseover="this.style.background='#ef4444'" onmouseout="this.style.background='rgba(255,255,255,.07)'">🇹🇭 Thailand</a>
+                    <a href="/france" style="background:rgba(255,255,255,.07); color:#fff; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px; text-decoration:none; transition:background .2s;" onmouseover="this.style.background='#ef4444'" onmouseout="this.style.background='rgba(255,255,255,.07)'">🇫🇷 France</a>
+                    <span style="background:rgba(255,255,255,.04); color:rgba(255,255,255,.35); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px;">🇩🇪 Germany</span>
+                    <span style="background:rgba(255,255,255,.04); color:rgba(255,255,255,.35); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px;">🇵🇱 Poland</span>
+                </div>
+            </div>
+            <a href="mailto:jmmaria.ugc@gmail.com" style="background:var(--red); color:#fff; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.2em; padding:16px 28px; border-radius:100px; text-decoration:none; white-space:nowrap; transition:background .2s; flex-shrink:0;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
+                Send Inquiry →
+            </a>
         </div>
     </div>
-</div>
+</section>
 
-<footer class="py-16 bg-black text-center border-t border-white/5">
-    <div class="flex justify-center gap-6 mb-6">
-        <a href="https://instagram.com/itsjmmaria" target="_blank" class="text-white/30 hover:text-white transition-colors text-sm"><i class="fab fa-instagram"></i></a>
-        <a href="https://tiktok.com/@itsjmmaria" target="_blank" class="text-white/30 hover:text-white transition-colors text-sm"><i class="fab fa-tiktok"></i></a>
-        <a href="https://youtube.com/@jmmaria" target="_blank" class="text-white/30 hover:text-red-500 transition-colors text-sm"><i class="fab fa-youtube"></i></a>
-        <a href="https://facebook.com/janinamariac" target="_blank" class="text-white/30 hover:text-white transition-colors text-sm"><i class="fab fa-facebook"></i></a>
+<!-- SUPPORT -->
+<section id="shop" style="background:var(--warm); padding-bottom:40px;">
+    <div class="sh reveal">
+        <p class="slabel">05 Support & Explore</p>
+        <h2 class="stitle">The <em>Good Stuff</em></h2>
     </div>
-    <p class="text-[9px] font-bold text-slate-700 uppercase tracking-[1em]">© 2026 JM Maria | jmmaria.com</p>
+    <div class="fw-iframe reveal">
+        <iframe src="chapter-5.html" onload="aH(this)" title="Support and explore"></iframe>
+    </div>
+</section>
+
+<!-- WORK WITH ME -->
+<section id="inquiries" style="background:var(--cream); padding-bottom:40px;">
+    <div class="sh reveal">
+        <p class="slabel">06 Work With Me</p>
+        <h2 class="stitle">Let's <em>Create</em></h2>
+    </div>
+    <div class="fw-iframe reveal">
+        <iframe src="chapter-6.html" onload="aH(this)" title="Work with JM Maria"></iframe>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--black); padding:56px 2rem 32px;">
+    <div style="max-width:1400px; margin:0 auto;">
+        <div style="border-top:1px solid rgba(255,255,255,.06); padding-top:40px; margin-bottom:40px;">
+            <p style="font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.35em; color:rgba(255,255,255,.22); text-align:center; margin-bottom:18px;">Quick links</p>
+            <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:8px;">
+                <a href="/uae" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🇦🇪 Dubai & UAE</a>
+                <a href="/thailand" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🇹🇭 Thailand</a>
+                <a href="/france" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🇫🇷 France</a>
+                <a href="/klook" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🎟 Klook · JMMARIAKLOOK</a>
+                <a href="/amazon" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🛒 Amazon</a>
+                <a href="/buymeacoffee" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">☕ Buy Me a Coffee</a>
+            </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-top:24px; border-top:1px solid rgba(255,255,255,.05);">
+            <a href="#" class="logo" style="color:#fff; font-size:28px;">Jm Maria</a>
+            <div style="display:flex; gap:20px;">
+                <a href="https://instagram.com/itsjmmaria" target="_blank" style="color:rgba(255,255,255,.3); font-size:17px; text-decoration:none; transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@itsjmmaria" target="_blank" style="color:rgba(255,255,255,.3); font-size:17px; text-decoration:none; transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><i class="fab fa-tiktok"></i></a>
+                <a href="https://youtube.com/@jmmaria" target="_blank" style="color:rgba(255,255,255,.3); font-size:17px; text-decoration:none; transition:color .2s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><i class="fab fa-youtube"></i></a>
+                <a href="https://facebook.com/janinamariac" target="_blank" style="color:rgba(255,255,255,.3); font-size:17px; text-decoration:none; transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p style="color:rgba(255,255,255,.18); font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.6em;">© 2026 jmmaria.com</p>
+        </div>
+    </div>
 </footer>
 
 <script>
-    /* Custom cursor */
-    const cur = document.getElementById('cursor');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px'; });
-    function animRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animRing); }
-    animRing();
+/* Cursor */
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
 
-    /* Mobile menu */
-    function toggleMenu() {
-        document.getElementById('mobile-menu').classList.toggle('open');
-        document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
-    }
+/* Mobile menu */
+function tMob(){
+    const m=document.getElementById('mob');
+    m.classList.toggle('open');
+    document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
 
-    /* Scroll reveal */
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+/* Auto-height iframes */
+function aH(f){ try{f.style.height=f.contentWindow.document.body.scrollHeight+'px';}catch(e){} }
+window.addEventListener('load',()=>{ document.querySelectorAll('iframe').forEach(f=>aH(f)); });
 
-    /* Smooth scroll */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
-            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-        });
+/* Scroll reveal */
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}}),{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+        const t=document.querySelector(a.getAttribute('href'));
+        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
     });
+});
 </script>
 </body>
 </html>
