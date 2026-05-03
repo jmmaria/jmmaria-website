@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Activities — JM Maria × Klook</title>
+    <meta name="description" content="Book the activities JM Maria actually does — Dubai desert safaris, Thailand island tours, Paris experiences and more. Powered by Klook.">
+    <meta property="og:title" content="JM Maria's Klook Activity Guide">
+    <meta property="og:description" content="Every destination I've filmed — now bookable. UAE, Thailand, France & Germany.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @font-face { font-family:'Hijrnotes'; src:url('Hijrnotes_PERSONAL_USE_ONLY.ttf') format('truetype'); }
+        * { box-sizing: border-box; }
+        body { font-family:'Inter',sans-serif; background:#fff; margin:0; overflow-x:hidden; }
+
+        .dest-tab { cursor:pointer; border-bottom:2px solid transparent; border-top:none; border-left:none; border-right:none; transition:all 0.25s ease; white-space:nowrap; background:none; padding-bottom:14px; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.25em; color:#94a3b8; }
+        .dest-tab.active { border-bottom-color:#ef4444; color:#000; }
+        .dest-tab:hover:not(.active) { color:#000; }
+        .dest-panel { display:none; }
+        .dest-panel.active { display:block; }
+        .widget-slot.live { background:transparent; border:none; padding:0; display:block; }
+        .widget-slot.live ins, .widget-slot.live iframe { width:100%!important; display:block; }
+        .search-slot.live { background:transparent; padding:0; display:block; overflow:hidden; }
+        .search-slot.live ins, .search-slot.live iframe { width:100%!important; display:block; }
+
+        .back-link { display:inline-flex; align-items:center; gap:6px; color:rgba(255,255,255,0.5); font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; text-decoration:none; transition:color 0.2s; }
+        .back-link:hover { color:#fff; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="background:#000; height:72px; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; position:sticky; top:0; z-index:100; border-bottom:1px solid rgba(255,255,255,0.05);">
+    <a href="/index.html" style="font-family:'Hijrnotes',cursive; font-size:32px; color:#fff; text-decoration:none; transform:rotate(-4deg); display:inline-block; transition:color 0.3s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#fff'">Jm Maria</a>
+    <div style="display:flex; align-items:center; gap:20px;">
+        <a href="/amazon" class="back-link">My Amazon</a>
+        <a href="/buymeacoffee" class="back-link">Buy Me a Coffee</a>
+        <a href="/index.html#inquiries" style="background:#ef4444; color:#fff; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.15em; padding:10px 20px; border-radius:100px; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">Work With Me</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section style="background:#000; padding:72px 2rem 56px; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:-40px; right:-40px; width:400px; height:400px; border-radius:50%; border:1px solid rgba(239,68,68,0.15);"></div>
+    <div style="position:absolute; top:20px; right:20px; width:240px; height:240px; border-radius:50%; border:1px solid rgba(239,68,68,0.08);"></div>
+    <div style="max-width:1200px; margin:0 auto; position:relative; z-index:1;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+            <div style="width:36px; height:3px; background:#ef4444; border-radius:2px;"></div>
+            <span style="color:#ef4444; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.4em;">Klook Kreator</span>
+        </div>
+        <h1 style="font-size:clamp(3rem,9vw,6.5rem); font-weight:900; text-transform:uppercase; letter-spacing:-0.02em; line-height:0.85; color:#fff; margin-bottom:20px;">
+            Book the<br><span style="color:#ef4444;">Activities</span><br>I Love
+        </h1>
+        <p style="color:rgba(255,255,255,0.45); font-size:13px; line-height:1.7; max-width:440px; margin-bottom:36px;">
+            Every destination below is somewhere I've personally filmed. Book through these Klook links — Klook handles everything and I earn a small commission at zero extra cost to you.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:32px;">
+            <span style="background:rgba(255,255,255,0.07); color:#fff; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; padding:8px 18px; border-radius:100px;">🇦🇪 UAE</span>
+            <span style="background:rgba(255,255,255,0.07); color:#fff; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; padding:8px 18px; border-radius:100px;">🇹🇭 Thailand</span>
+            <span style="background:rgba(255,255,255,0.07); color:#fff; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; padding:8px 18px; border-radius:100px;">🇫🇷 France</span>
+            <span style="background:rgba(255,255,255,0.07); color:#fff; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; padding:8px 18px; border-radius:100px;">🇩🇪 Germany</span>
+        </div>
+
+        <!-- PROMO CODE CARD -->
+        <div style="display:inline-flex; align-items:center; gap:20px; background:#fff; border-radius:1.5rem; padding:20px 28px; flex-wrap:wrap;">
+            <div>
+                <p style="color:#94a3b8; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.3em; margin:0 0 4px;">Use my code for a discount</p>
+                <p style="color:#000; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:0.15em; margin:0;">Apply at checkout on Klook</p>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+                <div id="promo-code" style="background:#000; color:#ef4444; font-size:18px; font-weight:900; letter-spacing:0.15em; padding:14px 24px; border-radius:1rem; font-family:monospace;">JMMARIAKLOOK</div>
+                <button onclick="copyCode()" id="copy-btn"
+                    style="background:#ef4444; color:#fff; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.15em; padding:14px 20px; border-radius:1rem; border:none; cursor:pointer; transition:all 0.2s; white-space:nowrap;"
+                    onmouseover="this.style.background='#dc2626'" onmouseout="if(!copied)this.style.background='#ef4444'">
+                    Copy Code
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="background:#ef4444; height:4px;"></div>
+
+<!-- SEARCH BOX -->
+<section style="padding:56px 2rem 40px; background:#fff;">
+    <div style="max-width:1200px; margin:0 auto;">
+        <p style="color:#94a3b8; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.3em; margin-bottom:16px;">Search any destination or activity</p>
+        <div class="search-slot live">
+            <ins class="klk-aff-widget" data-wid="62855" data-height="340px" data-adid="1268647" data-lang="" data-prod="search_vertical" data-currency=""><a href="//www.klook.com/?aid=">Klook.com</a></ins>
+            <script type="text/javascript">
+              (function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];s.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);})(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");
+            </script>
+        </div>
+    </div>
+</section>
+
+<!-- DESTINATION TABS + WIDGETS -->
+<section style="padding:16px 2rem 80px; background:#fff;">
+    <div style="max-width:1200px; margin:0 auto;">
+
+        <div style="display:flex; gap:32px; overflow-x:auto; padding-bottom:4px; margin-bottom:48px; border-bottom:1px solid #f1f5f9; scrollbar-width:none;">
+            <button class="dest-tab active" onclick="switchDest('uae',this)">🇦🇪 UAE</button>
+            <button class="dest-tab" onclick="switchDest('thailand',this)">🇹🇭 Thailand</button>
+            <button class="dest-tab" onclick="switchDest('france',this)">🇫🇷 France</button>
+            <button class="dest-tab" onclick="switchDest('germany',this)">🇩🇪 Germany</button>
+        </div>
+
+        <div class="dest-panel active widget-slot live" id="panel-uae">
+            <ins class="klk-aff-widget" data-adid="1268649" data-lang="" data-currency="" data-cardH="126" data-padding="92" data-lgH="470" data-edgeValue="655" data-cid="78" data-tid="-1" data-amount="6" data-prod="dynamic_widget"><a href="//www.klook.com/">Klook.com</a></ins>
+            <script type="text/javascript">(function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];s.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);})(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");</script>
+        </div>
+
+        <div class="dest-panel widget-slot live" id="panel-thailand">
+            <ins class="klk-aff-widget" data-adid="1268649" data-lang="" data-currency="" data-cardH="126" data-padding="92" data-lgH="470" data-edgeValue="655" data-cid="4" data-tid="-1" data-amount="6" data-prod="dynamic_widget"><a href="//www.klook.com/">Klook.com</a></ins>
+            <script type="text/javascript">(function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];s.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);})(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");</script>
+        </div>
+
+        <div class="dest-panel widget-slot live" id="panel-france">
+            <ins class="klk-aff-widget" data-adid="1268649" data-lang="" data-currency="" data-cardH="126" data-padding="92" data-lgH="470" data-edgeValue="655" data-cid="107" data-tid="-1" data-amount="6" data-prod="dynamic_widget"><a href="//www.klook.com/">Klook.com</a></ins>
+            <script type="text/javascript">(function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];s.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);})(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");</script>
+        </div>
+
+        <div class="dest-panel widget-slot live" id="panel-germany">
+            <ins class="klk-aff-widget" data-adid="1268649" data-lang="" data-currency="" data-cardH="126" data-padding="92" data-lgH="470" data-edgeValue="655" data-cid="103" data-tid="-1" data-amount="6" data-prod="dynamic_widget"><a href="//www.klook.com/">Klook.com</a></ins>
+            <script type="text/javascript">(function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];s.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);})(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");</script>
+        </div>
+
+        <p style="color:#cbd5e1; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.3em; text-align:center; margin-top:48px;">✦ Booking through these links supports my content at zero extra cost to you ✦</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<!-- PROMO REMINDER STRIP -->
+<div style="background:#ef4444; padding:16px 2rem; text-align:center;">
+    <p style="color:#fff; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.3em; margin:0;">
+        Use code <span style="background:rgba(0,0,0,0.25); padding:4px 14px; border-radius:100px; letter-spacing:0.2em;">JMMARIAKLOOK</span> at checkout for a discount ✦
+    </p>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#000; padding:40px 2rem; border-top:1px solid rgba(255,255,255,0.05);">
+    <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <a href="/index.html" style="font-family:'Hijrnotes',cursive; font-size:28px; color:#fff; text-decoration:none; transform:rotate(-4deg); display:inline-block;">Jm Maria</a>
+        <div style="display:flex; gap:20px; flex-wrap:wrap;">
+            <a href="/klook" style="color:#ef4444; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; text-decoration:none;">Klook</a>
+            <a href="/amazon" style="color:rgba(255,255,255,0.4); font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Amazon</a>
+            <a href="/buymeacoffee" style="color:rgba(255,255,255,0.4); font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Buy Me a Coffee</a>
+        </div>
+        <p style="color:#374151; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.6em;">© 2026 jmmaria.com</p>
+    </div>
+</footer>
+
+<script>
+    var copied = false;
+    function copyCode() {
+        navigator.clipboard.writeText('JMMARIAKLOOK').then(function() {
+            copied = true;
+            var btn = document.getElementById('copy-btn');
+            var code = document.getElementById('promo-code');
+            btn.textContent = 'Copied!';
+            btn.style.background = '#16a34a';
+            code.style.color = '#16a34a';
+            setTimeout(function() {
+                btn.textContent = 'Copy Code';
+                btn.style.background = '#ef4444';
+                code.style.color = '#ef4444';
+                copied = false;
+            }, 2500);
+        });
+    }
+    function switchDest(dest, btn) {
+        document.querySelectorAll('.dest-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.dest-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('panel-' + dest).classList.add('active');
+        btn.classList.add('active');
+    }
+</script>
+</body>
+</html>
