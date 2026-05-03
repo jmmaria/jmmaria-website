@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:'Syne',sans-serif; background:#0a0a0a; overflow-x:hidden; }
+
+        .section-header {
+            padding: 72px 2rem 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .slabel {
+            font-size:9px; font-weight:700; text-transform:uppercase;
+            letter-spacing:.4em; color:rgba(239,68,68,.8);
+            display:flex; align-items:center; gap:10px; margin-bottom:10px;
+        }
+        .slabel::before {
+            content:''; width:26px; height:2px;
+            background:rgba(239,68,68,.6); border-radius:2px; display:block; flex-shrink:0;
+        }
+        .stitle {
+            font-family:'DM Serif Display',serif;
+            font-size:clamp(2.2rem,4.5vw,3.8rem);
+            line-height:1.05; color:#fff;
+        }
+        .stitle em { font-style:italic; color:rgba(255,255,255,.18); }
+
+        /* Grid */
+        .tiktok-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 0 2rem 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        @media(max-width: 1100px) { .tiktok-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(max-width: 600px)  { .tiktok-grid { grid-template-columns: 1fr; } }
+
+        .tiktok-card {
+            background: #111;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Force TikTok embeds to fill the card */
+        .tiktok-card .tiktok-embed {
+            margin: 0 !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            border-radius: 0 !important;
+            border: none !important;
+        }
+
+        .card-label {
+            padding: 14px 18px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            color: rgba(255,255,255,.35);
+            border-top: 1px solid rgba(255,255,255,.06);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-label::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: #ef4444;
+            border-radius: 50%;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        /* Follow CTA strip */
+        .follow-strip {
+            margin: 0 2rem 80px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 1.5rem;
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .follow-text {
+            font-size: 13px;
+            font-weight: 700;
+            color: rgba(255,255,255,.5);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+        }
+        .follow-text strong {
+            color: #fff;
+            display: block;
+            font-size: 18px;
+            letter-spacing: -.01em;
+            margin-bottom: 2px;
+        }
+        .follow-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            color: #000;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            padding: 14px 28px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: background .2s;
+        }
+        .follow-btn:hover { background: #ef4444; color: #fff; }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="section-header">
+    <p class="slabel">07 TikTok</p>
+    <h2 class="stitle">Short <em>& Sweet</em></h2>
+</div>
+
+<!-- TIKTOK GRID -->
+<div class="tiktok-grid">
+
+    <!-- Video 1: Solo Date Diaries -->
+    <div class="tiktok-card">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@itsjmmaria/video/7634239441191587092" data-video-id="7634239441191587092" style="max-width:100%;min-width:0;">
+            <section><a target="_blank" href="https://www.tiktok.com/@itsjmmaria?refer=embed">@itsjmmaria</a></section>
+        </blockquote>
+        <div class="card-label">Solo Date Diaries · Dubai</div>
+    </div>
+
+    <!-- Video 2: Pick me challenge -->
+    <div class="tiktok-card">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@itsjmmaria/video/7635541283720678677" data-video-id="7635541283720678677" style="max-width:100%;min-width:0;">
+            <section><a target="_blank" href="https://www.tiktok.com/@itsjmmaria?refer=embed">@itsjmmaria</a></section>
+        </blockquote>
+        <div class="card-label">Pick Me Challenge · Dubai</div>
+    </div>
+
+    <!-- Video 3: Patchi cafe -->
+    <div class="tiktok-card">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@itsjmmaria/video/7446059970103217415" data-video-id="7446059970103217415" style="max-width:100%;min-width:0;">
+            <section><a target="_blank" href="https://www.tiktok.com/@itsjmmaria?refer=embed">@itsjmmaria</a></section>
+        </blockquote>
+        <div class="card-label">Patchi Cafe · Dubai</div>
+    </div>
+
+    <!-- Video 4: Coconut Cloud Matcha -->
+    <div class="tiktok-card">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@itsjmmaria/video/7633286921619295508" data-video-id="7633286921619295508" style="max-width:100%;min-width:0;">
+            <section><a target="_blank" href="https://www.tiktok.com/@itsjmmaria?refer=embed">@itsjmmaria</a></section>
+        </blockquote>
+        <div class="card-label">Coconut Cloud Matcha</div>
+    </div>
+
+</div>
+
+<!-- FOLLOW STRIP -->
+<div style="padding: 0 2rem 80px; max-width:1400px; margin:0 auto;">
+    <div class="follow-strip">
+        <div class="follow-text">
+            <strong>@itsjmmaria</strong>
+            Follow for daily Dubai life, travel & cafe content
+        </div>
+        <a href="https://tiktok.com/@itsjmmaria" target="_blank" class="follow-btn">
+            Follow on TikTok →
+        </a>
+    </div>
+</div>
+
+<!-- TikTok embed script — load once for all videos -->
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+</body>
+</html>
