@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:'Syne',sans-serif; background:#faf8f4; overflow-x:hidden; }
+
+        .section-header { padding:72px 2rem 48px; max-width:1400px; margin:0 auto; }
+        .slabel { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.4em; color:#ef4444; display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+        .slabel::before { content:''; width:26px; height:2px; background:#ef4444; border-radius:2px; display:block; flex-shrink:0; }
+        .stitle { font-family:'DM Serif Display',serif; font-size:clamp(2.2rem,4.5vw,3.8rem); line-height:1.05; color:#0a0a0a; }
+        .stitle em { font-style:italic; color:rgba(0,0,0,.15); }
+        .subtitle { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:rgba(0,0,0,.35); margin-top:10px; }
+
+        .feed-wrap { padding:0 2rem 60px; max-width:1400px; margin:0 auto; }
+
+        .follow-strip { background:#0a0a0a; border-radius:1.5rem; padding:28px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+        .follow-text { font-size:13px; font-weight:700; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; }
+        .follow-text strong { color:#fff; display:block; font-size:18px; letter-spacing:-.01em; margin-bottom:2px; }
+        .follow-btn { display:inline-flex; align-items:center; gap:8px; background:#ef4444; color:#fff; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.2em; padding:14px 28px; border-radius:100px; text-decoration:none; transition:all .2s; }
+        .follow-btn:hover { background:#dc2626; }
+    </style>
+</head>
+<body>
+
+<div class="section-header">
+    <p class="slabel">08 Instagram</p>
+    <h2 class="stitle">On The <em>'Gram</em></h2>
+    <p class="subtitle">Auto-updating · New posts appear here automatically</p>
+</div>
+
+<div class="feed-wrap">
+    <!-- Elfsight Instagram Feed | Auto-updating -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-bfd67ac5-81ea-470b-93bf-4ae7da686471" data-elfsight-app-lazy></div>
+</div>
+
+<div style="padding:0 2rem 80px; max-width:1400px; margin:0 auto;">
+    <div class="follow-strip">
+        <div class="follow-text">
+            <strong>@itsjmmaria</strong>
+            Daily travel content, hotel reviews &amp; Dubai life
+        </div>
+        <a href="https://instagram.com/itsjmmaria" target="_blank" class="follow-btn">
+            Follow on Instagram →
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
