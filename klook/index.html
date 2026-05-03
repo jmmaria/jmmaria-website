@@ -107,25 +107,7 @@
             <button class="dest-tab" onclick="switchDest('germany',this)">🇩🇪 Germany</button>
         </div>
 
-        <div class="dest-panel active widget-slot live" id="panel-uae">
-            <ins class="klk-aff-widget" data-adid="1268649" data-lang="" data-currency="" data-cardH="126" data-padding="92" data-lgH="470" data-edgeValue="655" data-cid="78" data-tid="-1" data-amount="6" data-prod="dynamic_widget"><a href="//www.klook.com/">Klook.com</a></ins>
-            <script type="text/javascript">(function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];s.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);})(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");</script>
-        </div>
-
-        <div class="dest-panel widget-slot live" id="panel-thailand">
-            <ins class="klk-aff-widget" data-adid="1268649" data-lang="" data-currency="" data-cardH="126" data-padding="92" data-lgH="470" data-edgeValue="655" data-cid="4" data-tid="-1" data-amount="6" data-prod="dynamic_widget"><a href="//www.klook.com/">Klook.com</a></ins>
-            <script type="text/javascript">(function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];s.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);})(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");</script>
-        </div>
-
-        <div class="dest-panel widget-slot live" id="panel-france">
-            <ins class="klk-aff-widget" data-adid="1268649" data-lang="" data-currency="" data-cardH="126" data-padding="92" data-lgH="470" data-edgeValue="655" data-cid="107" data-tid="-1" data-amount="6" data-prod="dynamic_widget"><a href="//www.klook.com/">Klook.com</a></ins>
-            <script type="text/javascript">(function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];s.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);})(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");</script>
-        </div>
-
-        <div class="dest-panel widget-slot live" id="panel-germany">
-            <ins class="klk-aff-widget" data-adid="1268649" data-lang="" data-currency="" data-cardH="126" data-padding="92" data-lgH="470" data-edgeValue="655" data-cid="103" data-tid="-1" data-amount="6" data-prod="dynamic_widget"><a href="//www.klook.com/">Klook.com</a></ins>
-            <script type="text/javascript">(function(d,sc,u){var s=d.createElement(sc),p=d.getElementsByTagName(sc)[0];s.type="text/javascript";s.async=true;s.src=u;p.parentNode.insertBefore(s,p);})(document,"script","https://affiliate.klook.com/widget/fetch-iframe-init.js");</script>
-        </div>
+        <div id="widget-container" style="min-height:300px;"></div>
 
         <p style="color:#cbd5e1; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:0.3em; text-align:center; margin-top:48px;">✦ Booking through these links supports my content at zero extra cost to you ✦</p>
     </div>
@@ -153,6 +135,48 @@
 </footer>
 
 <script>
+    var widgets = {
+        uae:      { cid: '78',  label: '🇦🇪 UAE' },
+        thailand: { cid: '4',   label: '🇹🇭 Thailand' },
+        france:   { cid: '107', label: '🇫🇷 France' },
+        germany:  { cid: '103', label: '🇩🇪 Germany' }
+    };
+
+    function renderWidget(dest) {
+        var container = document.getElementById('widget-container');
+        var w = widgets[dest];
+        /* Clear previous iframe/ins completely */
+        container.innerHTML = '';
+        /* Build fresh ins tag */
+        var ins = document.createElement('ins');
+        ins.className = 'klk-aff-widget';
+        ins.setAttribute('data-adid', '1268649');
+        ins.setAttribute('data-lang', '');
+        ins.setAttribute('data-currency', '');
+        ins.setAttribute('data-cardH', '126');
+        ins.setAttribute('data-padding', '92');
+        ins.setAttribute('data-lgH', '470');
+        ins.setAttribute('data-edgeValue', '655');
+        ins.setAttribute('data-cid', w.cid);
+        ins.setAttribute('data-tid', '-1');
+        ins.setAttribute('data-amount', '6');
+        ins.setAttribute('data-prod', 'dynamic_widget');
+        ins.innerHTML = '<a href="//www.klook.com/">Klook.com</a>';
+        container.appendChild(ins);
+        /* Inject fresh script so Klook re-processes only this ins */
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https://affiliate.klook.com/widget/fetch-iframe-init.js';
+        container.appendChild(s);
+    }
+
+    function switchDest(dest, btn) {
+        document.querySelectorAll('.dest-tab').forEach(function(t) { t.classList.remove('active'); });
+        btn.classList.add('active');
+        renderWidget(dest);
+    }
+
+    /* Copy promo code */
     var copied = false;
     function copyCode() {
         navigator.clipboard.writeText('JMMARIAKLOOK').then(function() {
@@ -170,12 +194,9 @@
             }, 2500);
         });
     }
-    function switchDest(dest, btn) {
-        document.querySelectorAll('.dest-panel').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.dest-tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('panel-' + dest).classList.add('active');
-        btn.classList.add('active');
-    }
+
+    /* Render UAE on load */
+    renderWidget('uae');
 </script>
 </body>
 </html>
