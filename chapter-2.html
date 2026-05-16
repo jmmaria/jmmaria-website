@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- SEO -->
     <meta name="description" content="JM Maria's curated hotel reviews — Pimalai Koh Lanta, Hotel AMI Paris, Novotel Berlin, Grand Kata Phuket and more. Cinematic hotel features on YouTube.">
     <meta name="keywords" content="hotel reviews YouTube, JM Maria hotels, luxury hotel vlog, Thailand hotel review, Dubai hotel, France hotel">
     <meta name="author" content="JM Maria">
     <meta name="robots" content="index, follow">
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="JM Maria">
     <meta property="og:title" content="Hotel Reviews — The Stay List | JM Maria">
@@ -16,13 +14,11 @@
     <meta property="og:image" content="https://jmmaria.com/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@itsjmmaria">
     <meta name="twitter:title" content="Hotel Reviews — The Stay List | JM Maria">
     <meta name="twitter:description" content="JM Maria's curated hotel reviews — Pimalai Koh Lanta, Hotel AMI Paris, Novotel Berlin, Grand Kata Phuket and more. Cinematic hotel features on YouTube.">
     <meta name="twitter:image" content="https://jmmaria.com/og-image.jpg">
-    <!-- Canonical -->
     <link rel="canonical" href="https://jmmaria.com/#hotels">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -50,20 +46,18 @@
         .hotel-card:hover .video-container { transform: translateY(-4px); box-shadow: 0 24px 48px -12px rgba(0,0,0,0.15); }
         .hotel-card.hidden-by-filter { display: none !important; }
 
-        /* Hover reveal Book CTA */
         .book-overlay {
             position: absolute; top: 10px; right: 10px;
             opacity: 0; transform: translateY(6px);
-            transition: all 0.3s ease;
-            z-index: 10;
+            transition: all 0.3s ease; z-index: 10;
         }
         .hotel-card:hover .book-overlay { opacity: 1; transform: translateY(0); }
         .book-btn {
             display: inline-flex; align-items: center; gap: 5px;
             background: #fff; color: #000;
             font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em;
-            padding: 7px 14px; border-radius: 100px; text-decoration: none;
-            transition: background 0.2s ease;
+            padding: 7px 14px; border-radius: 100px; cursor: pointer;
+            transition: background 0.2s ease; border: none;
         }
         .book-btn:hover { background: #ef4444; color: #fff; }
 
@@ -72,9 +66,88 @@
 
         .dot { cursor: pointer; height: 8px; width: 8px; background: #d1d5db; border-radius: 50%; display: inline-block; transition: 0.3s; }
         .dot.active { background: #ef4444; width: 24px; border-radius: 4px; }
+
+        /* MODAL */
+        #booking-modal {
+            display: none; position: fixed; inset: 0; z-index: 9999;
+            align-items: center; justify-content: center; padding: 1rem;
+        }
+        #booking-modal.open { display: flex; }
+        #modal-backdrop {
+            position: absolute; inset: 0;
+            background: rgba(0,0,0,0.65); backdrop-filter: blur(6px);
+        }
+        #modal-card {
+            position: relative; z-index: 1;
+            background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1.75rem; padding: 2rem;
+            width: 100%; max-width: 400px;
+            animation: popIn 0.25s ease;
+        }
+        @keyframes popIn { from{opacity:0;transform:scale(0.94);}to{opacity:1;transform:scale(1);} }
+        #modal-hotel-name { font-size: 18px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; color: #fff; margin-bottom: 4px; }
+        #modal-hotel-loc { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(255,255,255,0.35); margin-bottom: 1.5rem; }
+
+        .modal-option {
+            display: flex; align-items: flex-start; gap: 14px;
+            background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08);
+            border-radius: 1.2rem; padding: 16px; text-decoration: none;
+            transition: all 0.2s ease; margin-bottom: 10px; cursor: pointer;
+        }
+        .modal-option:hover { border-color: #ef4444; background: rgba(239,68,68,0.08); }
+        .modal-option-icon { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; }
+        .modal-option-title { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; margin-bottom: 3px; }
+        .modal-option-desc { font-size: 10px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+        #modal-close {
+            position: absolute; top: 1rem; right: 1rem;
+            background: rgba(255,255,255,0.07); border: none;
+            color: rgba(255,255,255,0.5); width: 30px; height: 30px;
+            border-radius: 50%; cursor: pointer; font-size: 13px;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s;
+        }
+        #modal-close:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+        .modal-divider { display: flex; align-items: center; gap: 10px; margin: 12px 0; }
+        .modal-divider::before, .modal-divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
+        .modal-divider span { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; color: rgba(255,255,255,0.2); }
     </style>
 </head>
 <body>
+
+<!-- BOOKING MODAL -->
+<div id="booking-modal">
+    <div id="modal-backdrop" onclick="closeModal()"></div>
+    <div id="modal-card">
+        <button id="modal-close" onclick="closeModal()">✕</button>
+        <p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.4em;color:#ef4444;margin-bottom:8px;">Book on Agoda</p>
+        <div id="modal-hotel-name">Hotel Name</div>
+        <div id="modal-hotel-loc">Location</div>
+
+        <a id="modal-promo-link" href="https://ago-da.co/JMMARIA" target="_blank" class="modal-option">
+            <div class="modal-option-icon" style="background:rgba(239,68,68,0.15);">📲</div>
+            <div>
+                <div class="modal-option-title">Save My Promo Code First</div>
+                <div class="modal-option-desc">Opens Agoda via my ambassador link — your promo saves automatically to the app. Then search for this hotel.</div>
+            </div>
+        </a>
+
+        <div class="modal-divider"><span>or</span></div>
+
+        <a id="modal-hotel-link" href="#" target="_blank" class="modal-option">
+            <div class="modal-option-icon" style="background:rgba(255,255,255,0.06);">🏨</div>
+            <div>
+                <div class="modal-option-title">Go Directly to This Hotel</div>
+                <div class="modal-option-desc">Opens this exact hotel on Agoda. Apply my promo code manually at checkout.</div>
+            </div>
+        </a>
+
+        <p style="font-size:8px;color:rgba(255,255,255,0.2);text-align:center;margin-top:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.2em;">
+            ✦ Booking through my link supports the content ✦
+        </p>
+    </div>
+</div>
 
 <div class="py-24 px-8">
     <div class="max-w-7xl mx-auto mb-10">
@@ -99,9 +172,9 @@
             <div class="hotel-card france group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/FNltoH5j3v4?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal('Maison Tillot','Dijon, France','https://www.agoda.com/ma-suite-maison-tillot/hotel/dijon-fr.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Maison Tillot</h3>
@@ -114,9 +187,9 @@
             <div class="hotel-card france group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/XuLwZVjsTag?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal('Hotel AMI Paris','Paris, France','https://www.agoda.com/delos-vaugirard-hotel/hotel/paris-fr.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Hotel AMI Paris</h3>
@@ -129,9 +202,9 @@
             <div class="hotel-card poland group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/T9ZEiEv1DUQ?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal('ORSO Loft Affairs','Warsaw, Poland','https://www.agoda.com/orso-room-apartments-loft-affair-collection/hotel/warsaw-pl.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">ORSO Loft Affairs</h3>
@@ -144,9 +217,9 @@
             <div class="hotel-card germany group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/-mgD_Reaazc?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal('Novotel Berlin Mitte','Berlin, Germany','https://www.agoda.com/novotel-berlin-mitte-hotel/hotel/berlin-de.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Novotel Berlin Mitte</h3>
@@ -159,9 +232,9 @@
             <div class="hotel-card thailand group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/YT2MyyZTuIk?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal('Pimalai Resort & Spa','Koh Lanta, Thailand','https://www.agoda.com/pimalai-resort-spa/hotel/koh-lanta-th.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Pimalai Resort & Spa</h3>
@@ -174,9 +247,9 @@
             <div class="hotel-card thailand group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/1ynft8XBS0s?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal('Grand Kata VIP','Phuket, Thailand','https://www.agoda.com/grand-kata-vip-kata-beach/hotel/phuket-th.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Grand Kata VIP</h3>
@@ -189,9 +262,9 @@
             <div class="hotel-card thailand group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/6vmlIrOePIw?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal('Cross Vibe Bangkok','Bangkok, Thailand','https://www.agoda.com/cross-vibe-bangkok-sukhumvit-formerly-x2-vibe-bangkok-sukhumvit-sha-plus/hotel/bangkok-th.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Cross Vibe Bangkok</h3>
@@ -204,9 +277,9 @@
             <div class="hotel-card thailand group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/aXV-8E-7As0?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal('Sea Seeker Krabi','Krabi, Thailand','https://www.agoda.com/sea-seeker-krabi-resort/hotel/krabi-th.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">Sea Seeker Krabi</h3>
@@ -219,9 +292,9 @@
             <div class="hotel-card thailand group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/S3ubr4hrB5I?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal('HIP Seaview Phi Phi','Phi Phi, Thailand','https://www.agoda.com/hip-seaview-resort-phi-phi/hotel/koh-phi-phi-th.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">HIP Seaview Phi Phi</h3>
@@ -236,9 +309,9 @@
             <div class="hotel-card thailand group">
                 <div class="video-container mb-5">
                     <iframe src="https://www.youtube.com/embed/yPpXDz1B5so?rel=0" allowfullscreen loading="lazy"></iframe>
-                    <a href="https://ago-da.co/JMMARIA" target="_blank" class="book-overlay">
+                    <button onclick="openModal(&quot;L'esprit de Nai Yang&quot;,'Phuket, Thailand','https://www.agoda.com/l-esprit-de-naiyang-beach-resort/hotel/phuket-th.html')" class="book-overlay">
                         <span class="book-btn"><i class="fas fa-bed" style="font-size:7px;"></i> Book Stay</span>
-                    </a>
+                    </button>
                 </div>
                 <div class="px-1">
                     <h3 class="font-black uppercase text-lg mb-1 tracking-tight">L'esprit de Nai Yang</h3>
@@ -258,6 +331,19 @@
 </div>
 
 <script>
+    function openModal(name, location, hotelUrl) {
+        document.getElementById('modal-hotel-name').textContent = name;
+        document.getElementById('modal-hotel-loc').textContent = location;
+        document.getElementById('modal-hotel-link').href = hotelUrl;
+        document.getElementById('booking-modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        document.getElementById('booking-modal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
     function goToPage(n) {
         document.querySelectorAll('.hotel-page').forEach(p => p.classList.remove('active'));
         document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
@@ -265,8 +351,7 @@
         document.getElementById('dot-'+n).classList.add('active');
     }
     function filterHotels(country) {
-        const buttons = document.querySelectorAll('.filter-btn');
-        buttons.forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         document.getElementById('btn-'+country).classList.add('active');
         const dots = document.querySelector('.mt-14');
         dots.style.display = country === 'all' ? 'flex' : 'none';
