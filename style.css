@@ -399,9 +399,10 @@ a.tag:hover{ color:var(--ink); border-color:var(--ink); }
 .slot--shot{ aspect-ratio:4/5; min-height:0; }
 
 /* logo wall — client marks, unified to one ink tone */
-.wall{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:clamp(20px,3vw,48px); align-items:center;
+.wall{ display:grid; grid-template-columns:repeat(2,1fr);
+  gap:clamp(22px,3vw,44px) clamp(20px,3vw,48px); align-items:center;
   border-block:1px solid var(--line); padding-block:clamp(28px,3.5vw,44px); }
+@media(min-width:620px){ .wall{ grid-template-columns:repeat(3,1fr); } }
 .section--ink .wall,.on-ink .wall{ border-color:var(--line-i); }
 .wall__i{ display:flex; align-items:center; justify-content:center; }
 .wall__i img{ width:min(100%, var(--w,120px)); height:auto;

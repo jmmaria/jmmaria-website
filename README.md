@@ -75,12 +75,17 @@ Sizing is by **equal optical area**, not equal height — a wide wordmark set to
 the same height as a stacked mark looks twice as big. Each `<img>` carries an
 inline `--w` equal to its natural width x 0.34. To add a logo:
 
-1. Knock out the background, flatten to `#141416`, trim, and scale so
-   `width x height` is roughly 34,000px.
+1. Crop off any screenshot chrome, knock out the background, flatten to
+   `#141416`, trim, and scale so `width x height` is roughly 34,000px.
 2. Add `<div class="wall__i"><img src="/brands/NAME.png" alt="Brand"
    style="--w:Xpx"></div>` where X is the new file's natural width x 0.34.
 
-Currently on the wall: Flowwow, Lorealistar, Casa Barkada Salon.
+Currently on the wall (3x3): Tim Hortons, Agoda, Klook, Amazon.ae, YesStyle,
+TIRTIR, Flowwow, Lorealistar, Casa Barkada Salon.
+
+Source screenshots were also cropped to their detected content rows first —
+several carried a full-width grey rule or shadow band from the screenshot
+itself, which would otherwise have survived into the transparent PNG.
 
 Logos are shown at 55% opacity, full on hover. If any brand's guidelines
 require full colour, drop the original PNG into `/brands/` and remove that
