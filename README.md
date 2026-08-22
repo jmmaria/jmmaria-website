@@ -38,13 +38,33 @@ Type: Instrument Serif (display) / Instrument Sans (body) / IBM Plex Mono
    `<img src="/portrait.jpg" alt="JM Maria">`. Styling is already there. This
    is the single highest-value addition: brands hiring a UGC creator are
    hiring a person.
-2. **Client logos** — Partners section. Four `<div class="slot">` placeholders.
-   Replace each with `<img src="..." alt="Brand name">`.
-3. **Rate card** — currently a `mailto:` CTA. No pricing is published anywhere.
+2. **Rate card** — currently a `mailto:` CTA. No pricing is published anywhere.
 4. **Bio accuracy** — the About copy is written from facts already on the old
    site (Dubai-based, 10 properties, 5 countries, 9 Dubai venues, solo
    pipeline). Anything about how long you've been filming, your kit, or where
    you're from was left out rather than guessed. Add it if you want it.
+
+## Brand logos
+
+`/brands/` holds the client marks used in the Partners section. Each source
+screenshot was background-knocked-out and flattened to a single ink tone
+(`--ink`) so the wall reads as one row rather than three competing brand
+palettes.
+
+Sizing is by **equal optical area**, not equal height — a wide wordmark set to
+the same height as a stacked mark looks twice as big. Each `<img>` carries an
+inline `--w` equal to its natural width x 0.34. To add a logo:
+
+1. Knock out the background, flatten to `#141416`, trim, and scale so
+   `width x height` is roughly 34,000px.
+2. Add `<div class="wall__i"><img src="/brands/NAME.png" alt="Brand"
+   style="--w:Xpx"></div>` where X is the new file's natural width x 0.34.
+
+Currently on the wall: Flowwow, Lorealistar, Casa Barkada Salon.
+
+Logos are shown at 55% opacity, full on hover. If any brand's guidelines
+require full colour, drop the original PNG into `/brands/` and remove that
+image's opacity rule.
 
 ## OG image
 
