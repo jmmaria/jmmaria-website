@@ -1,409 +1,682 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Maria | Travel Creator · Dubai</title>
-    <meta name="description" content="Cinematic travel storytelling across YouTube, TikTok & Instagram. Hotels, cafes, and destinations across Europe, Southeast Asia & the Middle East — by JM Maria, based in Dubai.">
-    <meta name="keywords" content="JM Maria, travel creator Dubai, travel vlog, UAE travel blogger, Dubai content creator, hotel reviews, cafe Dubai">
-    <meta name="author" content="JM Maria">
-    <meta name="robots" content="index, follow">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="JM Maria">
-    <meta property="og:title" content="JM Maria | Travel Creator · Dubai">
-    <meta property="og:description" content="Cinematic travel storytelling across YouTube, TikTok & Instagram.">
-    <meta property="og:url" content="https://jmmaria.com/">
-    <meta property="og:image" content="https://jmmaria.com/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@itsjmmaria">
-    <meta name="twitter:title" content="JM Maria | Travel Creator · Dubai">
-    <meta name="twitter:description" content="Cinematic travel storytelling across YouTube, TikTok & Instagram.">
-    <meta name="twitter:image" content="https://jmmaria.com/og-image.jpg">
-    <link rel="canonical" href="https://jmmaria.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JM Maria | UGC &amp; Branded Content · Dubai</title>
+<meta name="description" content="JM Maria produces cinematic UGC and branded content for hotels, tourism boards and lifestyle brands. Based in Dubai, filming worldwide. Portfolio, capabilities and rates.">
+<meta name="keywords" content="UGC creator Dubai, branded content Dubai, hotel content creator, tourism board creator, F&B content Dubai, travel videographer UAE">
+<meta name="author" content="JM Maria">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JM Maria">
+<meta property="og:title" content="JM Maria | UGC &amp; Branded Content · Dubai">
+<meta property="og:description" content="Cinematic UGC and branded content for hotels, tourism boards and lifestyle brands. Based in Dubai, filming worldwide.">
+<meta property="og:url" content="https://jmmaria.com/">
+<meta property="og:image" content="https://jmmaria.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@itsjmmaria">
+<meta name="twitter:title" content="JM Maria | UGC &amp; Branded Content · Dubai">
+<meta name="twitter:description" content="Cinematic UGC and branded content for hotels, tourism boards and lifestyle brands.">
+<meta name="twitter:image" content="https://jmmaria.com/og-image.jpg">
+<link rel="canonical" href="https://jmmaria.com/">
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-    <style>
-        @font-face { font-family:'Hijrnotes'; src:url('Hijrnotes_PERSONAL_USE_ONLY.ttf') format('truetype'); }
-
-        :root { --red:#ef4444; --black:#0a0a0a; --cream:#faf8f4; --warm:#f5f0e8; }
-
-        *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-        html { scroll-behavior:smooth; }
-        body { font-family:'Syne',sans-serif; background:var(--cream); color:var(--black); overflow-x:hidden; cursor:none; }
-
-        /* CURSOR */
-        #cur { width:10px; height:10px; background:var(--red); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .2s,height .2s; }
-        #cur-ring { width:38px; height:38px; border:1.5px solid rgba(239,68,68,.35); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); }
-        body:has(a:hover) #cur, body:has(button:hover) #cur { width:22px; height:22px; }
-        body:has(a:hover) #cur-ring, body:has(button:hover) #cur-ring { opacity:0; }
-        @media(hover:none){ #cur,#cur-ring{ display:none; } body{ cursor:auto; } }
-
-        /* NAV */
-        #nav { position:sticky; top:0; z-index:100; background:rgba(250,248,244,.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(0,0,0,.07); }
-        .nav-inner { max-width:1400px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:68px; }
-        .logo { font-family:'Hijrnotes',cursive; font-size:34px; color:var(--black); text-decoration:none; transform:rotate(-4deg); display:inline-block; transition:color .3s; }
-        .logo:hover { color:var(--red); }
-        .nav-links { display:flex; align-items:center; gap:1.8rem; }
-        .nav-links a { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.18em; color:rgba(0,0,0,.4); text-decoration:none; transition:color .2s; }
-        .nav-links a:hover { color:var(--black); }
-        .nav-sep { width:1px; height:18px; background:rgba(0,0,0,.1); flex-shrink:0; }
-        .pill-btn { background:var(--black) !important; color:#fff !important; padding:9px 20px; border-radius:100px; font-size:10px !important; }
-        .pill-btn:hover { background:var(--red) !important; }
-
-        /* MOBILE MENU */
-        #mob { position:fixed; inset:0; background:var(--black); z-index:200; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:3rem 3rem 3rem 4rem; gap:1.4rem; opacity:0; pointer-events:none; transition:opacity .4s; }
-        #mob.open { opacity:1; pointer-events:all; }
-        .mob-link { font-size:clamp(2rem,7vw,3.2rem); font-weight:800; color:#fff; text-decoration:none; text-transform:uppercase; letter-spacing:-.02em; transition:color .2s; }
-        .mob-link:hover { color:var(--red); }
-        .mob-sub { font-size:clamp(.85rem,2.5vw,1.1rem); font-weight:700; color:rgba(255,255,255,.3); text-decoration:none; text-transform:uppercase; letter-spacing:.15em; transition:color .2s; }
-        .mob-sub:hover { color:var(--red); }
-        #mob-x { position:absolute; top:1.8rem; right:2rem; background:none; border:none; color:#fff; font-size:1.6rem; cursor:none; }
-
-        /* HERO */
-        .hero { display:grid; grid-template-columns:55% 45%; min-height:100vh; }
-        @media(max-width:768px){ .hero{ grid-template-columns:1fr; } }
-        .hero-l { background:var(--black); padding:clamp(100px,15vw,160px) 3rem 3rem; display:flex; flex-direction:column; justify-content:flex-end; position:relative; overflow:hidden; }
-        .hero-l::before { content:''; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px); background-size:30px 30px; }
-        .hero-r { background:var(--red); display:flex; flex-direction:column; justify-content:flex-end; padding:2.5rem; position:relative; overflow:hidden; }
-        @media(max-width:768px){ .hero-r{ min-height:55vw; } }
-
-        .hlabel { font-size:9px; font-weight:700; letter-spacing:.45em; text-transform:uppercase; color:var(--red); position:relative; z-index:1; margin-bottom:1.5rem; }
-        .hname { font-family:'DM Serif Display',serif; font-size:clamp(5rem,11vw,9.5rem); color:#fff; line-height:.84; position:relative; z-index:1; }
-        .hname em { font-style:italic; color:rgba(255,255,255,.2); }
-        .htag { font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.4); max-width:280px; line-height:1.9; margin:1.8rem 0; position:relative; z-index:1; }
-        .hbtns { display:flex; gap:12px; flex-wrap:wrap; position:relative; z-index:1; }
-        .hbtn-w { background:#fff; color:var(--black); font-size:9px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; padding:14px 28px; border-radius:100px; text-decoration:none; transition:all .25s; }
-        .hbtn-w:hover { background:var(--red); color:#fff; }
-        .hbtn-g { border:1.5px solid rgba(255,255,255,.3); color:#fff; font-size:9px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; padding:14px 28px; border-radius:100px; text-decoration:none; transition:border-color .25s; }
-        .hbtn-g:hover { border-color:#fff; }
-        .hstats { display:flex; gap:2rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.07); margin-top:2rem; position:relative; z-index:1; flex-wrap:wrap; }
-        .hstat-n { font-family:'DM Serif Display',serif; font-size:2rem; color:#fff; display:block; }
-        .hstat-l { font-size:8px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-top:3px; display:block; }
-
-        /* Red side deco */
-        .rdeco { font-family:'DM Serif Display',serif; font-style:italic; font-size:clamp(3.5rem,7vw,6rem); color:rgba(0,0,0,.13); line-height:.9; user-select:none; }
-        .rbadge { position:absolute; top:2rem; right:2rem; background:rgba(0,0,0,.15); border-radius:1rem; padding:.9rem 1.1rem; text-align:center; }
-        .rbadge span { display:block; font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:rgba(255,255,255,.65); }
-        .rbadge strong { display:block; font-size:1.3rem; font-weight:800; color:#fff; margin-top:2px; }
-        .rsocials { display:flex; gap:10px; flex-wrap:wrap; margin-top:1.4rem; }
-        .rsoc-pill { background:rgba(0,0,0,.16); color:#fff; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:9px 16px; border-radius:100px; text-decoration:none; transition:background .2s; }
-        .rsoc-pill:hover { background:rgba(0,0,0,.32); }
-
-        /* TICKER */
-        .ticker { background:var(--black); overflow:hidden; padding:13px 0; }
-        .ticker-t { display:flex; gap:2.5rem; animation:sticker 26s linear infinite; width:max-content; }
-        @keyframes sticker { from{transform:translateX(0)}to{transform:translateX(-50%)} }
-        .ti { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.3em; color:rgba(255,255,255,.45); white-space:nowrap; }
-        .td { color:var(--red); }
-
-        /* SECTION HEADERS */
-        .sh { padding:80px 2rem 0; max-width:1400px; margin:0 auto; }
-        .slabel { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.4em; color:var(--red); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
-        .slabel::before { content:''; width:26px; height:2px; background:var(--red); border-radius:2px; display:block; flex-shrink:0; }
-        .slabel-dark { color:rgba(255,100,100,.8); }
-        .slabel-dark::before { background:rgba(255,80,80,.6); }
-        .stitle { font-family:'DM Serif Display',serif; font-size:clamp(2.2rem,4.5vw,3.8rem); line-height:1.05; }
-        .stitle-dark { color:#fff; }
-        .stitle em { font-style:italic; color:rgba(0,0,0,.18); }
-        .stitle-dark em { color:rgba(255,255,255,.18); }
-
-        /* CONNECT */
-        .cg { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; }
-        .sc { background:#fff; border-radius:2rem; padding:2rem 1.5rem; text-align:center; text-decoration:none; transition:all .3s; border:1.5px solid transparent; display:block; }
-        .sc:hover { transform:translateY(-6px); border-color:var(--red); }
-        .si { font-size:2rem; margin-bottom:1rem; display:block; }
-        .sn { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:rgba(0,0,0,.45); display:block; }
-        .sh2 { font-size:11px; font-weight:700; color:var(--black); margin-top:4px; display:block; }
-        .scount { font-family:'DM Serif Display',serif; font-size:2rem; color:var(--black); margin-top:8px; display:block; }
-
-        /* REVEAL */
-        .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
-        .reveal.on { opacity:1; transform:translateY(0); }
-        .rd1 { transition-delay:.1s; }
-        .rd2 { transition-delay:.2s; }
-
-        /* IFRAME */
-        .fw-iframe iframe { width:100%; border:none; display:block; }
-
-        /* HAM */
-        #ham { background:none; border:none; cursor:none; display:none; flex-direction:column; gap:5px; padding:4px; }
-        @media(max-width:1024px){ #ham{display:flex;} .nav-links{display:none;} }
-        .hl { width:22px; height:2px; background:var(--black); border-radius:2px; }
-    </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"JM Maria","description":"UGC and branded content production for hotels, tourism boards and lifestyle brands.","url":"https://jmmaria.com/","email":"jmmaria.ugc@gmail.com","areaServed":"Worldwide","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"},"sameAs":["https://youtube.com/@jmmaria","https://instagram.com/itsjmmaria","https://tiktok.com/@itsjmmaria","https://facebook.com/janinamariac"]}
+</script>
 </head>
 <body>
 
-<div id="cur"></div>
-<div id="cur-ring"></div>
-
-<!-- MOBILE MENU -->
-<div id="mob">
-    <button id="mob-x" onclick="tMob()">✕</button>
-    <a href="#travel" class="mob-link" onclick="tMob()">Archive</a>
-    <a href="#hotels" class="mob-link" onclick="tMob()">Hotels</a>
-    <a href="#cafes" class="mob-link" onclick="tMob()">Cafes</a>
-    <a href="#tiktok" class="mob-link" onclick="tMob()">TikTok</a>
-    <a href="#instagram" class="mob-link" onclick="tMob()">Instagram</a>
-    <a href="#connect" class="mob-link" onclick="tMob()">Connect</a>
-    <a href="#shop" class="mob-link" onclick="tMob()">Support</a>
-    <a href="#inquiries" class="mob-link" style="color:var(--red);" onclick="tMob()">Work With Me</a>
-    <div style="width:36px;height:1px;background:rgba(255,255,255,.1);"></div>
-    <a href="/klook" class="mob-sub" onclick="tMob()">🎟 Klook · JMMARIAKLOOK</a>
-    <a href="/amazon" class="mob-sub" onclick="tMob()">🛒 Amazon Storefront</a>
-    <a href="/buymeacoffee" class="mob-sub" onclick="tMob()">☕ Buy Me a Coffee</a>
+<!-- ── DRAWER ─────────────────────────────────────────── -->
+<div class="drawer" id="drawer">
+  <button class="drawer__x" onclick="toggleDrawer()">Close</button>
+  <a href="#work" onclick="toggleDrawer()">Work</a>
+  <a href="#capabilities" onclick="toggleDrawer()">Capabilities</a>
+  <a href="#reach" onclick="toggleDrawer()">Reach</a>
+  <a href="#process" onclick="toggleDrawer()">Process</a>
+  <a href="#shop" onclick="toggleDrawer()">Book &amp; shop</a>
+  <a href="#inquiry" onclick="toggleDrawer()">Start a project</a>
+  <div class="drawer__sub mt-l">
+    <a href="/uae" style="font:inherit;">Dubai &amp; UAE</a><br>
+    <a href="/thailand" style="font:inherit;">Thailand</a><br>
+    <a href="/france" style="font:inherit;">France</a>
+  </div>
 </div>
 
-<!-- NAV -->
-<nav id="nav">
-    <div class="nav-inner">
-        <a href="#" class="logo">Jm Maria</a>
-        <div class="nav-links">
-            <a href="#travel">Archive</a>
-            <a href="#hotels">Hotels</a>
-            <a href="#cafes">Cafes</a>
-            <a href="#tiktok">TikTok</a>
-            <a href="#instagram">Instagram</a>
-            <a href="#connect">Connect</a>
-            <a href="#shop">Support</a>
-            <div class="nav-sep"></div>
-            <a href="/klook" style="color:rgba(0,0,0,.3);">Klook</a>
-            <a href="/amazon" style="color:rgba(0,0,0,.3);">Amazon</a>
-            <a href="/buymeacoffee" style="color:rgba(0,0,0,.3);">☕</a>
-            <div class="nav-sep"></div>
-            <a href="#inquiries" class="pill-btn">Work With Me</a>
-        </div>
-        <button id="ham" onclick="tMob()" aria-label="Open menu">
-            <span class="hl"></span>
-            <span class="hl" style="width:16px;"></span>
-            <span class="hl"></span>
-        </button>
+<!-- ── NAV ────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav__in">
+    <a href="/" class="mark">JM <span>Maria</span></a>
+    <div class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#reach">Reach</a>
+      <a href="#process">Process</a>
+      <span class="nav__sep"></span>
+      <a href="#shop">Book &amp; shop</a>
+      <a href="/links">Links</a>
+      <span class="nav__sep"></span>
+      <a href="#inquiry" class="is-cta">Start a project</a>
     </div>
+    <button class="burger" onclick="toggleDrawer()" aria-label="Open menu"><i></i><i></i></button>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-l">
-        <p class="hlabel">Travel Creator · Dubai · UAE</p>
-        <h1 class="hname">JM<br><em>Maria</em></h1>
-        <p class="htag">Cinematic hotels, hidden cafes & destination stories — Europe, Southeast Asia & the Middle East.</p>
-        <div class="hbtns">
-            <a href="#travel" class="hbtn-w">Watch My Films</a>
-            <a href="#inquiries" class="hbtn-g">Work With Me</a>
-        </div>
-        <div class="hstats">
-            <div><span class="hstat-n">21K+</span><span class="hstat-l">YouTube</span></div>
-            <div><span class="hstat-n">10K+</span><span class="hstat-l">Instagram</span></div>
-            <div><span class="hstat-n">17+</span><span class="hstat-l">Hotels</span></div>
-            <div><span class="hstat-n">5</span><span class="hstat-l">Countries</span></div>
-        </div>
+<!-- ── HERO ───────────────────────────────────────────── -->
+<header class="hero on-ink">
+  <div class="wrap">
+    <span class="eyebrow hero__eyebrow">UGC &amp; branded content — Dubai, filming worldwide</span>
+    <h1 class="d1 hero__t">Films that make people want to <em>book the room.</em></h1>
+    <p class="lede hero__lede">I produce cinematic short and long-form content for hotels, restaurants, tourism boards and lifestyle brands — scouted, filmed, edited and delivered ready to publish, with full usage rights.</p>
+    <div class="hero__cta">
+      <a href="#inquiry" class="btn btn--solid">Start a project</a>
+      <a href="#work" class="btn btn--ghost">See selected work</a>
     </div>
-    <div class="hero-r">
-        <div class="rbadge">
-            <span>Based in</span>
-            <strong>Dubai 🇦🇪</strong>
-        </div>
-        <div>
-            <div class="rdeco">Hotels.<br>Cafes.<br>Stories.</div>
-            <div class="rsocials">
-                <a href="https://instagram.com/itsjmmaria" target="_blank" class="rsoc-pill"><i class="fab fa-instagram"></i> @itsjmmaria</a>
-                <a href="https://youtube.com/@jmmaria" target="_blank" class="rsoc-pill"><i class="fab fa-youtube"></i> Subscribe</a>
-                <a href="https://tiktok.com/@itsjmmaria" target="_blank" class="rsoc-pill"><i class="fab fa-tiktok"></i> TikTok</a>
-            </div>
-        </div>
+  </div>
+</header>
+
+<!-- ── SELECTED WORK ──────────────────────────────────── -->
+<section class="section" id="work">
+  <div class="wrap">
+
+    <div class="head">
+      <div class="head__t">
+        <span class="eyebrow">Selected work — F&amp;B &amp; venues</span>
+        <h2 class="d2">Dubai cafés, filmed on location.</h2>
+      </div>
+      <p class="small" style="max-width:30ch;">Nine venues across Jumeirah, Alserkal, City Walk and Downtown. Each shot in a single visit and cut for both long and short form.</p>
     </div>
+
+    <div class="grid grid--3">
+      <a class="tile" href="https://youtu.be/HnQWPyHMw-0" target="_blank" rel="noopener">
+        <div class="well"><iframe src="https://www.youtube.com/embed/HnQWPyHMw-0?rel=0" title="CoCoParis" allowfullscreen loading="lazy"></iframe></div>
+        <h3 class="tile__t">CoCoParis</h3>
+        <p class="tile__m">Jumeirah, Dubai</p>
+      </a>
+      <a class="tile" href="https://youtu.be/Rw48OghmSCI" target="_blank" rel="noopener">
+        <div class="well"><iframe src="https://www.youtube.com/embed/Rw48OghmSCI?rel=0" title="bkry" allowfullscreen loading="lazy"></iframe></div>
+        <h3 class="tile__t">bkry</h3>
+        <p class="tile__m">Alserkal Avenue</p>
+      </a>
+      <a class="tile" href="https://youtu.be/HCbQy0xm6cI" target="_blank" rel="noopener">
+        <div class="well"><iframe src="https://www.youtube.com/embed/HCbQy0xm6cI?rel=0" title="Villa 515" allowfullscreen loading="lazy"></iframe></div>
+        <h3 class="tile__t">Villa 515</h3>
+        <p class="tile__m">Jumeirah 3</p>
+      </a>
+      <a class="tile" href="https://youtu.be/QOi1ZjY7Im0" target="_blank" rel="noopener">
+        <div class="well"><iframe src="https://www.youtube.com/embed/QOi1ZjY7Im0?rel=0" title="Talabat Café" allowfullscreen loading="lazy"></iframe></div>
+        <h3 class="tile__t">Talabat Café</h3>
+        <p class="tile__m">City Walk</p>
+      </a>
+      <a class="tile" href="https://youtu.be/5Qeb2T3Iwzk" target="_blank" rel="noopener">
+        <div class="well"><iframe src="https://www.youtube.com/embed/5Qeb2T3Iwzk?rel=0" title="Caia Café" allowfullscreen loading="lazy"></iframe></div>
+        <h3 class="tile__t">Caia Café</h3>
+        <p class="tile__m">Boxpark</p>
+      </a>
+      <a class="tile" href="https://youtu.be/b10i_wEQEj8" target="_blank" rel="noopener">
+        <div class="well"><iframe src="https://www.youtube.com/embed/b10i_wEQEj8?rel=0" title="143 Café" allowfullscreen loading="lazy"></iframe></div>
+        <h3 class="tile__t">143 Café</h3>
+        <p class="tile__m">Jumeirah 2</p>
+      </a>
+      <a class="tile" href="https://youtu.be/HJM1SwD92PU" target="_blank" rel="noopener">
+        <div class="well"><iframe src="https://www.youtube.com/embed/HJM1SwD92PU?rel=0" title="Voyage" allowfullscreen loading="lazy"></iframe></div>
+        <h3 class="tile__t">Voyage</h3>
+        <p class="tile__m">Dubai Mall</p>
+      </a>
+      <a class="tile" href="https://youtu.be/cWuPHpVhX68" target="_blank" rel="noopener">
+        <div class="well"><iframe src="https://www.youtube.com/embed/cWuPHpVhX68?rel=0" title="Koncrete" allowfullscreen loading="lazy"></iframe></div>
+        <h3 class="tile__t">Koncrete</h3>
+        <p class="tile__m">Jumeirah</p>
+      </a>
+      <a class="tile" href="https://youtu.be/ugP0CkwzJj4" target="_blank" rel="noopener">
+        <div class="well"><iframe src="https://www.youtube.com/embed/ugP0CkwzJj4?rel=0" title="SCM Café" allowfullscreen loading="lazy"></iframe></div>
+        <h3 class="tile__t">SCM Café</h3>
+        <p class="tile__m">Al Wasl</p>
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker">
-    <div class="ticker-t">
-        <span class="ti">Dubai</span><span class="td">✦</span>
-        <span class="ti">Bangkok</span><span class="td">✦</span>
-        <span class="ti">Paris</span><span class="td">✦</span>
-        <span class="ti">Koh Lanta</span><span class="td">✦</span>
-        <span class="ti">Berlin</span><span class="td">✦</span>
-        <span class="ti">Phi Phi Island</span><span class="td">✦</span>
-        <span class="ti">Dijon</span><span class="td">✦</span>
-        <span class="ti">Phuket</span><span class="td">✦</span>
-        <span class="ti">Warsaw</span><span class="td">✦</span>
-        <span class="ti">Krabi</span><span class="td">✦</span>
-        <span class="ti">Dubai</span><span class="td">✦</span>
-        <span class="ti">Bangkok</span><span class="td">✦</span>
-        <span class="ti">Paris</span><span class="td">✦</span>
-        <span class="ti">Koh Lanta</span><span class="td">✦</span>
-        <span class="ti">Berlin</span><span class="td">✦</span>
-        <span class="ti">Phi Phi Island</span><span class="td">✦</span>
-        <span class="ti">Dijon</span><span class="td">✦</span>
-        <span class="ti">Phuket</span><span class="td">✦</span>
-        <span class="ti">Warsaw</span><span class="td">✦</span>
-        <span class="ti">Krabi</span><span class="td">✦</span>
+<!-- ── HOTELS ─────────────────────────────────────────── -->
+<section class="section section--bone" id="stays">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__t">
+        <span class="eyebrow">Selected work — hotels &amp; resorts</span>
+        <h2 class="d2">Ten properties across five countries.</h2>
+      </div>
+      <a href="https://www.youtube.com/@jmmaria" target="_blank" rel="noopener" class="tlink">Full archive on YouTube</a>
     </div>
-</div>
 
-<!-- ARCHIVE -->
-<section id="travel" style="background:var(--black); padding-bottom:40px;">
-    <div class="fw-iframe reveal">
-        <iframe src="chapter-1.html" onload="aH(this)" title="Video archive"></iframe>
+    <div class="filters" role="group" aria-label="Filter work by market">
+      <button class="filter is-active" data-f="all">All markets</button>
+      <button class="filter" data-f="thailand">Thailand</button>
+      <button class="filter" data-f="france">France</button>
+      <button class="filter" data-f="germany">Germany</button>
+      <button class="filter" data-f="poland">Poland</button>
     </div>
-</section>
 
-<!-- HOTELS -->
-<section id="hotels" style="background:var(--warm); padding-bottom:40px;">
-    <div class="fw-iframe reveal">
-        <iframe src="chapter-2.html" onload="aH(this)" title="Hotel reviews"></iframe>
-    </div>
-</section>
+    <div class="work" id="workList">
 
-<!-- CAFES -->
-<section id="cafes" style="background:var(--black); padding-bottom:40px;">
-    <div class="fw-iframe reveal">
-        <iframe src="chapter-3.html" onload="aH(this)" title="Cafe reviews"></iframe>
-    </div>
-</section>
-
-<!-- TIKTOK -->
-<section id="tiktok" style="background:var(--black); padding-bottom:0; border-top:1px solid rgba(255,255,255,.05);">
-    <div class="fw-iframe reveal">
-        <iframe src="chapter-7.html" onload="aH(this)" style="min-height:900px;" title="TikTok videos"></iframe>
-    </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section id="instagram" style="background:var(--cream); padding-bottom:0;">
-    <div class="fw-iframe reveal">
-        <iframe src="chapter-8.html" onload="aH(this)" style="min-height:900px;" title="Instagram feed"></iframe>
-    </div>
-</section>
-
-<!-- CONNECT -->
-<section id="connect" style="background:var(--cream); padding:100px 2rem 80px;">
-    <div style="max-width:1000px; margin:0 auto;">
-        <div class="reveal" style="text-align:center; margin-bottom:3rem;">
-            <p class="slabel" style="justify-content:center;">04 Connect</p>
-            <h2 class="stitle">Find Me <em>Everywhere</em></h2>
-            <p style="color:rgba(0,0,0,.4); font-size:13px; font-weight:600; letter-spacing:.05em; margin-top:1rem;">Follow along for daily travel content, hotel reviews & Dubai life.</p>
+      <article class="work__item" data-m="thailand">
+        <div class="work__meta">
+          <h3 class="work__title">Pimalai Resort &amp; Spa</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">Resort feature film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Koh Lanta, Thailand</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/YT2MyyZTuIk" target="_blank" rel="noopener" class="tlink">Watch film</a>
+            <a href="/thailand" class="tlink">Thailand market</a>
+          </div>
         </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/YT2MyyZTuIk?rel=0" title="Pimalai Resort &amp; Spa" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
 
-        <div class="cg reveal rd1">
-            <a href="https://youtube.com/@jmmaria" target="_blank" class="sc">
-                <span class="si" style="color:#ef4444;"><i class="fab fa-youtube"></i></span>
-                <span class="sn">YouTube</span>
-                <span class="sh2">@jmmaria</span>
-                <span class="scount">21K+</span>
-            </a>
-            <a href="https://instagram.com/itsjmmaria" target="_blank" class="sc">
-                <span class="si" style="color:#e1306c;"><i class="fab fa-instagram"></i></span>
-                <span class="sn">Instagram</span>
-                <span class="sh2">@itsjmmaria</span>
-                <span class="scount">10K+</span>
-            </a>
-            <a href="https://tiktok.com/@itsjmmaria" target="_blank" class="sc">
-                <span class="si"><i class="fab fa-tiktok"></i></span>
-                <span class="sn">TikTok</span>
-                <span class="sh2">@itsjmmaria</span>
-                <span class="scount">15K+</span>
-            </a>
-            <a href="https://facebook.com/janinamariac" target="_blank" class="sc">
-                <span class="si" style="color:#1877f2;"><i class="fab fa-facebook"></i></span>
-                <span class="sn">Facebook</span>
-                <span class="sh2">janinamariac</span>
-                <span class="scount">5K+</span>
-            </a>
+      <article class="work__item" data-m="france">
+        <div class="work__meta">
+          <h3 class="work__title">Hôtel AMI Paris</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">Boutique hotel film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Paris, France</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/XuLwZVjsTag" target="_blank" rel="noopener" class="tlink">Watch film</a>
+            <a href="/france" class="tlink">France market</a>
+          </div>
         </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/XuLwZVjsTag?rel=0" title="Hotel AMI Paris" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
 
-        <!-- Destination pills + CTA -->
-        <div class="reveal rd2" style="margin-top:2.5rem; background:var(--black); border-radius:2.5rem; padding:2.5rem; display:flex; gap:2rem; align-items:center; justify-content:space-between; flex-wrap:wrap;">
-            <div>
-                <p style="font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.35em; color:rgba(255,255,255,.3); margin-bottom:12px;">Explore by destination</p>
-                <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                    <a href="/uae" style="background:rgba(255,255,255,.07); color:#fff; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px; text-decoration:none; transition:background .2s;" onmouseover="this.style.background='#ef4444'" onmouseout="this.style.background='rgba(255,255,255,.07)'">🇦🇪 UAE</a>
-                    <a href="/thailand" style="background:rgba(255,255,255,.07); color:#fff; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px; text-decoration:none; transition:background .2s;" onmouseover="this.style.background='#ef4444'" onmouseout="this.style.background='rgba(255,255,255,.07)'">🇹🇭 Thailand</a>
-                    <a href="/france" style="background:rgba(255,255,255,.07); color:#fff; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px; text-decoration:none; transition:background .2s;" onmouseover="this.style.background='#ef4444'" onmouseout="this.style.background='rgba(255,255,255,.07)'">🇫🇷 France</a>
-                    <span style="background:rgba(255,255,255,.04); color:rgba(255,255,255,.35); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px;">🇩🇪 Germany</span>
-                    <span style="background:rgba(255,255,255,.04); color:rgba(255,255,255,.35); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:8px 16px; border-radius:100px;">🇵🇱 Poland</span>
-                </div>
-            </div>
-            <a href="mailto:jmmaria.ugc@gmail.com" style="background:var(--red); color:#fff; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.2em; padding:16px 28px; border-radius:100px; text-decoration:none; white-space:nowrap; transition:background .2s; flex-shrink:0;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
-                Send Inquiry →
-            </a>
+      <article class="work__item" data-m="france">
+        <div class="work__meta">
+          <h3 class="work__title">Maison Tillot</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">Heritage property film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Dijon, Burgundy</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/FNltoH5j3v4" target="_blank" rel="noopener" class="tlink">Watch film</a>
+            <a href="/france" class="tlink">France market</a>
+          </div>
         </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/FNltoH5j3v4?rel=0" title="Maison Tillot" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
+
+      <article class="work__item" data-m="germany">
+        <div class="work__meta">
+          <h3 class="work__title">Novotel Berlin Mitte</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">City hotel film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Berlin, Germany</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/-mgD_Reaazc" target="_blank" rel="noopener" class="tlink">Watch film</a>
+          </div>
+        </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/-mgD_Reaazc?rel=0" title="Novotel Berlin Mitte" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
+
+      <article class="work__item" data-m="poland">
+        <div class="work__meta">
+          <h3 class="work__title">ORSO Loft Affairs</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">Design apartment film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Warsaw, Poland</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/T9ZEiEv1DUQ" target="_blank" rel="noopener" class="tlink">Watch film</a>
+          </div>
+        </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/T9ZEiEv1DUQ?rel=0" title="ORSO Loft Affairs" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
+
+      <article class="work__item" data-m="thailand">
+        <div class="work__meta">
+          <h3 class="work__title">Cross Vibe Bangkok</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">City hotel film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Bangkok, Thailand</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/6vmlIrOePIw" target="_blank" rel="noopener" class="tlink">Watch film</a>
+            <a href="/thailand" class="tlink">Thailand market</a>
+          </div>
+        </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/6vmlIrOePIw?rel=0" title="Cross Vibe Bangkok" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
+
+      <article class="work__item" data-m="thailand">
+        <div class="work__meta">
+          <h3 class="work__title">Sea Seeker Krabi</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">Resort feature film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Krabi, Thailand</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/aXV-8E-7As0" target="_blank" rel="noopener" class="tlink">Watch film</a>
+            <a href="/thailand" class="tlink">Thailand market</a>
+          </div>
+        </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/aXV-8E-7As0?rel=0" title="Sea Seeker Krabi" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
+
+      <article class="work__item" data-m="thailand">
+        <div class="work__meta">
+          <h3 class="work__title">HIP Seaview Phi Phi</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">Island resort film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Koh Phi Phi, Thailand</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/S3ubr4hrB5I" target="_blank" rel="noopener" class="tlink">Watch film</a>
+            <a href="/thailand" class="tlink">Thailand market</a>
+          </div>
+        </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/S3ubr4hrB5I?rel=0" title="HIP Seaview Phi Phi" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
+
+      <article class="work__item" data-m="thailand">
+        <div class="work__meta">
+          <h3 class="work__title">Grand Kata VIP</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">Beach hotel film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Kata, Phuket</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/1ynft8XBS0s" target="_blank" rel="noopener" class="tlink">Watch film</a>
+            <a href="/thailand" class="tlink">Thailand market</a>
+          </div>
+        </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/1ynft8XBS0s?rel=0" title="Grand Kata VIP" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
+
+      <article class="work__item" data-m="thailand">
+        <div class="work__meta">
+          <h3 class="work__title">L'esprit de Nai Yang</h3>
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Subject</span><span class="spec__v">Beach resort film</span></div>
+            <div class="spec__r"><span class="spec__k">Location</span><span class="spec__v">Nai Yang, Phuket</span></div>
+            <div class="spec__r"><span class="spec__k">Format</span><span class="spec__v">16:9 long-form</span></div>
+            <div class="spec__r"><span class="spec__k">Platform</span><span class="spec__v">YouTube</span></div>
+          </div>
+          <div class="work__actions">
+            <a href="https://youtu.be/yPpXDz1B5so" target="_blank" rel="noopener" class="tlink">Watch film</a>
+            <a href="/thailand" class="tlink">Thailand market</a>
+          </div>
+        </div>
+        <div class="work__media"><div class="well"><iframe src="https://www.youtube.com/embed/yPpXDz1B5so?rel=0" title="L'esprit de Nai Yang" allowfullscreen loading="lazy"></iframe></div></div>
+      </article>
+
     </div>
+  </div>
 </section>
 
-<!-- SUPPORT -->
-<section id="shop" style="background:var(--warm); padding-bottom:40px;">
-    <div class="fw-iframe reveal">
-        <iframe src="chapter-5.html" onload="aH(this)" title="Support and explore"></iframe>
+<!-- ── CAPABILITIES ───────────────────────────────────── -->
+<section class="section" id="capabilities">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__t">
+        <span class="eyebrow">Capabilities</span>
+        <h2 class="d2">What I make, and what you get back.</h2>
+      </div>
+      <p class="small" style="max-width:30ch;">Every engagement is filmed, edited and delivered by me. No agency layer, no subcontracting.</p>
     </div>
+
+    <div class="grid grid--2">
+      <div class="card">
+        <span class="card__n">01 — UGC production</span>
+        <h3 class="card__t">Short-form assets</h3>
+        <p class="card__b">High-energy vertical content for TikTok, Reels and paid social. Filmed, edited and delivered with full usage rights so your team can run it as organic or media.</p>
+      </div>
+      <div class="card">
+        <span class="card__n">02 — Hospitality</span>
+        <h3 class="card__t">Hotel &amp; resort films</h3>
+        <p class="card__b">Cinematic long-form storytelling for properties — arrival, rooms, dining, grounds and the detail that sells the stay. Cut for YouTube with vertical variants included.</p>
+      </div>
+      <div class="card">
+        <span class="card__n">03 — Destinations</span>
+        <h3 class="card__t">Tourism campaigns</h3>
+        <p class="card__b">Multi-platform destination work for tourism boards and DMOs. Route planning, on-location filming across several days, and a coordinated publishing rollout.</p>
+      </div>
+      <div class="card">
+        <span class="card__n">04 — F&amp;B</span>
+        <h3 class="card__t">Restaurant &amp; venue features</h3>
+        <p class="card__b">Openings, menu launches and venue reveals. Fast turnaround formats designed for the first two weeks of trading, when discovery matters most.</p>
+      </div>
+    </div>
+
+    <div class="mt-l">
+      <div class="grid grid--3">
+        <div><span class="eyebrow">Deliverables</span><p class="small" style="margin-top:10px;">Master edit, vertical cuts, raw selects on request, and stills pulled from footage.</p></div>
+        <div><span class="eyebrow">Usage</span><p class="small" style="margin-top:10px;">Full usage rights on commissioned UGC. Licence terms agreed per project before shooting.</p></div>
+        <div><span class="eyebrow">Coverage</span><p class="small" style="margin-top:10px;">Based in Dubai. Regularly filming across the UAE, Southeast Asia and Europe.</p></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- WORK WITH ME -->
-<section id="inquiries" style="background:var(--cream); padding-bottom:40px;">
-    <div class="fw-iframe reveal">
-        <iframe src="chapter-6.html" onload="aH(this)" title="Work with JM Maria"></iframe>
+<!-- ── REACH ──────────────────────────────────────────── -->
+<section class="section section--ink" id="reach">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__t">
+        <span class="eyebrow">Audience</span>
+        <h2 class="d2">Roughly 51,000 people, across four platforms.</h2>
+      </div>
+      <p class="small" style="max-width:30ch;">Organic audience built on travel and Dubai lifestyle content. Detailed demographics available on request.</p>
     </div>
+
+    <div class="reach">
+      <a class="reach__row" href="https://youtube.com/@jmmaria" target="_blank" rel="noopener">
+        <span class="reach__name">YouTube</span><span class="reach__handle">@jmmaria — long-form films</span><span class="reach__n">21K+</span>
+      </a>
+      <a class="reach__row" href="https://tiktok.com/@itsjmmaria" target="_blank" rel="noopener">
+        <span class="reach__name">TikTok</span><span class="reach__handle">@itsjmmaria — short-form</span><span class="reach__n">15K+</span>
+      </a>
+      <a class="reach__row" href="https://instagram.com/itsjmmaria" target="_blank" rel="noopener">
+        <span class="reach__name">Instagram</span><span class="reach__handle">@itsjmmaria — daily</span><span class="reach__n">10K+</span>
+      </a>
+      <a class="reach__row" href="https://facebook.com/janinamariac" target="_blank" rel="noopener">
+        <span class="reach__name">Facebook</span><span class="reach__handle">janinamariac</span><span class="reach__n">5K+</span>
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:var(--black); padding:56px 2rem 32px;">
-    <div style="max-width:1400px; margin:0 auto;">
-        <div style="border-top:1px solid rgba(255,255,255,.06); padding-top:40px; margin-bottom:40px;">
-            <p style="font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.35em; color:rgba(255,255,255,.22); text-align:center; margin-bottom:18px;">Quick links</p>
-            <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:8px;">
-                <a href="/uae" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🇦🇪 Dubai & UAE</a>
-                <a href="/thailand" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🇹🇭 Thailand</a>
-                <a href="/france" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🇫🇷 France</a>
-                <a href="/klook" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🎟 Klook · JMMARIAKLOOK</a>
-                <a href="/amazon" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">🛒 Amazon</a>
-                <a href="/buymeacoffee" style="background:rgba(255,255,255,.05); color:rgba(255,255,255,.55); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; padding:10px 20px; border-radius:100px; text-decoration:none; border:1px solid rgba(255,255,255,.07); transition:all .2s;" onmouseover="this.style.background='#ef4444';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='rgba(255,255,255,.55)'">☕ Buy Me a Coffee</a>
-            </div>
-        </div>
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-top:24px; border-top:1px solid rgba(255,255,255,.05);">
-            <a href="#" class="logo" style="color:#fff; font-size:28px;">Jm Maria</a>
-            <div style="display:flex; gap:20px;">
-                <a href="https://instagram.com/itsjmmaria" target="_blank" style="color:rgba(255,255,255,.3); font-size:17px; text-decoration:none; transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><i class="fab fa-instagram"></i></a>
-                <a href="https://tiktok.com/@itsjmmaria" target="_blank" style="color:rgba(255,255,255,.3); font-size:17px; text-decoration:none; transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><i class="fab fa-tiktok"></i></a>
-                <a href="https://youtube.com/@jmmaria" target="_blank" style="color:rgba(255,255,255,.3); font-size:17px; text-decoration:none; transition:color .2s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><i class="fab fa-youtube"></i></a>
-                <a href="https://facebook.com/janinamariac" target="_blank" style="color:rgba(255,255,255,.3); font-size:17px; text-decoration:none; transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><i class="fab fa-facebook"></i></a>
-            </div>
-            <p style="color:rgba(255,255,255,.18); font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.6em;">© 2026 jmmaria.com</p>
-        </div>
+<!-- ── PROCESS ────────────────────────────────────────── -->
+<section class="section section--bone" id="process">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__t">
+        <span class="eyebrow">How it works</span>
+        <h2 class="d2">Four steps, from brief to published.</h2>
+      </div>
     </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step__n">01</span>
+        <div><h3 class="step__t">Brief</h3><p class="small">You send the property or venue, the dates and what the content needs to do. I come back with a scope, deliverables list and a quote — usually within 24 hours.</p></div>
+      </div>
+      <div class="step">
+        <span class="step__n">02</span>
+        <div><h3 class="step__t">Scout</h3><p class="small">Shot list built around your spaces and your peak light. If there are hero rooms, signature dishes or angles you need covered, they go on the list before I arrive.</p></div>
+      </div>
+      <div class="step">
+        <span class="step__n">03</span>
+        <div><h3 class="step__t">Shoot</h3><p class="small">Filmed on location, typically in a single visit for venues and one to two days for properties. Minimal crew and no disruption to guests or service.</p></div>
+      </div>
+      <div class="step">
+        <span class="step__n">04</span>
+        <div><h3 class="step__t">Deliver</h3><p class="small">Master edit plus vertical cuts, delivered to your drive with one revision round included. Published on my channels too, if that's part of the agreement.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNERS ───────────────────────────────────────── -->
+<section class="section" id="partners">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__t">
+        <span class="eyebrow">Partners &amp; affiliations</span>
+        <h2 class="d2">Working relationships.</h2>
+      </div>
+    </div>
+    <div class="grid grid--2">
+      <a class="card" href="/agoda">
+        <span class="card__n">Official ambassador</span>
+        <h3 class="card__t">Agoda</h3>
+        <p class="card__b">Ambassador programme member with a dedicated promo link across 2.5 million properties worldwide.</p>
+      </a>
+      <a class="card" href="/klook">
+        <span class="card__n">Creator programme</span>
+        <h3 class="card__t">Klook Kreator</h3>
+        <p class="card__b">Kreator partner covering activities and experiences across the UAE, Thailand, France and Germany.</p>
+      </a>
+    </div>
+    <div class="mt-l">
+      <span class="eyebrow">Brands worked with</span>
+      <div class="grid grid--4" style="margin-top:16px;">
+        <div class="slot">Client logo</div>
+        <div class="slot">Client logo</div>
+        <div class="slot">Client logo</div>
+        <div class="slot">Client logo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SHORT-FORM FEEDS ───────────────────────────────── -->
+<section class="section section--bone" id="social">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__t">
+        <span class="eyebrow">Short-form — live feeds</span>
+        <h2 class="d2">Published weekly, without a gap.</h2>
+      </div>
+      <div class="tags">
+        <a href="https://tiktok.com/@itsjmmaria" target="_blank" rel="noopener" class="tag">TikTok</a>
+        <a href="https://instagram.com/itsjmmaria" target="_blank" rel="noopener" class="tag">Instagram</a>
+      </div>
+    </div>
+
+    <div style="margin-bottom:clamp(40px,5vw,70px);">
+      <span class="eyebrow" style="display:block;margin-bottom:18px;">TikTok — @itsjmmaria</span>
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-fc0f65a6-eb75-4441-afd2-575ff8aefdf4" data-elfsight-app-lazy></div>
+    </div>
+
+    <div>
+      <span class="eyebrow" style="display:block;margin-bottom:18px;">Instagram — @itsjmmaria</span>
+      <div class="elfsight-app-bfd67ac5-81ea-470b-93bf-4ae7da686471" data-elfsight-app-lazy></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOK & SHOP ────────────────────────────────────── -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__t">
+        <span class="eyebrow">Book &amp; shop</span>
+        <h2 class="d2">The places I stayed, and the kit I filmed on.</h2>
+      </div>
+      <p class="small" style="max-width:30ch;">Affiliate links. Booking or shopping through them supports the work at no extra cost to you.</p>
+    </div>
+
+    <div class="grid grid--4">
+      <a class="card" href="/agoda">
+        <span class="card__n">Hotels</span>
+        <h3 class="card__t">Agoda</h3>
+        <p class="card__b">My ambassador link saves a promo code straight to the Agoda app.</p>
+      </a>
+      <a class="card" href="/klook">
+        <span class="card__n">Activities</span>
+        <h3 class="card__t">Klook</h3>
+        <p class="card__b">Experiences in every destination I've filmed. Code JMMARIAKLOOK at checkout.</p>
+      </a>
+      <a class="card" href="/amazon">
+        <span class="card__n">Gear</span>
+        <h3 class="card__t">Amazon storefront</h3>
+        <p class="card__b">Camera kit, travel essentials, beauty and everything else I actually use.</p>
+      </a>
+      <a class="card" href="/buymeacoffee">
+        <span class="card__n">Support</span>
+        <h3 class="card__t">Buy me a coffee</h3>
+        <p class="card__b">Keeps the films free to watch, and a portion goes back to communities I visit.</p>
+      </a>
+    </div>
+
+    <div class="tags mt-l">
+      <a href="/uae" class="tag">Dubai &amp; UAE guide</a>
+      <a href="/thailand" class="tag">Thailand guide</a>
+      <a href="/france" class="tag">France guide</a>
+      <a href="/links" class="tag">All links</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── INQUIRY ────────────────────────────────────────── -->
+<section class="section section--ink" id="inquiry">
+  <div class="wrap">
+    <div class="grid grid--2" style="gap:clamp(40px,5vw,80px);">
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:14px;">Start a project</span>
+        <h2 class="d2" style="margin-bottom:24px;">Tell me the property, the dates and what it needs to do.</h2>
+        <p class="lede" style="margin-bottom:32px;">I reply to every inquiry within 24 hours with scope, deliverables and a quote. Based in Dubai, available worldwide.</p>
+
+        <div class="reach" style="max-width:420px;">
+          <div class="reach__row" style="grid-template-columns:1fr auto;">
+            <span class="reach__name">Email</span>
+            <a href="mailto:jmmaria.ugc@gmail.com" class="tlink" style="justify-self:end;">jmmaria.ugc@gmail.com</a>
+          </div>
+          <div class="reach__row" style="grid-template-columns:1fr auto;">
+            <span class="reach__name">Rate card</span>
+            <a href="mailto:jmmaria.ugc@gmail.com?subject=Rate%20card%20request" class="tlink" style="justify-self:end;">Request rate card</a>
+          </div>
+          <div class="reach__row" style="grid-template-columns:1fr auto;">
+            <span class="reach__name">Response</span>
+            <span class="reach__handle" style="justify-self:end;">Within 24 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form class="form" action="https://formspree.io/f/jmmaria.ugc@gmail.com" method="POST">
+          <input type="text" name="name" required placeholder="Full name">
+          <input type="email" name="email" required placeholder="Email address">
+          <input type="text" name="brand" placeholder="Brand, property or agency">
+          <select name="subject" required>
+            <option value="" disabled selected>Type of project</option>
+            <option value="UGC">UGC — short-form assets</option>
+            <option value="Hotel">Hotel or resort film</option>
+            <option value="Tourism">Tourism or destination campaign</option>
+            <option value="FnB">Restaurant, café or venue</option>
+            <option value="Partnership">Ongoing partnership</option>
+            <option value="RateCard">Rate card request</option>
+            <option value="Other">Something else</option>
+          </select>
+          <textarea name="message" required rows="5" placeholder="Property or venue, location, rough dates, and what the content is for."></textarea>
+          <button type="submit">Send inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="foot on-ink">
+  <div class="wrap">
+    <div class="foot__cols">
+      <div>
+        <p class="foot__h">Work</p>
+        <div class="foot__l">
+          <a href="#work">Cafés &amp; F&amp;B</a>
+          <a href="#stays">Hotels &amp; resorts</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#process">Process</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot__h">Markets</p>
+        <div class="foot__l">
+          <a href="/uae">Dubai &amp; UAE</a>
+          <a href="/thailand">Thailand</a>
+          <a href="/france">France</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot__h">Book &amp; shop</p>
+        <div class="foot__l">
+          <a href="/agoda">Agoda</a>
+          <a href="/klook">Klook</a>
+          <a href="/amazon">Amazon storefront</a>
+          <a href="/buymeacoffee">Buy me a coffee</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot__h">Follow</p>
+        <div class="foot__l">
+          <a href="https://youtube.com/@jmmaria" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://instagram.com/itsjmmaria" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/@itsjmmaria" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://facebook.com/janinamariac" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot__h">Inquiries</p>
+        <div class="foot__l">
+          <a href="mailto:jmmaria.ugc@gmail.com">jmmaria.ugc@gmail.com</a>
+          <a href="#inquiry">Start a project</a>
+          <a href="/links">All links</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot__base">
+      <a href="/" class="mark">JM <span>Maria</span></a>
+      <p class="foot__c">© 2026 jmmaria.com — Dubai</p>
+    </div>
+  </div>
 </footer>
 
 <script>
-/* Cursor */
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
-
-/* Mobile menu */
-function tMob(){
-    const m=document.getElementById('mob');
-    m.classList.toggle('open');
-    document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+/* drawer */
+function toggleDrawer(){
+  var d=document.getElementById('drawer');
+  d.classList.toggle('is-open');
+  document.body.style.overflow=d.classList.contains('is-open')?'hidden':'';
 }
-
-/* Auto-height iframes */
-function aH(f){ try{f.style.height=f.contentWindow.document.body.scrollHeight+'px';}catch(e){} }
-window.addEventListener('load',()=>{ document.querySelectorAll('iframe').forEach(f=>aH(f)); });
-
-/* Scroll reveal */
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}}),{threshold:.06});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-/* Smooth scroll */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-        const t=document.querySelector(a.getAttribute('href'));
-        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
-    });
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){ var d=document.getElementById('drawer'); if(d.classList.contains('is-open')) toggleDrawer(); }
 });
+
+/* market filter */
+document.querySelectorAll('.filter').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var f=btn.dataset.f;
+    document.querySelectorAll('.filter').forEach(function(b){ b.classList.toggle('is-active',b===btn); });
+    document.querySelectorAll('#workList .work__item').forEach(function(item){
+      item.classList.toggle('is-hidden', f!=='all' && item.dataset.m!==f);
+    });
+  });
+});
+
+/* scroll reveal */
+(function(){
+  var els=document.querySelectorAll('.section, .hero');
+  els.forEach(function(el){ el.classList.add('reveal'); });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target); } });
+  },{threshold:.04, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

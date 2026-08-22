@@ -1,350 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Maria — Links</title>
-    <meta name="description" content="JM Maria — travel creator based in Dubai. All my links in one place.">
-    <meta property="og:title" content="JM Maria · All My Links">
-    <meta property="og:description" content="Travel creator based in Dubai — YouTube, Instagram, Klook, Amazon, and more.">
-    <meta property="og:image" content="https://jmmaria.com/og-image.jpg">
-    <meta property="og:url" content="https://jmmaria.com/links">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://jmmaria.com/links">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        @font-face { font-family:'Hijrnotes'; src:url('../Hijrnotes_PERSONAL_USE_ONLY.ttf') format('truetype'); }
-
-        :root { --red:#ef4444; --black:#0a0a0a; --cream:#faf8f4; }
-
-        * { box-sizing:border-box; margin:0; padding:0; }
-        html,body { min-height:100%; }
-
-        body {
-            font-family:'Syne',sans-serif;
-            background:var(--black);
-            color:#fff;
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            padding:0 0 60px;
-            overflow-x:hidden;
-        }
-
-        /* ── TOP RED STRIP ── */
-        .top-strip { width:100%; background:var(--red); height:4px; flex-shrink:0; }
-
-        /* ── PROFILE AREA ── */
-        .profile { width:100%; max-width:480px; padding:48px 24px 32px; text-align:center; }
-
-        .avatar {
-            width:96px; height:96px; border-radius:50%;
-            background:var(--red);
-            display:flex; align-items:center; justify-content:center;
-            margin:0 auto 20px;
-            font-family:'Hijrnotes',cursive;
-            font-size:42px; color:#fff;
-            transform:rotate(-4deg);
-            border:3px solid rgba(255,255,255,.1);
-            overflow:hidden;
-        }
-        .avatar img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
-
-        .handle {
-            font-size:11px; font-weight:700;
-            text-transform:uppercase; letter-spacing:.35em;
-            color:var(--red); margin-bottom:6px;
-        }
-        .display-name {
-            font-family:'DM Serif Display',serif;
-            font-size:2.2rem; color:#fff;
-            line-height:1; margin-bottom:10px;
-        }
-        .display-name em { font-style:italic; color:rgba(255,255,255,.25); }
-        .bio {
-            font-size:12px; font-weight:700;
-            color:rgba(255,255,255,.4);
-            line-height:1.7; letter-spacing:.04em;
-            text-transform:uppercase; max-width:300px;
-            margin:0 auto 24px;
-        }
-
-        /* Stats row */
-        .stats {
-            display:flex; justify-content:center; gap:2rem;
-            padding:16px 0; border-top:1px solid rgba(255,255,255,.07);
-            border-bottom:1px solid rgba(255,255,255,.07);
-            margin-bottom:0;
-        }
-        .stat-n { font-family:'DM Serif Display',serif; font-size:1.6rem; color:#fff; display:block; }
-        .stat-l { font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:rgba(255,255,255,.3); display:block; margin-top:2px; }
-
-        /* ── LINKS AREA ── */
-        .links { width:100%; max-width:480px; padding:0 20px; display:flex; flex-direction:column; gap:12px; }
-
-        /* Section label */
-        .section-lbl {
-            font-size:8px; font-weight:700; text-transform:uppercase;
-            letter-spacing:.4em; color:rgba(255,255,255,.25);
-            padding:8px 0 4px; text-align:center;
-        }
-
-        /* Link card base */
-        .lcard {
-            display:flex; align-items:center; gap:16px;
-            padding:16px 20px;
-            border-radius:1.2rem;
-            text-decoration:none;
-            font-size:13px; font-weight:700;
-            text-transform:uppercase; letter-spacing:.1em;
-            transition:transform .2s ease, opacity .2s ease;
-            -webkit-tap-highlight-color:transparent;
-            position:relative; overflow:hidden;
-        }
-        .lcard:active { transform:scale(.97); opacity:.85; }
-
-        /* Card variants */
-        .lcard-white { background:#fff; color:var(--black); }
-        .lcard-white:hover { background:#f0f0f0; }
-        .lcard-red { background:var(--red); color:#fff; }
-        .lcard-red:hover { background:#dc2626; }
-        .lcard-dark { background:rgba(255,255,255,.07); color:#fff; border:1px solid rgba(255,255,255,.08); }
-        .lcard-dark:hover { background:rgba(255,255,255,.12); }
-        .lcard-yellow { background:#FFDD00; color:#000; }
-        .lcard-yellow:hover { background:#f0ce00; }
-        .lcard-amazon { background:#FF9900; color:#000; }
-        .lcard-amazon:hover { background:#e68a00; }
-
-        .lcard-icon {
-            width:42px; height:42px; border-radius:.8rem;
-            display:flex; align-items:center; justify-content:center;
-            font-size:18px; flex-shrink:0;
-        }
-        .icon-dark { background:rgba(0,0,0,.1); }
-        .icon-light { background:rgba(255,255,255,.15); }
-        .icon-black { background:var(--black); color:#fff; }
-        .icon-red { background:var(--red); color:#fff; }
-
-        .lcard-text { flex:1; }
-        .lcard-title { display:block; font-size:13px; font-weight:800; letter-spacing:.05em; }
-        .lcard-sub { display:block; font-size:10px; font-weight:600; letter-spacing:.08em; opacity:.6; margin-top:2px; }
-
-        .lcard-arrow { font-size:16px; opacity:.4; flex-shrink:0; }
-
-        /* Promo code card */
-        .promo-card {
-            background:rgba(239,68,68,.12);
-            border:1.5px solid rgba(239,68,68,.3);
-            border-radius:1.2rem;
-            padding:16px 20px;
-            display:flex; align-items:center; gap:16px;
-        }
-        .promo-code {
-            font-family:monospace;
-            font-size:17px; font-weight:900;
-            color:var(--red); letter-spacing:.08em;
-            background:rgba(239,68,68,.1);
-            padding:6px 14px; border-radius:.6rem;
-            flex:1; text-align:center;
-        }
-        .copy-btn {
-            background:var(--red); color:#fff;
-            font-size:9px; font-weight:800;
-            text-transform:uppercase; letter-spacing:.15em;
-            padding:10px 16px; border-radius:.8rem;
-            border:none; cursor:pointer;
-            transition:background .2s;
-            white-space:nowrap;
-            -webkit-tap-highlight-color:transparent;
-        }
-        .copy-btn:active { background:#dc2626; transform:scale(.96); }
-
-        /* ── FOOTER ── */
-        .foot {
-            margin-top:48px;
-            font-size:9px; font-weight:700;
-            text-transform:uppercase; letter-spacing:.4em;
-            color:rgba(255,255,255,.18);
-            text-align:center;
-        }
-        .foot a { color:var(--red); text-decoration:none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JM Maria — All Links</title>
+<meta name="description" content="JM Maria — UGC and branded content creator based in Dubai. Portfolio, channels, booking links and inquiries, all in one place.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JM Maria">
+<meta property="og:title" content="JM Maria — All Links">
+<meta property="og:description" content="UGC and branded content creator based in Dubai. Portfolio, channels and booking links.">
+<meta property="og:url" content="https://jmmaria.com/links">
+<meta property="og:image" content="https://jmmaria.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@itsjmmaria">
+<link rel="canonical" href="https://jmmaria.com/links">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  body{ background:var(--ink); color:var(--bone); }
+  .bio{ max-width:560px; margin:0 auto; padding:clamp(48px,9vw,88px) var(--pad-x) 64px; }
+  .bio__id{ text-align:center; margin-bottom:clamp(36px,5vw,52px); }
+  .bio__name{ font-family:var(--serif); font-size:clamp(2.4rem,9vw,3.4rem); line-height:1; margin-bottom:12px; }
+  .bio__name em{ font-style:italic; }
+  .bio__role{ font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.22em; color:var(--stone-i); line-height:2; }
+  .bio__set{ margin-bottom:clamp(30px,4vw,44px); }
+  .bio__h{ font-family:var(--mono); font-size:9.5px; text-transform:uppercase; letter-spacing:.24em;
+    color:var(--stone-i); padding-bottom:12px; border-bottom:1px solid var(--line-i); margin-bottom:4px; }
+  .row{ display:grid; grid-template-columns:1fr auto; align-items:center; gap:16px;
+    padding:17px 0; border-bottom:1px solid var(--line-i); text-decoration:none;
+    transition:padding-left .35s var(--ease), color .3s var(--ease); }
+  a.row:hover{ padding-left:9px; color:var(--wine-i); }
+  .row__t{ font-size:15px; line-height:1.35; }
+  .row__s{ font-family:var(--mono); font-size:9.5px; text-transform:uppercase; letter-spacing:.16em; color:var(--stone-i); display:block; margin-top:4px; }
+  .row__a{ font-family:var(--mono); font-size:11px; color:var(--stone-i); }
+  a.row:hover .row__a{ color:var(--wine-i); }
+  .bio__foot{ text-align:center; margin-top:clamp(34px,5vw,56px); }
+</style>
 </head>
-<body>
+<body class="on-ink">
 
-<div class="top-strip"></div>
+<main class="bio">
 
-<!-- PROFILE -->
-<div class="profile">
+  <div class="bio__id">
+    <p class="bio__name">JM <em>Maria</em></p>
+    <p class="bio__role">UGC &amp; branded content<br>Dubai &middot; filming worldwide</p>
+  </div>
 
-    <!-- Avatar — swap the letter for your photo -->
-    <div class="avatar">
-        <!-- To add your photo: replace everything inside this div with:
-             <img src="your-photo.jpg" alt="JM Maria">
-             Upload the photo to your GitHub repo root -->
-        JM
+  <div class="bio__set">
+    <p class="bio__h">For brands</p>
+    <a class="row" href="/">
+      <span><span class="row__t">Portfolio &amp; capabilities</span><span class="row__s">jmmaria.com</span></span>
+      <span class="row__a">&rarr;</span>
+    </a>
+    <a class="row" href="/#inquiry">
+      <span><span class="row__t">Start a project</span><span class="row__s">Reply within 24 hours</span></span>
+      <span class="row__a">&rarr;</span>
+    </a>
+    <a class="row" href="mailto:jmmaria.ugc@gmail.com?subject=Rate%20card%20request">
+      <span><span class="row__t">Request rate card</span><span class="row__s">jmmaria.ugc@gmail.com</span></span>
+      <span class="row__a">&rarr;</span>
+    </a>
+  </div>
+
+  <div class="bio__set">
+    <p class="bio__h">Channels</p>
+    <a class="row" href="https://youtube.com/@jmmaria" target="_blank" rel="noopener">
+      <span><span class="row__t">YouTube</span><span class="row__s">@jmmaria &middot; 21K+</span></span>
+      <span class="row__a">&rarr;</span>
+    </a>
+    <a class="row" href="https://tiktok.com/@itsjmmaria" target="_blank" rel="noopener">
+      <span><span class="row__t">TikTok</span><span class="row__s">@itsjmmaria &middot; 15K+</span></span>
+      <span class="row__a">&rarr;</span>
+    </a>
+    <a class="row" href="https://instagram.com/itsjmmaria" target="_blank" rel="noopener">
+      <span><span class="row__t">Instagram</span><span class="row__s">@itsjmmaria &middot; 10K+</span></span>
+      <span class="row__a">&rarr;</span>
+    </a>
+    <a class="row" href="https://facebook.com/janinamariac" target="_blank" rel="noopener">
+      <span><span class="row__t">Facebook</span><span class="row__s">janinamariac &middot; 5K+</span></span>
+      <span class="row__a">&rarr;</span>
+    </a>
+  </div>
+
+  <div class="bio__set">
+    <p class="bio__h">Book &amp; shop</p>
+    <a class="row" href="/agoda">
+      <span><span class="row__t">Agoda &mdash; hotels</span><span class="row__s">Official ambassador</span></span>
+      <span class="row__a">&rarr;</span>
+    </a>
+    <a class="row" href="/klook">
+      <span><span class="row__t">Klook &mdash; activities</span><span class="row__s">Code JMMARIAKLOOK</span></span>
+      <span class="row__a">&rarr;</span>
+    </a>
+    <div class="row">
+      <span><span class="row__t" id="code">JMMARIAKLOOK</span><span class="row__s">Klook discount code</span></span>
+      <button class="row__a" id="copyBtn" onclick="copyCode()" style="cursor:pointer;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;font-size:9.5px;">Copy</button>
     </div>
-
-    <p class="handle">@itsjmmaria</p>
-    <h1 class="display-name">JM <em>Maria</em></h1>
-    <p class="bio">Travel Creator · Dubai<br>Hotels · Cafes · Stories</p>
-
-    <div class="stats">
-        <div><span class="stat-n">21K+</span><span class="stat-l">YouTube</span></div>
-        <div><span class="stat-n">10K+</span><span class="stat-l">Instagram</span></div>
-        <div><span class="stat-n">17+</span><span class="stat-l">Hotels</span></div>
-    </div>
-</div>
-
-<!-- LINKS -->
-<div class="links">
-
-    <!-- SOCIALS -->
-    <p class="section-lbl">Follow me</p>
-
-    <a href="https://youtube.com/@jmmaria" target="_blank" class="lcard lcard-red">
-        <div class="lcard-icon icon-light"><i class="fab fa-youtube"></i></div>
-        <div class="lcard-text">
-            <span class="lcard-title">YouTube</span>
-            <span class="lcard-sub">Watch my travel films · @jmmaria</span>
-        </div>
-        <span class="lcard-arrow">→</span>
+    <a class="row" href="/amazon">
+      <span><span class="row__t">Amazon storefront</span><span class="row__s">Gear &middot; travel &middot; beauty</span></span>
+      <span class="row__a">&rarr;</span>
     </a>
-
-    <a href="https://instagram.com/itsjmmaria" target="_blank" class="lcard lcard-white">
-        <div class="lcard-icon icon-black"><i class="fab fa-instagram" style="color:#e1306c;"></i></div>
-        <div class="lcard-text">
-            <span class="lcard-title">Instagram</span>
-            <span class="lcard-sub">Daily travel content · @itsjmmaria</span>
-        </div>
-        <span class="lcard-arrow" style="color:var(--black);">→</span>
+    <a class="row" href="/buymeacoffee">
+      <span><span class="row__t">Buy me a coffee</span><span class="row__s">Support the films</span></span>
+      <span class="row__a">&rarr;</span>
     </a>
+  </div>
 
-    <a href="https://tiktok.com/@itsjmmaria" target="_blank" class="lcard lcard-dark">
-        <div class="lcard-icon icon-light"><i class="fab fa-tiktok"></i></div>
-        <div class="lcard-text">
-            <span class="lcard-title">TikTok</span>
-            <span class="lcard-sub">Short travel clips · @itsjmmaria</span>
-        </div>
-        <span class="lcard-arrow">→</span>
+  <div class="bio__set">
+    <p class="bio__h">Destination guides</p>
+    <a class="row" href="/uae">
+      <span><span class="row__t">Dubai &amp; UAE</span><span class="row__s">9 venues filmed</span></span>
+      <span class="row__a">&rarr;</span>
     </a>
-
-    <a href="https://facebook.com/janinamariac" target="_blank" class="lcard lcard-dark">
-        <div class="lcard-icon icon-light"><i class="fab fa-facebook" style="color:#1877f2;"></i></div>
-        <div class="lcard-text">
-            <span class="lcard-title">Facebook</span>
-            <span class="lcard-sub">janinamariac</span>
-        </div>
-        <span class="lcard-arrow">→</span>
+    <a class="row" href="/thailand">
+      <span><span class="row__t">Thailand</span><span class="row__s">6 properties &middot; 5 destinations</span></span>
+      <span class="row__a">&rarr;</span>
     </a>
-
-    <!-- BOOK + SHOP -->
-    <p class="section-lbl">Book & shop</p>
-
-    <a href="/klook" class="lcard lcard-white">
-        <div class="lcard-icon" style="background:#ff6b35; color:#fff; border-radius:.8rem; width:42px; height:42px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">🎟</div>
-        <div class="lcard-text">
-            <span class="lcard-title">Book Activities · Klook</span>
-            <span class="lcard-sub">UAE · Thailand · France · Germany</span>
-        </div>
-        <span class="lcard-arrow" style="color:var(--black);">→</span>
+    <a class="row" href="/france">
+      <span><span class="row__t">France</span><span class="row__s">Paris &middot; Dijon</span></span>
+      <span class="row__a">&rarr;</span>
     </a>
+  </div>
 
-    <!-- Promo code -->
-    <div class="promo-card">
-        <div style="flex:1;">
-            <p style="font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.3em; color:rgba(255,255,255,.4); margin-bottom:8px;">Klook discount code</p>
-            <div style="display:flex; align-items:center; gap:10px;">
-                <span class="promo-code" id="code">JMMARIAKLOOK</span>
-                <button class="copy-btn" id="copy-btn" onclick="copyCode()">Copy</button>
-            </div>
-        </div>
-    </div>
+  <div class="bio__foot">
+    <p class="bio__role">jmmaria.com &middot; Dubai</p>
+  </div>
 
-    <a href="/amazon" class="lcard lcard-amazon">
-        <div class="lcard-icon icon-dark" style="font-size:20px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:.8rem; flex-shrink:0;">🛒</div>
-        <div class="lcard-text">
-            <span class="lcard-title">Amazon Storefront</span>
-            <span class="lcard-sub">My gear · beauty · travel essentials</span>
-        </div>
-        <span class="lcard-arrow" style="color:rgba(0,0,0,.5);">→</span>
-    </a>
-
-    <!-- SUPPORT -->
-    <p class="section-lbl">Support my content</p>
-
-    <a href="https://buymeacoffee.com/itsjmmaria" target="_blank" class="lcard lcard-yellow">
-        <div class="lcard-icon icon-dark" style="font-size:22px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:.8rem; flex-shrink:0;">☕</div>
-        <div class="lcard-text">
-            <span class="lcard-title">Buy Me a Coffee</span>
-            <span class="lcard-sub">Support the content · give back together</span>
-        </div>
-        <span class="lcard-arrow" style="color:rgba(0,0,0,.4);">→</span>
-    </a>
-
-    <!-- DESTINATIONS -->
-    <p class="section-lbl">Destination guides</p>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
-        <a href="/uae" class="lcard lcard-dark" style="flex-direction:column; text-align:center; padding:18px 10px; gap:8px;">
-            <span style="font-size:24px; line-height:1;">🇦🇪</span>
-            <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.08em;">UAE</span>
-        </a>
-        <a href="/thailand" class="lcard lcard-dark" style="flex-direction:column; text-align:center; padding:18px 10px; gap:8px;">
-            <span style="font-size:24px; line-height:1;">🇹🇭</span>
-            <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.08em;">Thailand</span>
-        </a>
-        <a href="/france" class="lcard lcard-dark" style="flex-direction:column; text-align:center; padding:18px 10px; gap:8px;">
-            <span style="font-size:24px; line-height:1;">🇫🇷</span>
-            <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.08em;">France</span>
-        </a>
-    </div>
-
-    <!-- COLLAB -->
-    <p class="section-lbl">Work with me</p>
-
-    <a href="https://jmmaria.com/#inquiries" class="lcard lcard-dark" style="border:1.5px solid rgba(239,68,68,.4);">
-        <div class="lcard-icon" style="background:rgba(239,68,68,.15); color:var(--red); width:42px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:.8rem; font-size:18px; flex-shrink:0;">✉️</div>
-        <div class="lcard-text">
-            <span class="lcard-title" style="color:var(--red);">Collab Inquiry</span>
-            <span class="lcard-sub">Hotels · cafes · tourism boards · UGC</span>
-        </div>
-        <span class="lcard-arrow" style="color:var(--red);">→</span>
-    </a>
-
-    <a href="mailto:jmmaria.ugc@gmail.com" class="lcard lcard-dark">
-        <div class="lcard-icon icon-light" style="font-size:16px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:.8rem; flex-shrink:0;"><i class="fas fa-envelope"></i></div>
-        <div class="lcard-text">
-            <span class="lcard-title">Email Me</span>
-            <span class="lcard-sub">jmmaria.ugc@gmail.com</span>
-        </div>
-        <span class="lcard-arrow">→</span>
-    </a>
-
-</div>
-
-<!-- FOOTER -->
-<p class="foot" style="padding:0 20px;">
-    <a href="https://jmmaria.com">jmmaria.com</a> · travel creator · dubai 🇦🇪
-</p>
+</main>
 
 <script>
-var copied = false;
-function copyCode() {
-    navigator.clipboard.writeText('JMMARIAKLOOK').then(function() {
-        var btn = document.getElementById('copy-btn');
-        var code = document.getElementById('code');
-        btn.textContent = 'Copied!';
-        btn.style.background = '#16a34a';
-        code.style.color = '#16a34a';
-        setTimeout(function() {
-            btn.textContent = 'Copy';
-            btn.style.background = '#ef4444';
-            code.style.color = '#ef4444';
-        }, 2500);
-    });
+function copyCode(){
+  navigator.clipboard.writeText('JMMARIAKLOOK').then(function(){
+    var b=document.getElementById('copyBtn');
+    b.textContent='Copied';
+    setTimeout(function(){ b.textContent='Copy'; },2200);
+  });
 }
 </script>
 </body>
