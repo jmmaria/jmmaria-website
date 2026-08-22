@@ -37,6 +37,7 @@
 <!-- ── DRAWER ─────────────────────────────────────────── -->
 <div class="drawer" id="drawer">
   <button class="drawer__x" onclick="toggleDrawer()">Close</button>
+  <a href="#about" onclick="toggleDrawer()">About</a>
   <a href="#work" onclick="toggleDrawer()">Work</a>
   <a href="#capabilities" onclick="toggleDrawer()">Capabilities</a>
   <a href="#reach" onclick="toggleDrawer()">Reach</a>
@@ -55,13 +56,12 @@
   <div class="nav__in">
     <a href="/" class="mark">JM <span>Maria</span></a>
     <div class="nav__links">
+      <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#reach">Reach</a>
-      <a href="#process">Process</a>
       <span class="nav__sep"></span>
       <a href="#shop">Book &amp; shop</a>
-      <a href="/links">Links</a>
       <span class="nav__sep"></span>
       <a href="#inquiry" class="is-cta">Start a project</a>
     </div>
@@ -72,7 +72,7 @@
 <!-- ── HERO ───────────────────────────────────────────── -->
 <header class="hero on-ink">
   <div class="wrap">
-    <span class="eyebrow hero__eyebrow">UGC &amp; branded content — Dubai, filming worldwide</span>
+    <span class="eyebrow hero__eyebrow">JM Maria — UGC creator, Dubai</span>
     <h1 class="d1 hero__t">Films that make people want to <em>book the room.</em></h1>
     <p class="lede hero__lede">I produce cinematic short and long-form content for hotels, restaurants, tourism boards and lifestyle brands — scouted, filmed, edited and delivered ready to publish, with full usage rights.</p>
     <div class="hero__cta">
@@ -81,6 +81,48 @@
     </div>
   </div>
 </header>
+
+
+<!-- ── ABOUT ──────────────────────────────────────────── -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about">
+
+      <div class="about__portrait">
+        <!-- PORTRAIT: replace this whole <div class="slot"> with
+             <img src="/portrait.jpg" alt="JM Maria"> and it will fit. -->
+        <div class="slot slot--portrait">Portrait<br>4:5</div>
+      </div>
+
+      <div class="about__body">
+        <span class="eyebrow" style="display:block;margin-bottom:18px;">About</span>
+        <h2 class="d2" style="margin-bottom:26px;max-width:15ch;">Hi &mdash; I'm <em>JM Maria.</em></h2>
+
+        <div class="stack">
+          <p class="lede">I'm a travel and lifestyle content creator based in Dubai. I make the kind of films that make you want to go somewhere: a hotel room at first light, the caf&eacute; everyone in Jumeirah is talking about, a ferry pulling into Phi Phi.</p>
+          <p class="lede">It started as filming my own trips. It turned into work &mdash; ten properties across five countries, nine Dubai venues, and an audience who plan their trips around what I post. Brands started asking for the same thing for their own channels, so now I shoot for them too.</p>
+          <p class="lede">I work alone, and that's the point. I scout, film, edit and deliver everything myself. What you approve is what you get, and the tone holds from the first frame to the last cut.</p>
+        </div>
+
+        <div class="about__spec">
+          <div class="spec">
+            <div class="spec__r"><span class="spec__k">Based</span><span class="spec__v">Dubai, UAE &mdash; filming worldwide</span></div>
+            <div class="spec__r"><span class="spec__k">Markets</span><span class="spec__v">UAE, Thailand, France, Germany, Poland</span></div>
+            <div class="spec__r"><span class="spec__k">Formats</span><span class="spec__v">16:9 long-form, 9:16 vertical, stills</span></div>
+            <div class="spec__r"><span class="spec__k">Channels</span><span class="spec__v">YouTube, TikTok, Instagram, Facebook</span></div>
+            <div class="spec__r"><span class="spec__k">Clients</span><span class="spec__v">Hotels, resorts, caf&eacute;s, tourism boards</span></div>
+          </div>
+        </div>
+
+        <div class="work__actions" style="margin-top:30px;">
+          <a href="#work" class="tlink">See the work</a>
+          <a href="#inquiry" class="tlink">Start a project</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ── SELECTED WORK ──────────────────────────────────── -->
 <section class="section" id="work">
@@ -377,6 +419,7 @@
         <div><span class="eyebrow">Usage</span><p class="small" style="margin-top:10px;">Full usage rights on commissioned UGC. Licence terms agreed per project before shooting.</p></div>
         <div><span class="eyebrow">Coverage</span><p class="small" style="margin-top:10px;">Based in Dubai. Regularly filming across the UAE, Southeast Asia and Europe.</p></div>
       </div>
+      <p class="small" style="margin-top:clamp(28px,3vw,40px);">Need it every week rather than once? I also take a small number of ongoing engagements &mdash; <a href="/services" class="tlink">ongoing services</a></p>
     </div>
   </div>
 </section>
@@ -562,6 +605,10 @@
             <a href="mailto:jmmaria.ugc@gmail.com?subject=Rate%20card%20request" class="tlink" style="justify-self:end;">Request rate card</a>
           </div>
           <div class="reach__row" style="grid-template-columns:1fr auto;">
+            <span class="reach__name">Ongoing work</span>
+            <a href="/services" class="tlink" style="justify-self:end;">Retainer services</a>
+          </div>
+          <div class="reach__row" style="grid-template-columns:1fr auto;">
             <span class="reach__name">Response</span>
             <span class="reach__handle" style="justify-self:end;">Within 24 hours</span>
           </div>
@@ -580,6 +627,8 @@
             <option value="Tourism">Tourism or destination campaign</option>
             <option value="FnB">Restaurant, café or venue</option>
             <option value="Partnership">Ongoing partnership</option>
+            <option value="Retainer">Social or content retainer</option>
+            <option value="VA">Virtual assistant support</option>
             <option value="RateCard">Rate card request</option>
             <option value="Other">Something else</option>
           </select>
@@ -635,6 +684,7 @@
         <div class="foot__l">
           <a href="mailto:jmmaria.ugc@gmail.com">jmmaria.ugc@gmail.com</a>
           <a href="#inquiry">Start a project</a>
+          <a href="/services">Ongoing services</a>
           <a href="/links">All links</a>
         </div>
       </div>

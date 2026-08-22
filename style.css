@@ -200,6 +200,18 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 .hero__lede{ margin-bottom:clamp(32px,4vw,46px); }
 .hero__cta{ display:flex; gap:12px; flex-wrap:wrap; }
 
+/* ── ABOUT ─────────────────────────────────────────────── */
+.about{ display:grid; grid-template-columns:minmax(240px,380px) 1fr; gap:clamp(28px,5vw,72px); align-items:start; }
+.about__portrait{ position:sticky; top:100px; }
+.about__portrait img{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--r); border:1px solid var(--line); display:block; }
+.slot--portrait{ aspect-ratio:4/5; min-height:0; line-height:2; }
+.about__spec{ margin-top:clamp(28px,3vw,40px); padding-top:26px; border-top:1px solid var(--line); }
+.about__spec .spec__r{ grid-template-columns:92px 1fr; }
+@media(max-width:820px){
+  .about{ grid-template-columns:1fr; }
+  .about__portrait{ position:static; max-width:300px; }
+}
+
 /* ── STAT / REACH TABLE ────────────────────────────────── */
 .reach{ border-top:1px solid var(--line); }
 .section--ink .reach,.on-ink .reach{ border-top-color:var(--line-i); }
@@ -215,7 +227,7 @@ a.reach__row:hover{ padding-left:10px; color:var(--wine); }
 .reach__name{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.18em; }
 .reach__handle{ font-size:13px; color:var(--stone); }
 .section--ink .reach__handle,.on-ink .reach__handle{ color:var(--stone-i); }
-.reach__n{ font-family:var(--serif); font-size:clamp(1.5rem,3vw,2.3rem); line-height:1; justify-self:end; }
+.reach__n{ font-family:var(--serif); font-variant-numeric:lining-nums; font-feature-settings:'lnum' 1,'onum' 0; font-size:clamp(1.5rem,3vw,2.3rem); line-height:1; justify-self:end; }
 @media(max-width:640px){
   .reach__row{ grid-template-columns:1fr auto; gap:.5rem 1rem; }
   .reach__handle{ grid-column:1; }
