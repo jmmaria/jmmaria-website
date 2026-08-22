@@ -5,7 +5,7 @@ creator, Dubai. Static site, no build step.
 
 ## Structure
 
-    index.html          Portfolio: work, capabilities, reach, process, inquiry
+    index.html          One page: About me / Video / Photography / Clients / Contact
     style.css           Whole design system. Every page loads this.
     services/           Ongoing & retainer services (unlisted from main nav)
     uae/                Market page — Dubai & UAE (9 venues)
@@ -31,14 +31,34 @@ whole site follows.
 Type: Instrument Serif (display) / Instrument Sans (body) / IBM Plex Mono
 (labels and spec sheets), all from Google Fonts.
 
+## Homepage structure
+
+    #about        About me — portrait, bio, what I make, audience numbers
+    #video        Video examples — intro
+      #video-hotels    10 hotel & resort films (filterable by market)
+      #video-venues    9 Dubai café & venue films
+      #video-short     live TikTok + Instagram feeds
+    #photography  Photography examples — 6 gallery slots
+    #clients      Previous clients — logo wall + Agoda / Klook programmes
+    #contact      Contact me — form, details, three-step "what happens next"
+    #shop         Book & shop — affiliate links
+
+Nav is About / Video / Photography / Clients / Book & shop / Contact.
+
 ## Still to supply
 
-1. **Portrait** — `index.html`, About section. Drop a 4:5 image at
+1. **Photography** — `#photography` has six 4:5 placeholder slots and no real
+   images. Add files to `/photos/` and swap each
+   `<div class="slot slot--shot">` for `<img src="/photos/01.jpg" alt="...">`.
+   The grid, ratio and hover are already styled. Until these are filled the
+   section advertises a service with nothing behind it, so either add stills
+   or delete the section.
+2. **Portrait** — `index.html`, About section. Drop a 4:5 image at
    `/portrait.jpg` and replace the `<div class="slot slot--portrait">` with
    `<img src="/portrait.jpg" alt="JM Maria">`. Styling is already there. This
    is the single highest-value addition: brands hiring a UGC creator are
    hiring a person.
-2. **Rate card** — currently a `mailto:` CTA. No pricing is published anywhere.
+3. **Rate card** — currently a `mailto:` CTA. No pricing is published anywhere.
 4. **Bio accuracy** — the About copy is written from facts already on the old
    site (Dubai-based, 10 properties, 5 countries, 9 Dubai venues, solo
    pipeline). Anything about how long you've been filming, your kit, or where

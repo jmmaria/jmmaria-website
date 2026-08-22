@@ -377,6 +377,27 @@ a.tag:hover{ color:var(--ink); border-color:var(--ink); }
 .section--ink a.tag:hover,.on-ink a.tag:hover{ color:var(--bone); border-color:var(--bone); }
 .tags{ display:flex; flex-wrap:wrap; gap:8px; }
 
+/* deck — compact "what I make" list, lighter than cards */
+.deck{ display:grid; grid-template-columns:1fr; border-top:1px solid var(--line); }
+@media(min-width:700px){ .deck{ grid-template-columns:repeat(2,1fr); column-gap:clamp(24px,4vw,64px); } }
+.deck__i{ padding:20px 0; border-bottom:1px solid var(--line); }
+.section--ink .deck,.on-ink .deck{ border-top-color:var(--line-i); }
+.section--ink .deck__i,.on-ink .deck__i{ border-bottom-color:var(--line-i); }
+.deck__t{ font-family:var(--serif); font-size:1.2rem; line-height:1.2; margin-bottom:6px; }
+.deck__b{ font-size:13.5px; line-height:1.7; color:var(--stone); }
+.section--ink .deck__b,.on-ink .deck__b{ color:var(--stone-i); }
+
+/* photography gallery */
+.gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(10px,1.4vw,18px); }
+@media(min-width:820px){ .gallery{ grid-template-columns:repeat(3,1fr); } }
+.shot{ margin:0; }
+.shot img{ width:100%; aspect-ratio:4/5; object-fit:cover; display:block;
+  border-radius:var(--r); border:1px solid var(--line);
+  transition:opacity .35s var(--ease); }
+.shot img:hover{ opacity:.86; }
+.section--ink .shot img,.on-ink .shot img{ border-color:var(--line-i); }
+.slot--shot{ aspect-ratio:4/5; min-height:0; }
+
 /* logo wall — client marks, unified to one ink tone */
 .wall{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:clamp(20px,3vw,48px); align-items:center;
